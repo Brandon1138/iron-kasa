@@ -1,0 +1,20 @@
+[33mb0c47fe[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m HEAD@{0}: reset: moving to HEAD~3
+[33m0c78348[m HEAD@{1}: rebase (finish): returning to refs/heads/main
+[33m0c78348[m HEAD@{2}: rebase (start): checkout head~2
+[33m0c78348[m HEAD@{3}: rebase (finish): returning to refs/heads/main
+[33m0c78348[m HEAD@{4}: rebase (start): checkout HEAD~1
+[33m0c78348[m HEAD@{5}: rebase (finish): returning to refs/heads/main
+[33m0c78348[m HEAD@{6}: rebase (start): checkout HEAD~3
+[33m0c78348[m HEAD@{7}: rebase (finish): returning to refs/heads/main
+[33m0c78348[m HEAD@{8}: rebase (start): checkout HEAD~3
+[33m22b3f02[m HEAD@{9}: rebase (finish): returning to refs/heads/main
+[33m22b3f02[m HEAD@{10}: rebase (start): checkout HEAD~3
+[33m22b3f02[m HEAD@{11}: rebase (finish): returning to refs/heads/main
+[33m22b3f02[m HEAD@{12}: rebase (start): checkout HEAD~3
+[33m22b3f02[m HEAD@{13}: reset: moving to HEAD
+[33m22b3f02[m HEAD@{14}: commit: Implemented Hero and About sections
+[33m8efb586[m HEAD@{15}: commit: Implemented Hero and About Sections
+[33m0c78348[m HEAD@{16}: commit: Implemented Hero Section and began implementation of the About Section
+[33m64670b1[m[33m ([m[1;31morigin/main[m[33m)[m HEAD@{17}: commit: Implemented navigation bar
+[33m685c6e0[m HEAD@{18}: commit: Adjusted background to match Figma designs
+[33mb0c47fe[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m HEAD@{19}: commit (initial): Initial commit for iPhoneDoctor web application
