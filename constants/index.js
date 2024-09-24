@@ -25,11 +25,26 @@ export const features = [
   },
 ];
 
+export const categoryCard = [
+  {
+    imgUrl: '/category-iphone.svg',
+  },
+  {
+    imgUrl: '/category-ipad.svg',
+  },
+  {
+    imgUrl: '/category-macbook.svg',
+  },
+  {
+    imgUrl: '/category-imac.svg',
+  }, 
+]
+
 export const mainDisclaimer = [
   'iPhone Doctor Romania nu este, nu a fost și nu va fi niciodată un service autorizat Apple. Din considerente etice și din respect atât pentru clienții noștri, cât și pentru service-urile autorizate  Apple, dorim să clarificăm acest aspect. Piesele folosite, garanția oferită și reparațiile executate nu sunt în niciun fel afiliate Apple.'
 ]
 
-export const iphoneRepairs = [
+export const iphoneServiceCards = [
   {
     imgUrl: 'iphone_14_pro_max.png',
     title: 'iPhone 14 Pro Max',
