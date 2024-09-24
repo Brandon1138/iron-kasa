@@ -14,6 +14,10 @@ module.exports = {
         'secondary-white': '#c7c7c7',
         'overlay-black': '#1e1e1e',
       },
+      screens: {
+        ml: '850px', // Between md (768px) and lg (1024px)
+        xl: '1150px', // Between lg (1024px) and xl (1280px)
+      },
       transitionTimingFunction: {
         'out-flex': 'cubic-bezier(0.05, 0.6, 0.4, 0.9)',
       },

@@ -12,11 +12,6 @@ import { useState } from 'react';
 
 const Services = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
-  const [hoveredCategory, setHoveredCategory] = useState(null);
-
-  const handleCategoryClick = (index) => {
-    setSelectedCategory(index);
-  };
 
   const categoryTitles = [
     'Reparații iPhone',
@@ -25,8 +20,9 @@ const Services = () => {
     'Reparații iMac',
   ];
 
-  const categoryToDisplay =
-    hoveredCategory !== null ? hoveredCategory : selectedCategory;
+  const handleCategorySelect = (index) => {
+    setSelectedCategory(index);
+  };
 
   return (
     <section className={`${styles.paddings} px-6 py-12`} id="services">
@@ -60,37 +56,37 @@ const Services = () => {
           whileInView="show"
           viewport={{ once: false, amount: 0.25 }}
           className="
-            flex flex-wrap justify-center items-center mt-8 py-8
-            gap-6
+            grid grid-cols-4 mt-8 py-8
+            gap-[10px] sm:gap-[14px] lg:gap-[30px]
+            w-full
           "
         >
           {categoryCard.map((category, index) => (
             <motion.div
               key={index}
               variants={fadeIn('up', 'tween', index * 0.1, 1)}
+              className="flex justify-center"
             >
               <CategoryCard
                 imgUrl={category.imgUrl}
                 title={categoryTitles[index]}
-                onClick={() => handleCategoryClick(index)}
-                onMouseEnter={() => setHoveredCategory(index)}
-                onMouseLeave={() => setHoveredCategory(null)}
+                onSelect={() => handleCategorySelect(index)}
               />
             </motion.div>
           ))}
         </motion.div>
 
-        {/* Selected or Hovered Category Information */}
-        {categoryToDisplay !== null && (
+        {/* Selected Category Information */}
+        {selectedCategory !== null && (
           <motion.div
-            key={categoryToDisplay}
+            key={selectedCategory}
             variants={fadeIn('up', 'tween', 0.2, 1)}
             initial="hidden"
             animate="show"
             className="mt-12 text-center px-4"
           >
             <h3 className="font-bold text-3xl text-white">
-              {categoryTitles[categoryToDisplay]}
+              {categoryTitles[selectedCategory]}
             </h3>
             <motion.p
               variants={fadeIn('up', 'tween', 0.3, 1)}
