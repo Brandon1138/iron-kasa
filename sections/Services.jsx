@@ -1,4 +1,4 @@
-// Services.jsx
+// sections/Services.jsx
 
 'use client';
 
@@ -6,12 +6,15 @@ import { TypingText, TitleText } from '../components';
 import { motion } from 'framer-motion';
 import styles from '../styles';
 import { staggerContainer, fadeIn } from '../utils/motion';
-import { categoryCard, mainDisclaimer } from '../constants';
+import { categoryCard, mainDisclaimer, iPhoneServiceCards } from '../constants';
 import CategoryCard from '../components/CategoryCard';
+import ServiceCard from '../components/ServiceCard';
+import ServiceModal from '../components/ServiceModal';
 import { useState } from 'react';
 
 const Services = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedService, setSelectedService] = useState(null);
 
   const categoryTitles = [
     'Reparații iPhone',
@@ -22,6 +25,14 @@ const Services = () => {
 
   const handleCategorySelect = (index) => {
     setSelectedCategory(index);
+  };
+
+  const handleServiceSelect = (service) => {
+    setSelectedService(service);
+  };
+
+  const handleModalClose = () => {
+    setSelectedService(null);
   };
 
   return (
@@ -56,7 +67,7 @@ const Services = () => {
           whileInView="show"
           viewport={{ once: false, amount: 0.25 }}
           className="
-            grid grid-cols-4 mt-8 py-8
+            grid grid-cols-4 sm:grid-cols-4 mt-8 py-8 px-4
             gap-[10px] sm:gap-[14px] lg:gap-[30px]
             w-full
           "
@@ -98,6 +109,43 @@ const Services = () => {
             </motion.p>
           </motion.div>
         )}
+
+        {/* Service Cards */}
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.25 }}
+          className="
+            grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4
+            mt-8 py-8
+            gap-[10px] sm:gap-[14px] lg:gap-[30px]
+            w-full
+          "
+        >
+          {iPhoneServiceCards.map((service, index) => (
+            <motion.div
+              key={index}
+              variants={fadeIn('up', 'tween', index * 0.1, 1)}
+              className="flex justify-center"
+            >
+              <ServiceCard
+                imgUrl={service.imgUrl}
+                title={service.title}
+                onClick={() => handleServiceSelect(service)}
+              />
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Service Modal */}
+        <ServiceModal
+          isVisible={selectedService !== null}
+          onClose={handleModalClose}
+          imgUrl={selectedService?.imgUrl}
+          title={selectedService?.title}
+          description={selectedService?.description || 'Detalii despre serviciu.'}
+        />
       </div>
     </section>
   );

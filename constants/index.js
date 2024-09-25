@@ -44,101 +44,101 @@ export const mainDisclaimer = [
   'iPhone Doctor Romania nu este, nu a fost și nu va fi niciodată un service autorizat Apple. Din considerente etice și din respect atât pentru clienții noștri, cât și pentru service-urile autorizate  Apple, dorim să clarificăm acest aspect. Piesele folosite, garanția oferită și reparațiile executate nu sunt în niciun fel afiliate Apple.'
 ]
 
-export const iphoneServiceCards = [
+export const iPhoneServiceCards = [
   {
-    imgUrl: 'iphone_14_pro_max.png',
+    imgUrl: '/iphone_14_pro_max.png',
     title: 'iPhone 14 Pro Max',
   },
   {
-    imgUrl: 'iphone_14_plus.png',
+    imgUrl: '/iphone_14_plus.png',
     title: 'iPhone 14 Plus',
   },
   {
-    imgUrl: 'iphone_14_pro.png',
+    imgUrl: '/iphone_14_pro.png',
     title: 'iPhone 14 Pro',
   },
   {
-    imgUrl: 'iphone_14.png',
+    imgUrl: '/iphone_14.png',
     title: 'iPhone 14',
   },
   {
-    imgUrl: 'iphone_13_pro_max.png',
+    imgUrl: '/iphone_13_pro_max.png',
     title: 'iPhone 13 Pro Max',
   },
   {
-    imgUrl: 'iphone_13_pro.png',
+    imgUrl: '/iphone_13_pro.png',
     title: 'iPhone 13 Pro',
   },
   {
-    imgUrl: 'iphone_13_mini.png',
+    imgUrl: '/iphone_13_mini.png',
     title: 'iPhone 13 Mini',
   },
   {
-    imgUrl: 'iphone_13.png',
+    imgUrl: '/iphone_13.png',
     title: 'iPhone 13',
   },
   {
-    imgUrl: 'iphone_12_pro_max.png',
+    imgUrl: '/iphone_12_pro_max.png',
     title: 'iPhone 12 Pro Max',
   },
   {
-    imgUrl: 'iphone_12_pro.png',
+    imgUrl: '/iphone_12_pro.png',
     title: 'iPhone 12 Pro',
   },
   {
-    imgUrl: 'iphone_12_mini.png',
+    imgUrl: '/iphone_12_mini.png',
     title: 'iPhone 12 Mini',
   },
   {
-    imgUrl: 'iphone_12.png',
+    imgUrl: '/iphone_12.png',
     title: 'iPhone 12',
   },
   {
-    imgUrl: 'iphone_11_pro_max.png',
+    imgUrl: '/iphone_11_pro_max.png',
     title: 'iPhone 11 Pro Max',
   },
   {
-    imgUrl: 'iphone_11_pro.png',
+    imgUrl: '/iphone_11_pro.png',
     title: 'iPhone 11 Pro',
   },
   {
-    imgUrl: 'iphone_11.png',
+    imgUrl: '/iphone_11.png',
     title: 'iPhone 11',
   },
   {
-    imgUrl: 'iphone_xr.png',
+    imgUrl: '/iphone_xr.png',
     title: 'iPhone XR',
   },
   {
-    imgUrl: 'iphone_xs_max.png',
+    imgUrl: '/iphone_xs_max.png',
     title: 'iPhone XS',
   },
   {
-    imgUrl: 'iphone_xs.png',
+    imgUrl: '/iphone_xs.png',
     title: 'iPhone XS',
   },
   {
-    imgUrl: 'iphone_x.png',
+    imgUrl: '/iphone_x.png',
     title: 'iPhone X',
   },
   {
-    imgUrl: 'iphone_8_plus.png',
+    imgUrl: '/iphone_8_plus.png',
     title: 'iPhone 8 Plus',
   },
   {
-    imgUrl: 'iphone_8.png',
+    imgUrl: '/iphone_8.png',
     title: 'iPhone 8',
   },
   {
-    imgUrl: 'iphone_7_plus.png',
+    imgUrl: '/iphone_7_plus.png',
     title: 'iPhone 7 Plus',
   },
   {
-    imgUrl: 'iphone_7.png',
+    imgUrl: '/iphone_7.png',
     title: 'iPhone 7',
   },
   {
-    imgUrl: 'iphone_6s_plus.png',
+    imgUrl: '/iphone_6s_plus.png',
     title: 'iPhone 6s Plus',
   },
 ]

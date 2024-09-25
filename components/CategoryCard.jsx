@@ -9,11 +9,11 @@ const CategoryCard = ({ imgUrl, title, onSelect }) => {
     <motion.div
       className="
         relative cursor-pointer group
-        w-[90px] h-[85px] rounded-[12px]
-        sm:w-[105px] sm:h-[105px] sm:rounded-[18px]
-        md:w-[110px] md:h-[110px] md:rounded-[18px]
-        lg:w-[170px] lg:h-[170px] lg:rounded-[28px]
-        xl:w-[220px] xl:h-[220px] xl:rounded-[36px]
+        w-[100px] h-[100px] rounded-[20px]
+        sm:w-[125px] sm:h-[125px] sm:rounded-[24px]
+        md:w-[160px] md:h-[160px] md:rounded-[26px]
+        lg:w-[195px] lg:h-[195px] lg:rounded-[28px]
+        xl:w-[235px] xl:h-[235px] xl:rounded-[36px]
         2xl:w-[270px] 2xl:h-[270px] 2xl:rounded-[44px]
         overflow-visible
       "
@@ -32,9 +32,9 @@ const CategoryCard = ({ imgUrl, title, onSelect }) => {
           animate-spin-slow
           pointer-events-none
           z-0
-          rounded-[12px]
-          sm:rounded-[18px]
-          md:rounded-[18px]
+          rounded-[20px]
+          sm:rounded-[24px]
+          md:rounded-[26px]
           lg:rounded-[28px]
           xl:rounded-[36px]
           2xl:rounded-[44px]
@@ -52,9 +52,9 @@ const CategoryCard = ({ imgUrl, title, onSelect }) => {
           relative flex justify-center items-center
           overflow-hidden
           w-full h-full
-          rounded-[12px]
-          sm:rounded-[18px]
-          md:rounded-[18px]
+          rounded-[20px]
+          sm:rounded-[24px]
+          md:rounded-[26px]
           lg:rounded-[28px]
           xl:rounded-[36px]
           2xl:rounded-[44px]
