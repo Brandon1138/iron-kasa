@@ -1,15 +1,12 @@
-// sections/Services.jsx
-
 'use client';
 
 import { TypingText, TitleText } from '../components';
 import { motion } from 'framer-motion';
 import styles from '../styles';
 import { staggerContainer, fadeIn } from '../utils/motion';
-import { categoryCard, mainDisclaimer, iPhoneServiceCards } from '../constants';
+import { categoryCard, mainDisclaimer, iPhoneServiceDetails } from '../constants';
 import CategoryCard from '../components/CategoryCard';
 import ServiceCard from '../components/ServiceCard';
-import ServiceModal from '../components/ServiceModal';
 import { useState } from 'react';
 
 const Services = () => {
@@ -119,33 +116,25 @@ const Services = () => {
           className="
             grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4
             mt-8 py-8 px-4
-            gap-[10px] sm:gap-[14px] lg:gap-[30px]
+            gap-[12px] sm:gap-[12px] md:gap-[16px] lg:gap-[22px] xl:gap-[26px] 2xl:gap-[30px]
             w-full
           "
         >
-          {iPhoneServiceCards.map((service, index) => (
+          {iPhoneServiceDetails.map((service, index) => (
             <motion.div
               key={index}
               variants={fadeIn('up', 'tween', index * 0.1, 1)}
               className="flex justify-center"
             >
               <ServiceCard
-                imgUrl={service.imgUrl}
-                title={service.title}
+                service={service}
                 onClick={() => handleServiceSelect(service)}
+                selectedService={selectedService}
+                onClose={handleModalClose}
               />
             </motion.div>
           ))}
         </motion.div>
-
-        {/* Service Modal */}
-        <ServiceModal
-          isVisible={selectedService !== null}
-          onClose={handleModalClose}
-          imgUrl={selectedService?.imgUrl}
-          title={selectedService?.title}
-          description={selectedService?.description || 'Detalii despre serviciu.'}
-        />
       </div>
     </section>
   );
