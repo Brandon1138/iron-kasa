@@ -48,153 +48,111 @@ export const iPhoneServiceCards = [
   {
     imgUrl: '/iphone_14_pro_max.png',
     title: 'iPhone 14 Pro Max',
-    modelWidth: 77.6,   // Width in mm
-    modelHeight: 160.7, // Height in mm
   },
   {
     imgUrl: '/iphone_14_plus.png',
     title: 'iPhone 14 Plus',
-    modelWidth: 78.1,
-    modelHeight: 160.8,
   },
   {
     imgUrl: '/iphone_14_pro.png',
     title: 'iPhone 14 Pro',
-    modelWidth: 71.5,
-    modelHeight: 147.5,
   },
   {
     imgUrl: '/iphone_14.png',
     title: 'iPhone 14',
-    modelWidth: 71.5,
-    modelHeight: 146.7,
   },
   {
     imgUrl: '/iphone_13_pro_max.png',
     title: 'iPhone 13 Pro Max',
-    modelWidth: 78.1,
-    modelHeight: 160.8,
   },
   {
     imgUrl: '/iphone_13_pro.png',
     title: 'iPhone 13 Pro',
-    modelWidth: 71.5,
-    modelHeight: 146.7,
   },
   {
     imgUrl: '/iphone_13_mini.png',
     title: 'iPhone 13 Mini',
-    modelWidth: 64.2,
-    modelHeight: 131.5,
   },
   {
     imgUrl: '/iphone_13.png',
     title: 'iPhone 13',
-    modelWidth: 71.5,
-    modelHeight: 146.7,
   },
   {
     imgUrl: '/iphone_12_pro_max.png',
     title: 'iPhone 12 Pro Max',
-    modelWidth: 78.1,
-    modelHeight: 160.8,
   },
   {
     imgUrl: '/iphone_12_pro.png',
     title: 'iPhone 12 Pro',
-    modelWidth: 71.5,
-    modelHeight: 146.7,
   },
   {
     imgUrl: '/iphone_12_mini.png',
     title: 'iPhone 12 Mini',
-    modelWidth: 64.2,
-    modelHeight: 131.5,
   },
   {
     imgUrl: '/iphone_12.png',
     title: 'iPhone 12',
-    modelWidth: 71.5,
-    modelHeight: 146.7,
   },
   {
     imgUrl: '/iphone_11_pro_max.png',
     title: 'iPhone 11 Pro Max',
-    modelWidth: 77.8,
-    modelHeight: 158.0,
   },
   {
     imgUrl: '/iphone_11_pro.png',
     title: 'iPhone 11 Pro',
-    modelWidth: 71.4,
-    modelHeight: 144.0,
   },
   {
     imgUrl: '/iphone_11.png',
     title: 'iPhone 11',
-    modelWidth: 75.7,
-    modelHeight: 150.9,
   },
   {
     imgUrl: '/iphone_xr.png',
     title: 'iPhone XR',
-    modelWidth: 75.7,
-    modelHeight: 150.9,
   },
   {
     imgUrl: '/iphone_xs_max.png',
     title: 'iPhone XS Max',
-    modelWidth: 77.4,
-    modelHeight: 157.5,
   },
   {
     imgUrl: '/iphone_xs.png',
     title: 'iPhone XS',
-    modelWidth: 70.9,
-    modelHeight: 143.6,
   },
   {
     imgUrl: '/iphone_x.png',
     title: 'iPhone X',
-    modelWidth: 70.9,
-    modelHeight: 143.6,
   },
   {
     imgUrl: '/iphone_8_plus.png',
     title: 'iPhone 8 Plus',
-    modelWidth: 78.1,
-    modelHeight: 158.4,
   },
   {
     imgUrl: '/iphone_8.png',
     title: 'iPhone 8',
-    modelWidth: 67.3,
-    modelHeight: 138.4,
   },
   {
     imgUrl: '/iphone_7_plus.png',
     title: 'iPhone 7 Plus',
-    modelWidth: 77.9,
-    modelHeight: 158.2,
   },
   {
     imgUrl: '/iphone_7.png',
     title: 'iPhone 7',
-    modelWidth: 67.1,
-    modelHeight: 138.3,
   },
   {
     imgUrl: '/iphone_6s_plus.png',
     title: 'iPhone 6s Plus',
-    modelWidth: 77.9,
-    modelHeight: 158.2,
   },
 ];
 
 export const iPhoneServiceDetails = [
   {
     imgUrl: '/iphone_14_pro_max.png',
-    title: 'Service iPhone 14 Pro Max',
+    title: 'iPhone 14 Pro Max',
+    sizes: {
+      expanded: { width: 467, height: 342 },
+      lg: { width: 215, height: 156 },
+      md: { width: 151, height: 109 },
+      sm: { width: 128, height: 92 },
+    },
     services: [
       { name: 'Înlocuire ecran (display și touchscreen)', duration: '30 min', price: '2000 lei' },
       { name: 'Înlocuire capac spate și rama metalică mijlocie', duration: '30 min', price: '1500 lei' },
@@ -207,7 +165,13 @@ export const iPhoneServiceDetails = [
   },
     {
     imgUrl: '/iphone_14_plus.png',
-    title: 'Service iPhone 4 Plus',
+    title: 'iPhone 14 Plus',
+    sizes: {
+      expanded: { width: 531, height: 342 },
+      lg: { width: 241, height: 156 },
+      md: { width: 168, height: 109 },
+      sm: { width: 142, height: 92 },
+    },
     services: [
       { name: 'Înlocuire ecran (display și touchscreen)', duration: '30 min', price: '1400 lei' },
       { name: 'Înlocuire rama metalică mijlocie', duration: '30 min', price: '1200 lei' },
@@ -221,7 +185,13 @@ export const iPhoneServiceDetails = [
   },
   {
     imgUrl: '/iphone_14_pro.png',
-    title: 'Service iPhone 14 Pro',
+    title: 'iPhone 14 Pro',
+    sizes: {
+      expanded: { width: 422, height: 308 },
+      lg: { width: 194, height: 141 },
+      md: { width: 134, height: 99 },
+      sm: { width: 113, height: 84 },
+    },
     services: [
       { name: 'Înlocuire ecran (display și touchscreen)', duration: '30 min', price: '1800 lei' },
       { name: 'Înlocuire capac spate și rama metalică mijlocie', duration: '30 min', price: '1500 lei' },
@@ -234,7 +204,13 @@ export const iPhoneServiceDetails = [
   },
   {
     imgUrl: '/iphone_14.png',
-    title: 'Service iPhone 14',
+    title: 'iPhone 14',
+    sizes: {
+      expanded: { width: 503, height: 308 },
+      lg: { width: 231, height: 141 },
+      md: { width: 162, height: 99 },
+      sm: { width: 137, height: 84 },
+    },
     services: [
       { name: 'Înlocuire ecran (display și touchscreen)', duration: '30 min', price: '1200 lei' },
       { name: 'Înlocuire rama metalică mijlocie', duration: '30 min', price: '1200 lei' },
@@ -248,7 +224,13 @@ export const iPhoneServiceDetails = [
   },
   {
     imgUrl: '/iphone_13_pro_max.png',
-    title: 'Service iPhone 13 Pro Max',
+    title: 'iPhone 13 Pro Max',
+    sizes: {
+      expanded: { width: 489, height: 342 },
+      lg: { width: 222, height: 156 },
+      md: { width: 155, height: 109 },
+      sm: { width: 131, height: 92 },
+    },
     services: [
       { name: 'Înlocuire ecran (display și touchscreen)', duration: '30 min', price: '1400 lei' },
       { name: 'Înlocuire capac spate și rama metalică mijlocie', duration: '30 min', price: '1200 lei' },
@@ -261,7 +243,13 @@ export const iPhoneServiceDetails = [
   },
   {
     imgUrl: '/iphone_13_pro.png',
-    title: 'Service iPhone 13 Pro',
+    title: 'iPhone 13 Pro',
+    sizes: {
+      expanded: { width: 473, height: 308 },
+      lg: { width: 215, height: 140 },
+      md: { width: 149, height: 99 },
+      sm: { width: 126, height: 84 },
+    },
     services: [
       { name: 'Înlocuire ecran (display și touchscreen)', duration: '30 min', price: '1400 lei' },
       { name: 'Înlocuire capac spate și rama metalică mijlocie', duration: '40 min', price: '1200 lei' },
@@ -274,7 +262,13 @@ export const iPhoneServiceDetails = [
   },
   {
     imgUrl: '/iphone_13_mini.png',
-    title: 'Service iPhone 13 Mini',
+    title: 'iPhone 13 Mini',
+    sizes: {
+      expanded: { width: 460, height: 276 },
+      lg: { width: 209, height: 126 },
+      md: { width: 146, height: 88 },
+      sm: { width: 124, height: 74 },
+    },
     services: [
       { name: 'Înlocuire ecran (display și touchscreen)', duration: '30 min', price: '900 lei' },
       { name: 'Înlocuire capac spate și rama metalică mijlocie', duration: '40 min', price: '900 lei' },
@@ -287,7 +281,13 @@ export const iPhoneServiceDetails = [
   },
   {
     imgUrl: '/iphone_13.png',
-    title: 'Service iPhone 13',
+    title: 'iPhone 13',
+    sizes: {
+      expanded: { width: 493, height: 308 },
+      lg: { width: 225, height: 141 },
+      md: { width: 157, height: 99 },
+      sm: { width: 133, height: 84 },
+    },
     services: [
       { name: 'Înlocuire ecran (display și touchscreen)', duration: '30 min', price: '900 lei' },
       { name: 'Înlocuire capac spate și rama metalică mijlocie', duration: '40 min', price: '900 lei' },
@@ -300,7 +300,13 @@ export const iPhoneServiceDetails = [
   },
   {
     imgUrl: '/iphone_12_pro_max.png',
-    title: 'Service iPhone 12 Pro Max',
+    title: 'iPhone 12 Pro Max',
+    sizes: {
+      expanded: { width: 363, height: 342 },
+      lg: { width: 167, height: 156 },
+      md: { width: 117, height: 109 },
+      sm: { width: 99, height: 92 },
+    },
     services: [
       { name: 'Înlocuire ecran (display și touchscreen)', duration: '30 min', price: '1400 lei' },
       { name: 'Înlocuire capac spate și rama metalică mijlocie', duration: '40 min', price: '900 lei' },
@@ -313,7 +319,13 @@ export const iPhoneServiceDetails = [
   },
   {
     imgUrl: '/iphone_12_pro.png',
-    title: 'Service iPhone 12 Pro',
+    title: 'iPhone 12 Pro',
+    sizes: {
+      expanded: { width: 337, height: 308 },
+      lg: { width: 153, height: 140 },
+      md: { width: 109, height: 99 },
+      sm: { width: 90, height: 82 },
+    },
     services: [
       { name: 'Înlocuire ecran (display și touchscreen)', duration: '30 min', price: '600 / 800 lei' },
       { name: 'Înlocuire capac spate și rama metalică mijlocie', duration: '40 min', price: '800 lei' },
@@ -326,7 +338,13 @@ export const iPhoneServiceDetails = [
   },
   {
     imgUrl: '/iphone_12_mini.png',
-    title: 'Service iPhone 12 Mini',
+    title: 'iPhone 12 Mini',
+    sizes: {
+      expanded: { width: 413, height: 276 },
+      lg: { width: 189, height: 126 },
+      md: { width: 131, height: 88 },
+      sm: { width: 111, height: 74 },
+    },
     services: [
       { name: 'Înlocuire ecran (display și touchscreen)', duration: '30 min', price: '900 lei' },
       { name: 'Înlocuire capac spate și rama metalică mijlocie', duration: '40 min', price: '700 lei' },
@@ -339,7 +357,13 @@ export const iPhoneServiceDetails = [
   },
   {
     imgUrl: '/iphone_12.png',
-    title: 'Service iPhone 12',
+    title: 'iPhone 12',
+    sizes: {
+      expanded: { width: 493, height: 308 },
+      lg: { width: 225, height: 141 },
+      md: { width: 157, height: 99 },
+      sm: { width: 133, height: 84 },
+    },
     services: [
       { name: 'Înlocuire ecran (display și touchscreen)', duration: '30 min', price: '600 / 700 lei' },
       { name: 'Înlocuire capac spate și rama metalică mijlocie', duration: '40 min', price: '700 lei' },
@@ -352,7 +376,13 @@ export const iPhoneServiceDetails = [
   },
   {
     imgUrl: '/iphone_11_pro_max.png',
-    title: 'Service iPhone 11 Pro Max',
+    title: 'iPhone 11 Pro Max',
+    sizes: {
+      expanded: { width: 409, height: 332 },
+      lg: { width: 186, height: 152 },
+      md: { width: 132, height: 106 },
+      sm: { width: 112, height: 90 },
+    },
     services: [
       { name: 'Înlocuire ecran (display și touchscreen)', duration: '15 min', price: '700 / 1200 lei' },
       { name: 'Înlocuire capac spate și rama metalică mijlocie', duration: '30 min', price: '800 lei' },
@@ -365,7 +395,13 @@ export const iPhoneServiceDetails = [
   },
   {
     imgUrl: '/iphone_11_pro.png',
-    title: 'Service iPhone 11 Pro',
+    title: 'iPhone 11 Pro',
+    sizes: {
+      expanded: { width: 403, height: 304 },
+      lg: { width: 183, height: 140 },
+      md: { width: 128, height: 99 },
+      sm: { width: 107, height: 82 },
+    },
     services: [
       { name: 'Înlocuire ecran (display și touchscreen)', duration: '15 min', price: '700 / 1100 lei' },
       { name: 'Înlocuire capac spate și rama metalică mijlocie', duration: '30 min', price: '700 lei' },
@@ -378,7 +414,13 @@ export const iPhoneServiceDetails = [
   },
   {
     imgUrl: '/iphone_11.png',
-    title: 'Service iPhone 11',
+    title: 'iPhone 11',
+    sizes: {
+      expanded: { width: 393, height: 318 },
+      lg: { width: 179, height: 146 },
+      md: { width: 123, height: 100 },
+      sm: { width: 105, height: 85 },
+    },
     services: [
       { name: 'Înlocuire ecran (display și touchscreen)', duration: '15 min', price: '450 / 800 lei' },
       { name: 'Înlocuire capac spate și rama metalică mijlocie', duration: '30 min', price: '500 lei' },
@@ -391,7 +433,13 @@ export const iPhoneServiceDetails = [
   },
   {
     imgUrl: '/iphone_xr.png',
-    title: 'Service iPhone XR',
+    title: 'iPhone XR',
+    sizes: {
+      expanded: { width: 389, height: 318 },
+      lg: { width: 179, height: 145 },
+      md: { width: 124, height: 100 },
+      sm: { width: 106, height: 85 },
+    },
     services: [
       { name: 'Înlocuire ecran (display și touchscreen)', duration: '15 min', price: '450 / 600 lei' },
       { name: 'Înlocuire capac spate și rama metalică mijlocie', duration: '30 min', price: '400 lei' },
@@ -403,7 +451,13 @@ export const iPhoneServiceDetails = [
   },
   {
     imgUrl: '/iphone_xs_max.png',
-    title: 'Service iPhone XS Max',
+    title: 'iPhone XS Max',
+    sizes: {
+      expanded: { width: 309, height: 332 },
+      lg: { width: 142, height: 152 },
+      md: { width: 98, height: 106 },
+      sm: { width: 84, height: 90 },
+    },
     services: [
       { name: 'Înlocuire ecran (display și touchscreen)', duration: '15 min', price: '600 / 900 lei' },
       { name: 'Înlocuire capac spate și rama metalică mijlocie', duration: '30 min', price: '600 lei' },
@@ -415,7 +469,13 @@ export const iPhoneServiceDetails = [
   },
   {
     imgUrl: '/iphone_xs.png',
-    title: 'Service iPhone XS',
+    title: 'iPhone XS',
+    sizes: {
+      expanded: { width: 290, height: 304 },
+      lg: { width: 134, height: 140 },
+      md: { width: 94, height: 99 },
+      sm: { width: 79, height: 83 },
+    },
     services: [
       { name: 'Înlocuire ecran (display și touchscreen)', duration: '15 min', price: '500 / 800 lei' },
       { name: 'Înlocuire capac spate și rama metalică mijlocie', duration: '30 min', price: '500 lei' },
@@ -427,7 +487,13 @@ export const iPhoneServiceDetails = [
   },
   {
     imgUrl: '/iphone_x.png',
-    title: 'Service iPhone X',
+    title: 'iPhone X',
+    sizes: {
+      expanded: { width: 229, height: 305 },
+      lg: { width: 105, height: 140 },
+      md: { width: 73, height: 99 },
+      sm: { width: 61, height: 84 },
+    },
     services: [
       { name: 'Înlocuire ecran (display și touchscreen)', duration: '15 min', price: '500 / 700 lei' },
       { name: 'Înlocuire capac spate și rama metalică mijlocie', duration: '30 min', price: '500 lei' },
@@ -439,7 +505,13 @@ export const iPhoneServiceDetails = [
   },
   {
     imgUrl: '/iphone_8_plus.png',
-    title: 'Service iPhone 8 Plus',
+    title: 'iPhone 8 Plus',
+    sizes: {
+      expanded: { width: 272, height: 335 },
+      lg: { width: 126, height: 154 },
+      md: { width: 89, height: 108 },
+      sm: { width: 76, height: 92 },
+    },
     services: [
       { name: 'Înlocuire ecran (display și touchscreen)', duration: '20 min', price: '300 / 400 lei' },
       { name: 'Înlocuire capac spate și rama metalică mijlocie', duration: '30 min', price: '500 lei' },
@@ -451,7 +523,13 @@ export const iPhoneServiceDetails = [
   },
   {
     imgUrl: '/iphone_8.png',
-    title: 'Service iPhone 8',
+    title: 'iPhone 8',
+    sizes: {
+      expanded: { width: 245, height: 291 },
+      lg: { width: 113, height: 133 },
+      md: { width: 80, height: 92 },
+      sm: { width: 68, height: 78 },
+    },
     services: [
       { name: 'Înlocuire ecran (display și touchscreen)', duration: '20 min', price: '300 / 400 lei' },
       { name: 'Înlocuire capac spate și rama metalică mijlocie', duration: '20 min', price: '500 lei' },
@@ -463,7 +541,13 @@ export const iPhoneServiceDetails = [
   },
   {
     imgUrl: '/iphone_7_plus.png',
-    title: 'Service iPhone 7 Plus',
+    title: 'iPhone 7 Plus',
+    sizes: {
+      expanded: { width: 435, height: 335 },
+      lg: { width: 199, height: 154 },
+      md: { width: 138, height: 108 },
+      sm: { width: 117, height: 92 },
+    },
     services: [
       { name: 'Înlocuire ecran (display și touchscreen)', duration: '40 min', price: '300 / 500 lei' },
       { name: 'Înlocuire buton "Power"', duration: '40 min', price: '100 lei' },
@@ -479,7 +563,13 @@ export const iPhoneServiceDetails = [
   },
   {
     imgUrl: '/iphone_7.png',
-    title: 'Service iPhone 7',
+    title: 'iPhone 7',
+    sizes: {
+      expanded: { width: 387, height: 291 },
+      lg: { width: 176, height: 133 },
+      md: { width: 124, height: 92 },
+      sm: { width: 105, height: 78 },
+    },
     services: [
       { name: 'Înlocuire ecran (display și touchscreen)', duration: '15 min', price: '250 / 300 lei' },
       { name: 'Înlocuire buton "Power"', duration: '40 min', price: '100 lei' },
@@ -495,7 +585,13 @@ export const iPhoneServiceDetails = [
   },
   {
     imgUrl: '/iphone_6s_plus.png',
-    title: 'Service iPhone 6s Plus',
+    title: 'iPhone 6s Plus',
+    sizes: {
+      expanded: { width: 437, height: 335 },
+      lg: { width: 202, height: 154 },
+      md: { width: 141, height: 108 },
+      sm: { width: 120, height: 92 },
+    },
     services: [
       { name: 'Înlocuire ecran (display și touchscreen)', duration: '15 min', price: '240 / 300 lei' },
       { name: 'Înlocuire buton "Power"', duration: '40 min', price: '80 lei' },

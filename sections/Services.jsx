@@ -1,3 +1,4 @@
+// Services.jsx
 'use client';
 
 import { TypingText, TitleText } from '../components';
@@ -12,6 +13,7 @@ import { useState } from 'react';
 const Services = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedService, setSelectedService] = useState(null);
+  const [isAnimationComplete, setIsAnimationComplete] = useState(false); // New state
 
   const categoryTitles = [
     'Reparații iPhone',
@@ -40,7 +42,8 @@ const Services = () => {
           variants={staggerContainer}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false, amount: 0.25 }}
+          viewport={{ once: true, amount: 0.25 }} // Changed 'once' to true
+          onAnimationComplete={() => setIsAnimationComplete(true)} // Callback
           className="flex flex-col items-center"
         >
           <TypingText title="| Servicii" textStyles="text-center" />
@@ -51,7 +54,7 @@ const Services = () => {
           variants={fadeIn('up', 'tween', 0.2, 1)}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false, amount: 0.25 }}
+          viewport={{ once: true, amount: 0.25 }} // Changed 'once' to true
           className="text-center mt-4"
         >
           <TitleText title="Alege dispozitivul pe care vrei să îl repari" />
@@ -62,7 +65,7 @@ const Services = () => {
           variants={staggerContainer}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false, amount: 0.25 }}
+          viewport={{ once: true, amount: 0.25 }} // Changed 'once' to true
           className="
             grid grid-cols-4 sm:grid-cols-4 mt-8 py-8 px-4
             gap-[10px] sm:gap-[14px] lg:gap-[30px]
@@ -112,7 +115,8 @@ const Services = () => {
           variants={staggerContainer}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false, amount: 0.25 }}
+          viewport={{ once: true, amount: 0.25 }} // Changed 'once' to true
+          onAnimationComplete={() => setIsAnimationComplete(true)} // Callback
           className="
             grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4
             mt-8 py-8 px-4
@@ -131,6 +135,7 @@ const Services = () => {
                 onClick={() => handleServiceSelect(service)}
                 selectedService={selectedService}
                 onClose={handleModalClose}
+                isAnimationComplete={isAnimationComplete} // Pass down the state
               />
             </motion.div>
           ))}

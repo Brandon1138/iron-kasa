@@ -1,3 +1,4 @@
+/* global.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,6 +11,7 @@
   scroll-behavior: smooth;
 }
 
+/* Adjusted Gradients with 50% Opacity */
 .gradient-01 {
   background-image: linear-gradient(
     270deg,
@@ -22,6 +24,7 @@
     hsl(220deg 76% 51%) 100%
   );
   filter: blur(125px);
+  opacity: 0.5; /* Added opacity */
 }
 
 .hero-gradient {
@@ -31,6 +34,7 @@
     #34acc7 53.65%,
     #a134c7 100%
   );
+  opacity: 0.5; /* Added opacity */
 }
 
 .gradient-02 {
@@ -42,10 +46,13 @@
 
   background: #7aebfb;
   filter: blur(190px);
+  opacity: 0.5; /* Added opacity */
 }
 
 .glassmorphism {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(30, 30, 30, 0.75); /* Changed color and opacity */
+  /* You can edit the color and opacity here as needed */
+  /* Example: background: rgba(30, 30, 30, 0.75); */
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -62,6 +69,7 @@
   background: rgba(149, 66, 232, 0.35);
   filter: blur(175px);
   transform: rotate(-114.2deg);
+  opacity: 0.5; /* Added opacity */
 }
 
 .gradient-04 {
@@ -74,6 +82,7 @@
   background: rgba(45, 72, 152, 0.75);
   filter: blur(200px);
   transform: rotate(-53.13deg);
+  opacity: 0.5; /* Added opacity */
 }
 
 .gradient-05 {
@@ -82,9 +91,10 @@
     rgba(255, 255, 255, 0.04) 0%,
     rgba(255, 255, 255, 0) 100%
   );
+  opacity: 0.5; /* Added opacity */
 }
 
-.feedback-gradient {
+.unused-gradient {
   position: absolute;
   width: 200px;
   height: 316px;
@@ -93,6 +103,16 @@
 
   background: #8d39a3;
   filter: blur(175px);
+  opacity: 0.5; /* Added opacity */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .footer-gradient {
@@ -104,4 +124,34 @@
 
   background: #65c4fa;
   filter: blur(150px);
+  opacity: 0.5; /* Added opacity */
+}
+
+/* Custom Gradient Text and Animations */
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(90deg, #a509ff, #34acc7, #a134c7);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Animation for Bold Text with Gradient Glow */
+  .font-bold-animate {
+    font-weight: 700; /* Makes text bold */
+    text-shadow: 0 0 10px #a509ff, 0 0 20px #34acc7;
+    transition: font-weight 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+  }
+
+  .font-normal-animate {
+    font-weight: 400; /* Normal font weight */
+    text-shadow: none;
+    transition: font-weight 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+  }
+
+  /* Custom Shadow for Glow Effect (if needed elsewhere) */
+  .shadow-glow {
+    box-shadow: 0 0 10px #a509ff, 0 0 20px #34acc7;
+  }
 }
