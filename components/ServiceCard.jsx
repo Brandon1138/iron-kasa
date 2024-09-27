@@ -160,7 +160,7 @@ const ServiceCard = ({
           >
             {/* Backdrop with Blur */}
             <motion.div
-              className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm"
+              className="absolute inset-0 bg-black bg-opacity-60 backdrop-blur-sm"
               onClick={onClose}
             />
 
