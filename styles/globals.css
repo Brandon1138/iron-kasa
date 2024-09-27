@@ -56,33 +56,30 @@
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .gradient-03 {
   position: absolute;
-  width: 404px;
+  width: 500px; 
   height: 800px;
-  left: 20%;
-  top: 5%;
-
+  left: 25%; 
+  top: 10%;
   background: rgba(149, 66, 232, 0.35);
-  filter: blur(175px);
+  filter: blur(200px);
   transform: rotate(-114.2deg);
-  opacity: 0.5; /* Added opacity */
+  opacity: 0.5;
 }
 
 .gradient-04 {
   position: absolute;
-  width: 304px;
+  width: 600px; 
   height: 100vh;
-  left: 30%;
-  top: 10%;
-
+  left: 50%;
+  top: 20%;
   background: rgba(45, 72, 152, 0.75);
-  filter: blur(200px);
+  filter: blur(250px); 
   transform: rotate(-53.13deg);
-  opacity: 0.5; /* Added opacity */
+  opacity: 0.5;
 }
 
 .gradient-05 {
@@ -91,7 +88,7 @@
     rgba(255, 255, 255, 0.04) 0%,
     rgba(255, 255, 255, 0) 100%
   );
-  opacity: 0.5; /* Added opacity */
+  opacity: 0.5; 
 }
 
 .unused-gradient {
@@ -103,7 +100,7 @@
 
   background: #8d39a3;
   filter: blur(175px);
-  opacity: 0.5; /* Added opacity */
+  opacity: 0.5; 
 }
 
 .hide-scrollbar::-webkit-scrollbar {
@@ -124,7 +121,7 @@
 
   background: #65c4fa;
   filter: blur(150px);
-  opacity: 0.5; /* Added opacity */
+  opacity: 0.5; 
 }
 
 /* Custom Gradient Text and Animations */
@@ -139,13 +136,13 @@
 
   /* Animation for Bold Text with Gradient Glow */
   .font-bold-animate {
-    font-weight: 700; /* Makes text bold */
+    font-weight: 700; 
     text-shadow: 0 0 10px #a509ff, 0 0 20px #34acc7;
     transition: font-weight 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
   }
 
   .font-normal-animate {
-    font-weight: 400; /* Normal font weight */
+    font-weight: 400; 
     text-shadow: none;
     transition: font-weight 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
   }

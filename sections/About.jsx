@@ -17,7 +17,7 @@ const About = () => (
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
-      className="w-full flex flex-col px-6 lg:px-[7.5vw] lg:max-w-[85vw] mx-auto"
+      className="w-full flex flex-col px-6 lg:max-w-[85vw] mx-auto"
     >
       {/* This is the Section Title */}
       <TypingText title="| Despre noi" textStyles="text-left" />

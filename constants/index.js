@@ -40,7 +40,11 @@ export const categoryCard = [
   }, 
 ]
 
+
 export const mainDisclaimer = [
+  'iPhone Doctor Romania nu este, nu a fost și nu va fi niciodată un service autorizat Apple. Din considerente etice și din respect atât pentru clienții noștri, cât și pentru service-urile autorizate  Apple, dorim să clarificăm acest aspect. Piesele folosite, garanția oferită și reparațiile executate nu sunt în niciun fel afiliate Apple.',
+  'iPhone Doctor Romania nu este, nu a fost și nu va fi niciodată un service autorizat Apple. Din considerente etice și din respect atât pentru clienții noștri, cât și pentru service-urile autorizate  Apple, dorim să clarificăm acest aspect. Piesele folosite, garanția oferită și reparațiile executate nu sunt în niciun fel afiliate Apple.',
+  'iPhone Doctor Romania nu este, nu a fost și nu va fi niciodată un service autorizat Apple. Din considerente etice și din respect atât pentru clienții noștri, cât și pentru service-urile autorizate  Apple, dorim să clarificăm acest aspect. Piesele folosite, garanția oferită și reparațiile executate nu sunt în niciun fel afiliate Apple.',
   'iPhone Doctor Romania nu este, nu a fost și nu va fi niciodată un service autorizat Apple. Din considerente etice și din respect atât pentru clienții noștri, cât și pentru service-urile autorizate  Apple, dorim să clarificăm acest aspect. Piesele folosite, garanția oferită și reparațiile executate nu sunt în niciun fel afiliate Apple.'
 ]
 
@@ -606,6 +610,25 @@ export const iPhoneServiceDetails = [
     ],
   },
 ]
+
+export const iPadServiceDetails = [
+
+]
+
+export const macBookServiceDetails = [
+
+]
+
+export const iMacServiceDetails = [
+  
+]
+  
+export const serviceDetails = {
+  0: iPhoneServiceDetails, // Reparații iPhone
+  1: iPadServiceDetails,   // Reparații iPad
+  2: macBookServiceDetails, // Reparații MacBook
+  3: iMacServiceDetails,   // Reparații iMac
+};
 
 // add testimonial content here [also profile pics in public]
 // export const reviews =[
