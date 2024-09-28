@@ -125,7 +125,7 @@ const Services = () => {
               grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4
               mt-8 py-8 px-4
               gap-[12px] sm:gap-[12px] md:gap-[16px] lg:gap-[22px] xl:gap-[26px] 2xl:gap-[30px]
-              w-full
+              w-full 
             "
           >
             {serviceDetails[selectedCategory].map((service, index) => (
