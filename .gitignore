@@ -38,5 +38,5 @@ next-env.d.ts
 # vscode
 .vscode
 
-# maps API key
+# Google Maps API key
 .env.local

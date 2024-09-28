@@ -62,8 +62,8 @@ const Transport = () => (
           <Image
             src="/van.png"
             alt="Transport Van"
-            width={465}
-            height={300}
+            width={390}
+            height={200}
             objectFit="contain"
             className="rounded-[36px] glassmorphism-hover transition-shadow duration-300"
           />

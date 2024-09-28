@@ -9,6 +9,7 @@ const Page = () => (
       <About />
       <div className="gradient-02 z-0 opacity-50" />
       <Services />
+      <Location />
     </div>
     <div className="relative">
       <Transport />
