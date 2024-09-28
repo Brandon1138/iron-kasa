@@ -58,6 +58,15 @@
   -webkit-backdrop-filter: blur(4px);
 }
 
+/* Add this at the end of your global.css file */
+.glassmorphism-hover:hover {
+  background: rgba(30, 30, 30, 0.75);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+
 .gradient-03 {
   position: absolute;
   width: 500px; 
@@ -151,4 +160,73 @@
   .shadow-glow {
     box-shadow: 0 0 10px #a509ff, 0 0 20px #34acc7;
   }
+}
+
+/* Box Sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Fade Mask for Testimonials */
+.fadeMask {
+  mask-image: linear-gradient(to bottom, transparent, black 25%, black 75%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 25%, black 75%, transparent);
+  
+  mask-size: 100% 100%;
+  -webkit-mask-size: 100% 100%;
+  
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  
+  mask-position: center;
+  -webkit-mask-position: center;
+}
+
+
+/* Fade Mask for Testimonials */
+.fadeMask {
+  mask-image: linear-gradient(to bottom, transparent, black 25%, black 75%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 25%, black 75%, transparent);
+  
+  mask-size: 100% 100%;
+  -webkit-mask-size: 100% 100%;
+  
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  
+  mask-position: center;
+  -webkit-mask-position: center;
+}
+
+/* Hide Scrollbar */
+.noScrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.noScrollbar {
+  scrollbar-width: none;
+}
+
+/* Glassmorphism Effect on Hover for Testimonial Cards */
+.testimonialCard {
+  /* Base styles (optional): You can define a base background if needed */
+  background: rgba(30, 30, 30, 0.5); /* Semi-transparent base */
+  transition: background 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.testimonialCard:hover {
+  /* Glassmorphism effect */
+  background: rgba(30, 30, 30, 0.75);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* Hide Scrollbar */
+.noScrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.noScrollbar {
+  scrollbar-width: none; /* Firefox */
 }

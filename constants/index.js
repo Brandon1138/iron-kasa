@@ -630,6 +630,123 @@ export const serviceDetails = {
   3: iMacServiceDetails,   // Reparații iMac
 };
 
+export const testimonials = [
+  {
+    name: 'Norris Măgeanu',
+    username: '@norrismageanu',
+    imgUrl: '/norris_mageanu.png',
+    text: 'In general, in viata, imi place sa am cunoscuti, parteneri, care au solutii rapide in ariile lor de competenta. "Doctoru\'" Robert e in aceasta categorie cand vorbim de iphone. Nu mi-a spus niciodata "nu se poate" cand am avut vreo problema cu telefonul. Sa nu il cautati mai devreme de pranz, totusi...',
+  },
+  {
+    name: 'Speak',
+    username: '@iamspeak',
+    imgUrl: '/speak.png',
+    text: 'Mereu cand am o problema cu telefonul sau laptopul, apelez cu mare incredere la Iphone Doctor pentru ca lucrurile se misca foarte repede si sunt de calitate. Intotdeauna se gaseste o solutie rapida si eficienta in rezolvarea problemelor.',
+  },
+  {
+    name: 'DJ Optick',
+    username: '@djoptick',
+    imgUrl: '/dj_optick.png',
+    text: 'Doctor talentat, prompt - un fel de iFixit, dar in Bucuresti!',
+  },
+  {
+    name: 'Loredana Chivu',
+    username: '@loredanachivu_official',
+    imgUrl: '/loredana_chivu.png',
+    text: 'Display spart, telefon scapat in apa si alte probleme: pe loc in maxim 1 ora au rezolvat toate problemele! Multumesc',
+  },
+  {
+    name: 'DJ Mahony',
+    username: '@mahonyro',
+    imgUrl: '/dj_mahony.png',
+    text: 'De peste 8 ani apelez la prietenul meu iPhone Doctor Romania pentru orice problema legata de telefon sau de laptop. De fiecare data a dat dovada de profesionalism si ii recomand intotdeauna. Multumesc iPhone Doctor Romania pentru cele mai bune servicii din Bucuresti pentru Mac si iPhone',
+  },
+  {
+    name: 'Cabral',
+    username: '@cabralibacka',
+    imgUrl: '/cabral.png',
+    text: 'Băiatul ășta nu se pricepe la marketing si PR, dar se pricepe la orice device din universul Apple. Am reparat la Robert de la Iphone 3 - până la X, și de la Macbook Air si Pro - până la iPad. Este serios, își face treaba repede și gaseste intotdeauna soluții. Recomand.',
+  },
+  {
+    name: 'Raluka',
+    username: '@ralukaofficial',
+    imgUrl: '/raluka.png',
+    text: 'Cand nu te astepti, spargi un ecran sau nu mai este ok bateria. Am schimbat ecranul telefonului personal, am reparat si o problema la WiFi si am observat profesionalismul lui. Recomand.',
+  },
+  {
+    name: 'Florin Ristei',
+    username: '@fristei',
+    imgUrl: '/florin_ristei.png',
+    text: 'De la iPhone 5 la iPhone 7, la niste Macbook Pro, sau niste Magic soricei d-aia albi si enervanti, pe toate le-am gasit la iPhone Doctor. Sau daca nu le-am gasit la el, macar a fost cel care mi le-a facut ca noi dupa ce unele au suferit traume mai mult decat emotionale. Super profi si punctual, lucreaza curat.Recomand oricand, cu drag!',
+  },
+  {
+    name: 'DJ Sava',
+    username: '@djsava',
+    imgUrl: '/dj_sava.png',
+    text: 'Pentru ca in general nu prea am grija de lucruri, mai ales de telefoane (le sparg sau le pierd) e bine sa ai pe cineva doar la un apel distanta, si totul se rezolva! Eu de 11 ani il am pe Iphone Doctor!',
+  },
+  {
+    name: 'Alina Ceușan',
+    username: '@alinaceusan',
+    imgUrl: '/alina_ceusan.png',
+    text: 'E bine de stiut, pentru orice probleme ati avea cu iPhone-ul mergeti la iPhone Doctor Romania pentru ca se ocupa super repede de treaba.',
+  },
+  {
+    name: 'Adelina Pestrițu',
+    username: '@adelina.pestritu',
+    imgUrl: '/adelina_pestritu.png',
+    text: 'Pentru reparatii pe loc, mergeti la iPhone Doctor Romania.',
+  },
+  {
+    name: 'Delia Matache',
+    username: '@delia',
+    imgUrl: '/delia.png',
+    text: 'Am reusit sa-mi sparg telefonul iar in timp ce m-am pregatit pentru concert iPhone Doctor l-a si reparat. Multumesc!',
+  },
+  {
+    name: 'Andra',
+    username: '@andra',
+    imgUrl: '/andra.png',
+    text: 'Problema rezolvata, multumesc iPhone Doctor Romania - nu am crezut ca poti sa rezolvi atat de repede un ecran - Am telefonu exact ca nou!',
+  },
+  {
+    name: 'Irina Rimes',
+    username: '@irinarimes',
+    imgUrl: '/irina_rimes.png',
+    text: 'Laptop-ul meu a ajuns inapoi casa, in sfarsit. - Multumesc iPhone Doctor Romania. De aceea dragii mei am pentru voi un sfat: sa fiti atenti cu lucrurile voastre pentru ca daca nu sunteti si faceti ca mine - va trebui sa mergeti cu ele la Doctor.',
+  },
+  {
+    name: 'Andreea Mantea',
+    username: '@andreeamantea',
+    imgUrl: '/andreea_mantea.png',
+    text: 'Servicii de calitate - Multumesc mult, iPhone Doctor Romania. Sunteti cei mai buni.',
+  },
+  {
+    name: 'Andreea Bănică',
+    username: '@iamandreeabanica',
+    imgUrl: '/andreea_banica.png',
+    text: 'Am avut o situatie neprevazuta cu un telefon spart ,si am mers la iPhone Doctor Romania care l-a reparat pe loc!',
+  },
+  {
+    name: 'Selly',
+    username: '@selly',
+    imgUrl: '/selly.png',
+    text: 'Multumesc iPhone Doctor Romania ... nu aveam chef sa stau cu telefonul in service zile intregi iar baietii l-au facut pe loc in 5 minute.',
+  },
+  {
+    name: 'Carmen Grebenișan',
+    username: '@grebenisancarmen',
+    imgUrl: '/carmen_grebenisan.png',
+    text: 'Vreau sa le multumesc din suflet baietilor de la iPhone Doctor Romania ca au rezolvat problema atat de repede si intr-un mod impecabil. Asa ca daca vreodata aveti vreo problema cu un iPhone apelati cu incredere la ei pentru ca va rezolva problema extraordinar de repede: Wow',
+  },
+  {
+    name: 'Alina Pușcaș',
+    username: '@alina_puscas_',
+    imgUrl: '/alina_puscas.png',
+    text: 'Din tot sufletul multumesc iPhone Doctor Romania pentru ca altfel nu aveam nici o sansa sa rezolv problema rapid fara ei.',
+  },
+]
+
 // add testimonial content here [also profile pics in public]
 // export const reviews =[
 //   {

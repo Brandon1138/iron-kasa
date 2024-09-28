@@ -19,7 +19,6 @@ const CategoryCard = ({ imgUrl, title, onSelect, isSelected }) => {
         2xl:w-[270px] 2xl:h-[270px] 2xl:rounded-[44px]
         overflow-visible
         transition-transform duration-300
-        glassmorphism
         ${isSelected ? 'scale-105' : ''}
       `}
       onClick={onSelect}
