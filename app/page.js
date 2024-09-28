@@ -9,12 +9,12 @@ const Page = () => (
       <About />
       <div className="gradient-02 z-0 opacity-50" />
       <Services />
-      <Location />
     </div>
     <div className="relative">
       <Transport />
       <div className="gradient-04 z-0" />
       <Testimonials />
+      <Location />
     </div>
     <Footer />
   </div>

@@ -20,186 +20,132 @@ const Location = () => {
       zoom: 15,
       styles: [
         {
-            "featureType": "all",
-            "elementType": "labels.text.fill",
-            "stylers": [
-                {
-                    "saturation": 36
-                },
-                {
-                    "color": "#000000"
-                },
-                {
-                    "lightness": 40
-                }
-            ]
+          "featureType": "all",
+          "elementType": "labels.text.fill",
+          "stylers": [
+            { "saturation": 36 },
+            { "color": "#000000" },
+            { "lightness": 40 }
+          ]
         },
         {
-            "featureType": "all",
-            "elementType": "labels.text.stroke",
-            "stylers": [
-                {
-                    "visibility": "on"
-                },
-                {
-                    "color": "#000000"
-                },
-                {
-                    "lightness": 16
-                }
-            ]
+          "featureType": "all",
+          "elementType": "labels.text.stroke",
+          "stylers": [
+            { "visibility": "on" },
+            { "color": "#000000" },
+            { "lightness": 16 }
+          ]
         },
         {
-            "featureType": "all",
-            "elementType": "labels.icon",
-            "stylers": [
-                {
-                    "visibility": "off"
-                }
-            ]
+          "featureType": "all",
+          "elementType": "labels.icon",
+          "stylers": [
+            { "visibility": "off" }
+          ]
         },
         {
-            "featureType": "administrative",
-            "elementType": "geometry.fill",
-            "stylers": [
-                {
-                    "color": "#000000"
-                },
-                {
-                    "lightness": 20
-                }
-            ]
+          "featureType": "administrative",
+          "elementType": "geometry.fill",
+          "stylers": [
+            { "color": "#000000" },
+            { "lightness": 20 }
+          ]
         },
         {
-            "featureType": "administrative",
-            "elementType": "geometry.stroke",
-            "stylers": [
-                {
-                    "color": "#000000"
-                },
-                {
-                    "lightness": 17
-                },
-                {
-                    "weight": 1.2
-                }
-            ]
+          "featureType": "administrative",
+          "elementType": "geometry.stroke",
+          "stylers": [
+            { "color": "#000000" },
+            { "lightness": 17 },
+            { "weight": 1.2 }
+          ]
         },
         {
-            "featureType": "landscape",
-            "elementType": "geometry",
-            "stylers": [
-                {
-                    "color": "#000000"
-                },
-                {
-                    "lightness": 20
-                }
-            ]
+          "featureType": "landscape",
+          "elementType": "geometry",
+          "stylers": [
+            { "color": "#000000" },
+            { "lightness": 20 }
+          ]
         },
         {
-            "featureType": "landscape",
-            "elementType": "geometry.fill",
-            "stylers": [
-                {
-                    "color": "#232937"
-                }
-            ]
+          "featureType": "landscape",
+          "elementType": "geometry.fill",
+          "stylers": [
+            { "color": "#232937" }
+          ]
         },
         {
-            "featureType": "poi",
-            "elementType": "geometry",
-            "stylers": [
-                {
-                    "color": "#000000"
-                },
-                {
-                    "lightness": 21
-                }
-            ]
+          "featureType": "poi",
+          "elementType": "geometry",
+          "stylers": [
+            { "color": "#000000" },
+            { "lightness": 21 }
+          ]
         },
         {
-            "featureType": "road.highway",
-            "elementType": "geometry.fill",
-            "stylers": [
-                {
-                    "color": "#e3282e"
-                },
-                {
-                    "lightness": 17
-                }
-            ]
+          "featureType": "road.highway",
+          "elementType": "geometry.fill",
+          "stylers": [
+            { "color": "#e3282e" },
+            { "lightness": 17 }
+          ]
         },
         {
-            "featureType": "road.highway",
-            "elementType": "geometry.stroke",
-            "stylers": [
-                {
-                    "color": "#000000"
-                },
-                {
-                    "lightness": 29
-                },
-                {
-                    "weight": 0.2
-                }
-            ]
+          "featureType": "road.highway",
+          "elementType": "geometry.stroke",
+          "stylers": [
+            { "color": "#000000" },
+            { "lightness": 29 },
+            { "weight": 0.2 }
+          ]
         },
         {
-            "featureType": "road.arterial",
-            "elementType": "geometry",
-            "stylers": [
-                {
-                    "color": "#000000"
-                },
-                {
-                    "lightness": 18
-                }
-            ]
+          "featureType": "road.arterial",
+          "elementType": "geometry",
+          "stylers": [
+            { "color": "#000000" },
+            { "lightness": 18 }
+          ]
         },
         {
-            "featureType": "road.local",
-            "elementType": "geometry",
-            "stylers": [
-                {
-                    "color": "#000000"
-                },
-                {
-                    "lightness": 16
-                }
-            ]
+          "featureType": "road.local",
+          "elementType": "geometry",
+          "stylers": [
+            { "color": "#000000" },
+            { "lightness": 16 }
+          ]
         },
         {
-            "featureType": "transit",
-            "elementType": "geometry",
-            "stylers": [
-                {
-                    "color": "#000000"
-                },
-                {
-                    "lightness": 19
-                }
-            ]
+          "featureType": "transit",
+          "elementType": "geometry",
+          "stylers": [
+            { "color": "#000000" },
+            { "lightness": 19 }
+          ]
         },
         {
-            "featureType": "water",
-            "elementType": "geometry",
-            "stylers": [
-                {
-                    "color": "#232937"
-                },
-                {
-                    "lightness": 17
-                }
-            ]
+          "featureType": "water",
+          "elementType": "geometry",
+          "stylers": [
+            { "color": "#232937" },
+            { "lightness": 17 }
+          ]
         }
-    ],
+      ],
     });
 
     new window.google.maps.Marker({
       position: shopLocation, // Place the marker at the shop location
       map: map,
     });
+  };
+
+  // Function to generate Google Maps directions link
+  const getDirectionsLink = () => {
+    const { lat, lng } = { lat: 44.41361458005216, lng: 26.132022068483483 };
+    return `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
   };
 
   return (
@@ -223,23 +169,112 @@ const Location = () => {
         >
           Ne găsești aici
         </motion.h2>
-        <motion.p
+
+        {/* Contact and Program Information */}
+        <motion.div
           variants={fadeIn('up', 'tween', 0.3, 1)}
-          className="mt-4 text-white text-opacity-75 text-lg text-center px-4"
+          className="mt-8 w-full max-w-[1230px] px-4"
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </motion.p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-white">
+            {/* First Column - Contact Information */}
+            <div className="flex flex-col items-center md:items-start">
+              <h3 className="text-xl font-bold mb-4">Date de Contact</h3>
+              <ul className="space-y-4">
+                <li className="flex items-center justify-center md:justify-start">
+                  {/* Address with Clickable Icon */}
+                  <a
+                    href={getDirectionsLink()}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center"
+                  >
+                    <img
+                      src="/map.svg"
+                      alt="Get Directions"
+                      className="mr-2 interactive-hover cursor-pointer w-4 h-4 border-0" // Reduced size to 16px and removed border
+                    />
+                    <span>Str. Știrului nr. 8A, Sector 3, Bucureşti</span>
+                  </a>
+                </li>
+                <li className="flex items-center justify-center md:justify-start">
+                  <a href="tel:0764838860" className="flex items-center">
+                    <img
+                      src="/phone.svg"
+                      alt="Phone"
+                      className="mr-2 interactive-hover cursor-pointer w-4 h-4 border-0" // Reduced size to 16px and removed border
+                    />
+                    <span>0764 838 860</span>
+                  </a>
+                </li>
+                <li className="flex items-center justify-center md:justify-start">
+                  <a href="tel:0784888444" className="flex items-center">
+                    <img
+                      src="/phone.svg"
+                      alt="Phone"
+                      className="mr-2 interactive-hover cursor-pointer w-4 h-4 border-0" // Reduced size to 16px and removed border
+                    />
+                    <span>0784 888 444</span>
+                  </a>
+                </li>
+                <li className="flex items-center justify-center md:justify-start">
+                  <a href="mailto:office@iPhoneDoctor.ro" className="flex items-center">
+                    <img
+                      src="/mail.svg"
+                      alt="Email"
+                      className="mr-2 interactive-hover cursor-pointer w-4 h-4 border-0" // Reduced size to 16px and removed border
+                    />
+                    <span>office@iPhoneDoctor.ro</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Second Column - Program Information */}
+            <div className="flex flex-col items-center md:items-end">
+              <h3 className="text-xl font-bold mb-4">Program</h3>
+              <ul className="space-y-2 text-center md:text-right">
+                <li className="leading-loose">Luni - Joi &gt;&gt; 10:00 - 20:00 {/* Adjusted line height */}</li>
+                <li className="leading-loose">Vineri &gt;&gt; 10:00 - 17:00 {/* Adjusted line height */}</li>
+                <li className="leading-loose">Sâmbătă &gt;&gt; Închis {/* Adjusted line height */}</li>
+                <li className="leading-loose">Duminică &gt;&gt; 12:00 - 17:00 {/* Adjusted line height */}</li>
+              </ul>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Map Section */}
         <motion.div
           variants={fadeIn('up', 'tween', 0.4, 1)}
           className="mt-8 w-full"
         >
           {/* Map container with max width and padding */}
-          <div className="mx-auto w-full max-w-[1250px] px-4">
+          <div className="mx-auto w-full max-w-[1230px] px-4">
             <div
               ref={mapRef}
               className="w-full h-[400px] rounded-[36px] overflow-hidden shadow-lg"
             ></div>
           </div>
+        </motion.div>
+
+        {/* Map Directions Link */}
+        <motion.div
+          variants={fadeIn('up', 'tween', 0.5, 1)}
+          className="mt-4"
+        >
+          <a
+            href={getDirectionsLink()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center text-white text-lg font-semibold"
+          >
+            {/* Map Icon with Clickable Link */}
+            <img
+              src="/map.svg"
+              alt="Get Directions"
+              className="mr-2 interactive-hover cursor-pointer w-4 h-4 border-0" // Reduced size to 16px and removed border
+            />
+            <span>Obțineți direcții</span>
+          </a>
         </motion.div>
       </motion.div>
     </section>

@@ -230,3 +230,13 @@
 .noScrollbar {
   scrollbar-width: none; /* Firefox */
 }
+
+.interactive-hover {
+  transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+}
+
+.interactive-hover:hover {
+  transform: scale(1.2); /* Scales the icon up by 20% */
+  opacity: 0.8; /* Slightly reduces opacity */
+  box-shadow: 0 0 10px rgba(165, 9, 255, 0.6); /* Subtle purple glow */
+}
