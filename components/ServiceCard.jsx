@@ -75,6 +75,7 @@ const ServiceCard = ({
           overflow-hidden
           flex flex-col justify-center items-center
           p-4
+          glassmorphism-hover
         "
         onClick={() => {
           if (isAnimationComplete) onClick();
