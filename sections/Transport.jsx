@@ -22,13 +22,15 @@ const Transport = () => (
         <motion.div
           variants={fadeIn('right', 'tween', 0.2, 1)}
           className="hidden lg:flex justify-center"
+          whileHover={{ scale: 1.03 }}
         >
           <Image
-            src="/van.svg"
+            src="/van.png"
             alt="Transport Van"
-            width={500}
-            height={500}
+            width={568}
+            height={568}
             objectFit="contain"
+            className="rounded-[36px] glassmorphism-hover transition-shadow duration-300"
           />
         </motion.div>
 
