@@ -11,7 +11,7 @@ import ServiceCard from '../components/ServiceCard';
 import { useState } from 'react';
 
 const Services = () => {
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState(0);
   const [selectedService, setSelectedService] = useState(null);
   const [isAnimationComplete, setIsAnimationComplete] = useState(false);
 

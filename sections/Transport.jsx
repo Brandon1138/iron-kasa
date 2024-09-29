@@ -30,7 +30,7 @@ const Transport = () => (
             width={568}
             height={568}
             objectFit="contain"
-            className="rounded-[36px] glassmorphism-hover transition-shadow duration-300"
+            className="rounded-[36px] glassmorphism-hover outer-shadow transition-shadow duration-300"
           />
         </motion.div>
 

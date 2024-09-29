@@ -193,7 +193,7 @@ const Location = () => {
                       alt="Get Directions"
                       className="mr-2 interactive-hover cursor-pointer w-4 h-4 border-0" // Reduced size to 16px and removed border
                     />
-                    <span>Str. Știrului nr. 8A, Sector 3, Bucureşti</span>
+                    <span>Str. Știrului nr. 8A, Sector 3</span>
                   </a>
                 </li>
                 <li className="flex items-center justify-center md:justify-start">

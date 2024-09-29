@@ -20,6 +20,8 @@ const CategoryCard = ({ imgUrl, title, onSelect, isSelected }) => {
         overflow-visible
         transition-transform duration-300
         ${isSelected ? 'scale-105' : ''}
+        outer-shadow
+        glassmorphism
       `}
       onClick={onSelect}
       whileHover={{ scale: 1.05 }}

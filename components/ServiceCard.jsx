@@ -75,6 +75,8 @@ const ServiceCard = ({
           overflow-hidden
           flex flex-col justify-center items-center
           p-4
+          outer-shadow
+          glassmorphism
           glassmorphism-hover
         "
         onClick={() => {
@@ -264,7 +266,8 @@ const ServiceCard = ({
                 flex flex-col items-center
                 w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%]
                 p-6 md:p-8 lg:p-12
-                glassmorphism
+                outer-shadow
+                glassmorphism-modal
                 z-50
               "
               layoutId={`card-${title}`}

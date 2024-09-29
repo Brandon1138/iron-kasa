@@ -50,12 +50,31 @@
 }
 
 .glassmorphism {
+  /* Linear Gradient Background: Top (#FFFFFF 100% opacity) to Bottom (#FFFFFF 30% opacity) */
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.04) 0%,   /* Top: White at 4% opacity */
+    rgba(255, 255, 255, 0.012) 100% /* Bottom: White at 1.2% opacity */
+  );
+  
+  /* Existing Glassmorphic Effects */
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px); /* Increased blur for frosted look */
+  -webkit-backdrop-filter: blur(14px);
+  
+  /* Rounded Corners and Subtle Border */
+  border-radius: 20px; /* Ensure rounded corners */
+  border: 1px solid rgba(255, 255, 255, 0.08); /* Subtle border for depth */
+}
+
+.glassmorphism-modal {
   background: rgba(30, 30, 30, 0.75); /* Changed color and opacity */
   /* You can edit the color and opacity here as needed */
   /* Example: background: rgba(30, 30, 30, 0.75); */
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(30, 30, 30, 0.12); /* Subtle border for depth */
 }
 
 /* Add this at the end of your global.css file */
@@ -239,4 +258,13 @@
   transform: scale(1.2); /* Scales the icon up by 20% */
   opacity: 0.8; /* Slightly reduces opacity */
   box-shadow: 0 0 10px rgba(165, 9, 255, 0.6); /* Subtle purple glow */
+}
+
+.outer-shadow {
+  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Custom Inner Shadow */
+.inner-shadow {
+  box-shadow: inset 0 2px 14px rgba(0, 0, 0, 0.2);
 }
