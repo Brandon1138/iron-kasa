@@ -1,5 +1,3 @@
-// Hero.jsx
-
 'use client';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
@@ -39,15 +37,36 @@ const Hero = () => {
           variants={fadeIn('up', 'tween', 0.2, 1)}
           className="relative w-full pt-16 md:-mt-[10px] -mt-[12px] overflow-hidden"
         >
-          <div className="w-full aspect-video overflow-hidden ">
+          <div className="w-full aspect-video overflow-hidden">
             <video
-              src="/hero_video.mp4"
               className="w-full h-full object-cover"
               playsInline
               autoPlay
               muted
               loop
-            />
+              preload="auto"
+              poster="/fallback-image.png" // Ensure this path is correct
+            >
+              {/* Mobile Video Source */}
+              <source
+                src="/hero_video_480p.mp4"
+                type="video/mp4"
+                media="(max-width: 640px)"
+              />
+              {/* Tablet Video Source */}
+              <source
+                src="/hero_video_720p.mp4"
+                type="video/mp4"
+                media="(max-width: 1024px)"
+              />
+              {/* Desktop Video Source */}
+              <source
+                src="/hero_video_1080p.mp4"
+                type="video/mp4"
+              />
+              {/* Fallback Text */}
+              Your browser does not support the video tag.
+            </video>
           </div>
         </motion.div>
       </motion.div>
