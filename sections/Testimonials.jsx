@@ -61,7 +61,7 @@ const Testimonials = () => {
               {/* Column 1 */}
               <motion.div
                 className="flex flex-col gap-6"
-                animate={{ y: ['0%', '-100%'] }}
+                animate={{ y: ['0%', '-50%'] }}
                 transition={{
                   duration: 120,
                   ease: 'linear',
@@ -76,7 +76,7 @@ const Testimonials = () => {
               {/* Column 2 */}
               <motion.div
                 className="flex flex-col gap-6"
-                animate={{ y: ['0%', '-100%'] }}
+                animate={{ y: ['0%', '-50%'] }}
                 transition={{
                   duration: 140,
                   ease: 'linear',
@@ -91,7 +91,7 @@ const Testimonials = () => {
               {/* Column 3 */}
               <motion.div
                 className="flex flex-col gap-6"
-                animate={{ y: ['0%', '-100%'] }}
+                animate={{ y: ['0%', '-50%'] }}
                 transition={{
                   duration: 160,
                   ease: 'linear',

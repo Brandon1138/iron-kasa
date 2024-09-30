@@ -43,10 +43,10 @@ const Hero = () => {
             <video
               src="/hero_video.mp4"
               className="w-full h-full object-cover"
-              autoPlay
-              loop
-              muted
               playsInline
+              autoPlay
+              muted
+              loop
             />
           </div>
         </motion.div>
