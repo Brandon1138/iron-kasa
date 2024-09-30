@@ -318,7 +318,7 @@ const ServiceCard = ({
 
                 {/* Services Grid */}
                 <div className="mt-8 w-full px-4">
-                  <div className="grid grid-cols-[70%_10%_20%] gap-4 mr-6">
+                  <div className="grid grid-cols-[65%_15%_20%] gap-4 mr-6">
                     {/* Header Row */}
                     <div className="font-semibold text-white text-left">
                       Serviciu

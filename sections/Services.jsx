@@ -14,6 +14,9 @@ const Services = () => {
   const [selectedCategory, setSelectedCategory] = useState(0);
   const [selectedService, setSelectedService] = useState(null);
   const [isAnimationComplete, setIsAnimationComplete] = useState(false);
+  
+  // **New Hover State**
+  const [hoveredCategoryId, setHoveredCategoryId] = useState(null);
 
   const categoryTitles = [
     'Reparații iPhone',
@@ -69,7 +72,7 @@ const Services = () => {
           whileInView="show"
           viewport={{ once: true, amount: 0.25 }}
           className="
-            grid grid-cols-4 sm:grid-cols-4 mt-8 py-8 px-4
+            grid grid-cols-2 sm:grid-cols-4 mt-8 py-8 px-4
             gap-[10px] sm:gap-[14px] lg:gap-[30px]
             w-full
           "
@@ -81,10 +84,13 @@ const Services = () => {
               className="flex justify-center"
             >
               <CategoryCard
+                id={index} // **Pass Unique ID**
                 imgUrl={category.imgUrl}
                 title={categoryTitles[index]}
                 onSelect={() => handleCategorySelect(index)}
                 isSelected={selectedCategory === index}
+                hoveredCategoryId={hoveredCategoryId} // **Pass Hovered Category ID**
+                setHoveredCategoryId={setHoveredCategoryId} // **Pass Setter Function**
               />
             </motion.div>
           ))}
