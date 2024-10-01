@@ -3,7 +3,7 @@ import About from './About';
 import Services from './Services';
 import Transport from './Transport';
 import Testimonials from './Testimonials';
-import Location from './Location';
+import Contact from './Contact';
 
 export {
   Hero,
@@ -11,5 +11,5 @@ export {
   Services,
   Transport,
   Testimonials,
-  Location,
+  Contact,
 };

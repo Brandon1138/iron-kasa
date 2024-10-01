@@ -9,7 +9,7 @@ import { fadeIn, staggerContainer } from '../utils/motion';
 import { features } from '../constants';
 
 const About = () => (
-  <section className={`${styles.paddings} relative z-10`}>
+  <section id="about" className={`${styles.paddings} relative z-10`}>
     <div className="gradient-02 z-0 opacity-50" />
 
     <motion.div

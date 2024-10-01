@@ -16,7 +16,7 @@ const Hero = () => {
   const borderRadius = useTransform(scrollYProgress, [0, 1], [0, 44]);
 
   return (
-    <section className={`${styles.yPaddings}`}>
+    <section className={`${styles.yPaddings} lg:mt-[130px] md:mt-[90px] sm:mt-[50px] mt-[50px]`}> {/* Shift Hero section down by 200px. Adjust 'mt-[200px]' if needed */}
       <motion.div
         ref={ref}
         variants={staggerContainer}
@@ -24,7 +24,7 @@ const Hero = () => {
         animate="show"
         className="w-full flex flex-col"
       >
-        <div className="flex justify-center items-center flex-col relative z-10">
+        <div className="flex justify-center items-center flex-col relative z-10 md:gap-y-2 lg:gap-y-3">
           <motion.h1 variants={textVariant(1.1)} className={styles.heroHeading}>
             Specialiști în
           </motion.h1>

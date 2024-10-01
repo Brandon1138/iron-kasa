@@ -1,4 +1,4 @@
-// sections/Location.jsx
+// sections/Contact.jsx
 
 'use client';
 
@@ -9,7 +9,7 @@ import { TypingText } from '../components';
 import styles from '../styles';
 import { fadeIn, staggerContainer } from '../utils/motion';
 
-const Location = () => {
+const Contact = () => {
   const mapRef = useRef(null);
 
   const initMap = () => {
@@ -149,7 +149,7 @@ const Location = () => {
   };
 
   return (
-    <section className={`${styles.paddings} relative z-10`} id="location">
+    <section id="contact" className={`${styles.paddings} relative z-10`}>
       <Script
         src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`}
         strategy="lazyOnload"
@@ -162,7 +162,7 @@ const Location = () => {
         viewport={{ once: false, amount: 0.25 }}
         className="mx-auto flex flex-col items-center"
       >
-        <TypingText title="| Locație" textStyles="text-center" />
+        <TypingText title="| Contact" textStyles="text-center" />
         <motion.h2
           variants={fadeIn('up', 'tween', 0.2, 1)}
           className="mt-4 font-bold text-3xl lg:text-5xl text-white text-center"
@@ -281,4 +281,4 @@ const Location = () => {
   );
 };
 
-export default Location;
+export default Contact;
