@@ -18,7 +18,7 @@ const Footer = () => (
     <div className={`${styles.innerWidth} mx-auto lg:px-12 px-4 flex flex-col gap-8`}>
       {/* Adjusted Flex Container for Heading and Button */}
       <div className="flex flex-col items-center md:flex-row md:justify-between flex-wrap gap-5">
-        <h4 className="font-bold lg:text-[64px] md:text-[44px] sm:text-[32px] text-[32px] text-center text-white">
+        <h4 className="font-bold lg:text-[58px] md:text-[38px] sm:text-[32px] text-[32px] text-center text-white">
           Ai nevoie de ajutor?
         </h4>
         <button
@@ -37,7 +37,7 @@ const Footer = () => (
         <div className="flex flex-col items-center justify-center md:flex-row md:justify-between flex-wrap 
                         gap-6 md:gap-4 text-center md:text-left">
           <h4 className="font-bold text-[24px] text-white">iPhoneDoctor</h4>
-          <p className="font-normal text-[14px] text-white opacity-50">All rights reserved 2024 - 2025 iPhone Doctor</p>
+          <p className="font-normal text-[14px] text-white opacity-50">All rights reserved 2024 iPhoneDoctor</p>
           <div className="flex gap-4">
             {socials.map((social) => (
               <img
