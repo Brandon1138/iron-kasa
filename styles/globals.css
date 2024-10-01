@@ -77,14 +77,57 @@
   border: 1px solid rgba(30, 30, 30, 0.12); /* Subtle border for depth */
 }
 
-/* Add this at the end of your global.css file */
-.glassmorphism-hover:hover {
-  background: rgba(30, 30, 30, 0.75);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+/* Define the spin animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
+/* Glassmorphism on hover for Cards with dual box-shadow */
+.glassmorphism-hover {
+  position: relative; /* Ensure that the spinning gradient is positioned relative to this container */
+  background: rgba(30, 30, 30, 0.75);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: all 0.3s ease; /* Smooth transition for all properties */
+  border-radius: 16px; /* Optional: Add some border-radius for better aesthetics */
+  /* Initial box-shadow for default state (optional) */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Ensure the spinning gradient doesn't overflow */
+}
+
+.glassmorphism-hover:hover {
+  /* Dual box-shadow: one for bottom-right and one for top-left */
+  box-shadow: 8px 8px 32px rgba(97, 31, 135, 0.37),
+              -8px -8px 32px rgba(135, 31, 95, 0.37);
+}
+
+/* Spinning Gradient Layer */
+.spinning-gradient {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, #ff0066, #ffcc00, #00ffcc, #6600ff, #ff0066);
+  background-size: 400% 400%;
+  opacity: 0.3; /* Adjust opacity as needed */
+  z-index: -1; /* Ensure it stays behind the card content */
+  border-radius: inherit; /* Match the border-radius of the parent */
+  /* Start the spinning animation but keep it paused by default */
+  animation: spin 2s linear infinite;
+  /* Control the animation play state based on hover */
+  transition: opacity 0.3s ease;
+  opacity: 0; /* Hidden by default */
+}
+
+.glassmorphism-hover:hover .spinning-gradient {
+  opacity: 1; /* Show the gradient on hover */
+}
 
 .gradient-03 {
   position: absolute;

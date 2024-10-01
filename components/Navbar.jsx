@@ -60,7 +60,7 @@ const Navbar = () => {
     <motion.nav
       variants={navVariants}
       initial="hidden"
-      animate="show" // Changed from whileInView to animate
+      animate="show" 
       className={`${styles.xPaddings} py-8 fixed top-0 left-0 right-0 z-50 bg-primary-black bg-opacity-90 backdrop-blur-md`}
       aria-label="Main Navigation"
     >
@@ -99,7 +99,7 @@ const Navbar = () => {
             <>
               {/* Backdrop with blur */}
               <motion.div
-                className="fixed inset-0 z-40"
+                className="fixed inset-0 z-40 bg-primary-black bg-opacity-90 backdrop-blur-md" // Added classes here if you want the backdrop to have the styles
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 0.6 }}
                 exit={{ opacity: 0 }}
@@ -109,7 +109,7 @@ const Navbar = () => {
 
               {/* Menu Content */}
               <motion.div
-                className="fixed top-16 right-8 glassmorphism-modal outer-shadow z-50 p-6 rounded-lg w-64"
+                className="fixed top-16 right-8 z-50 p-6 rounded-lg w-64 bg-primary-black bg-opacity-90 backdrop-blur-md" // Added bg-primary-black bg-opacity-90 backdrop-blur-md
                 role="dialog"
                 aria-modal="true"
                 aria-labelledby="menu-heading"
