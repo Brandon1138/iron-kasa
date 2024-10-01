@@ -762,12 +762,8 @@ export const secondaryDisclaimer = [
 
 export const socials = [
   {
-    name: 'twitter',
-    url: '/twitter.svg',
-  },
-  {
-    name: 'linkedin',
-    url: '/linkedin.svg',
+    name: 'whatsapp',
+    url: '/whatsapp.svg',
   },
   {
     name: 'instagram',
@@ -776,5 +772,9 @@ export const socials = [
   {
     name: 'facebook',
     url: '/facebook.svg',
+  },
+  {
+    name: 'tiktok',
+    url: '/tiktok.svg',
   },
 ];

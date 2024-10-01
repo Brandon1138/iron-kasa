@@ -2,7 +2,7 @@ import { Footer, Navbar } from '../components';
 import { About, Services, Hero, Location, Transport, Testimonials } from '../sections';
 
 const Page = () => (
-  <div className="relative bg-primary-black overflow-hidden before:absolute before:inset-0 before:bg-overlay-black before:opacity-75 before:content-['']">
+  <div className="relative bg-primary-black overflow-hidden">
     <Navbar />
     <Hero />
     <div className="relative">

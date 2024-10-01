@@ -64,13 +64,13 @@ const ServiceCard = ({
       <motion.div
         className="
           relative cursor-pointer group
-          w-[200px] h-[200px]
+          w-[150px] h-[150px]
           sm:w-[200px] sm:h-[200px]
           md:w-[203px] md:h-[203px]
           lg:w-[270px] lg:h-[270px]
-          rounded-[20px]
-          sm:rounded-[22px]
-          md:rounded-[32px]
+          rounded-[30px]
+          sm:rounded-[32px]
+          md:rounded-[36px]
           lg:rounded-[44px]
           overflow-hidden
           flex flex-col justify-center items-center
@@ -143,7 +143,7 @@ const ServiceCard = ({
             />
           </motion.div>
           <motion.h3
-            className="mt-2 text-center text-sm md:text-md lg:text-lg font-regular text-white group-hover:text-white"
+            className="mt-2 text-center text-[12px] md:text-md lg:text-lg font-regular text-white group-hover:text-white"
             layoutId={`card-title-${title}`}
             transition={{ duration: 0.5, type: 'tween', ease: 'linear' }}
           >
