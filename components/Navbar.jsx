@@ -99,7 +99,7 @@ const Navbar = () => {
             <>
               {/* Backdrop with blur */}
               <motion.div
-                className="fixed inset-0 z-40 bg-primary-black bg-opacity-90 backdrop-blur-md" // Added classes here if you want the backdrop to have the styles
+                className="fixed inset-0 z-40" // Added classes here if you want the backdrop to have the styles
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 0.6 }}
                 exit={{ opacity: 0 }}

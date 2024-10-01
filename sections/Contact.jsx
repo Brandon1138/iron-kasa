@@ -170,7 +170,7 @@ const Contact = () => {
           variants={fadeIn('up', 'tween', 0.2, 1)}
           className="mt-4 font-bold text-3xl lg:text-5xl text-white text-center"
         >
-          Vă așteptăm cu drag
+          Suntem aici să te ajutăm!
         </motion.h2>
 
         {/* Paragraph */}
@@ -178,7 +178,7 @@ const Contact = () => {
           variants={fadeIn('up', 'tween', 0.4, 1)}
           className="mt-6 w-full max-w-[1230px] px-4 text-white text-opacity-75 text-lg text-center mx-auto"
         >
-          Suntem aici să te ajutăm! Fie că ai probleme cu software-ul, hardware-ul sau pur și simplu vrei să-ți îmbunătățești performanțele dispozitivului, echipa iPhone Doctor te va trata cu seriozitate și profesionalism. Scrie-ne, sună-ne sau fă-ne o vizită la service și vom găsi soluția potrivită pentru tine. Așteptăm cu drag să te ajutăm!
+          Fie că ai probleme cu software-ul, hardware-ul sau pur și simplu vrei să-ți îmbunătățești performanțele dispozitivului, echipa iPhone Doctor te va trata cu seriozitate și profesionalism. Scrie-ne, sună-ne sau fă-ne o vizită la service și vom găsi soluția potrivită pentru tine. Așteptăm cu drag să te ajutăm!
         </motion.p>
 
         {/* Map Section */}
@@ -205,7 +205,7 @@ const Contact = () => {
             <div className="flex flex-col items-center md:items-start">
               <h3 className="text-xl font-bold mb-4">Program</h3>
               {/* Subcolumns for Days and Hours */}
-              <div className="w-full flex flex-col md:flex-row md:space-x-8">
+              <div className="w-full flex flex-row justify-center md:justify-start space-x-8">
                 {/* Days Column */}
                 <ul className="space-y-2 text-center md:text-left">
                   <li className="leading-loose">Luni - Joi</li>
@@ -214,7 +214,7 @@ const Contact = () => {
                   <li className="leading-loose">Duminică</li>
                 </ul>
                 {/* Hours Column */}
-                <ul className="space-y-2 text-center md:text-left mt-4 md:mt-0">
+                <ul className="space-y-2 text-center md:text-left">
                   <li className="leading-loose">10:00 - 20:00</li>
                   <li className="leading-loose">10:00 - 17:00</li>
                   <li className="leading-loose">Închis</li>

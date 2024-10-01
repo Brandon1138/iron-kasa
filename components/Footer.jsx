@@ -19,7 +19,7 @@ const Footer = () => (
       {/* Adjusted Flex Container for Heading and Button */}
       <div className="flex flex-col items-center md:flex-row md:justify-between flex-wrap gap-5">
         <h4 className="font-bold lg:text-[58px] md:text-[38px] sm:text-[32px] text-[32px] text-center text-white">
-          Ai nevoie de ajutor?
+          Ai nevoie de Doctor?
         </h4>
         <button
           type="button"
