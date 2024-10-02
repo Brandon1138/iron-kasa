@@ -3,7 +3,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion'; // Import AnimatePresence
 import Image from 'next/image';
 
 const ServiceCard = ({
@@ -55,13 +55,40 @@ const ServiceCard = ({
     };
   }, [isSelected]);
 
-  // Get image size based on screen size
-  const imageSize = isSelected ? sizes.expanded : sizes[screenSize] || sizes.sm;
+  // Get image size based on screen size only (decoupled from isSelected)
+  const imageSize = sizes[screenSize] || sizes.sm;
 
-  // Adjusted image size when expanded
+  // Adjusted image size for the modal (remains independent)
   const expandedImageSize = {
-    width: imageSize.width * 0.7,
-    height: imageSize.height * 0.7,
+    width: sizes.expanded.width * 0.7,
+    height: sizes.expanded.height * 0.7,
+  };
+
+  // Animation variants for the modal
+  const modalVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1 },
+    exit: { opacity: 0, scale: 0.8 }, // Exit variant for fade-out
+  };
+
+  // Animation variants for the backdrop
+  const backdropVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 0.6 },
+    exit: { opacity: 0 }, // Exit variant for fade-out
+  };
+
+  // Animation variants for the spinning shadow
+  const spinningShadowVariants = {
+    rotate: {
+      rotate: 360,
+      transition: {
+        repeat: Infinity,
+        repeatType: 'loop',
+        duration: 10, // Adjust the duration as needed
+        ease: 'linear',
+      },
+    },
   };
 
   return (
@@ -89,7 +116,6 @@ const ServiceCard = ({
           if (isAnimationComplete) onClick();
         }}
         whileHover={{ scale: 1.05 }}
-        layoutId={`card-${title}`}
         role="button"
         tabIndex={0}
         onKeyPress={(e) => {
@@ -98,20 +124,19 @@ const ServiceCard = ({
         aria-label={`Open details for ${title}`}
       >
         {/* Base Gradient */}
-        <motion.div
+        <div
           className="
             absolute inset-0
             pointer-events-none
             rounded-[inherit]
           "
-          layoutId={`card-bg-${title}`}
           style={{
             backgroundColor: isSelected
               ? 'rgba(30,30,30,0.75)'
               : 'rgba(255,255,255,0.04)',
+            transition: 'background-color 0.5s linear',
           }}
-          transition={{ duration: 0.5, type: 'tween', ease: 'linear' }}
-        ></motion.div>
+        ></div>
 
         {/* Overlay Gradient for Hover Effect */}
         {!isSelected && (
@@ -129,12 +154,12 @@ const ServiceCard = ({
 
         {/* Card Content */}
         <div className="z-10 flex flex-col items-center space-y-2">
-          <motion.div
-            layoutId={`card-image-${title}`}
-            transition={{ duration: 0.5, type: 'tween', ease: 'linear' }}
+          {/* Image without size transition */}
+          <div
             style={{
               width: imageSize.width,
               height: imageSize.height,
+              /* Removed transition to prevent animation */
             }}
           >
             <Image
@@ -146,33 +171,43 @@ const ServiceCard = ({
               priority={false}
               loading="lazy"
             />
-          </motion.div>
-          <motion.h3
+          </div>
+          {/* Title */}
+          <h3
             className="text-center text-[12px] md:text-md lg:text-lg font-regular text-white group-hover:text-white"
-            layoutId={`card-title-${title}`}
-            transition={{ duration: 0.5, type: 'tween', ease: 'linear' }}
+            style={{ transition: 'color 0.5s linear' }}
           >
             {title}
-          </motion.h3>
+          </h3>
         </div>
       </motion.div>
 
-      {/* Modal */}
+      {/* AnimatePresence to handle exit animations */}
       <AnimatePresence>
+        {/* Modal */}
         {isSelected && (
           <motion.div
-            key={title}
-            className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center"
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1 },
+              exit: { opacity: 0 }, // Ensures the backdrop fades out
+            }}
           >
             {/* Backdrop with Blur */}
             <motion.div
-              className="absolute inset-0 bg-black bg-opacity-60 backdrop-blur-sm"
+              className="absolute inset-0 bg-black backdrop-blur-sm"
+              variants={backdropVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
               onClick={onClose}
+              style={{ cursor: 'pointer' }}
             />
-
+            
             {/* Modal Content */}
             <motion.div
               className="
@@ -186,9 +221,16 @@ const ServiceCard = ({
                 z-50
                 max-h-[90vh] overflow-y-auto hide-scrollbar
               "
-              layoutId={`card-${title}`}
-              transition={{ duration: 0.5, type: 'tween', ease: 'linear' }}
+              variants={modalVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              transition={{ duration: 0.3, ease: 'easeInOut' }} // Adjust transition duration as needed
               onClick={(e) => e.stopPropagation()}
+              style={{
+                boxShadow:
+                  '8px 8px 32px rgba(97, 31, 135, 0.37), -8px -8px 32px rgba(135, 31, 95, 0.37)',
+              }}
             >
               {/* Close Button */}
               <button
@@ -203,14 +245,13 @@ const ServiceCard = ({
               {/* Content Wrapper */}
               <div className="flex flex-col items-center w-full space-y-6">
                 {/* Image */}
-                <motion.div
-                  layoutId={`card-image-${title}`}
-                  transition={{ duration: 0.5, type: 'tween', ease: 'linear' }}
+                <div
                   style={{
                     width: expandedImageSize.width,
                     height: expandedImageSize.height,
                     maxWidth: '100%',
                     maxHeight: '35vh',
+                    /* Optional: You can add transitions here if desired */
                   }}
                 >
                   <Image
@@ -220,16 +261,12 @@ const ServiceCard = ({
                     height={expandedImageSize.height}
                     objectFit="contain"
                   />
-                </motion.div>
+                </div>
 
                 {/* Title */}
-                <motion.h2
-                  className="text-center text-xl md:text-2xl lg:text-3xl font-bold text-white"
-                  layoutId={`card-title-${title}`}
-                  transition={{ duration: 0.5, type: 'tween', ease: 'linear' }}
-                >
+                <h2 className="text-center text-xl md:text-2xl lg:text-3xl font-bold text-white">
                   Service {title}
-                </motion.h2>
+                </h2>
 
                 {/* Services Grid */}
                 <div className="w-full px-4">
@@ -267,7 +304,8 @@ const ServiceCard = ({
                 {/* CTA Sentences */}
                 <div className="text-white text-center px-4 space-y-2">
                   <p>
-                    Prețurile afișate includ piesa și manopera aferentă schimbării.
+                    Prețurile afișate includ piesa și manopera aferentă
+                    schimbării.
                   </p>
                   <p>Contactați-ne pentru mai multe detalii.</p>
                 </div>
