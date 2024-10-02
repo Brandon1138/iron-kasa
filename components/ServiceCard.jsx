@@ -1,9 +1,7 @@
-// components/ServiceCard.jsx
-
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion'; // Import AnimatePresence
+import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 
 const ServiceCard = ({
@@ -68,14 +66,14 @@ const ServiceCard = ({
   const modalVariants = {
     hidden: { opacity: 0, scale: 0.8 },
     visible: { opacity: 1, scale: 1 },
-    exit: { opacity: 0, scale: 0.8 }, // Exit variant for fade-out
+    exit: { opacity: 0, scale: 0.8 },
   };
 
   // Animation variants for the backdrop
   const backdropVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 0.6 },
-    exit: { opacity: 0 }, // Exit variant for fade-out
+    exit: { opacity: 0 },
   };
 
   return (
@@ -123,7 +121,7 @@ const ServiceCard = ({
               : 'rgba(255,255,255,0.04)',
             transition: 'background-color 0.5s linear',
           }}
-        ></div>
+        />
 
         {/* Overlay Gradient for Hover Effect */}
         {!isSelected && (
@@ -136,7 +134,7 @@ const ServiceCard = ({
               pointer-events-none
               rounded-[inherit]
             "
-          ></div>
+          />
         )}
 
         {/* Card Content */}
@@ -146,7 +144,6 @@ const ServiceCard = ({
             style={{
               width: imageSize.width,
               height: imageSize.height,
-              /* Removed transition to prevent animation */
             }}
           >
             <Image
@@ -181,7 +178,7 @@ const ServiceCard = ({
             variants={{
               hidden: { opacity: 0 },
               visible: { opacity: 1 },
-              exit: { opacity: 0 }, // Ensures the backdrop fades out
+              exit: { opacity: 0 },
             }}
           >
             {/* Backdrop with Blur */}
@@ -194,7 +191,7 @@ const ServiceCard = ({
               onClick={onClose}
               style={{ cursor: 'pointer' }}
             />
-            
+
             {/* Modal Content */}
             <motion.div
               className="
@@ -212,16 +209,16 @@ const ServiceCard = ({
               initial="hidden"
               animate="visible"
               exit="exit"
-              transition={{ duration: 0.3, ease: 'easeInOut' }} // Adjust transition duration as needed
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
               onClick={(e) => e.stopPropagation()}
               style={{
-                /* Updated Box Shadow */
                 boxShadow:
                   '12px 12px 48px rgba(97, 31, 135, 0.2), -12px -12px 48px rgba(135, 31, 95, 0.2)',
               }}
             >
               {/* Close Button */}
               <button
+                type="button" // Added type attribute
                 className="absolute top-4 right-4 text-white text-3xl font-bold"
                 style={{ zIndex: 1000 }}
                 onClick={onClose}
@@ -270,8 +267,9 @@ const ServiceCard = ({
                     </div>
 
                     {/* Services List */}
-                    {services &&
-                      services.map((serviceItem, index) => (
+                    {
+                      services
+                      && services.map((serviceItem, index) => (
                         <React.Fragment key={index}>
                           <div className="text-white text-left">
                             {serviceItem.name}
@@ -284,7 +282,8 @@ const ServiceCard = ({
                             {serviceItem.price}
                           </div>
                         </React.Fragment>
-                      ))}
+                      ))
+                    }
                   </div>
                 </div>
 
@@ -299,6 +298,7 @@ const ServiceCard = ({
 
                 {/* CTA Button */}
                 <button
+                  type="button" // Added type attribute
                   className="
                     flex items-center justify-center
                     w-[225px] h-[66px]

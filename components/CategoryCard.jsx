@@ -16,8 +16,7 @@ const CategoryCard = ({
   setHoveredCategoryId,
 }) => {
   const isHovered = hoveredCategoryId === id;
-  const isAnotherCardHovered =
-    hoveredCategoryId !== null && hoveredCategoryId !== id;
+  const isAnotherCardHovered = hoveredCategoryId !== null && hoveredCategoryId !== id;
 
   return (
     <motion.div
@@ -76,7 +75,7 @@ const CategoryCard = ({
           background:
             'conic-gradient(from 0deg, #DD7DFF 0%, #E1CD86 25%, #8BCB92 50%, #71C2EF 75%, #DD7DFF 100%)',
         }}
-      ></div>
+      />
 
       {/* The card */}
       <div

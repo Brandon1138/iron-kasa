@@ -34,8 +34,9 @@ const Footer = () => (
         <div className="mb-[50px] h-[2px] bg-white opacity-10" />
 
         {/* Updated Flex Container for Footer Items */}
-        <div className="flex flex-col items-center justify-center md:flex-row md:justify-between flex-wrap 
-                        gap-6 md:gap-4 text-center md:text-left">
+        <div className="flex flex-col items-center justify-center md:flex-row md:justify-between flex-wrap
+                        gap-6 md:gap-4 text-center md:text-left"
+        >
           <h4 className="font-bold text-[24px] text-white">iPhoneDoctor</h4>
           <p className="font-normal text-[14px] text-white opacity-50">All rights reserved 2024 iPhoneDoctor</p>
           <div className="flex gap-4">
