@@ -23,9 +23,11 @@ const ServiceCard = ({
     // Function to handle screen resize
     const handleResize = () => {
       const width = window.innerWidth;
-      if (width >= 1024) { // lg and above
+      if (width >= 1024) {
+        // lg and above
         setScreenSize('lg');
-      } else if (width >= 768) { // md
+      } else if (width >= 768) {
+        // md
         setScreenSize('md');
       } else {
         setScreenSize('sm');
@@ -54,9 +56,13 @@ const ServiceCard = ({
   }, [isSelected]);
 
   // Get image size based on screen size
-  const imageSize = isSelected
-    ? sizes.expanded
-    : sizes[screenSize] || sizes.sm;
+  const imageSize = isSelected ? sizes.expanded : sizes[screenSize] || sizes.sm;
+
+  // Adjusted image size when expanded
+  const expandedImageSize = {
+    width: imageSize.width * 0.7,
+    height: imageSize.height * 0.7,
+  };
 
   return (
     <>
@@ -122,9 +128,8 @@ const ServiceCard = ({
         )}
 
         {/* Card Content */}
-        <div className="relative z-10 flex flex-col items-center">
+        <div className="z-10 flex flex-col items-center space-y-2">
           <motion.div
-            className="relative"
             layoutId={`card-image-${title}`}
             transition={{ duration: 0.5, type: 'tween', ease: 'linear' }}
             style={{
@@ -143,7 +148,7 @@ const ServiceCard = ({
             />
           </motion.div>
           <motion.h3
-            className="mt-2 text-center text-[12px] md:text-md lg:text-lg font-regular text-white group-hover:text-white"
+            className="text-center text-[12px] md:text-md lg:text-lg font-regular text-white group-hover:text-white"
             layoutId={`card-title-${title}`}
             transition={{ duration: 0.5, type: 'tween', ease: 'linear' }}
           >
@@ -156,6 +161,7 @@ const ServiceCard = ({
       <AnimatePresence>
         {isSelected && (
           <motion.div
+            key={title}
             className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -167,108 +173,18 @@ const ServiceCard = ({
               onClick={onClose}
             />
 
-            {/* Animated Background Glow */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-40">
-              {/* Existing Animated Gradients */}
-              <motion.div
-                className="gradient-01"
-                animate={{ rotate: 360 }}
-                transition={{
-                  repeat: Infinity,
-                  duration: 20,
-                  ease: 'linear',
-                }}
-              ></motion.div>
-              <motion.div
-                className="gradient-02"
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{
-                  repeat: Infinity,
-                  duration: 15,
-                  ease: 'easeInOut',
-                }}
-              ></motion.div>
-              <motion.div
-                className="gradient-03"
-                animate={{ rotate: -360 }}
-                transition={{
-                  repeat: Infinity,
-                  duration: 25,
-                  ease: 'linear',
-                }}
-              ></motion.div>
-              <motion.div
-                className="gradient-04"
-                animate={{ scale: [1, 1.1, 1] }}
-                transition={{
-                  repeat: Infinity,
-                  duration: 18,
-                  ease: 'easeInOut',
-                }}
-              ></motion.div>
-              <motion.div
-                className="footer-gradient"
-                animate={{ opacity: [0.5, 0.8, 0.5] }}
-                transition={{
-                  repeat: Infinity,
-                  duration: 12,
-                  ease: 'easeInOut',
-                }}
-              ></motion.div>
-
-              {/* Additional Larger Glow Layers */}
-              {/* Outer Glow Layer 1 */}
-              <motion.div
-                style={{
-                  position: 'absolute',
-                  width: '120%',
-                  height: '120%',
-                  background:
-                    'radial-gradient(circle, rgba(165,9,255,0.4) 0%, rgba(52,172,199,0.2) 60%, rgba(161,52,199,0) 100%)',
-                  borderRadius: 'inherit',
-                  filter: 'blur(100px)',
-                  opacity: 0.3,
-                }}
-                animate={{ rotate: 360 }}
-                transition={{
-                  repeat: Infinity,
-                  duration: 30,
-                  ease: 'linear',
-                }}
-              ></motion.div>
-
-              {/* Outer Glow Layer 2 */}
-              <motion.div
-                style={{
-                  position: 'absolute',
-                  width: '140%',
-                  height: '140%',
-                  background:
-                    'radial-gradient(circle, rgba(165,9,255,0.3) 0%, rgba(52,172,199,0.1) 70%, rgba(161,52,199,0) 100%)',
-                  borderRadius: 'inherit',
-                  filter: 'blur(150px)',
-                  opacity: 0.2,
-                }}
-                animate={{ rotate: -360 }}
-                transition={{
-                  repeat: Infinity,
-                  duration: 40,
-                  ease: 'linear',
-                }}
-              ></motion.div>
-            </div>
-
             {/* Modal Content */}
             <motion.div
               className="
-                relative mt-10 mb-10
-                rounded-[44px] overflow-y-auto hide-scrollbar max-h-[90vh]
+                relative
+                rounded-[44px]
                 flex flex-col items-center
                 w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%]
-                p-6 md:p-8 lg:p-12
+                p-6
                 outer-shadow
                 glassmorphism-modal
                 z-50
+                max-h-[90vh] overflow-y-auto hide-scrollbar
               "
               layoutId={`card-${title}`}
               transition={{ duration: 0.5, type: 'tween', ease: 'linear' }}
@@ -285,31 +201,30 @@ const ServiceCard = ({
               </button>
 
               {/* Content Wrapper */}
-              <div className="relative z-50 flex flex-col items-center w-full">
+              <div className="flex flex-col items-center w-full space-y-6">
                 {/* Image */}
                 <motion.div
-                  className="relative"
                   layoutId={`card-image-${title}`}
                   transition={{ duration: 0.5, type: 'tween', ease: 'linear' }}
                   style={{
-                    width: imageSize.width,
-                    height: imageSize.height,
+                    width: expandedImageSize.width,
+                    height: expandedImageSize.height,
                     maxWidth: '100%',
-                    maxHeight: '50vh',
+                    maxHeight: '35vh',
                   }}
                 >
                   <Image
                     src={imgUrl}
                     alt={title}
-                    width={imageSize.width}
-                    height={imageSize.height}
+                    width={expandedImageSize.width}
+                    height={expandedImageSize.height}
                     objectFit="contain"
                   />
                 </motion.div>
 
                 {/* Title */}
                 <motion.h2
-                  className="mt-8 text-center text-xl md:text-2xl lg:text-3xl font-bold text-white"
+                  className="text-center text-xl md:text-2xl lg:text-3xl font-bold text-white"
                   layoutId={`card-title-${title}`}
                   transition={{ duration: 0.5, type: 'tween', ease: 'linear' }}
                 >
@@ -317,7 +232,7 @@ const ServiceCard = ({
                 </motion.h2>
 
                 {/* Services Grid */}
-                <div className="mt-8 w-full px-4">
+                <div className="w-full px-4">
                   <div className="grid grid-cols-[65%_15%_20%] gap-4 mr-6">
                     {/* Header Row */}
                     <div className="font-semibold text-white text-left">
@@ -350,10 +265,9 @@ const ServiceCard = ({
                 </div>
 
                 {/* CTA Sentences */}
-                <div className="mt-12 text-white text-center px-4">
+                <div className="text-white text-center px-4 space-y-2">
                   <p>
-                    Prețurile afișate includ piesa și manopera aferentă
-                    schimbării.
+                    Prețurile afișate includ piesa și manopera aferentă schimbării.
                   </p>
                   <p>Contactați-ne pentru mai multe detalii.</p>
                 </div>
@@ -361,7 +275,6 @@ const ServiceCard = ({
                 {/* CTA Button */}
                 <button
                   className="
-                    mt-6
                     flex items-center justify-center
                     w-[225px] h-[66px]
                     bg-[#25618B]
@@ -372,7 +285,6 @@ const ServiceCard = ({
                   "
                   onClick={() => {
                     // Define the action, e.g., open chat or navigate to contact page
-                    // router.push('/contact');
                   }}
                   aria-label="Trimite un mesaj"
                 >
