@@ -29,9 +29,10 @@ const TestimonialCard = ({ testimonial }) => {
           <h3 className="text-lg font-bold">{testimonial.name}</h3>
           <div className="flex items-center">
             <a
-              href="#"
-              /* !!!!! TO-DO: Replace '#' with variable to the actual link to the user's profile */
-              className="text-sm opacity-70"
+              href={testimonial.instagramLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm opacity-70 hover:underline"
             >
               {testimonial.username}
             </a>

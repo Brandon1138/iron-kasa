@@ -228,8 +228,9 @@ const ServiceCard = ({
               transition={{ duration: 0.3, ease: 'easeInOut' }} // Adjust transition duration as needed
               onClick={(e) => e.stopPropagation()}
               style={{
+                /* Updated Box Shadow */
                 boxShadow:
-                  '8px 8px 32px rgba(97, 31, 135, 0.37), -8px -8px 32px rgba(135, 31, 95, 0.37)',
+                  '12px 12px 48px rgba(97, 31, 135, 0.2), -12px -12px 48px rgba(135, 31, 95, 0.2)',
               }}
             >
               {/* Close Button */}

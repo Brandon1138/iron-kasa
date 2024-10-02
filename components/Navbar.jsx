@@ -130,7 +130,7 @@ const Navbar = () => {
                       className="text-white text-lg transition-all duration-300 ease-in-out hover:text-transparent hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-600 hover:bg-clip-text hover:[-webkit-background-clip:text] hover:font-bold-animate"
                       onClick={() => setIsMenuOpen(false)}
                     >
-                      Home
+                      Acasă
                     </a>
                   </li>
                   <li>
@@ -139,7 +139,7 @@ const Navbar = () => {
                       className="text-white text-lg transition-all duration-300 ease-in-out hover:text-transparent hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-600 hover:bg-clip-text hover:[-webkit-background-clip:text] hover:font-bold-animate"
                       onClick={() => setIsMenuOpen(false)}
                     >
-                      About
+                      Despre noi
                     </a>
                   </li>
                   <li>
@@ -148,7 +148,7 @@ const Navbar = () => {
                       className="text-white text-lg transition-all duration-300 ease-in-out hover:text-transparent hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-600 hover:bg-clip-text hover:[-webkit-background-clip:text] hover:font-bold-animate"
                       onClick={() => setIsMenuOpen(false)}
                     >
-                      Services
+                      Servicii
                     </a>
                   </li>
                   <li>
@@ -166,7 +166,7 @@ const Navbar = () => {
                       className="text-white text-lg transition-all duration-300 ease-in-out hover:text-transparent hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-600 hover:bg-clip-text hover:[-webkit-background-clip:text] hover:font-bold-animate"
                       onClick={() => setIsMenuOpen(false)}
                     >
-                      Testimonials
+                      Testimoniale
                     </a>
                   </li>
                   <li>
