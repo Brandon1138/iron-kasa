@@ -78,19 +78,6 @@ const ServiceCard = ({
     exit: { opacity: 0 }, // Exit variant for fade-out
   };
 
-  // Animation variants for the spinning shadow
-  const spinningShadowVariants = {
-    rotate: {
-      rotate: 360,
-      transition: {
-        repeat: Infinity,
-        repeatType: 'loop',
-        duration: 10, // Adjust the duration as needed
-        ease: 'linear',
-      },
-    },
-  };
-
   return (
     <>
       {/* Service Card */}
@@ -252,7 +239,6 @@ const ServiceCard = ({
                     height: expandedImageSize.height,
                     maxWidth: '100%',
                     maxHeight: '35vh',
-                    /* Optional: You can add transitions here if desired */
                   }}
                 >
                   <Image

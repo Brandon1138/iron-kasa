@@ -23,10 +23,10 @@ const CategoryCard = ({
     <motion.div
       className={`
         relative cursor-pointer
-        w-[100px] h-[100px] rounded-[20px]
-        sm:w-[125px] sm:h-[125px] sm:rounded-[24px]
-        md:w-[160px] md:h-[160px] md:rounded-[26px]
-        lg:w-[195px] lg:h-[195px] lg:rounded-[28px]
+        w-[70px] h-[70px] rounded-[18px]
+        sm:w-[110px] sm:h-[110px] sm:rounded-[24px]
+        md:w-[140px] md:h-[140px] md:rounded-[26px]
+        lg:w-[190px] lg:h-[190px] lg:rounded-[28px]
         xl:w-[235px] xl:h-[235px] xl:rounded-[36px]
         2xl:w-[270px] 2xl:h-[270px] 2xl:rounded-[44px]
         overflow-visible
@@ -38,6 +38,7 @@ const CategoryCard = ({
         }
         outer-shadow
         glassmorphism
+        flex-shrink-0  // **Added Class**
       `}
       onClick={onSelect}
       onMouseEnter={() => setHoveredCategoryId(id)}
@@ -63,7 +64,7 @@ const CategoryCard = ({
           animate-spin-slow
           pointer-events-none
           z-0
-          rounded-[20px]
+          rounded-[18px]
           sm:rounded-[24px]
           md:rounded-[26px]
           lg:rounded-[28px]
@@ -83,7 +84,7 @@ const CategoryCard = ({
           relative flex justify-center items-center
           overflow-hidden
           w-full h-full
-          rounded-[20px]
+          rounded-[18px]
           sm:rounded-[24px]
           md:rounded-[26px]
           lg:rounded-[28px]

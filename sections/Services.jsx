@@ -65,14 +65,14 @@ const Services = () => {
           <TitleText title="Alege dispozitivul pe care vrei să îl repari" />
         </motion.div>
 
-        {/* Category Cards */}
+        {/* Category Cards Container */}
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.25 }}
           className="
-            grid grid-cols-2 sm:grid-cols-4 mt-8 py-8 px-4
+            grid grid-cols-4 mt-8 py-8 px-4
             gap-[10px] sm:gap-[14px] lg:gap-[30px]
             w-full
           "
@@ -84,13 +84,13 @@ const Services = () => {
               className="flex justify-center"
             >
               <CategoryCard
-                id={index} // **Pass Unique ID**
+                id={index}
                 imgUrl={category.imgUrl}
                 title={categoryTitles[index]}
                 onSelect={() => handleCategorySelect(index)}
                 isSelected={selectedCategory === index}
-                hoveredCategoryId={hoveredCategoryId} // **Pass Hovered Category ID**
-                setHoveredCategoryId={setHoveredCategoryId} // **Pass Setter Function**
+                hoveredCategoryId={hoveredCategoryId}
+                setHoveredCategoryId={setHoveredCategoryId}
               />
             </motion.div>
           ))}
