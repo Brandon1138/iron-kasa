@@ -53,19 +53,19 @@ const Transport = () => (
           </motion.p>
         </div>
 
-        {/* For sm and md screens, add the van image below the text */}
+        {/* Transport Image for md and below */}
         <motion.div
           variants={fadeIn('up', 'tween', 0.5, 1)}
-          className="lg:hidden flex justify-center mt-8"
+          className="flex lg:hidden w-full justify-center px-6 mt-8"
           whileHover={{ scale: 1.02 }}
         >
           <Image
             src="/van.png"
             alt="Transport Van"
-            width={390}
-            height={200}
+            width={568} // Use the same width for consistency
+            height={568} // Adjust height as needed
             objectFit="contain"
-            className="rounded-[36px] glassmorphism-hover transition-shadow duration-300"
+            className="rounded-[36px] glassmorphism-hover transition-shadow duration-300 w-full"
           />
         </motion.div>
       </div>
