@@ -140,6 +140,52 @@ const Navbar = () => {
                       Acasă
                     </a>
                   </li>
+                  <li>
+                    <a
+                      href="#about"
+                      className="text-white text-lg transition-all duration-300 ease-in-out hover:text-transparent hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-600 hover:bg-clip-text hover:[-webkit-background-clip:text] hover:font-bold-animate"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Despre noi
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#services"
+                      className="text-white text-lg transition-all duration-300 ease-in-out hover:text-transparent hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-600 hover:bg-clip-text hover:[-webkit-background-clip:text] hover:font-bold-animate"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Servicii
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#transport"
+                      className="text-white text-lg transition-all duration-300 ease-in-out hover:text-transparent hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-600 hover:bg-clip-text hover:[-webkit-background-clip:text] hover:font-bold-animate"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Transport
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#testimonials"
+                      className="text-white text-lg transition-all duration-300 ease-in-out hover:text-transparent hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-600 hover:bg-clip-text hover:[-webkit-background-clip:text] hover:font-bold-animate"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Testimoniale
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#contact"
+                      className="text-white text-lg transition-all duration-300 ease-in-out hover:text-transparent hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-600 hover:bg-clip-text hover:[-webkit-background-clip:text] hover:font-bold-animate"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Contact
+                    </a>
+                  </li>
+
                   {/* Repeat for other menu items */}
                 </ul>
               </motion.div>

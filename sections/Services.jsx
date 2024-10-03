@@ -1,20 +1,21 @@
-// Services.jsx
+// components/Services.jsx
 'use client';
 
 import { TypingText, TitleText } from '../components';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion'; // Ensure AnimatePresence is imported
 import styles from '../styles';
 import { staggerContainer, fadeIn } from '../utils/motion';
 import { categoryCard, mainDisclaimer, serviceDetails } from '../constants';
 import CategoryCard from '../components/CategoryCard';
 import ServiceCard from '../components/ServiceCard';
+import ServiceModal from '../components/ServiceModal'; // Ensure correct import path
 import { useState } from 'react';
 
 const Services = () => {
   const [selectedCategory, setSelectedCategory] = useState(0);
   const [selectedService, setSelectedService] = useState(null);
   const [isAnimationComplete, setIsAnimationComplete] = useState(false);
-  
+
   // **New Hover State**
   const [hoveredCategoryId, setHoveredCategoryId] = useState(null);
 
@@ -143,14 +144,19 @@ const Services = () => {
                 <ServiceCard
                   service={service}
                   onClick={() => handleServiceSelect(service)}
-                  selectedService={selectedService}
-                  onClose={handleModalClose}
                   isAnimationComplete={isAnimationComplete}
                 />
               </motion.div>
             ))}
           </motion.div>
         )}
+
+        {/* Service Modal with AnimatePresence */}
+        <AnimatePresence>
+          {selectedService && (
+            <ServiceModal service={selectedService} onClose={handleModalClose} />
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );
