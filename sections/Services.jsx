@@ -2,21 +2,19 @@
 'use client';
 
 import { TypingText, TitleText } from '../components';
-import { motion, AnimatePresence } from 'framer-motion'; // Ensure AnimatePresence is imported
+import { motion, AnimatePresence } from 'framer-motion';
 import styles from '../styles';
 import { staggerContainer, fadeIn } from '../utils/motion';
 import { categoryCard, mainDisclaimer, serviceDetails } from '../constants';
 import CategoryCard from '../components/CategoryCard';
 import ServiceCard from '../components/ServiceCard';
-import ServiceModal from '../components/ServiceModal'; // Ensure correct import path
+import ServiceModal from '../components/ServiceModal';
 import { useState } from 'react';
 
 const Services = () => {
   const [selectedCategory, setSelectedCategory] = useState(0);
   const [selectedService, setSelectedService] = useState(null);
   const [isAnimationComplete, setIsAnimationComplete] = useState(false);
-
-  // **New Hover State**
   const [hoveredCategoryId, setHoveredCategoryId] = useState(null);
 
   const categoryTitles = [
@@ -39,9 +37,10 @@ const Services = () => {
   };
 
   return (
-    <section className={`${styles.paddings} px-6 py-12`} id="services">
-      <div className="absolute inset-0 gradient-03 z-0 opacity-50" />
-      <div className="absolute inset-0 gradient-04 z-0 opacity-50" />
+    <section
+      className={`${styles.paddings} px-6 py-12 bg-[#191919]`}
+      id="services"
+    >
       <div className={`${styles.innerWidth} mx-auto flex flex-col items-center`}>
         {/* TypingText */}
         <motion.div

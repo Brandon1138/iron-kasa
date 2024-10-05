@@ -10,7 +10,6 @@ import { features } from '../constants';
 
 const About = () => (
   <section id="about" className={`${styles.paddings} relative z-10`}>
-    <div className="gradient-02 z-0 opacity-50" />
 
     <motion.div
       variants={staggerContainer}

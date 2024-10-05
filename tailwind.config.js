@@ -10,8 +10,11 @@ module.exports = {
   mode: 'jit',
   theme: {
     extend: {
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(ellipse at center, var(--tw-gradient-stops))',
+      },
       colors: {
-        'primary-black': '#1D1F22',
+        'primary-black': '#121212',
         'secondary-white': '#c7c7c7',
         'overlay-black': '#1e1e1e',
       },

@@ -134,10 +134,9 @@ const Navbar = () => {
         variants={navVariants}
         initial="hidden"
         animate="show"
-        className={`${styles.xPaddings} py-8 fixed top-0 left-0 right-0 z-50 bg-primary-black bg-opacity-90 backdrop-blur-md`}
+        className={`${styles.xPaddings} py-8 fixed top-0 left-0 right-0 z-50 bg-primary-black bg-opacity-50 backdrop-blur-md`}
         aria-label="Main Navigation"
       >
-        <div className="absolute w-[50%] inset-0 gradient-01 opacity-50" />
         <div className={`${styles.innerWidth} mx-auto flex justify-between gap-8 items-center`}>
           {/* Search Container */}
           <div className="relative flex items-center" ref={searchContainerRef}>

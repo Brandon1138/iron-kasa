@@ -106,6 +106,11 @@
               -8px -8px 32px rgba(135, 31, 95, 0.37);
 }
 
+.test {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
 /* Spinning Gradient Layer */
 .spinning-gradient {
   position: absolute;
