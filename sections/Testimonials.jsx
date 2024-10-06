@@ -1,3 +1,5 @@
+// sections/Testimonials.jsx
+
 'use client';
 
 import { motion } from 'framer-motion';
@@ -54,7 +56,11 @@ const Testimonials = () => {
             variants={fadeIn('up', 'tween', 0.3, 1)}
             className="mt-4 font-bold text-3xl lg:text-5xl text-white text-center"
           >
-            Ce spun clienții noștri
+            Ce spun{' '}
+            <span className="bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-purple-500 via-rose-500 to-amber-500 bg-clip-text text-transparent">
+              clienții
+            </span>{' '}
+            noștri
           </motion.h2>
 
           {/* Testimonials Content */}

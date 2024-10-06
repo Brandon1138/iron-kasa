@@ -94,7 +94,7 @@ const ServiceModal = ({ service, onClose }) => {
                 flex flex-col items-center
                 w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%]
                 p-6
-shadow-[0_10px_20px_rgba(12,_12,_12,_0.7)]
+                shadow-[0_10px_20px_rgba(12,_12,_12,_0.7)]
                 bg-stone-700 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-40 backdrop-saturate-150 backdrop-contrast-100
                 z-50
                 max-h-[90vh] overflow-y-auto hide-scrollbar

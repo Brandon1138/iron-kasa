@@ -41,7 +41,11 @@ const Transport = () => (
             variants={fadeIn('up', 'tween', 0.3, 1)}
             className="mt-4 font-bold text-3xl lg:text-5xl text-white text-center lg:text-left"
           >
-            Nu poți să-l aduci? Îl luăm noi!
+            Asigurăm{' '}
+            <span className="bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-purple-500 via-rose-500 to-amber-500 bg-clip-text text-transparent">
+              transportul
+            </span>{' '}
+            dispozitivului
           </motion.h2>
           <motion.p
             variants={fadeIn('up', 'tween', 0.4, 1)}

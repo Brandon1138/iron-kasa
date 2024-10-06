@@ -56,7 +56,7 @@ const Services = () => {
           <TypingText title="| Servicii" textStyles="text-center" />
         </motion.div>
 
-        {/* TitleText */}
+        {/* TitleText with Styled "dispozitivul" */}
         <motion.div
           variants={fadeIn('up', 'tween', 0.2, 1)}
           initial="hidden"
@@ -64,7 +64,17 @@ const Services = () => {
           viewport={{ once: true, amount: 0.25 }}
           className="text-center mt-4"
         >
-          <TitleText title="Alege dispozitivul pe care vrei să îl repari" />
+          <TitleText
+            title={
+              <>
+                Alege{' '}
+                <span className="bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-purple-500 via-rose-500 to-amber-500 bg-clip-text text-transparent">
+                  dispozitivul
+                </span>{' '}
+                pe care vrei să îl repari
+              </>
+            }
+          />
         </motion.div>
 
         {/* Category Cards Container */}

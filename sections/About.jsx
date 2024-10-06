@@ -11,7 +11,9 @@ import { features } from '../constants';
 const About = () => (
   <section id="about" className={`${styles.paddings} relative z-10`}>
     {/* Updated Background Div */}
-    <div class="relative h-full w-full z-2 bg-slate-950"><div class="absolute z-2 bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div></div>
+    <div className="relative h-full w-full z-2 bg-slate-950">
+      <div className="absolute z-2 bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+    </div>
 
     <motion.div
       variants={staggerContainer}
@@ -28,7 +30,11 @@ const About = () => (
         variants={fadeIn('up', 'tween', 0.2, 1)}
         className="mt-[8px] font-bold lg:text-[64px] md:text-[48px] sm:text-[32px] text-[32px] text-left text-white"
       >
-        Rezolvăm orice problemă
+        Rezolvăm{' '}
+        <span className="bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-purple-500 via-rose-500 to-amber-500 bg-clip-text text-transparent">
+          orice
+        </span>{' '}
+        problemă
       </motion.h2>
 
       {/* Features Grid */}
