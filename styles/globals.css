@@ -197,7 +197,7 @@
 /* Custom Gradient Text and Animations */
 @layer utilities {
   .text-gradient {
-    background: linear-gradient(90deg, #a509ff, #34acc7, #a134c7);
+    background: linear-gradient(90deg, #a855f7, #f43f5e, #d97706);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -205,11 +205,20 @@
     object-fit: cover;
   }
 
-  /* Animation for Bold Text with Gradient Glow */
+  /* Updated Animation for Bold Text with Gradient Glow */
   .font-bold-animate {
     font-weight: 700; 
-    text-shadow: 0 0 10px #a509ff, 0 0 20px #34acc7;
-    transition: font-weight 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+    /* Gradient Background */
+    background: radial-gradient(ellipse at top left, #a855f7, #f43f5e, #d97706);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    
+    /* Text Shadow for Glow Effect */
+    text-shadow: 0 0 10px #a855f7, 0 0 20px #f43f5e, 0 0 30px #d97706;
+    
+    /* Transition Properties */
+    transition: font-weight 0.3s ease-in-out, background 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
   }
 
   .font-normal-animate {
@@ -220,7 +229,7 @@
 
   /* Custom Shadow for Glow Effect (if needed elsewhere) */
   .shadow-glow {
-    box-shadow: 0 0 10px #a509ff, 0 0 20px #34acc7;
+    box-shadow: 0 0 10px #a855f7, 0 0 20px #d97706;
   }
 }
 

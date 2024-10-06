@@ -96,7 +96,7 @@ const WordFlip = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-orange-500 flex items-center justify-start"
+          className="absolute inset-0 text-transparent bg-clip-text bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-purple-500 via-rose-500 to-amber-500 bg-clip-text text-transparent flex items-center justify-start"
         >
           {words[currentWordIndex]}
         </motion.span>

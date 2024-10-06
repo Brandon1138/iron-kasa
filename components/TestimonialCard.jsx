@@ -11,7 +11,7 @@ const TestimonialCard = ({ testimonial }) => {
 
   return (
     <motion.div
-      className="relative bg-[#1E1E1E] bg-opacity-70 backdrop-filter backdrop-blur-lg rounded-[36px] p-6 text-white shadow-lg transition-shadow duration-300 overflow-visible glassmorphism-hover"
+      className="relative bg-[#1E1E1E] bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-[36px] p-6 text-white shadow-lg transition-shadow duration-300 overflow-visible glassmorphism-hover"
       whileHover={isTouchDevice ? {} : { scale: 1.02 }}
     >
       {/* Profile Section */}

@@ -45,11 +45,11 @@ const ServiceCard = ({
     <motion.div
       className="
         relative cursor-pointer group
-        w-[150px] h-[150px]
-        sm:w-[200px] sm:h-[200px]
-        md:w-[203px] md:h-[203px]
-        lg:w-[270px] lg:h-[270px]
-        xl:w-[320px] xl:h-[320px]
+        w-[150px] aspect-square
+        sm:w-[200px]
+        md:w-[203px]
+        lg:w-[270px]
+        xl:w-[320px]
         rounded-[30px]
         sm:rounded-[32px]
         md:rounded-[36px]

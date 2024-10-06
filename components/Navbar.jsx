@@ -198,7 +198,7 @@ const Navbar = () => {
                                 {iphone.title.split(new RegExp(`(${searchQuery})`, 'gi')).map((part, i) => (part.toLowerCase() === searchQuery.toLowerCase() ? (
                                   <span
                                     key={i}
-                                    className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"
+                                    className="bg-gradient-to-r font-bold-animate bg-clip-text text-transparent"
                                   >
                                     {part}
                                   </span>
