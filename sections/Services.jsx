@@ -1,7 +1,7 @@
 'use client';
 
 import { TypingText, TitleText } from '../components';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion'; // Removed AnimatePresence
 import styles from '../styles';
 import { staggerContainer, fadeIn } from '../utils/motion';
 import { categoryCard, mainDisclaimer, serviceDetails } from '../constants';
@@ -37,13 +37,13 @@ const Services = () => {
 
   return (
     <section
-      className={`${styles.paddings} px-6 py-12 relative`} // Added 'relative'
+      className={`${styles.paddings} px-6 py-12 relative`}
       id="services"
     >
       {/* Background Div */}
-      <div className="absolute inset-0 z-0 bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#121212_2px)] bg-[size:20px_20px]"></div> {/* Updated classes */}
+      <div className="absolute inset-0 z-0 bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#121212_2px)] bg-[size:20px_20px]"></div>
       
-      <div className={`${styles.innerWidth} mx-auto flex flex-col items-center relative z-10`}> {/* Added 'relative z-10' */}
+      <div className={`${styles.innerWidth} mx-auto flex flex-col items-center relative z-10`}>
         {/* TypingText */}
         <motion.div
           variants={staggerContainer}
@@ -152,12 +152,10 @@ const Services = () => {
           </motion.div>
         )}
 
-        {/* Service Modal with AnimatePresence */}
-        <AnimatePresence>
-          {selectedService && (
-            <ServiceModal service={selectedService} onClose={handleModalClose} />
-          )}
-        </AnimatePresence>
+        {/* Service Modal */}
+        {selectedService && (
+          <ServiceModal service={selectedService} onClose={handleModalClose} />
+        )}
       </div>
     </section>
   );

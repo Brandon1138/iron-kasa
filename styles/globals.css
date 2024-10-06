@@ -310,3 +310,6 @@
   transition: color 0.3s ease;
 }
 
+html {
+  overflow-y: scroll;
+}
