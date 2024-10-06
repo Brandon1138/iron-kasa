@@ -52,7 +52,7 @@ const Hero = () => {
         style={{
           backgroundImage: 'url(/noise.png)',
           opacity: 0.05,
-          backgroundRepeat: 'repeat',
+          backgroundRepeat: 'fill',
         }}
       />
 

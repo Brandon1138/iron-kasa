@@ -20,11 +20,11 @@ const ServiceCard = ({
     // Function to handle screen resize
     const handleResize = () => {
       const width = window.innerWidth;
-      if (width >= 1024) {
-        // lg and above
+      if (width >= 1280) { // xl and above
+        setScreenSize('xl');
+      } else if (width >= 1024) { // lg
         setScreenSize('lg');
-      } else if (width >= 768) {
-        // md
+      } else if (width >= 768) { // md
         setScreenSize('md');
       } else {
         setScreenSize('sm');
@@ -38,8 +38,8 @@ const ServiceCard = ({
     }
   }, []);
 
-  // Get image size based on screen size only
-  const imageSize = sizes[screenSize] || sizes.sm;
+  // Get image size based on screen size with improved fallback
+  const imageSize = sizes[screenSize] || sizes.lg || sizes.md || sizes.sm;
 
   return (
     <motion.div
@@ -49,16 +49,18 @@ const ServiceCard = ({
         sm:w-[200px] sm:h-[200px]
         md:w-[203px] md:h-[203px]
         lg:w-[270px] lg:h-[270px]
+        xl:w-[320px] xl:h-[320px]
         rounded-[30px]
         sm:rounded-[32px]
         md:rounded-[36px]
         lg:rounded-[44px]
-        overflow-hidden
-        flex flex-col justify-center items-center
-        p-4
+        xl:rounded-[50px]
+        overflow-visible
+        flex justify-center items-center
         outer-shadow
         glassmorphism
-        glassmorphism-hover
+        transition-transform duration-300
+        group-hover:scale-105
       "
       onClick={() => {
         if (isAnimationComplete) onClick();
@@ -71,39 +73,51 @@ const ServiceCard = ({
       }}
       aria-label={`Open details for ${title}`}
     >
-      {/* Base Gradient */}
+      {/* Background Glow with Blur and Rotation */}
       <div
-        className="
+        className={`
           absolute inset-0
+          opacity-0 group-hover:opacity-100
+          transition-opacity duration-500
+          blur-md sm:blur-md md:blur-lg lg:blur-xl xl:blur-2xl
+          animate-spin-slow
           pointer-events-none
-          rounded-[inherit]
-        "
+          z-0
+          rounded-[30px]
+          sm:rounded-[32px]
+          md:rounded-[36px]
+          lg:rounded-[44px]
+          xl:rounded-[50px]
+          scale-100 sm:scale-110 md:scale-125 lg:scale-150 xl:scale-175 2xl:scale-200
+        `}
         style={{
-          backgroundColor: 'rgba(255,255,255,0.04)',
-          transition: 'background-color 0.5s linear',
+          background:
+            'conic-gradient(from 0deg, #DD7DFF 0%, #E1CD86 25%, #8BCB92 50%, #71C2EF 75%, #DD7DFF 100%)',
         }}
       />
 
-      {/* Overlay Gradient for Hover Effect */}
+      {/* Card Content with Gradient Background Transition */}
       <div
-        className="
-          absolute inset-0
-          bg-gradient-to-b from-[rgba(255,255,255,0.12)] to-[rgba(255,255,255,0.036)]
-          opacity-0 group-hover:opacity-100
-          transition-opacity duration-500
-          pointer-events-none
-          rounded-[inherit]
-        "
-      />
-
-      {/* Card Content */}
-      <div className="z-10 flex flex-col items-center space-y-2">
-        {/* Image without size transition */}
+        className={`
+          absolute inset-0 z-10
+          flex flex-col justify-center items-center
+          rounded-[30px]
+          sm:rounded-[32px]
+          md:rounded-[36px]
+          lg:rounded-[44px]
+          xl:rounded-[50px]
+          transition-colors duration-500
+          bg-gradient-to-b from-[rgba(255,255,255,0.04)] to-[rgba(255,255,255,0.012)]
+          group-hover:from-[#1e1e1eBF] group-hover:to-[#1e1e1eBF]
+        `}
+      >
+        {/* Image */}
         <div
           style={{
             width: imageSize.width,
             height: imageSize.height,
           }}
+          className="flex justify-center items-center"
         >
           <Image
             src={imgUrl}
@@ -117,7 +131,7 @@ const ServiceCard = ({
         </div>
         {/* Title */}
         <h3
-          className="text-center text-[12px] md:text-md lg:text-lg font-regular text-white group-hover:text-white"
+          className="mt-2 text-center text-[12px] md:text-md lg:text-lg font-regular text-white group-hover:text-white"
           style={{ transition: 'color 0.5s linear' }}
         >
           {title}

@@ -1,4 +1,3 @@
-// components/Services.jsx
 'use client';
 
 import { TypingText, TitleText } from '../components';
@@ -38,10 +37,13 @@ const Services = () => {
 
   return (
     <section
-      className={`${styles.paddings} px-6 py-12 bg-[#191919]`}
+      className={`${styles.paddings} px-6 py-12 relative`} // Added 'relative'
       id="services"
     >
-      <div className={`${styles.innerWidth} mx-auto flex flex-col items-center`}>
+      {/* Background Div */}
+      <div className="absolute inset-0 z-0 bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#121212_2px)] bg-[size:20px_20px]"></div> {/* Updated classes */}
+      
+      <div className={`${styles.innerWidth} mx-auto flex flex-col items-center relative z-10`}> {/* Added 'relative z-10' */}
         {/* TypingText */}
         <motion.div
           variants={staggerContainer}

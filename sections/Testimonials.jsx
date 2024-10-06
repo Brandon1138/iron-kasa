@@ -30,16 +30,20 @@ const Testimonials = () => {
 
   return (
     <section
-      className={`${styles.paddings} relative z-10 overflow-hidden`}
+      className={`${styles.paddings} relative z-10 overflow-hidden bg-[url('/testimonials-background.jpeg')] bg-cover bg-center`}
       id="testimonials"
       style={{ height: '100vh' }}
     >
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black opacity-50"></div>
+
+      {/* Content Wrapper */}
       <motion.div
         variants={staggerContainer}
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
-        className={`${styles.innerWidth} mx-auto`}
+        className={`${styles.innerWidth} mx-auto relative z-10`}
       >
         <div className="flex flex-col items-center">
           {/* Typing Text */}
