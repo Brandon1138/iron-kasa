@@ -18,6 +18,12 @@ const CategoryCard = ({
   const isHovered = hoveredCategoryId === id;
   const isAnotherCardHovered = hoveredCategoryId !== null && hoveredCategoryId !== id;
 
+  // Determine if the glow should be visible
+  const isGlowVisible = (isSelected && !isAnotherCardHovered) || isHovered;
+
+  // Determine if a delay should be applied (only when selected)
+  const shouldDelay = isSelected && !isAnotherCardHovered;
+
   return (
     <motion.div
       className={`
@@ -37,7 +43,7 @@ const CategoryCard = ({
         }
         outer-shadow
         glassmorphism
-        flex-shrink-0  // **Added Class**
+        flex-shrink-0
       `}
       onClick={onSelect}
       onMouseEnter={() => setHoveredCategoryId(id)}
@@ -50,15 +56,9 @@ const CategoryCard = ({
       aria-label={`Select ${title}`}
     >
       {/* Background glow with rotation and blur */}
-      <div
+      <motion.div
         className={`
           absolute inset-0 transform
-          ${
-            (isSelected && !isAnotherCardHovered) || isHovered
-              ? 'opacity-100'
-              : 'opacity-0'
-          }
-          transition-opacity duration-500
           blur-md sm:blur-md md:blur-lg lg:blur-xl xl:blur-2xl
           animate-spin-slow
           pointer-events-none
@@ -74,6 +74,14 @@ const CategoryCard = ({
         style={{
           background:
             'conic-gradient(from 0deg, #DD7DFF 0%, #E1CD86 25%, #8BCB92 50%, #71C2EF 75%, #DD7DFF 100%)',
+        }}
+        initial={{ opacity: 0 }}
+        animate={{
+          opacity: isGlowVisible ? 1 : 0,
+          transition: {
+            duration: 0.5,
+            delay: shouldDelay ? 0.2 : 0, // 200ms delay only when selected
+          },
         }}
       />
 

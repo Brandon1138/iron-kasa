@@ -21,7 +21,7 @@ const Footer = () => (
         </h4>
         <button
           type="button"
-          className="flex items-center h-fit py-4 px-6 bg-[#25618b] rounded-[32px] gap-[12px]"
+          className="flex items-center h-fit py-4 px-6 bg-[#25618b] rounded-[32px] gap-[12px] hover:bg-[#1f4d6a] transition-colors duration-300"
         >
           <img src="/chat.svg" alt="chat" className="w-[24px] h-[24px] object-contain" />
           <span className="font-normal text-[16px] text-white">Trimite un mesaj</span>
