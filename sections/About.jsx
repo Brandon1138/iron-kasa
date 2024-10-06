@@ -10,17 +10,16 @@ import { features } from '../constants';
 
 const About = () => (
   <section id="about" className={`${styles.paddings} relative z-10`}>
-    {/* Updated Background Div */}
-    <div className="relative h-full w-full z-2 bg-slate-950">
-      <div className="absolute z-2 bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
-    </div>
-
+    {/* Existing Background Div */}
+    <div className="absolute inset-0 z-[-2] h-full w-full bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#121212_2px)] bg-[size:20px_20px]"></div>
+    <div className="absolute inset-0 z-[-1] h-full w-full bg-gradient-to-b from-stone-500 to-neutral-950 opacity-30 " />  
+    
     <motion.div
       variants={staggerContainer}
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
-      className="w-full flex flex-col px-6 lg:max-w-[85vw] mx-auto pb-4"
+      className="w-full flex flex-col px-6 lg:max-w-[85vw] mx-auto pb-2"
     >
       {/* Section Title */}
       <TypingText title="| Despre noi" textStyles="text-left" />

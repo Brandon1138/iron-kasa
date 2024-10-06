@@ -153,6 +153,7 @@ const Contact = () => {
       id="contact"
       className={`pt-24 -pb-24 lg:px-8 md:px-16 px-6 relative z-10`} // Increased pt-24 and decreased pb-8
     >
+      <div class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
       <Script
         src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`}
         strategy="lazyOnload"
