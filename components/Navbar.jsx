@@ -49,7 +49,9 @@ const Navbar = () => {
       return;
     }
 
-    const results = iPhoneServiceDetails.filter((iphone) => iphone.title.toLowerCase().includes(query.toLowerCase()));
+    const results = iPhoneServiceDetails.filter((iphone) =>
+      iphone.title.toLowerCase().includes(query.toLowerCase())
+    );
 
     setSearchResults(results);
   };
@@ -79,20 +81,20 @@ const Navbar = () => {
     const handleClickOutside = (event) => {
       // Close Menu if clicking outside
       if (
-        isMenuOpen
-        && menuRef.current
-        && !menuRef.current.contains(event.target)
-        && buttonRef.current
-        && !buttonRef.current.contains(event.target)
+        isMenuOpen &&
+        menuRef.current &&
+        !menuRef.current.contains(event.target) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target)
       ) {
         setIsMenuOpen(false);
       }
 
       // Close Search Bar if clicking outside
       if (
-        isSearchOpen
-        && searchContainerRef.current
-        && !searchContainerRef.current.contains(event.target)
+        isSearchOpen &&
+        searchContainerRef.current &&
+        !searchContainerRef.current.contains(event.target)
       ) {
         setIsSearchOpen(false);
       }
@@ -195,16 +197,18 @@ const Navbar = () => {
                                 className="flex-shrink-0 rounded"
                               />
                               <span className="text-white">
-                                {iphone.title.split(new RegExp(`(${searchQuery})`, 'gi')).map((part, i) => (part.toLowerCase() === searchQuery.toLowerCase() ? (
-                                  <span
-                                    key={i}
-                                    className="bg-gradient-to-r font-bold-animate bg-clip-text text-transparent"
-                                  >
-                                    {part}
-                                  </span>
-                                ) : (
-                                  part
-                                )))}
+                                {iphone.title.split(new RegExp(`(${searchQuery})`, 'gi')).map((part, i) =>
+                                  part.toLowerCase() === searchQuery.toLowerCase() ? (
+                                    <span
+                                      key={i}
+                                      className="bg-gradient-to-r font-bold-animate bg-clip-text text-transparent"
+                                    >
+                                      {part}
+                                    </span>
+                                  ) : (
+                                    part
+                                  )
+                                )}
                               </span>
                             </button>
                           </li>
@@ -234,15 +238,24 @@ const Navbar = () => {
             </AnimatePresence>
           </div>
 
-          {/* Brand Title */}
-          <h2
-            className={`font-bold text-[24px] leading-[30px] text-white transition-opacity duration-300 ${
+          {/* Brand Logo with Glow Effect */}
+          <div
+            className={`relative flex-shrink-0 transition-opacity duration-300 ${
               isSearchOpen ? 'opacity-0 lg:opacity-100' : 'opacity-100'
             }`}
             aria-hidden={isSearchOpen ? 'true' : 'false'}
           >
-            iPhoneDoctor
-          </h2>
+            {/* Glow Effect */}
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-r from-[#a855f7] via-[#f43f5e] to-[#d97706] rounded-full filter blur-lg opacity-40"
+              aria-hidden="true"
+              initial={{ scale: 1 }}
+              animate={{ scale: [1, 1.05, 1] }}
+              transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
+            />
+            {/* Logo */}
+            <Image src="/logo.svg" alt="iPhoneDoctor Logo" width={150} height={50} />
+          </div>
 
           {/* Toggle Menu Button */}
           <button
