@@ -1,3 +1,5 @@
+// components/Services.jsx
+
 'use client';
 
 import { TypingText, TitleText } from '../components';
@@ -156,6 +158,7 @@ const Services = () => {
                   service={service}
                   onClick={() => handleServiceSelect(service)}
                   isAnimationComplete={isAnimationComplete}
+                  isActive={selectedService === service} // Pass isActive prop
                 />
               </motion.div>
             ))}

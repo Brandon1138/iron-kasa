@@ -10,6 +10,7 @@ const ServiceCard = ({
   service,
   onClick,
   isAnimationComplete,
+  isActive, // Ensure this prop is destructured
 }) => {
   const { imgUrl, title, sizes } = service;
 
@@ -66,6 +67,7 @@ const ServiceCard = ({
         if (isAnimationComplete) onClick();
       }}
       whileHover={{ scale: 1.05 }}
+      animate={{ scale: isActive ? 1.05 : 1 }} // Conditional scale based on isActive
       role="button"
       tabIndex={0}
       onKeyPress={(e) => {
@@ -77,7 +79,7 @@ const ServiceCard = ({
       <div
         className={`
           absolute inset-0
-          opacity-0 group-hover:opacity-100
+          ${isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'} // Conditional opacity
           transition-opacity duration-500
           blur-md sm:blur-md md:blur-lg lg:blur-xl xl:blur-2xl
           animate-spin-slow
@@ -108,7 +110,7 @@ const ServiceCard = ({
           xl:rounded-[50px]
           transition-colors duration-500
           bg-gradient-to-b from-[rgba(255,255,255,0.04)] to-[rgba(255,255,255,0.012)]
-          group-hover:from-[#1e1e1eBF] group-hover:to-[#1e1e1eBF]
+          ${isActive ? 'from-[#1e1e1eBF] to-[#1e1e1eBF]' : 'group-hover:from-[#1e1e1eBF] group-hover:to-[#1e1e1eBF]'}
         `}
       >
         {/* Image */}
