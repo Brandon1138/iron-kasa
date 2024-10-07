@@ -12,7 +12,7 @@ const Transport = () => (
   <section className={`${styles.paddings} relative z-10`} id="transport">
     {/* Existing Background Div */}
     <div className="absolute inset-0 z-[-2] h-full w-full bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#121212_2px)] bg-[size:20px_20px]"></div>
-    <div className="absolute inset-0 z-[-1] h-full w-full bg-gradient-to-b from-neutral-900 via-stone-900 to-stone-600 opacity-30 " />  
+    <div className="absolute inset-0 z-[-1] h-full w-full bg-gradient-to-b from-neutral-900 to-neutral-600 opacity-30 " />  
     
     <motion.div
       variants={staggerContainer}

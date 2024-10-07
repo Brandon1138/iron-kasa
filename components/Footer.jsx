@@ -16,7 +16,7 @@ const Footer = () => (
     <div className={`${styles.innerWidth} mx-auto lg:px-12 px-4 flex flex-col gap-8`}>
       {/* Adjusted Flex Container for Heading and Button */}
       <div className="flex flex-col items-center md:flex-row md:justify-between flex-wrap gap-5">
-        <h4 className="font-bold lg:text-[58px] md:text-[38px] sm:text-[32px] text-[32px] text-center text-white">
+        <h4 className="font-bold lg:text-[58px] md:text-[38px] sm:text-[32px] text-[32px] text-center text-white ">
         Ai nevoie de{' '}
         <span className="bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-purple-500 via-rose-500 to-amber-500 bg-clip-text text-transparent">
           Doctor
@@ -51,6 +51,7 @@ const Footer = () => (
               />
             ))}
           </div>
+          <div className="footer-gradient" />
         </div>
       </div>
     </div>

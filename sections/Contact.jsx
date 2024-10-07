@@ -20,120 +20,282 @@ const Contact = () => {
       zoom: 15,
       styles: [
         {
-          "featureType": "all",
-          "elementType": "labels.text.fill",
-          "stylers": [
-            { "saturation": 36 },
-            { "color": "#000000" },
-            { "lightness": 40 }
-          ]
+            "featureType": "all",
+            "elementType": "labels.text.fill",
+            "stylers": [
+                {
+                    "saturation": 36
+                },
+                {
+                    "color": "#000000"
+                },
+                {
+                    "lightness": 40
+                }
+            ]
         },
         {
-          "featureType": "all",
-          "elementType": "labels.text.stroke",
-          "stylers": [
-            { "visibility": "on" },
-            { "color": "#000000" },
-            { "lightness": 16 }
-          ]
+            "featureType": "all",
+            "elementType": "labels.text.stroke",
+            "stylers": [
+                {
+                    "visibility": "on"
+                },
+                {
+                    "color": "#000000"
+                },
+                {
+                    "lightness": 16
+                }
+            ]
         },
         {
-          "featureType": "all",
-          "elementType": "labels.icon",
-          "stylers": [
-            { "visibility": "off" }
-          ]
+            "featureType": "all",
+            "elementType": "labels.icon",
+            "stylers": [
+                {
+                    "visibility": "off"
+                }
+            ]
         },
         {
-          "featureType": "administrative",
-          "elementType": "geometry.fill",
-          "stylers": [
-            { "color": "#000000" },
-            { "lightness": 20 }
-          ]
+            "featureType": "administrative",
+            "elementType": "geometry.fill",
+            "stylers": [
+                {
+                    "color": "#000000"
+                },
+                {
+                    "lightness": 20
+                }
+            ]
         },
         {
-          "featureType": "administrative",
-          "elementType": "geometry.stroke",
-          "stylers": [
-            { "color": "#000000" },
-            { "lightness": 17 },
-            { "weight": 1.2 }
-          ]
+            "featureType": "administrative",
+            "elementType": "geometry.stroke",
+            "stylers": [
+                {
+                    "color": "#000000"
+                },
+                {
+                    "lightness": 17
+                },
+                {
+                    "weight": 1.2
+                }
+            ]
         },
         {
-          "featureType": "landscape",
-          "elementType": "geometry",
-          "stylers": [
-            { "color": "#000000" },
-            { "lightness": 20 }
-          ]
+            "featureType": "administrative.province",
+            "elementType": "geometry",
+            "stylers": [
+                {
+                    "visibility": "on"
+                },
+                {
+                    "color": "#ff8200"
+                }
+            ]
         },
         {
-          "featureType": "landscape",
-          "elementType": "geometry.fill",
-          "stylers": [
-            { "color": "#232937" }
-          ]
+            "featureType": "administrative.province",
+            "elementType": "geometry.fill",
+            "stylers": [
+                {
+                    "visibility": "on"
+                },
+                {
+                    "color": "#ff3800"
+                }
+            ]
         },
         {
-          "featureType": "poi",
-          "elementType": "geometry",
-          "stylers": [
-            { "color": "#000000" },
-            { "lightness": 21 }
-          ]
+            "featureType": "administrative.province",
+            "elementType": "labels.text.fill",
+            "stylers": [
+                {
+                    "color": "#ff6600"
+                }
+            ]
         },
         {
-          "featureType": "road.highway",
-          "elementType": "geometry.fill",
-          "stylers": [
-            { "color": "#63397c" },
-            { "lightness": 17 }
-          ]
+            "featureType": "administrative.locality",
+            "elementType": "labels.text.fill",
+            "stylers": [
+                {
+                    "color": "#d9d9d9"
+                }
+            ]
         },
         {
-          "featureType": "road.highway",
-          "elementType": "geometry.stroke",
-          "stylers": [
-            { "color": "#000000" },
-            { "lightness": 29 },
-            { "weight": 0.2 }
-          ]
+            "featureType": "administrative.locality",
+            "elementType": "labels.text.stroke",
+            "stylers": [
+                {
+                    "visibility": "off"
+                }
+            ]
         },
         {
-          "featureType": "road.arterial",
-          "elementType": "geometry",
-          "stylers": [
-            { "color": "#000000" },
-            { "lightness": 18 }
-          ]
+            "featureType": "administrative.neighborhood",
+            "elementType": "all",
+            "stylers": [
+                {
+                    "visibility": "on"
+                },
+                {
+                    "color": "#CA4776"
+                }
+            ]
         },
         {
-          "featureType": "road.local",
-          "elementType": "geometry",
-          "stylers": [
-            { "color": "#000000" },
-            { "lightness": 16 }
-          ]
+            "featureType": "administrative.neighborhood",
+            "elementType": "labels.text.stroke",
+            "stylers": [
+                {
+                    "color": "#000000"
+                }
+            ]
         },
         {
-          "featureType": "transit",
-          "elementType": "geometry",
-          "stylers": [
-            { "color": "#000000" },
-            { "lightness": 19 }
-          ]
+            "featureType": "administrative.land_parcel",
+            "elementType": "labels.text.fill",
+            "stylers": [
+                {
+                    "color": "#ff0000"
+                }
+            ]
         },
         {
-          "featureType": "water",
-          "elementType": "geometry",
-          "stylers": [
-            { "color": "#232937" },
-            { "lightness": 17 }
-          ]
+            "featureType": "landscape",
+            "elementType": "geometry",
+            "stylers": [
+                {
+                    "color": "#161616"
+                },
+                {
+                    "lightness": 20
+                }
+            ]
+        },
+        {
+            "featureType": "landscape.man_made",
+            "elementType": "geometry",
+            "stylers": [
+                {
+                    "visibility": "on"
+                },
+                {
+                    "color": "#202020"
+                }
+            ]
+        },
+        {
+            "featureType": "poi",
+            "elementType": "all",
+            "stylers": [
+                {
+                    "visibility": "on"
+                }
+            ]
+        },
+        {
+            "featureType": "poi",
+            "elementType": "geometry",
+            "stylers": [
+                {
+                    "lightness": 21
+                },
+                {
+                    "color": "#121212"
+                }
+            ]
+        },
+        {
+            "featureType": "poi",
+            "elementType": "labels.text.fill",
+            "stylers": [
+                {
+                    "color": "#F8B25A"
+                }
+            ]
+        },
+        {
+            "featureType": "road.highway",
+            "elementType": "geometry.fill",
+            "stylers": [
+                {
+                    "color": "#d97706"
+                }
+            ]
+        },
+        {
+            "featureType": "road.highway",
+            "elementType": "geometry.stroke",
+            "stylers": [
+                {
+                    "color": "#000000"
+                },
+                {
+                    "lightness": 29
+                },
+                {
+                    "weight": 0.2
+                }
+            ]
+        },
+        {
+            "featureType": "road.arterial",
+            "elementType": "geometry",
+            "stylers": [
+                {
+                    "color": "#271532"
+                },
+                {
+                    "lightness": 18
+                },
+                {
+                    "visibility": "on"
+                }
+            ]
+        },
+        {
+            "featureType": "road.local",
+            "elementType": "geometry",
+            "stylers": [
+                {
+                    "color": "#000000"
+                },
+                {
+                    "lightness": 16
+                }
+            ]
+        },
+        {
+            "featureType": "transit",
+            "elementType": "geometry",
+            "stylers": [
+                {
+                    "color": "#000000"
+                },
+                {
+                    "lightness": 19
+                }
+            ]
+        },
+        {
+            "featureType": "water",
+            "elementType": "geometry",
+            "stylers": [
+                {
+                    "color": "#000000"
+                },
+                {
+                    "lightness": 17
+                }
+            ]
         }
-      ],
+    ],
     });
 
     new window.google.maps.Marker({
@@ -153,7 +315,7 @@ const Contact = () => {
       id="contact"
       className={`pt-24 -pb-24 lg:px-8 md:px-16 px-6 relative z-10`} // Increased pt-24 and decreased pb-8
     >
-      <div class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+      
       <Script
         src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`}
         strategy="lazyOnload"
@@ -184,7 +346,7 @@ const Contact = () => {
           variants={fadeIn('up', 'tween', 0.4, 1)}
           className="mt-6 w-full max-w-[1230px] px-4 text-white text-opacity-75 text-lg text-center mx-auto"
         >
-          Fie că ai probleme cu software-ul, hardware-ul sau pur și simplu vrei să-ți îmbunătățești performanțele dispozitivului, echipa iPhone Doctor te va trata cu seriozitate și profesionalism. Scrie-ne, sună-ne sau fă-ne o vizită la service și vom găsi soluția potrivită pentru tine. Așteptăm cu drag să te ajutăm!
+          Fie că ai probleme cu software-ul, hardware-ul sau pur și simplu vrei să-ți îmbunătățești performanțele dispozitivului, echipa iPhone Doctor te va trata cu seriozitate și profesionalism. Scrie-ne, sună-ne sau fă-ne o vizită la clinică și vom găsi soluția potrivită pentru tine. Așteptăm cu drag să te ajutăm!
         </motion.p>
 
         {/* Map Section */}

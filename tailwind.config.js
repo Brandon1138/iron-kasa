@@ -47,5 +47,10 @@ module.exports = {
       },
     },
   },
+  variants: {
+    extend: {
+      backdropBlur: ['responsive'],
+    },
+  },
   plugins: [],
 };
