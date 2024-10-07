@@ -179,7 +179,7 @@ const Navbar = () => {
                   />
                   {/* Search Results or No Results Message */}
                   {searchQuery.length > 0 && (
-                    <ul className="absolute top-full left-0 right-0 bg-primary-black bg-opacity-90 backdrop-blur-md rounded-2xl mt-2 max-h-60 overflow-y-auto hide-scrollbar z-50">
+                    <ul className="absolute top-full left-0 right-0 bg-primary-black bg-opacity-90 backdrop-blur-md rounded-3xl mt-2 max-h-60 overflow-y-auto hide-scrollbar z-50">
                       {searchResults.length > 0 ? (
                         searchResults.map((iphone, index) => (
                           <li key={index} className="px-4 py-2">
@@ -215,21 +215,15 @@ const Navbar = () => {
                         ))
                       ) : (
                         <li className="px-4 py-2 text-white flex items-center space-x-2" aria-hidden="true">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-5 w-5 text-red-500"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            aria-hidden="true"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-11.707a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414L7.586 12l-1.293 1.293a1 1 0 001.414 1.414L9 13.414l1.293 1.293a1 1 0 001.414-1.414L10.414 12l1.293-1.293z"
-                              clipRule="evenodd"
-                            />
-                          </svg>
-                          <span>Nu sunt rezultate.</span>
-                        </li>
+                        <Image
+                          src="/no-results.png"
+                          alt="Nu sunt rezultate"
+                          width={20} // Adjust as needed
+                          height={20} // Adjust as needed
+                          className="flex-shrink-0"
+                        />
+                        <span>Nu sunt rezultate.</span>
+                      </li>
                       )}
                     </ul>
                   )}
@@ -285,7 +279,7 @@ const Navbar = () => {
                 />
                 {/* Menu Content */}
                 <motion.div
-                  className="fixed top-6 right-6 z-50 p-6 rounded-2xl w-64 bg-primary-black bg-opacity-90 backdrop-blur-md"
+                  className="fixed top-6 right-6 z-50 p-6 rounded-3xl w-64 bg-primary-black bg-opacity-90 backdrop-blur-md"
                   role="dialog"
                   aria-modal="true"
                   aria-labelledby="menu-heading"

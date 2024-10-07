@@ -6,7 +6,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
 import styles from '../styles';
 import { fadeIn, staggerContainer, textVariant } from '../utils/motion';
-import WordFlip from '../components/WordFlip'; // Ensure correct relative path
+import WordFlip from '../components/WordFlip';
 
 const Hero = () => {
   const ref = useRef(null);
@@ -35,7 +35,7 @@ const Hero = () => {
 
   return (
     <section
-      className={`${styles.yPaddings} py-16 lg:py-24 md:py-20 sm:py-16 relative overflow-hidden`}
+      className={`${styles.yPaddings} py-16 lg:py-24 md:py-20 sm:py-16 relative`}
     >
       {/* Texture Background with 4px Blur */}
       <div
@@ -52,7 +52,7 @@ const Hero = () => {
         style={{
           backgroundImage: 'url(/noise.png)',
           opacity: 0.05,
-          backgroundRepeat: 'fill',
+          backgroundRepeat: 'repeat',
         }}
       />
 
@@ -64,13 +64,13 @@ const Hero = () => {
         animate="show"
         className="w-full flex flex-col relative z-40 pt-12 sm:pt-16 md:pt-24 lg:pt-32"
       >
-        <div className="flex justify-center items-center flex-col relative z-40 md:gap-y-2 lg:gap-y-3">
+        <div className="flex justify-center pt-8 sm:pt-8 items-center flex-col relative z-40 md:gap-y-2 lg:gap-y-3">
           <motion.h1 variants={textVariant(1.1)} className={styles.heroHeading}>
             Specialiști în
           </motion.h1>
           <motion.h1
             variants={textVariant(1.2)}
-            className={`${styles.heroHeading} flex items-center gap-x-4 ml-[270px] md:ml-[185px] lg:ml-[116px]`} 
+            className={`${styles.heroHeading} flex items-center gap-x-4 ml-[270px] md:ml-[185px] lg:ml-[116px]`}
           >
             <span className="whitespace-nowrap">reparații</span>
             <WordFlip />
@@ -82,10 +82,13 @@ const Hero = () => {
             borderRadius: borderRadius,
           }}
           variants={fadeIn('up', 'tween', 0.2, 1)}
-          className="relative w-full pt-16 md:-mt-[10px] -mt-[12px] overflow-hidden"
+          className="relative w-full lg:pt-16 md:pt-12 sm:pt-8 pt-8"
         >
-          <div className="w-full aspect-video overflow-hidden">
-            <video
+          <div className="w-full aspect-video">
+            <motion.video
+              style={{
+                borderRadius: borderRadius,
+              }}
               className="w-full h-full object-cover"
               playsInline
               autoPlay
@@ -110,7 +113,7 @@ const Hero = () => {
               <source src="/hero_video_1080p.mp4" type="video/mp4" />
               {/* Fallback Text */}
               Your browser does not support the video tag.
-            </video>
+            </motion.video>
           </div>
         </motion.div>
       </motion.div>
