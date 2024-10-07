@@ -122,7 +122,12 @@ const ServiceModal = ({ service, onClose }) => {
               {/* Close Button */}
               <button
                 type="button"
-                className="absolute top-4 right-4 text-white text-3xl font-bold z-10"
+                className="
+                  absolute top-4 right-4
+                  text-white text-3xl font-bold z-10
+                  transition-colors duration-300 ease-in-out
+                  hover:text-red-500
+                "
                 onClick={handleClose}
                 aria-label="Close Modal"
               >
@@ -187,17 +192,20 @@ const ServiceModal = ({ service, onClose }) => {
                 </div>
 
                 {/* CTA Button */}
-                <button
+                <motion.button
                   type="button"
                   className="
                       flex items-center justify-center
                       w-[225px] h-[66px]
-                      bg-[#25618B]
+                      bg-[#d97706]
                       rounded-[32px]
                       text-white text-lg font-semibold
-                      hover:bg-[#1f4d6a]
+                      hover:bg-[#a95c04]
+                      glassmorphism-hover
                       transition-colors duration-300
                     "
+                  whileHover={{ scale: 1.02 }} // Optional: Maintain hover effect
+                  whileTap={{ scale: 0.98 }} // Optional: Add tap effect for better UX
                   onClick={() => {
                     // Define the action, e.g., open chat or navigate to contact page
                   }}
@@ -212,7 +220,7 @@ const ServiceModal = ({ service, onClose }) => {
                     className="mr-3"
                   />
                   Trimite un mesaj
-                </button>
+                </motion.button>
               </div>
             </motion.div>
           </motion.div>

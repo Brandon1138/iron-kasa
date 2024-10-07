@@ -91,10 +91,12 @@
   position: relative; /* Ensure that the spinning gradient is positioned relative to this container */
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  transition: all 0.3s ease; /* Smooth transition for all properties */
   /* Initial box-shadow for default state (optional) */
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   overflow: hidden; /* Ensure the spinning gradient doesn't overflow */
+  /* Update transition to specific properties */
+  transition-property: background-color, box-shadow;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
 }
 
 /* Triple box-shadow with specified colors */

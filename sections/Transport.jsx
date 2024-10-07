@@ -26,15 +26,14 @@ const Transport = () => (
         <motion.div
           variants={fadeIn('right', 'tween', 0.2, 1)}
           className="hidden lg:flex justify-center"
-          whileHover={{ scale: 1.02 }}
         >
           <Image
-            src="/van.png"
+            src="/transport-image.jpg"
             alt="Transport Van"
             width={568}
             height={568}
             objectFit="contain"
-            className="rounded-[36px] glassmorphism-hover outer-shadow transition-shadow duration-300"
+            className="rounded-[36px] outer-shadow transition-shadow duration-300"
           />
         </motion.div>
 
@@ -55,25 +54,41 @@ const Transport = () => (
             variants={fadeIn('up', 'tween', 0.4, 1)}
             className="mt-4 text-white text-opacity-75 text-lg text-center lg:text-left"
           >
+            Trimite-ne un mesaj cu modelul dispozitivul tău, afecțiunile sale, adresa de preluare și iPhoneDoctor te va contacta pentru confirmare.
+          </motion.p>
+          <motion.p
+            variants={fadeIn('up', 'tween', 0.4, 1)}
+            className="mt-4 text-white text-opacity-75 text-lg text-center lg:text-left"
+          >
             iPhone Doctor îți asigură transportul dispozitivului atât către
             service cât şi înapoi către tine. Serviciu disponibil in Sectorul 3
             si zone învecinate.
           </motion.p>
+          {/* Animated Button */}
+          <motion.button
+            variants={fadeIn('up', 'tween', 0.3, 1)} // Adjusted delay to 0.5
+            className="flex items-center h-fit py-4 px-6 bg-[#d97706] rounded-[32px] gap-[12px] hover:bg-[#a95c04] glassmorphism-hover transition-colors duration-300 self-center lg:self-start mt-6"
+            whileHover={{ scale: 1.02 }} // Optional: Maintain hover effect
+            whileTap={{ scale: 0.98 }} // Optional: Add tap effect for better UX
+            type="button"
+          >
+            <img src="/chat.svg" alt="chat" className="w-[24px] h-[24px] object-contain" />
+            <span className="font-normal text-[16px] text-white">Trimite un mesaj</span>
+          </motion.button>
         </div>
 
         {/* Transport Image for md and below */}
         <motion.div
           variants={fadeIn('up', 'tween', 0.5, 1)}
           className="flex lg:hidden w-full justify-center px-6 mt-8"
-          whileHover={{ scale: 1.02 }}
         >
           <Image
-            src="/van.png"
+            src="/transport-image.jpg"
             alt="Transport Van"
             width={568} // Use the same width for consistency
             height={568} // Adjust height as needed
             objectFit="contain"
-            className="rounded-[36px] glassmorphism-hover transition-shadow duration-300 w-full"
+            className="rounded-[36px] transition-shadow duration-300 w-full"
           />
         </motion.div>
       </div>

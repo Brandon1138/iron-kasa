@@ -23,13 +23,15 @@ const Footer = () => (
         </span>
         ?
         </h4>
-        <button
+        <motion.button
           type="button"
-          className="flex items-center h-fit py-4 px-6 bg-[#25618b] rounded-[32px] gap-[12px] hover:bg-[#1f4d6a] transition-colors duration-300"
+          className="flex items-center h-fit py-4 px-6 bg-[#d97706] rounded-[32px] gap-[12px] hover:bg-[#a95c04] glassmorphism-hover transition-colors duration-300"
+          whileHover={{ scale: 1.02 }} // Optional: Maintain hover effect
+          whileTap={{ scale: 0.98 }} // Optional: Add tap effect for better UX
         >
           <img src="/chat.svg" alt="chat" className="w-[24px] h-[24px] object-contain" />
           <span className="font-normal text-[16px] text-white">Trimite un mesaj</span>
-        </button>
+        </motion.button>
       </div>
 
       <div className="flex flex-col">

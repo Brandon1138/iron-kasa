@@ -216,7 +216,7 @@ const Contact = () => {
             "elementType": "labels.text.fill",
             "stylers": [
                 {
-                    "color": "#F8B25A"
+                    "color": "#858585"
                 }
             ]
         },
