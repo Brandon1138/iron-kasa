@@ -177,7 +177,7 @@ const Navbar = () => {
                   />
                   {/* Search Results or No Results Message */}
                   {searchQuery.length > 0 && (
-                    <ul className="absolute top-full left-0 right-0 bg-primary-black bg-opacity-90 backdrop-blur-md rounded-lg mt-2 max-h-60 overflow-y-auto z-50">
+                    <ul className="absolute top-full left-0 right-0 bg-primary-black bg-opacity-90 backdrop-blur-md rounded-2xl mt-2 max-h-60 overflow-y-auto hide-scrollbar z-50">
                       {searchResults.length > 0 ? (
                         searchResults.map((iphone, index) => (
                           <li key={index} className="px-4 py-2">
@@ -185,7 +185,7 @@ const Navbar = () => {
                               type="button"
                               onClick={() => handleResultClick(iphone)}
                               onKeyDown={(e) => handleResultKeyDown(e, iphone)}
-                              className="w-full text-left hover:bg-purple-700 cursor-pointer flex items-center space-x-4 focus:outline-none focus:bg-purple-700 rounded"
+                              className="w-full text-left hover:bg-neutral-700 cursor-pointer flex items-center space-x-4 focus:outline-none focus:bg-purple-900 rounded-2xl"
                             >
                               <Image
                                 src={iphone.imgUrl}
@@ -224,7 +224,7 @@ const Navbar = () => {
                               clipRule="evenodd"
                             />
                           </svg>
-                          <span>No results found.</span>
+                          <span>Nu sunt rezultate.</span>
                         </li>
                       )}
                     </ul>
@@ -272,7 +272,7 @@ const Navbar = () => {
                 />
                 {/* Menu Content */}
                 <motion.div
-                  className="fixed top-6 right-6 z-50 p-6 rounded-lg w-64 bg-primary-black bg-opacity-90 backdrop-blur-md"
+                  className="fixed top-6 right-6 z-50 p-6 rounded-2xl w-64 bg-primary-black bg-opacity-90 backdrop-blur-md"
                   role="dialog"
                   aria-modal="true"
                   aria-labelledby="menu-heading"

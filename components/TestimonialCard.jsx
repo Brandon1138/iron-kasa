@@ -56,7 +56,7 @@ const TestimonialCard = ({ testimonial }) => {
         relative z-20 cursor-pointer group
         ${paddingClasses[screenSize]}
         ${roundedClasses[screenSize]}
-        bg-[#121212] bg-opacity-30
+        bg-[#242424] bg-opacity-30
         backdrop-blur-lg
         shadow-lg
         overflow-hidden

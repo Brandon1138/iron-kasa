@@ -71,7 +71,7 @@ const Testimonials = () => {
 
           {/* Testimonials Content */}
           <div
-            className={`relative pt-4 mt-16 px-6 h-[calc(100vh-200px)] overflow-hidden fadeMask`}
+            className={`relative pt-4 mt-16 px-10 h-[calc(100vh-200px)] overflow-hidden fadeMask`}
           >
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {/* Column 1 */}
