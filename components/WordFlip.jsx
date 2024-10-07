@@ -46,7 +46,7 @@ const WordFlip = () => {
       }, flipDuration + flipDelay);
 
       return () => clearTimeout(timer);
-    } else if (isFlipping && currentWordIndex === words.length - 1) {
+    } if (isFlipping && currentWordIndex === words.length - 1) {
       // Stop flipping when the last word is reached
       setIsFlipping(false);
     }
@@ -66,20 +66,18 @@ const WordFlip = () => {
   return (
     <span
       className="inline-block relative overflow-hidden"
-      style={{ width: '400px', height: '1em' }} // Set width to 400px
+      style={{ width: '450px', height: '1em' }} // Increased width to 450px
     >
       <AnimatePresence>
         {(isFlipping || currentWordIndex === 0) && (
           <motion.span
             key={currentWordIndex}
-            initial={{ rotateX: 90, opacity: 0 }}
-            animate={{ rotateX: 0, opacity: 1 }}
-            exit={{ rotateX: -90, opacity: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             transition={{ duration: 0.5, ease: 'easeInOut' }}
             className="absolute inset-0 text-white"
             style={{
-              transformOrigin: 'center',
-              backfaceVisibility: 'hidden',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'flex-start', // Align text to the left

@@ -1,4 +1,5 @@
 // ServiceModal.jsx
+
 'use client';
 
 import React, { useEffect, useState } from 'react';
@@ -174,8 +175,8 @@ const ServiceModal = ({ service, onClose }) => {
                     </div>
 
                     {/* Services List */}
-                    {services &&
-                      services.map((serviceItem, index) => (
+                    {services
+                      && services.map((serviceItem, index) => (
                         <React.Fragment key={index}>
                           <div className="text-white text-left">
                             {serviceItem.name}

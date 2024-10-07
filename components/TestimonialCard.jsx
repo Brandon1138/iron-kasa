@@ -13,7 +13,7 @@ const TestimonialCard = ({ testimonial }) => {
   useEffect(() => {
     // Detect touch devices
     setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0);
-    
+
     // Handle screen resize for responsive design
     const handleResize = () => {
       const width = window.innerWidth;

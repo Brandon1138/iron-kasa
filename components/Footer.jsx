@@ -1,8 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { socials } from '../constants';
 import Image from 'next/image'; // Import Next.js Image component
+import { socials } from '../constants';
 
 import styles from '../styles';
 import { footerVariants } from '../utils/motion';
@@ -40,8 +40,9 @@ const Footer = () => (
 
         {/* Updated Flex Container for Footer Items */}
         <div className="flex flex-col items-center justify-center md:flex-row md:justify-between flex-wrap
-                        gap-6 md:gap-4 text-center md:text-left">
-          
+                        gap-6 md:gap-4 text-center md:text-left"
+        >
+
           {/* Brand Logo with Glow Effect */}
           <div
             className="relative flex-shrink-0"
@@ -62,7 +63,7 @@ const Footer = () => (
           {/* <h4 className="font-bold text-[24px] text-white">iPhoneDoctor</h4> */}
 
           <p className="font-normal text-[14px] text-white opacity-50">All rights reserved 2024 iPhoneDoctor</p>
-          
+
           <div className="flex gap-4">
             {socials.map((social) => (
               <a href={social.link} key={social.name} target="_blank" rel="noopener noreferrer">
@@ -76,7 +77,7 @@ const Footer = () => (
               </a>
             ))}
           </div>
-          
+
           {/* Optional: Remove or keep based on your design */}
           <div className="footer-gradient" />
         </div>

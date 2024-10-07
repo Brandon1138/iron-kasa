@@ -70,7 +70,7 @@ const Hero = () => {
           </motion.h1>
           <motion.h1
             variants={textVariant(1.2)}
-            className={`${styles.heroHeading} flex items-center gap-x-4 ml-[270px] md:ml-[185px] lg:ml-[116px]`}
+            className={`${styles.heroHeading} flex items-center gap-x-4 ml-[320px] md:ml-[238px] lg:ml-[179px]`}
           >
             <span className="whitespace-nowrap">reparații</span>
             <WordFlip />

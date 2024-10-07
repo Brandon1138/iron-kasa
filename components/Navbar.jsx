@@ -49,9 +49,7 @@ const Navbar = () => {
       return;
     }
 
-    const results = iPhoneServiceDetails.filter((iphone) =>
-      iphone.title.toLowerCase().includes(query.toLowerCase())
-    );
+    const results = iPhoneServiceDetails.filter((iphone) => iphone.title.toLowerCase().includes(query.toLowerCase()));
 
     setSearchResults(results);
   };
@@ -81,20 +79,20 @@ const Navbar = () => {
     const handleClickOutside = (event) => {
       // Close Menu if clicking outside
       if (
-        isMenuOpen &&
-        menuRef.current &&
-        !menuRef.current.contains(event.target) &&
-        buttonRef.current &&
-        !buttonRef.current.contains(event.target)
+        isMenuOpen
+        && menuRef.current
+        && !menuRef.current.contains(event.target)
+        && buttonRef.current
+        && !buttonRef.current.contains(event.target)
       ) {
         setIsMenuOpen(false);
       }
 
       // Close Search Bar if clicking outside
       if (
-        isSearchOpen &&
-        searchContainerRef.current &&
-        !searchContainerRef.current.contains(event.target)
+        isSearchOpen
+        && searchContainerRef.current
+        && !searchContainerRef.current.contains(event.target)
       ) {
         setIsSearchOpen(false);
       }
@@ -197,33 +195,31 @@ const Navbar = () => {
                                 className="flex-shrink-0 rounded"
                               />
                               <span className="text-white">
-                                {iphone.title.split(new RegExp(`(${searchQuery})`, 'gi')).map((part, i) =>
-                                  part.toLowerCase() === searchQuery.toLowerCase() ? (
-                                    <span
-                                      key={i}
-                                      className="bg-gradient-to-r font-bold-animate bg-clip-text text-transparent"
-                                    >
-                                      {part}
-                                    </span>
-                                  ) : (
-                                    part
-                                  )
-                                )}
+                                {iphone.title.split(new RegExp(`(${searchQuery})`, 'gi')).map((part, i) => (part.toLowerCase() === searchQuery.toLowerCase() ? (
+                                  <span
+                                    key={i}
+                                    className="bg-gradient-to-r font-bold-animate bg-clip-text text-transparent"
+                                  >
+                                    {part}
+                                  </span>
+                                ) : (
+                                  part
+                                )))}
                               </span>
                             </button>
                           </li>
                         ))
                       ) : (
                         <li className="px-4 py-2 text-white flex items-center space-x-2" aria-hidden="true">
-                        <Image
-                          src="/no-results.png"
-                          alt="Nu sunt rezultate"
-                          width={20} // Adjust as needed
-                          height={20} // Adjust as needed
-                          className="flex-shrink-0"
-                        />
-                        <span>Nu sunt rezultate.</span>
-                      </li>
+                          <Image
+                            src="/no-results.png"
+                            alt="Nu sunt rezultate"
+                            width={20} // Adjust as needed
+                            height={20} // Adjust as needed
+                            className="flex-shrink-0"
+                          />
+                          <span>Nu sunt rezultate.</span>
+                        </li>
                       )}
                     </ul>
                   )}
