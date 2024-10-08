@@ -17,7 +17,7 @@ const Hero = () => {
 
   // Animate scale and borderRadius based on scroll progress
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.85]);
-  const borderRadius = useTransform(scrollYProgress, [0, 1], [0, 44]);
+  const borderRadius = useTransform(scrollYProgress, [0, 1], [0, 60]);
 
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
@@ -35,7 +35,7 @@ const Hero = () => {
 
   return (
     <section
-      className={`${styles.yPaddings} py-16 lg:py-24 md:py-20 sm:py-16 relative`}
+      className={`${styles.yPaddings} py-14 lg:py-22 md:py-20 sm:py-16 relative`}
       id="home"
     >
       {/* Texture Background with 4px Blur */}
@@ -71,7 +71,7 @@ const Hero = () => {
           </motion.h1>
           <motion.h1
             variants={textVariant(1.2)}
-            className={`${styles.heroHeading} flex items-center gap-x-4 ml-[320px] md:ml-[238px] lg:ml-[179px]`}
+            className={`${styles.heroHeading} flex items-center gap-x-3 ml-[320px] md:ml-[238px] lg:ml-[179px]`}
           >
             <span className="whitespace-nowrap">reparații</span>
             <WordFlip />
