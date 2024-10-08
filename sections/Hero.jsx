@@ -36,6 +36,7 @@ const Hero = () => {
   return (
     <section
       className={`${styles.yPaddings} py-16 lg:py-24 md:py-20 sm:py-16 relative`}
+      id="home"
     >
       {/* Texture Background with 4px Blur */}
       <div
