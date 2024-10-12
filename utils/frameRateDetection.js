@@ -2,7 +2,7 @@
 
 export const detectFrameRate = () => {
   if (typeof window === 'undefined') {
-    // If window is undefined, resolve to false to prevent animations
+    // If window is undefined (e.g., during SSR), resolve to false to prevent animations
     return Promise.resolve(false);
   }
 
