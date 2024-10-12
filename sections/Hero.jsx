@@ -40,21 +40,8 @@ const Hero = () => {
     >
       {/* Texture Background with 4px Blur */}
       <div
-        className="absolute inset-0 bg-cover bg-center z-0 blur-md"
-        style={{ backgroundImage: 'url(/texture.jpg)' }}
-      />
-
-      {/* Black Overlay with 50% Opacity */}
-      <div className="absolute inset-0 bg-black opacity-50 z-10" />
-
-      {/* Noise Overlay */}
-      <div
-        className="absolute inset-0 z-20"
-        style={{
-          backgroundImage: 'url(/noise.png)',
-          opacity: 0.05,
-          backgroundRepeat: 'repeat',
-        }}
+        className="absolute inset-0 bg-cover bg-center z-0"
+        style={{ backgroundImage: 'url(/texture-new.jpg)' }}
       />
 
       {/* Content Wrapper */}
