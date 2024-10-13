@@ -41,7 +41,7 @@ const MotionWrapper = ({ children, variants, initial, animate, ...props }) => {
       <motion.div
         variants={variants}
         initial={initial}
-        animate={animate}
+        whileInView={animate}
         {...props}
       >
         {children}

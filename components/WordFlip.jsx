@@ -97,7 +97,7 @@ const WordFlip = () => {
 
   return (
     <span
-      className="inline-block relative overflow-hidden"
+      className="inline-block relative overflow-hidden mt-1"
       style={{ width: '450px', height: '1em' }} // Increased width to 450px
     >
       <AnimatePresence>

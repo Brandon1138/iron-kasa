@@ -18,7 +18,7 @@ const About = () => (
     <MotionWrapper
       variants={staggerContainer}
       initial="hidden"
-      animate="show"
+      whileInView="show"
       className="w-full flex flex-col px-6 lg:max-w-[85vw] mx-auto pb-2"
     >
       {/* Section Title */}
@@ -28,7 +28,7 @@ const About = () => (
       <MotionWrapper
         variants={fadeIn('up', 'tween', 0.2, 1)}
         initial="hidden"
-        animate="show"
+        whileInView="show"
         className="mt-[8px] font-bold lg:text-[64px] md:text-[48px] sm:text-[32px] text-[32px] text-left text-white"
       >
         Rezolvăm{' '}
@@ -42,7 +42,7 @@ const About = () => (
       <MotionWrapper
         variants={staggerContainer}
         initial="hidden"
-        animate="show"
+        whileInView="show"
         className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12"
       >
         {features.map((feature, index) => (
@@ -50,7 +50,7 @@ const About = () => (
             key={feature.title}
             variants={fadeIn('up', 'tween', 0.2 * index, 0.8)}
             initial="hidden"
-            animate="show"
+            whileInView="show"
           >
             <Features
               imgUrl={feature.imgUrl}
