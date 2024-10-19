@@ -1,12 +1,15 @@
+// components/Navbar.jsx
+
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { iPhoneServiceDetails } from '../constants';
 import ServiceModal from './ServiceModal';
 import styles from '../styles';
 import { navVariants } from '../utils/motion';
+import { AnimationContext } from '../context/AnimationContext'; // Import the AnimationContext
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,15 +17,21 @@ const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [selectedService, setSelectedService] = useState(null);
+  const [isGraphicsOpen, setIsGraphicsOpen] = useState(false); // State for Graphics settings
 
   const menuRef = useRef(null);
   const buttonRef = useRef(null);
   const searchContainerRef = useRef(null);
   const searchInputRef = useRef(null);
 
+  const { canAnimate, toggleCanAnimate } = useContext(AnimationContext); // Access context
+
   // Toggle the menu open/close
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
+    if (isMenuOpen) {
+      setIsGraphicsOpen(false); // Close Graphics panel when menu closes
+    }
   };
 
   // Toggle the search bar
@@ -86,6 +95,7 @@ const Navbar = () => {
         && !buttonRef.current.contains(event.target)
       ) {
         setIsMenuOpen(false);
+        setIsGraphicsOpen(false);
       }
 
       // Close Search Bar if clicking outside
@@ -101,17 +111,19 @@ const Navbar = () => {
     const handleScroll = () => {
       if (isMenuOpen) setIsMenuOpen(false);
       if (isSearchOpen) setIsSearchOpen(false);
+      if (isGraphicsOpen) setIsGraphicsOpen(false);
     };
 
     const handleKeyDown = (event) => {
       if (event.key === 'Escape') {
         if (isMenuOpen) setIsMenuOpen(false);
         if (isSearchOpen) setIsSearchOpen(false);
+        if (isGraphicsOpen) setIsGraphicsOpen(false);
         if (selectedService) setSelectedService(null);
       }
     };
 
-    if (isMenuOpen || isSearchOpen || selectedService) {
+    if (isMenuOpen || isSearchOpen || isGraphicsOpen || selectedService) {
       document.addEventListener('mousedown', handleClickOutside);
       window.addEventListener('scroll', handleScroll);
       document.addEventListener('keydown', handleKeyDown);
@@ -126,7 +138,7 @@ const Navbar = () => {
       window.removeEventListener('scroll', handleScroll);
       document.removeEventListener('keydown', handleKeyDown);
     };
-  }, [isMenuOpen, isSearchOpen, selectedService]);
+  }, [isMenuOpen, isSearchOpen, isGraphicsOpen, selectedService]);
 
   return (
     <>
@@ -345,7 +357,52 @@ const Navbar = () => {
                         Contact
                       </a>
                     </li>
-                    {/* Add more menu items as needed */}
+                    {/* Separator */}
+                    <li>
+                      <hr className="border-gray-700" />
+                    </li>
+                    {/* Graphics Menu Item */}
+                    <li>
+                      <button
+                        type="button"
+                        className="text-white text-lg transition-all duration-300 ease-in-out hover:text-transparent hover:bg-gradient-to-r hover:from-green-400 hover:to-blue-600 hover:bg-clip-text hover:-webkit-background-clip-text hover:font-bold-animate focus:outline-none w-full text-left flex items-center justify-between"
+                        onClick={() => setIsGraphicsOpen((prev) => !prev)}
+                        aria-expanded={isGraphicsOpen}
+                        aria-controls="graphics-settings-menu-mobile"
+                      >
+                        <span>Graphics</span>
+                        {/* Icon for expanding/collapsing */}
+                        <span className="transform transition-transform duration-200">
+                          {isGraphicsOpen ? '▲' : '▼'}
+                        </span>
+                      </button>
+                      {/* Graphics Settings */}
+                      <AnimatePresence>
+                        {isGraphicsOpen && (
+                          <motion.div
+                            id="graphics-settings-menu-mobile"
+                            className="mt-2 pl-4"
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                          >
+                            <label className="flex items-center space-x-2 text-white text-sm">
+                              <span className="relative inline-flex items-center cursor-pointer">
+                                <input
+                                  type="checkbox"
+                                  checked={canAnimate}
+                                  onChange={toggleCanAnimate}
+                                  className="sr-only peer"
+                                />
+                                <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-purple-300 dark:peer-focus:ring-purple-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-purple-600" />
+                              </span>
+                              <span>Toggle Animated Glow</span>
+                            </label>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </li>
                   </ul>
                 </motion.div>
               </>
