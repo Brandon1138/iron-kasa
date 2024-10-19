@@ -1,12 +1,10 @@
-// components/MotionWrapper.jsx
-
 'use client';
 
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { detectFrameRate } from '../utils/frameRateDetection';
 
-const MotionWrapper = ({ children, variants, initial, animate, ...props }) => {
+const MotionWrapper = ({ children, variants, initial, animate, style, ...props }) => {
   const [canAnimate, setCanAnimate] = useState(false);
   const [hasChecked, setHasChecked] = useState(false);
 
@@ -33,7 +31,7 @@ const MotionWrapper = ({ children, variants, initial, animate, ...props }) => {
 
   if (!hasChecked) {
     // Render static content while checking
-    return <div {...props}>{children}</div>;
+    return <div {...props} style={style}>{children}</div>;
   }
 
   if (canAnimate) {
@@ -41,7 +39,8 @@ const MotionWrapper = ({ children, variants, initial, animate, ...props }) => {
       <motion.div
         variants={variants}
         initial={initial}
-        whileInView={animate}
+        animate={animate}
+        style={style} // Ensure 'style' is applied here
         {...props}
       >
         {children}
@@ -50,7 +49,7 @@ const MotionWrapper = ({ children, variants, initial, animate, ...props }) => {
   }
 
   // If animations are not enabled, render static content
-  return <div {...props}>{children}</div>;
+  return <div {...props} style={style}>{children}</div>;
 };
 
 export default MotionWrapper;

@@ -33,17 +33,19 @@ const HeroClient = () => {
   return (
     <div ref={ref} className="relative z-40">
       {!prefersReducedMotion ? (
-        <MotionWrapper
+        <motion.div
           style={{
             scale,
             borderRadius: borderRadius,
           }}
-          variants={fadeIn('up', 'tween', 0.2, 1)}
-          initial="hidden"
-          animate="show"
           className="relative w-full lg:pt-16 md:pt-12 sm:pt-8 pt-8"
         >
-          <div className="w-full aspect-video">
+          <MotionWrapper
+            variants={fadeIn('up', 'tween', 0.2, 1)}
+            initial="hidden"
+            animate="show"
+            className="w-full aspect-video"
+          >
             <motion.video
               style={{
                 borderRadius: borderRadius,
@@ -73,8 +75,8 @@ const HeroClient = () => {
               {/* Fallback Text */}
               Your browser does not support the video tag.
             </motion.video>
-          </div>
-        </MotionWrapper>
+          </MotionWrapper>
+        </motion.div>
       ) : (
         // Render static content without animations
         <div className="relative w-full lg:pt-16 md:pt-12 sm:pt-8 pt-8">

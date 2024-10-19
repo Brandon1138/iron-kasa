@@ -1,144 +1,35 @@
-// components/Navbar.jsx
-
 'use client';
 
-import React, { useState, useEffect, useRef, useContext } from 'react';
+import React, { useState, Suspense, memo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Image from 'next/image';
-import { iPhoneServiceDetails } from '../constants';
-import ServiceModal from './ServiceModal';
+import dynamic from 'next/dynamic';
 import styles from '../styles';
 import { navVariants } from '../utils/motion';
-import { AnimationContext } from '../context/AnimationContext'; // Import the AnimationContext
+import ServiceModal from './ServiceModal';
+import ErrorBoundary from './ErrorBoundary'; // Ensure you have an ErrorBoundary component
 
-const Navbar = () => {
+// Lazy load child components
+const SearchBar = dynamic(() => import('./SearchBar'), {
+  suspense: true,
+});
+const BrandLogo = dynamic(() => import('./BrandLogo'), {
+  suspense: true,
+});
+const Menu = dynamic(() => import('./Menu'), {
+  suspense: true,
+});
+
+const Navbar = memo(() => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
   const [selectedService, setSelectedService] = useState(null);
-  const [isGraphicsOpen, setIsGraphicsOpen] = useState(false); // State for Graphics settings
+  const [isGraphicsOpen, setIsGraphicsOpen] = useState(false);
 
-  const menuRef = useRef(null);
-  const buttonRef = useRef(null);
-  const searchContainerRef = useRef(null);
-  const searchInputRef = useRef(null);
-
-  const { canAnimate, toggleCanAnimate } = useContext(AnimationContext); // Access context
-
-  // Toggle the menu open/close
-  const toggleMenu = () => {
-    setIsMenuOpen((prev) => !prev);
-    if (isMenuOpen) {
-      setIsGraphicsOpen(false); // Close Graphics panel when menu closes
-    }
-  };
-
-  // Toggle the search bar
-  const handleSearchToggle = () => {
-    setIsSearchOpen((prev) => !prev);
-    setSearchQuery('');
-    setSearchResults([]);
-    if (!isSearchOpen) {
-      setTimeout(() => {
-        if (searchInputRef.current) {
-          searchInputRef.current.focus();
-        }
-      }, 300);
-    }
-  };
-
-  // Handle search input changes
-  const handleSearchChange = (e) => {
-    const query = e.target.value;
-    setSearchQuery(query);
-
-    if (query.length === 0) {
-      setSearchResults([]);
-      return;
-    }
-
-    const results = iPhoneServiceDetails.filter((iphone) => iphone.title.toLowerCase().includes(query.toLowerCase()));
-
-    setSearchResults(results);
-  };
-
-  // Handle clicking on a search result
-  const handleResultClick = (iphone) => {
-    setSelectedService(iphone);
-    setIsSearchOpen(false);
-    setSearchQuery('');
-    setSearchResults([]);
-  };
-
-  // Handle keyboard interaction on search results
-  const handleResultKeyDown = (e, iphone) => {
-    if (e.key === 'Enter') {
-      handleResultClick(iphone);
-    }
-  };
-
-  // Handle modal close
-  const handleModalClose = () => {
-    setSelectedService(null);
-  };
-
-  // Close the menu and search bar when clicking outside, scrolling, or pressing Escape
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      // Close Menu if clicking outside
-      if (
-        isMenuOpen
-        && menuRef.current
-        && !menuRef.current.contains(event.target)
-        && buttonRef.current
-        && !buttonRef.current.contains(event.target)
-      ) {
-        setIsMenuOpen(false);
-        setIsGraphicsOpen(false);
-      }
-
-      // Close Search Bar if clicking outside
-      if (
-        isSearchOpen
-        && searchContainerRef.current
-        && !searchContainerRef.current.contains(event.target)
-      ) {
-        setIsSearchOpen(false);
-      }
-    };
-
-    const handleScroll = () => {
-      if (isMenuOpen) setIsMenuOpen(false);
-      if (isSearchOpen) setIsSearchOpen(false);
-      if (isGraphicsOpen) setIsGraphicsOpen(false);
-    };
-
-    const handleKeyDown = (event) => {
-      if (event.key === 'Escape') {
-        if (isMenuOpen) setIsMenuOpen(false);
-        if (isSearchOpen) setIsSearchOpen(false);
-        if (isGraphicsOpen) setIsGraphicsOpen(false);
-        if (selectedService) setSelectedService(null);
-      }
-    };
-
-    if (isMenuOpen || isSearchOpen || isGraphicsOpen || selectedService) {
-      document.addEventListener('mousedown', handleClickOutside);
-      window.addEventListener('scroll', handleScroll);
-      document.addEventListener('keydown', handleKeyDown);
-    } else {
-      document.removeEventListener('mousedown', handleClickOutside);
-      window.removeEventListener('scroll', handleScroll);
-      document.removeEventListener('keydown', handleKeyDown);
-    }
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-      window.removeEventListener('scroll', handleScroll);
-      document.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [isMenuOpen, isSearchOpen, isGraphicsOpen, selectedService]);
+  // Removed toggleCanAnimate since it's not used
+  // const toggleCanAnimate = useCallback(() => {
+  //   // This function should be handled within the AnimationContext
+  //   // It's passed down to child components
+  // }, []);
 
   return (
     <>
@@ -150,273 +41,44 @@ const Navbar = () => {
         aria-label="Main Navigation"
       >
         <div className={`${styles.innerWidth} mx-auto flex justify-between gap-8 items-center`}>
-          {/* Search Container */}
-          <div className="relative flex items-center" ref={searchContainerRef}>
-            {/* Always render the search icon */}
-            <motion.button
-              onClick={handleSearchToggle}
-              className="w-[24px] h-[24px] object-contain cursor-pointer z-50 focus:outline-none"
-              aria-label="Search"
-              animate={{ opacity: isSearchOpen ? 0 : 1 }}
-              transition={{ duration: 0.3 }}
-            >
-              <Image src="/search.svg" alt="search" width={24} height={24} />
-            </motion.button>
+          <ErrorBoundary>
+            <Suspense fallback={<div className="w-24 h-24 bg-gray-700 rounded" />}>
+              {/* Search Bar */}
+              <SearchBar
+                isSearchOpen={isSearchOpen}
+                toggleSearch={setIsSearchOpen}
+                setSelectedService={setSelectedService}
+              />
+            </Suspense>
+          </ErrorBoundary>
 
-            {/* Render the search bar when open */}
-            <AnimatePresence>
-              {isSearchOpen && (
-                <motion.div
-                  key="search-bar"
-                  initial={{ width: '0px', opacity: 0 }}
-                  animate={{ width: '300px', opacity: 1 }}
-                  exit={{ width: '0px', opacity: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="absolute left-0 top-1/2 -translate-y-1/2 bg-primary-black bg-opacity-90 backdrop-blur-md rounded-full flex items-center px-4 z-60"
-                >
-                  <motion.input
-                    type="text"
-                    ref={searchInputRef}
-                    value={searchQuery}
-                    onChange={handleSearchChange}
-                    placeholder="Caută dispozitiv..."
-                    initial={{ width: '0px' }}
-                    animate={{ width: '100%' }}
-                    exit={{ width: '0px' }}
-                    transition={{ duration: 0.3 }}
-                    className="w-full px-4 py-2 bg-transparent text-white placeholder-white focus:outline-none"
-                    aria-label="Search iPhones"
-                  />
-                  {/* Search Results or No Results Message */}
-                  {searchQuery.length > 0 && (
-                    <ul className="absolute top-full left-0 right-0 bg-primary-black bg-opacity-90 backdrop-blur-md rounded-3xl mt-2 max-h-60 overflow-y-auto hide-scrollbar z-50">
-                      {searchResults.length > 0 ? (
-                        searchResults.map((iphone, index) => (
-                          <li key={index} className="px-4 py-2">
-                            <button
-                              type="button"
-                              onClick={() => handleResultClick(iphone)}
-                              onKeyDown={(e) => handleResultKeyDown(e, iphone)}
-                              className="w-full text-left hover:bg-neutral-700 cursor-pointer flex items-center space-x-4 focus:outline-none focus:bg-purple-900 rounded-2xl"
-                            >
-                              <Image
-                                src={iphone.imgUrl}
-                                alt={iphone.title}
-                                width={40}
-                                height={40}
-                                className="flex-shrink-0 rounded"
-                              />
-                              <span className="text-white">
-                                {iphone.title.split(new RegExp(`(${searchQuery})`, 'gi')).map((part, i) => (part.toLowerCase() === searchQuery.toLowerCase() ? (
-                                  <span
-                                    key={i}
-                                    className="bg-gradient-to-r font-bold-animate bg-clip-text text-transparent"
-                                  >
-                                    {part}
-                                  </span>
-                                ) : (
-                                  part
-                                )))}
-                              </span>
-                            </button>
-                          </li>
-                        ))
-                      ) : (
-                        <li className="px-4 py-2 text-white flex items-center space-x-2" aria-hidden="true">
-                          <Image
-                            src="/no-results.png"
-                            alt="Nu sunt rezultate"
-                            width={20} // Adjust as needed
-                            height={20} // Adjust as needed
-                            className="flex-shrink-0"
-                          />
-                          <span>Nu sunt rezultate.</span>
-                        </li>
-                      )}
-                    </ul>
-                  )}
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
+          <ErrorBoundary>
+            <Suspense fallback={<div className="w-24 h-24 bg-gray-700 rounded" />}>
+              {/* Brand Logo */}
+              <BrandLogo isSearchOpen={isSearchOpen} />
+            </Suspense>
+          </ErrorBoundary>
 
-          {/* Brand Logo with Glow Effect */}
-          <div
-            className={`relative flex-shrink-0 transition-opacity duration-300 ${
-              isSearchOpen ? 'opacity-0 lg:opacity-100' : 'opacity-100'
-            }`}
-            aria-hidden={isSearchOpen ? 'true' : 'false'}
-          >
-            {/* Glow Effect */}
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-[#a855f7] via-[#f43f5e] to-[#d97706] rounded-full filter blur-lg opacity-40"
-              aria-hidden="true"
-              initial={{ scale: 1 }}
-              animate={{ scale: [1, 1.05, 1] }}
-              transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
-            />
-            {/* Logo */}
-            <Image src="/logo.svg" alt="iPhoneDoctor Logo" width={150} height={50} />
-          </div>
-
-          {/* Toggle Menu Button */}
-          <button
-            type="button"
-            aria-label="Toggle menu"
-            aria-haspopup="true"
-            aria-expanded={isMenuOpen}
-            className="w-[24px] h-[24px] object-contain cursor-pointer focus:outline-none z-60"
-            onClick={toggleMenu}
-            ref={buttonRef}
-          >
-            <Image src="/menu.svg" alt="menu" width={24} height={24} />
-          </button>
-
-          {/* Menu Modal */}
-          <AnimatePresence>
-            {isMenuOpen && (
-              <>
-                {/* Backdrop with blur */}
-                <motion.div
-                  className="fixed inset-0 z-40"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 0.6 }}
-                  exit={{ opacity: 0 }}
-                  onClick={() => setIsMenuOpen(false)}
-                  aria-hidden="true"
-                />
-                {/* Menu Content */}
-                <motion.div
-                  className="fixed top-6 right-6 z-50 p-6 rounded-3xl w-64 bg-primary-black bg-opacity-90 backdrop-blur-md"
-                  role="dialog"
-                  aria-modal="true"
-                  aria-labelledby="menu-heading"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.8 }}
-                  transition={{ duration: 0.3 }}
-                  ref={menuRef}
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <h2 id="menu-heading" className="sr-only">
-                    Navigation Menu
-                  </h2>
-                  <ul className="flex flex-col space-y-4">
-                    {/* Menu Items */}
-                    <li>
-                      <a
-                        href="#home"
-                        className="text-white text-lg transition-all duration-300 ease-in-out hover:text-transparent hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-600 hover:bg-clip-text hover:-webkit-background-clip-text hover:font-bold-animate"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Acasă
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#about"
-                        className="text-white text-lg transition-all duration-300 ease-in-out hover:text-transparent hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-600 hover:bg-clip-text hover:-webkit-background-clip-text hover:font-bold-animate"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Despre noi
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#services"
-                        className="text-white text-lg transition-all duration-300 ease-in-out hover:text-transparent hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-600 hover:bg-clip-text hover:-webkit-background-clip-text hover:font-bold-animate"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Servicii
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#transport"
-                        className="text-white text-lg transition-all duration-300 ease-in-out hover:text-transparent hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-600 hover:bg-clip-text hover:-webkit-background-clip-text hover:font-bold-animate"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Transport
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#testimonials"
-                        className="text-white text-lg transition-all duration-300 ease-in-out hover:text-transparent hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-600 hover:bg-clip-text hover:-webkit-background-clip-text hover:font-bold-animate"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Testimoniale
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#contact"
-                        className="text-white text-lg transition-all duration-300 ease-in-out hover:text-transparent hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-600 hover:bg-clip-text hover:-webkit-background-clip-text hover:font-bold-animate"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Contact
-                      </a>
-                    </li>
-                    {/* Separator */}
-                    <li>
-                      <hr className="border-gray-700" />
-                    </li>
-                    {/* Graphics Menu Item */}
-                    <li>
-                      <button
-                        type="button"
-                        className="text-white text-lg transition-all duration-300 ease-in-out hover:text-transparent hover:bg-gradient-to-r hover:from-green-400 hover:to-blue-600 hover:bg-clip-text hover:-webkit-background-clip-text hover:font-bold-animate focus:outline-none w-full text-left flex items-center justify-between"
-                        onClick={() => setIsGraphicsOpen((prev) => !prev)}
-                        aria-expanded={isGraphicsOpen}
-                        aria-controls="graphics-settings-menu-mobile"
-                      >
-                        <span>Graphics</span>
-                        {/* Icon for expanding/collapsing */}
-                        <span className="transform transition-transform duration-200">
-                          {isGraphicsOpen ? '▲' : '▼'}
-                        </span>
-                      </button>
-                      {/* Graphics Settings */}
-                      <AnimatePresence>
-                        {isGraphicsOpen && (
-                          <motion.div
-                            id="graphics-settings-menu-mobile"
-                            className="mt-2 pl-4"
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: 'auto', opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.3 }}
-                          >
-                            <label className="flex items-center space-x-2 text-white text-sm">
-                              <span className="relative inline-flex items-center cursor-pointer">
-                                <input
-                                  type="checkbox"
-                                  checked={canAnimate}
-                                  onChange={toggleCanAnimate}
-                                  className="sr-only peer"
-                                />
-                                <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-purple-300 dark:peer-focus:ring-purple-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-purple-600" />
-                              </span>
-                              <span>Toggle Animated Glow</span>
-                            </label>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </li>
-                  </ul>
-                </motion.div>
-              </>
-            )}
-          </AnimatePresence>
+          <ErrorBoundary>
+            <Suspense fallback={<div className="w-24 h-24 bg-gray-700 rounded" />}>
+              {/* Menu */}
+              <Menu
+                isMenuOpen={isMenuOpen}
+                toggleMenu={setIsMenuOpen}
+                isGraphicsOpen={isGraphicsOpen}
+                setIsGraphicsOpen={setIsGraphicsOpen}
+              />
+            </Suspense>
+          </ErrorBoundary>
         </div>
       </motion.nav>
 
       {/* Service Modal */}
       <AnimatePresence>
-        {selectedService && <ServiceModal service={selectedService} onClose={handleModalClose} />}
+        {selectedService && <ServiceModal service={selectedService} onClose={() => setSelectedService(null)} />}
       </AnimatePresence>
     </>
   );
-};
+});
 
 export default Navbar;
