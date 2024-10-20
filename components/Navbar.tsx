@@ -28,17 +28,21 @@ interface MenuProps {
   setIsGraphicsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-// Dynamic Imports with Proper Typing
+// Dynamic Imports with Proper Typing and Client-Side Rendering
 const SearchBar = dynamic<SearchBarProps>(() => import('./SearchBar'), {
   suspense: true,
+  // Ensure it's treated as a client component
+  ssr: false,
 });
 
 const BrandLogo = dynamic<BrandLogoProps>(() => import('./BrandLogo'), {
   suspense: true,
+  ssr: false,
 });
 
 const Menu = dynamic<MenuProps>(() => import('./Menu'), {
   suspense: true,
+  ssr: false,
 });
 
 const Navbar = memo(() => {
