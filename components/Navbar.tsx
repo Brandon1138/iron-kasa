@@ -1,35 +1,70 @@
+// components/Navbar.tsx
+
 'use client';
 
-import React, { useState, Suspense, memo } from 'react';
+import React, { useState, Suspense, memo, startTransition } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import dynamic from 'next/dynamic';
 import styles from '../styles';
 import { navVariants } from '../utils/motion';
 import ServiceModal from './ServiceModal';
-import ErrorBoundary from './ErrorBoundary'; // Ensure you have an ErrorBoundary component
+import ErrorBoundary from './ErrorBoundary';
 
-// Lazy load child components
-const SearchBar = dynamic(() => import('./SearchBar'), {
+// Define Prop Interfaces for Dynamic Components
+interface SearchBarProps {
+  isSearchOpen: boolean;
+  toggleSearch: React.Dispatch<React.SetStateAction<boolean>>;
+  setSelectedService: React.Dispatch<React.SetStateAction<string | null>>;
+}
+
+interface BrandLogoProps {
+  isSearchOpen: boolean;
+}
+
+interface MenuProps {
+  isMenuOpen: boolean;
+  toggleMenu: React.Dispatch<React.SetStateAction<boolean>>;
+  isGraphicsOpen: boolean;
+  setIsGraphicsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+// Dynamic Imports with Proper Typing
+const SearchBar = dynamic<SearchBarProps>(() => import('./SearchBar'), {
   suspense: true,
 });
-const BrandLogo = dynamic(() => import('./BrandLogo'), {
+
+const BrandLogo = dynamic<BrandLogoProps>(() => import('./BrandLogo'), {
   suspense: true,
 });
-const Menu = dynamic(() => import('./Menu'), {
+
+const Menu = dynamic<MenuProps>(() => import('./Menu'), {
   suspense: true,
 });
 
 const Navbar = memo(() => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [selectedService, setSelectedService] = useState(null);
-  const [isGraphicsOpen, setIsGraphicsOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
+  const [selectedService, setSelectedService] = useState<string | null>(null);
+  const [isGraphicsOpen, setIsGraphicsOpen] = useState<boolean>(false);
 
-  // Removed toggleCanAnimate since it's not used
-  // const toggleCanAnimate = useCallback(() => {
-  //   // This function should be handled within the AnimationContext
-  //   // It's passed down to child components
-  // }, []);
+  // Wrap state updates in startTransition for smoother hydration handling
+  const handleToggleMenu = () => {
+    startTransition(() => {
+      setIsMenuOpen((prev) => !prev);
+    });
+  };
+
+  const handleToggleSearch = () => {
+    startTransition(() => {
+      setIsSearchOpen((prev) => !prev);
+    });
+  };
+
+  const handleToggleGraphics = () => {
+    startTransition(() => {
+      setIsGraphicsOpen((prev) => !prev);
+    });
+  };
 
   return (
     <>
@@ -50,8 +85,8 @@ const Navbar = memo(() => {
               {/* Search Bar */}
               <SearchBar
                 isSearchOpen={isSearchOpen}
-                toggleSearch={setIsSearchOpen}
-                setSelectedService={setSelectedService}
+                toggleSearch={handleToggleSearch}
+                setSelectedService={setSelectedService} // Pass setSelectedService directly
               />
             </Suspense>
           </ErrorBoundary>
@@ -72,9 +107,9 @@ const Navbar = memo(() => {
               {/* Menu */}
               <Menu
                 isMenuOpen={isMenuOpen}
-                toggleMenu={setIsMenuOpen}
+                toggleMenu={handleToggleMenu}
                 isGraphicsOpen={isGraphicsOpen}
-                setIsGraphicsOpen={setIsGraphicsOpen}
+                setIsGraphicsOpen={handleToggleGraphics}
               />
             </Suspense>
           </ErrorBoundary>

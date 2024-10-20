@@ -1,3 +1,5 @@
+// components/BrandLogo.tsx
+
 'use client';
 
 import React, { useContext, memo } from 'react';
@@ -5,8 +7,18 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { AnimationContext } from '../context/AnimationContext';
 
-const BrandLogo = memo(({ isSearchOpen }) => {
-  const { canAnimate } = useContext(AnimationContext);
+interface BrandLogoProps {
+  isSearchOpen: boolean;
+}
+
+const BrandLogo = memo(({ isSearchOpen }: BrandLogoProps) => {
+  const context = useContext(AnimationContext);
+  if (!context) {
+    throw new Error(
+      'AnimationContext must be used within an AnimationProvider'
+    );
+  }
+  const { canAnimate } = context;
 
   return (
     <div

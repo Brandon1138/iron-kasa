@@ -11,22 +11,61 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { AnimationContext } from '../context/AnimationContext';
 
+// Define MenuItem type for consistency
+type MenuItem =
+  | 'Acasă'
+  | 'Despre noi'
+  | 'Servicii'
+  | 'Transport'
+  | 'Testimoniale'
+  | 'Contact';
+
+// Define MenuProps interface
+interface MenuProps {
+  isMenuOpen: boolean;
+  toggleMenu: React.Dispatch<React.SetStateAction<boolean>>;
+  isGraphicsOpen: boolean;
+  setIsGraphicsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+// Define menu items
+const menuItems: MenuItem[] = [
+  'Acasă',
+  'Despre noi',
+  'Servicii',
+  'Transport',
+  'Testimoniale',
+  'Contact',
+];
+
 const Menu = memo(
-  ({ isMenuOpen, toggleMenu, isGraphicsOpen, setIsGraphicsOpen }) => {
-    const { canAnimate, toggleCanAnimate } = useContext(AnimationContext);
-    const menuRef = useRef(null);
-    const buttonRef = useRef(null);
-    const firstMenuItemRef = useRef(null);
+  ({
+    isMenuOpen,
+    toggleMenu,
+    isGraphicsOpen,
+    setIsGraphicsOpen,
+  }: MenuProps) => {
+    const context = useContext(AnimationContext);
+    if (!context) {
+      throw new Error(
+        'AnimationContext must be used within an AnimationProvider'
+      );
+    }
+    const { canAnimate, toggleCanAnimate } = context;
+
+    const menuRef = useRef<HTMLDivElement>(null);
+    const buttonRef = useRef<HTMLButtonElement>(null);
+    const firstMenuItemRef = useRef<HTMLAnchorElement>(null);
 
     // Close the menu when clicking outside or pressing Escape
     useEffect(() => {
-      const handleClickOutside = (event) => {
+      const handleClickOutside = (event: MouseEvent) => {
         if (
           isMenuOpen &&
           menuRef.current &&
-          !menuRef.current.contains(event.target) &&
+          !menuRef.current.contains(event.target as Node) &&
           buttonRef.current &&
-          !buttonRef.current.contains(event.target)
+          !buttonRef.current.contains(event.target as Node)
         ) {
           startTransition(() => {
             toggleMenu(false);
@@ -44,7 +83,7 @@ const Menu = memo(
         }
       };
 
-      const handleKeyDown = (event) => {
+      const handleKeyDown = (event: KeyboardEvent) => {
         if (event.key === 'Escape') {
           startTransition(() => {
             if (isMenuOpen) toggleMenu(false);
@@ -76,35 +115,33 @@ const Menu = memo(
         'a[href], area[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex="0"]';
       const menuNode = menuRef.current;
       const focusableElements = menuNode
-        ? menuNode.querySelectorAll(focusableElementsString)
+        ? Array.from(
+            menuNode.querySelectorAll<HTMLElement>(focusableElementsString)
+          )
         : [];
       const firstFocusableElement = focusableElements[0];
       const lastFocusableElement =
         focusableElements[focusableElements.length - 1];
 
-      const handleTrapFocus = (e) => {
+      const handleTrapFocus = (e: KeyboardEvent) => {
         if (e.key !== 'Tab') return;
 
         if (e.shiftKey && document.activeElement === firstFocusableElement) {
           // Shift + Tab and at the first focusable element
           e.preventDefault();
-          lastFocusableElement.focus();
+          lastFocusableElement?.focus();
         } else if (
           !e.shiftKey &&
           document.activeElement === lastFocusableElement
         ) {
           // Tab and at the last focusable element
           e.preventDefault();
-          firstFocusableElement.focus();
+          firstFocusableElement?.focus();
         }
       };
 
       if (isMenuOpen) {
-        if (firstFocusableElement) {
-          setTimeout(() => {
-            firstFocusableElement.focus();
-          }, 0);
-        }
+        firstFocusableElement?.focus();
         if (menuNode) {
           menuNode.addEventListener('keydown', handleTrapFocus);
         }
@@ -117,6 +154,31 @@ const Menu = memo(
       };
     }, [isMenuOpen]);
 
+    // Handler to toggle menu open state
+    const handleToggleMenu = () => {
+      startTransition(() => {
+        toggleMenu(!isMenuOpen);
+      });
+    };
+
+    // Handler to close menu
+    const handleCloseMenu = () => {
+      startTransition(() => {
+        toggleMenu(false);
+        setIsGraphicsOpen(false);
+      });
+    };
+
+    // Handler for menu item click
+    const handleMenuItemClick = () => {
+      handleCloseMenu();
+    };
+
+    // Handler for backdrop click
+    const handleBackdropClick = () => {
+      handleCloseMenu();
+    };
+
     return (
       <>
         {/* Toggle Menu Button */}
@@ -126,7 +188,7 @@ const Menu = memo(
           aria-haspopup="true"
           aria-expanded={isMenuOpen}
           className="w-[24px] h-[24px] object-contain cursor-pointer rounded z-60"
-          onClick={() => startTransition(() => toggleMenu(!isMenuOpen))}
+          onClick={handleToggleMenu}
           ref={buttonRef}
         >
           <Image src="/menu.svg" alt="Menu Icon" width={24} height={24} />
@@ -142,7 +204,7 @@ const Menu = memo(
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 0.6 }}
                 exit={{ opacity: 0 }}
-                onClick={() => startTransition(() => toggleMenu(false))}
+                onClick={handleBackdropClick}
                 aria-hidden="true"
               />
 
@@ -164,19 +226,12 @@ const Menu = memo(
                 </h2>
                 <ul className="flex flex-col space-y-4">
                   {/* Menu Items */}
-                  {[
-                    'Acasă',
-                    'Despre noi',
-                    'Servicii',
-                    'Transport',
-                    'Testimoniale',
-                    'Contact',
-                  ].map((item, index) => (
+                  {menuItems.map((item, index) => (
                     <li key={item}>
                       <a
                         href={`#${item.toLowerCase().replace(/\s+/g, '')}`}
                         className="text-white text-lg transition-all duration-300 ease-in-out hover:text-transparent hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-600 hover:bg-clip-text hover:-webkit-background-clip-text hover:font-bold-animate rounded"
-                        onClick={() => startTransition(() => toggleMenu(false))}
+                        onClick={handleMenuItemClick}
                         ref={index === 0 ? firstMenuItemRef : null}
                       >
                         {item}
@@ -211,7 +266,7 @@ const Menu = memo(
                       {isGraphicsOpen && (
                         <motion.div
                           id="graphics-settings-menu-mobile"
-                          className="mt-2 pl-0" // Updated padding
+                          className="mt-2 pl-0"
                           initial={{ height: 0, opacity: 0 }}
                           animate={{ height: 'auto', opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
