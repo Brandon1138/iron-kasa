@@ -30,18 +30,16 @@ const Testimonials = () => {
   const combinedColumn2 = [...column2, ...column2];
   const combinedColumn3 = [...column3, ...column3];
 
-  
   return (
     <section
       className={`${styles.paddings} relative z-10 overflow-hidden bg-cover bg-center`}
       id="testimonials"
       style={{
         height: '100vh',
-
       }}
     >
       <div class="absolute top-0 left-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(103,46,150,0.3),rgba(255,255,255,0))]"></div>
-      
+
       {/* Overlay */}
       {/* <div className="absolute inset-0 bg-black opacity-50"></div> */}
 
@@ -85,7 +83,10 @@ const Testimonials = () => {
                 }}
               >
                 {combinedColumn1.map((testimonial, index) => (
-                  <TestimonialCard key={`col1-${index}`} testimonial={testimonial} />
+                  <TestimonialCard
+                    key={`col1-${index}`}
+                    testimonial={testimonial}
+                  />
                 ))}
               </motion.div>
 
@@ -100,7 +101,10 @@ const Testimonials = () => {
                 }}
               >
                 {combinedColumn2.map((testimonial, index) => (
-                  <TestimonialCard key={`col2-${index}`} testimonial={testimonial} />
+                  <TestimonialCard
+                    key={`col2-${index}`}
+                    testimonial={testimonial}
+                  />
                 ))}
               </motion.div>
 
@@ -115,7 +119,10 @@ const Testimonials = () => {
                 }}
               >
                 {combinedColumn3.map((testimonial, index) => (
-                  <TestimonialCard key={`col3-${index}`} testimonial={testimonial} />
+                  <TestimonialCard
+                    key={`col3-${index}`}
+                    testimonial={testimonial}
+                  />
                 ))}
               </motion.div>
             </div>

@@ -25,7 +25,9 @@ const SearchBar = memo(({ isSearchOpen, toggleSearch, setSelectedService }) => {
       return;
     }
 
-    const results = iPhoneServiceDetails.filter((iphone) => iphone.title.toLowerCase().includes(query.toLowerCase()));
+    const results = iPhoneServiceDetails.filter((iphone) =>
+      iphone.title.toLowerCase().includes(query.toLowerCase())
+    );
 
     setSearchResults(results);
   };
@@ -63,7 +65,9 @@ const SearchBar = memo(({ isSearchOpen, toggleSearch, setSelectedService }) => {
     const focusableItems = resultsRef.current.querySelectorAll('button');
     if (focusableItems.length === 0) return;
 
-    const currentIndex = Array.from(focusableItems).indexOf(document.activeElement);
+    const currentIndex = Array.from(focusableItems).indexOf(
+      document.activeElement
+    );
 
     if (e.key === 'ArrowDown') {
       e.preventDefault();
@@ -71,7 +75,8 @@ const SearchBar = memo(({ isSearchOpen, toggleSearch, setSelectedService }) => {
       focusableItems[nextIndex].focus();
     } else if (e.key === 'ArrowUp') {
       e.preventDefault();
-      const prevIndex = (currentIndex - 1 + focusableItems.length) % focusableItems.length;
+      const prevIndex =
+        (currentIndex - 1 + focusableItems.length) % focusableItems.length;
       focusableItems[prevIndex].focus();
     } else if (e.key === 'Escape') {
       toggleSearch(false);
@@ -82,9 +87,9 @@ const SearchBar = memo(({ isSearchOpen, toggleSearch, setSelectedService }) => {
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
-        isSearchOpen
-        && containerRef.current
-        && !containerRef.current.contains(event.target)
+        isSearchOpen &&
+        containerRef.current &&
+        !containerRef.current.contains(event.target)
       ) {
         toggleSearch(false);
       }
@@ -175,20 +180,23 @@ const SearchBar = memo(({ isSearchOpen, toggleSearch, setSelectedService }) => {
                         <span className="text-white">
                           {iphone.title
                             .split(new RegExp(`(${searchQuery})`, 'gi'))
-                            .map((part, i) => (part.toLowerCase() === searchQuery.toLowerCase() ? (
-                              <span
-                                key={i}
-                                className={
+                            .map((part, i) =>
+                              part.toLowerCase() ===
+                              searchQuery.toLowerCase() ? (
+                                <span
+                                  key={i}
+                                  className={
                                     canAnimate
                                       ? 'bg-gradient-to-r from-purple-400 to-pink-600 font-bold-animate bg-clip-text text-transparent'
                                       : 'font-bold'
                                   }
-                              >
-                                {part}
-                              </span>
-                            ) : (
-                              part
-                            )))}
+                                >
+                                  {part}
+                                </span>
+                              ) : (
+                                part
+                              )
+                            )}
                         </span>
                       </button>
                     </li>
@@ -216,5 +224,7 @@ const SearchBar = memo(({ isSearchOpen, toggleSearch, setSelectedService }) => {
     </div>
   );
 });
+
+SearchBar.displayName = 'Search Bar';
 
 export default SearchBar;

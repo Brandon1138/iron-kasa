@@ -2,7 +2,7 @@
 
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const words = ['Apple', 'iPhone', 'iPad', 'MacBook', 'iMac', 'Apple'];
@@ -14,6 +14,9 @@ const WordFlip = () => {
   const [isFlipping, setIsFlipping] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  const flipDurationRef = useRef(flipDuration);
+  const flipDelayRef = useRef(flipDelay);
 
   // Detect prefers-reduced-motion
   useEffect(() => {
@@ -30,7 +33,7 @@ const WordFlip = () => {
 
   // Detect small screens (e.g., max-width: 640px for Tailwind's 'sm')
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(max-width: 640px)'); // Tailwind's 'sm' breakpoint
+    const mediaQuery = window.matchMedia('(max-width: 640px)');
     setIsSmallScreen(mediaQuery.matches);
 
     const handleChange = () => {
@@ -56,10 +59,10 @@ const WordFlip = () => {
     // Start flipping after the initial render
     const initialFlipTimer = setTimeout(() => {
       setIsFlipping(true);
-    }, flipDuration + flipDelay);
+    }, flipDurationRef.current + flipDelayRef.current);
 
     return () => clearTimeout(initialFlipTimer);
-  }, [flipDuration, flipDelay, prefersReducedMotion, isSmallScreen]);
+  }, [prefersReducedMotion, isSmallScreen]);
 
   useEffect(() => {
     if (prefersReducedMotion || isSmallScreen) return;
@@ -67,7 +70,7 @@ const WordFlip = () => {
     if (isFlipping && currentWordIndex < words.length - 1) {
       const timer = setTimeout(() => {
         setCurrentWordIndex((prevIndex) => prevIndex + 1);
-      }, flipDuration + flipDelay);
+      }, flipDurationRef.current + flipDelayRef.current);
 
       return () => clearTimeout(timer);
     }
@@ -75,15 +78,7 @@ const WordFlip = () => {
       // Stop flipping when the last word is reached
       setIsFlipping(false);
     }
-  }, [
-    currentWordIndex,
-    isFlipping,
-    words.length,
-    flipDuration,
-    flipDelay,
-    prefersReducedMotion,
-    isSmallScreen,
-  ]);
+  }, [currentWordIndex, isFlipping, prefersReducedMotion, isSmallScreen]);
 
   // Determine which word to display based on screen size and flipping state
   const displayWord = isSmallScreen
@@ -98,7 +93,7 @@ const WordFlip = () => {
   return (
     <span
       className="inline-block relative overflow-hidden mt-1"
-      style={{ width: '450px', height: '1em' }} // Increased width to 450px
+      style={{ width: '450px', height: '1em' }}
     >
       <AnimatePresence>
         {(isFlipping || (currentWordIndex === 0 && !isSmallScreen)) && (
@@ -112,8 +107,8 @@ const WordFlip = () => {
             style={{
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'flex-start', // Align text to the left
-              paddingLeft: '0px', // Ensure there's no extra padding
+              justifyContent: 'flex-start',
+              paddingLeft: '0px',
             }}
           >
             {displayWord}
@@ -121,7 +116,8 @@ const WordFlip = () => {
         )}
       </AnimatePresence>
       {/* Static word with gradient after flipping or on small screens */}
-      {(!isFlipping && currentWordIndex === words.length - 1) || isSmallScreen ? (
+      {(!isFlipping && currentWordIndex === words.length - 1) ||
+      isSmallScreen ? (
         <motion.span
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

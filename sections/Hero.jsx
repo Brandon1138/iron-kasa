@@ -25,7 +25,11 @@ const Hero = () => (
       className="w-full flex flex-col relative z-40 pt-12 sm:pt-16 md:pt-24 lg:pt-32"
     >
       <div className="flex justify-center pt-8 sm:pt-8 items-center flex-col relative z-40 md:gap-y-2 lg:gap-y-3">
-        <MotionWrapper variants={textVariant(1.1)} initial="hidden" animate="show">
+        <MotionWrapper
+          variants={textVariant(1.1)}
+          initial="hidden"
+          animate="show"
+        >
           <h1 className={styles.heroHeading}>Specialiști în</h1>
         </MotionWrapper>
         <MotionWrapper

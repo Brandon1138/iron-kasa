@@ -4,12 +4,21 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { detectFrameRate } from '../utils/frameRateDetection';
 
-const MotionWrapper = ({ children, variants, initial, animate, style, ...props }) => {
+const MotionWrapper = ({
+  children,
+  variants,
+  initial,
+  animate,
+  style,
+  ...props
+}) => {
   const [canAnimate, setCanAnimate] = useState(false);
   const [hasChecked, setHasChecked] = useState(false);
 
   useEffect(() => {
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
 
     if (prefersReducedMotion) {
       setCanAnimate(false);
@@ -31,7 +40,11 @@ const MotionWrapper = ({ children, variants, initial, animate, style, ...props }
 
   if (!hasChecked) {
     // Render static content while checking
-    return <div {...props} style={style}>{children}</div>;
+    return (
+      <div {...props} style={style}>
+        {children}
+      </div>
+    );
   }
 
   if (canAnimate) {
@@ -49,7 +62,11 @@ const MotionWrapper = ({ children, variants, initial, animate, style, ...props }
   }
 
   // If animations are not enabled, render static content
-  return <div {...props} style={style}>{children}</div>;
+  return (
+    <div {...props} style={style}>
+      {children}
+    </div>
+  );
 };
 
 export default MotionWrapper;

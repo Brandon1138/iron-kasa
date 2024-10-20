@@ -1,6 +1,5 @@
-// Features.jsx
-
 import React from 'react';
+import Image from 'next/image';
 
 const Features = ({ imgUrl, title, subtitle }) => (
   <div className="flex flex-col items-start text-left">
@@ -9,7 +8,14 @@ const Features = ({ imgUrl, title, subtitle }) => (
       className="w-[70px] h-[70px] rounded-[24px] glassmorphism outer-shadow flex items-center justify-center"
       style={{ backgroundColor: 'rgba(255, 255, 255, 0.08)' }}
     >
-      <img src={imgUrl} alt={title} className="w-[36px] h-[36px] object-contain" />
+      <Image
+        src={imgUrl}
+        alt={title}
+        width={36}
+        height={36}
+        className="object-contain"
+        priority
+      />
     </div>
 
     {/* Title */}

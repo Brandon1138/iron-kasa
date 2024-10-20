@@ -21,7 +21,10 @@ export const detectFrameRate = () => {
         const frameRate = frame;
         const canAnimate = frameRate >= 30; // Threshold can be adjusted
         try {
-          localStorage.setItem(FRAME_RATE_STORAGE_KEY, JSON.stringify(canAnimate));
+          localStorage.setItem(
+            FRAME_RATE_STORAGE_KEY,
+            JSON.stringify(canAnimate)
+          );
           localStorage.setItem(FRAME_RATE_TIMESTAMP_KEY, now.toString());
         } catch (error) {
           console.error('Failed to set localStorage:', error);

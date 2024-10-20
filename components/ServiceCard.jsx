@@ -28,11 +28,14 @@ const ServiceCard = ({
     // Function to handle screen resize
     const handleResize = () => {
       const width = window.innerWidth;
-      if (width >= 1280) { // xl and above
+      if (width >= 1280) {
+        // xl and above
         setScreenSize('xl');
-      } else if (width >= 1024) { // lg
+      } else if (width >= 1024) {
+        // lg
         setScreenSize('lg');
-      } else if (width >= 768) { // md
+      } else if (width >= 768) {
+        // md
         setScreenSize('md');
       } else {
         setScreenSize('sm');
@@ -134,9 +137,9 @@ const ServiceCard = ({
             `}
             style={{
               boxShadow:
-                '-8px -8px 32px rgba(168, 85, 247, 0.37), '
-                + '0px 0px 32px rgba(244, 63, 94, 0.37), '
-                + '8px 8px 32px rgba(217, 119, 6, 0.37)',
+                '-8px -8px 32px rgba(168, 85, 247, 0.37), ' +
+                '0px 0px 32px rgba(244, 63, 94, 0.37), ' +
+                '8px 8px 32px rgba(217, 119, 6, 0.37)',
             }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

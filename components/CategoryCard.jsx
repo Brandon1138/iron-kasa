@@ -32,7 +32,8 @@ const CategoryCard = ({
   }, []);
 
   const isHovered = hoveredCategoryId === id;
-  const isAnotherCardHovered = hoveredCategoryId !== null && hoveredCategoryId !== id;
+  const isAnotherCardHovered =
+    hoveredCategoryId !== null && hoveredCategoryId !== id;
 
   // Determine if the glow should be visible
   const isGlowVisible = (isSelected && !isAnotherCardHovered) || isHovered;
@@ -85,8 +86,8 @@ const CategoryCard = ({
     >
       {/* AnimatePresence wraps the conditional glow elements */}
       <AnimatePresence>
-        {isGlowVisible && (
-          shouldAnimate ? (
+        {isGlowVisible &&
+          (shouldAnimate ? (
             // Animated Glow with fade-in and fade-out
             <motion.div
               key="glow"
@@ -131,9 +132,9 @@ const CategoryCard = ({
               `}
               style={{
                 boxShadow:
-                  '-8px -8px 32px rgba(168, 85, 247, 0.37), '
-                  + '0px 0px 32px rgba(244, 63, 94, 0.37), '
-                  + '8px 8px 32px rgba(217, 119, 6, 0.37)',
+                  '-8px -8px 32px rgba(168, 85, 247, 0.37), ' +
+                  '0px 0px 32px rgba(244, 63, 94, 0.37), ' +
+                  '8px 8px 32px rgba(217, 119, 6, 0.37)',
               }}
               variants={glowVariants}
               initial="hidden"
@@ -141,8 +142,7 @@ const CategoryCard = ({
               exit="exit"
               transition={{ duration: 0.5 }} // Ensure duration matches ServiceCard
             />
-          )
-        )}
+          ))}
       </AnimatePresence>
 
       {/* The card */}

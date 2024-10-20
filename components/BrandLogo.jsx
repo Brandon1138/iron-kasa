@@ -37,4 +37,6 @@ const BrandLogo = memo(({ isSearchOpen }) => {
   );
 });
 
+BrandLogo.displayName = 'Brand Logo';
+
 export default BrandLogo;

@@ -1,7 +1,10 @@
 // context/AnimationContext.js
 
 import React, { createContext, useState, useEffect } from 'react';
-import { detectFrameRate, getStoredFrameRate } from '../utils/frameRateDetection';
+import {
+  detectFrameRate,
+  getStoredFrameRate,
+} from '../utils/frameRateDetection';
 
 // Create the context with default values
 export const AnimationContext = createContext({
@@ -40,7 +43,8 @@ export const AnimationProvider = ({ children }) => {
   };
 
   // Determine the final canAnimate value
-  const canAnimate = userCanAnimate !== null ? userCanAnimate : automaticCanAnimate;
+  const canAnimate =
+    userCanAnimate !== null ? userCanAnimate : automaticCanAnimate;
 
   return (
     <AnimationContext.Provider value={{ canAnimate, toggleCanAnimate }}>

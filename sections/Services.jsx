@@ -38,14 +38,13 @@ const Services = () => {
   };
 
   return (
-    <section
-      className={`${styles.paddings} px-6 py-12 relative`}
-      id="services"
-    >
+    <section className={`${styles.paddings} px-6 py-12 relative`} id="services">
       {/* Background Div */}
       <div className="absolute inset-0 z-0 bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#121212_2px)] bg-[size:20px_20px]"></div>
-      
-      <div className={`${styles.innerWidth} mx-auto flex flex-col items-center relative z-10`}>
+
+      <div
+        className={`${styles.innerWidth} mx-auto flex flex-col items-center relative z-10`}
+      >
         {/* TypingText */}
         <motion.div
           variants={staggerContainer}

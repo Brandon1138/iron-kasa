@@ -40,9 +40,13 @@ const Navbar = memo(() => {
         className={`${styles.xPaddings} py-8 fixed top-0 left-0 right-0 z-50 bg-primary-black bg-opacity-50 backdrop-blur-md`}
         aria-label="Main Navigation"
       >
-        <div className={`${styles.innerWidth} mx-auto flex justify-between gap-8 items-center`}>
+        <div
+          className={`${styles.innerWidth} mx-auto flex justify-between gap-8 items-center`}
+        >
           <ErrorBoundary>
-            <Suspense fallback={<div className="w-24 h-24 bg-gray-700 rounded" />}>
+            <Suspense
+              fallback={<div className="w-24 h-24 bg-gray-700 rounded" />}
+            >
               {/* Search Bar */}
               <SearchBar
                 isSearchOpen={isSearchOpen}
@@ -53,14 +57,18 @@ const Navbar = memo(() => {
           </ErrorBoundary>
 
           <ErrorBoundary>
-            <Suspense fallback={<div className="w-24 h-24 bg-gray-700 rounded" />}>
+            <Suspense
+              fallback={<div className="w-24 h-24 bg-gray-700 rounded" />}
+            >
               {/* Brand Logo */}
               <BrandLogo isSearchOpen={isSearchOpen} />
             </Suspense>
           </ErrorBoundary>
 
           <ErrorBoundary>
-            <Suspense fallback={<div className="w-24 h-24 bg-gray-700 rounded" />}>
+            <Suspense
+              fallback={<div className="w-24 h-24 bg-gray-700 rounded" />}
+            >
               {/* Menu */}
               <Menu
                 isMenuOpen={isMenuOpen}
@@ -75,10 +83,17 @@ const Navbar = memo(() => {
 
       {/* Service Modal */}
       <AnimatePresence>
-        {selectedService && <ServiceModal service={selectedService} onClose={() => setSelectedService(null)} />}
+        {selectedService && (
+          <ServiceModal
+            service={selectedService}
+            onClose={() => setSelectedService(null)}
+          />
+        )}
       </AnimatePresence>
     </>
   );
 });
+
+Navbar.displayName = 'Navbar';
 
 export default Navbar;

@@ -11,8 +11,10 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(ellipse at center, var(--tw-gradient-stops))',
-        'conic-gradient': 'conic-gradient(rgba(244, 114, 182, 0.4) 0deg, rgba(192, 193, 252, 0.4) 0deg, transparent 80deg)',
+        'gradient-radial':
+          'radial-gradient(ellipse at center, var(--tw-gradient-stops))',
+        'conic-gradient':
+          'conic-gradient(rgba(244, 114, 182, 0.4) 0deg, rgba(192, 193, 252, 0.4) 0deg, transparent 80deg)',
       },
       colors: {
         'primary-black': '#121212',
@@ -36,8 +38,8 @@ module.exports = {
           '100%': { opacity: 1, transform: 'translateY(0)' },
         },
         'border-spin': {
-          'from': { transform: 'rotate(0deg)' },
-          'to': { transform: 'rotate(360deg)' },
+          from: { transform: 'rotate(0deg)' },
+          to: { transform: 'rotate(360deg)' },
         },
       },
       animation: {
