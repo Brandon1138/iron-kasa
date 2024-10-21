@@ -2,72 +2,36 @@
 
 'use client';
 
-import React, { useState, Suspense, memo, startTransition } from 'react';
+import React, { useState, memo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import dynamic from 'next/dynamic';
 import styles from '../styles';
 import { navVariants } from '../utils/motion';
 import ServiceModal from './ServiceModal';
-import ErrorBoundary from './ErrorBoundary';
 
-// Define Prop Interfaces for Dynamic Components
-interface SearchBarProps {
-  isSearchOpen: boolean;
-  toggleSearch: React.Dispatch<React.SetStateAction<boolean>>;
-  setSelectedService: React.Dispatch<React.SetStateAction<string | null>>;
-}
+// Import components directly
+import SearchBar from './SearchBar';
+import BrandLogo from './BrandLogo';
+import Menu from './Menu';
 
-interface BrandLogoProps {
-  isSearchOpen: boolean;
-}
+import { Iphone } from '../types'; // Ensure this import path is correct
 
-interface MenuProps {
-  isMenuOpen: boolean;
-  toggleMenu: React.Dispatch<React.SetStateAction<boolean>>;
-  isGraphicsOpen: boolean;
-  setIsGraphicsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-// Dynamic Imports with Proper Typing and Client-Side Rendering
-const SearchBar = dynamic<SearchBarProps>(() => import('./SearchBar'), {
-  suspense: true,
-  // Ensure it's treated as a client component
-  ssr: false,
-});
-
-const BrandLogo = dynamic<BrandLogoProps>(() => import('./BrandLogo'), {
-  suspense: true,
-  ssr: false,
-});
-
-const Menu = dynamic<MenuProps>(() => import('./Menu'), {
-  suspense: true,
-  ssr: false,
-});
-
-const Navbar = memo(() => {
+const Navbar = memo(function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
-  const [selectedService, setSelectedService] = useState<string | null>(null);
+  const [selectedService, setSelectedService] = useState<Iphone | null>(null);
   const [isGraphicsOpen, setIsGraphicsOpen] = useState<boolean>(false);
 
-  // Wrap state updates in startTransition for smoother hydration handling
+  // Handlers
   const handleToggleMenu = () => {
-    startTransition(() => {
-      setIsMenuOpen((prev) => !prev);
-    });
+    setIsMenuOpen((prev) => !prev);
   };
 
-  const handleToggleSearch = () => {
-    startTransition(() => {
-      setIsSearchOpen((prev) => !prev);
-    });
+  const handleToggleSearch = (value: boolean) => {
+    setIsSearchOpen(value);
   };
 
   const handleToggleGraphics = () => {
-    startTransition(() => {
-      setIsGraphicsOpen((prev) => !prev);
-    });
+    setIsGraphicsOpen((prev) => !prev);
   };
 
   return (
@@ -82,41 +46,23 @@ const Navbar = memo(() => {
         <div
           className={`${styles.innerWidth} mx-auto flex justify-between gap-8 items-center`}
         >
-          <ErrorBoundary>
-            <Suspense
-              fallback={<div className="w-24 h-24 bg-gray-700 rounded" />}
-            >
-              {/* Search Bar */}
-              <SearchBar
-                isSearchOpen={isSearchOpen}
-                toggleSearch={handleToggleSearch}
-                setSelectedService={setSelectedService} // Pass setSelectedService directly
-              />
-            </Suspense>
-          </ErrorBoundary>
+          {/* Search Bar */}
+          <SearchBar
+            isSearchOpen={isSearchOpen}
+            toggleSearch={handleToggleSearch}
+            setSelectedService={setSelectedService}
+          />
 
-          <ErrorBoundary>
-            <Suspense
-              fallback={<div className="w-24 h-24 bg-gray-700 rounded" />}
-            >
-              {/* Brand Logo */}
-              <BrandLogo isSearchOpen={isSearchOpen} />
-            </Suspense>
-          </ErrorBoundary>
+          {/* Brand Logo */}
+          <BrandLogo isSearchOpen={isSearchOpen} />
 
-          <ErrorBoundary>
-            <Suspense
-              fallback={<div className="w-24 h-24 bg-gray-700 rounded" />}
-            >
-              {/* Menu */}
-              <Menu
-                isMenuOpen={isMenuOpen}
-                toggleMenu={handleToggleMenu}
-                isGraphicsOpen={isGraphicsOpen}
-                setIsGraphicsOpen={handleToggleGraphics}
-              />
-            </Suspense>
-          </ErrorBoundary>
+          {/* Menu */}
+          <Menu
+            isMenuOpen={isMenuOpen}
+            toggleMenu={handleToggleMenu}
+            isGraphicsOpen={isGraphicsOpen}
+            setIsGraphicsOpen={handleToggleGraphics}
+          />
         </div>
       </motion.nav>
 

@@ -180,7 +180,8 @@ const Menu = memo(
     };
 
     return (
-      <>
+      // **1. Wrap the button and menu in a relative container**
+      <div className="relative inline-block">
         {/* Toggle Menu Button */}
         <button
           type="button"
@@ -208,22 +209,20 @@ const Menu = memo(
                 aria-hidden="true"
               />
 
-              {/* Menu Content */}
+              {/* **2. Change positioning to absolute and adjust placement** */}
               <motion.div
-                className="fixed top-6 right-6 z-50 p-6 rounded-3xl w-64 bg-primary-black bg-opacity-90 backdrop-blur-md"
+                className="absolute top-full right-0 mt-2 z-50 p-6 rounded-3xl w-[350px] bg-primary-black bg-opacity-90 backdrop-blur-md" // Increased width from w-64 to w-[350px]
                 role="dialog"
                 aria-modal="true"
-                aria-labelledby="menu-heading"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
+                // aria-labelledby="menu-heading" // Removed as per instruction
+                initial={{ opacity: 0, scale: 0.8, y: -10 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.8, y: -10 }}
                 transition={{ duration: 0.3 }}
                 ref={menuRef}
                 onClick={(e) => e.stopPropagation()}
               >
-                <h2 id="menu-heading" className="sr-only">
-                  Navigation Menu
-                </h2>
+                {/* Removed the "Navigation Menu" heading */}
                 <ul className="flex flex-col space-y-4">
                   {/* Menu Items */}
                   {menuItems.map((item, index) => (
@@ -294,7 +293,7 @@ const Menu = memo(
             </>
           )}
         </AnimatePresence>
-      </>
+      </div>
     );
   }
 );
