@@ -1,3 +1,5 @@
+// Menu.tsx
+
 'use client';
 
 import React, {
@@ -211,7 +213,7 @@ const Menu = memo(
 
               {/* **2. Change positioning to absolute and adjust placement** */}
               <motion.div
-                className="absolute top-full right-0 mt-2 z-50 p-6 rounded-3xl w-[350px] bg-primary-black bg-opacity-90 backdrop-blur-md" // Increased width from w-64 to w-[350px]
+                className="absolute top-full right-0 mt-2 z-50 p-6 rounded-3xl w-64 bg-primary-black bg-opacity-90 backdrop-blur-md" // Switched back to w-64 from w-[350px]
                 role="dialog"
                 aria-modal="true"
                 // aria-labelledby="menu-heading" // Removed as per instruction
@@ -280,7 +282,14 @@ const Menu = memo(
                                 className="sr-only peer"
                                 aria-label="Toggle Animated Glow"
                               />
-                              <div className="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-purple-600" />
+                              <div
+                                className="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 
+                                peer-checked:after:translate-x-full peer-checked:after:border-white 
+                                after:content-empty after:absolute after:top-0.5 after:left-[2px] 
+                                after:bg-white after:border-gray-300 after:border after:rounded-full 
+                                after:h-5 after:w-5 after:transition-all dark:border-gray-600 
+                                peer-checked:bg-purple-600"
+                              />
                             </span>
                             <span className="ml-2">Toggle Animated Glow</span>
                           </label>
