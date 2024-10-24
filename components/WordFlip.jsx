@@ -1,5 +1,3 @@
-// components/WordFlip.jsx
-
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
@@ -93,7 +91,11 @@ const WordFlip = () => {
   return (
     <span
       className="inline-block relative overflow-hidden mt-1"
-      style={{ width: '450px', height: '1em' }}
+      style={{
+        width: '450px',
+        height: '1.2em', // Increased from 1em to accommodate descenders
+        transform: 'translateY(-0.1em)', // Shift up slightly to maintain alignment with surrounding text
+      }}
     >
       <AnimatePresence>
         {(isFlipping || (currentWordIndex === 0 && !isSmallScreen)) && (
