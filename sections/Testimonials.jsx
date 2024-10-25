@@ -38,7 +38,7 @@ const Testimonials = () => {
         height: '100vh',
       }}
     >
-      <div class="absolute top-0 left-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(103,46,150,0.3),rgba(255,255,255,0))]"></div>
+      <div className="absolute top-0 left-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(103,46,150,0.3),rgba(255,255,255,0))]"></div>
 
       {/* Overlay */}
       {/* <div className="absolute inset-0 bg-black opacity-50"></div> */}

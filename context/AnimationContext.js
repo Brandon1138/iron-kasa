@@ -16,8 +16,11 @@ export const AnimationContext = createContext({
 export const AnimationProvider = ({ children }) => {
   const [automaticCanAnimate, setAutomaticCanAnimate] = useState(false);
   const [userCanAnimate, setUserCanAnimate] = useState(null); // null indicates no user preference
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true); // Mark as mounted after client-side hydration
+
     // Retrieve user preference from localStorage
     const storedUserCanAnimate = localStorage.getItem('userCanAnimate');
     if (storedUserCanAnimate !== null) {
@@ -46,9 +49,16 @@ export const AnimationProvider = ({ children }) => {
   const canAnimate =
     userCanAnimate !== null ? userCanAnimate : automaticCanAnimate;
 
+  // Prevent rendering until mounted to avoid hydration mismatch
+  if (!mounted) {
+    return null; // Or a loading spinner if preferred
+  }
+
   return (
     <AnimationContext.Provider value={{ canAnimate, toggleCanAnimate }}>
       {children}
+      {/* Portal Root for Modals */}
+      <div id="modal-root"></div>
     </AnimationContext.Provider>
   );
 };

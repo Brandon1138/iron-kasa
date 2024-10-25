@@ -1,10 +1,8 @@
 // app/layout.js
 
-'use client'; // Make this a client component to use React Context and hooks
-
 import React from 'react';
-import { AnimationProvider } from '../context/AnimationContext';
 import '../styles/globals.css';
+import ClientProviders from './ClientProviders'; // New client component
 
 const RootLayout = ({ children }) => (
   <html lang="en">
@@ -16,11 +14,11 @@ const RootLayout = ({ children }) => (
       />
     </head>
     <body>
-      <AnimationProvider>
+      <ClientProviders>
         {children}
         {/* Portal Root for Modals */}
         <div id="modal-root"></div>
-      </AnimationProvider>
+      </ClientProviders>
     </body>
   </html>
 );
