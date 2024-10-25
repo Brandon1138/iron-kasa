@@ -2,7 +2,7 @@
 
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import Script from 'next/script';
 import { TypingText } from '../components';
@@ -12,12 +12,13 @@ import { fadeIn, staggerContainer } from '../utils/motion';
 const Contact = () => {
   const mapRef = useRef(null);
 
-  const initMap = () => {
+  const initMap = useCallback(() => {
     const shopLocation = { lat: 44.41362120240169, lng: 26.132020598094197 }; // iPhoneDoctor's latitude and longitude
 
     const map = new window.google.maps.Map(mapRef.current, {
       center: shopLocation, // Center the map on the shop location
       zoom: 15,
+      mapId: 'a7d50c754bc2729c', // Replace with your actual Map ID
       styles: [
         {
           featureType: 'all',
@@ -298,11 +299,14 @@ const Contact = () => {
       ],
     });
 
-    new window.google.maps.Marker({
-      position: shopLocation, // Place the marker at the shop location
+    // Create an AdvancedMarkerElement
+    const marker = new window.google.maps.marker.AdvancedMarkerElement({
       map: map,
+      position: shopLocation,
+      title: 'iPhone Doctor',
+      // Optional: Add custom content or other options here
     });
-  };
+  });
 
   // Function to generate Google Maps directions link
   const getDirectionsLink = () => {
@@ -316,9 +320,13 @@ const Contact = () => {
       className={`pt-24 -pb-24 lg:px-8 md:px-16 px-6 relative z-10`} // Increased pt-24 and decreased pb-8
     >
       <Script
-        src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`}
-        strategy="lazyOnload"
+        src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&libraries=marker`}
+        strategy="afterInteractive" // Ensures async loading
         onLoad={initMap}
+        onError={(e) => {
+          console.error('Google Maps failed to load:', e);
+          // Optionally, set a state to display an error message to the user
+        }}
       />
       <motion.div
         variants={staggerContainer}
@@ -403,6 +411,7 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center"
+                    aria-label="Get Directions to iPhone Doctor"
                   >
                     <img
                       src="/map.svg"
