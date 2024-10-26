@@ -1,4 +1,4 @@
-// Menu.tsx
+// components/Menu.tsx
 
 'use client';
 
@@ -194,7 +194,16 @@ const Menu = memo(
           onClick={handleToggleMenu}
           ref={buttonRef}
         >
-          <Image src="/menu.svg" alt="Menu Icon" width={24} height={24} />
+          {/* Updated to use fill prop and sizes */}
+          <div className="relative w-[24px] h-[24px]">
+            <Image
+              src="/menu.svg"
+              alt="Menu Icon"
+              fill // Use fill prop
+              sizes="24px" // Add sizes prop
+              style={{ objectFit: 'contain' }}
+            />
+          </div>
         </button>
 
         {/* Menu Modal */}
@@ -213,10 +222,9 @@ const Menu = memo(
 
               {/* **2. Change positioning to absolute and adjust placement** */}
               <motion.div
-                className="absolute top-full right-0 mt-2 z-50 p-6 rounded-3xl w-64 bg-primary-black bg-opacity-90 backdrop-blur-md" // Switched back to w-64 from w-[350px]
+                className="absolute top-full right-0 mt-2 z-50 p-6 rounded-3xl w-64 bg-primary-black bg-opacity-90 backdrop-blur-md"
                 role="dialog"
                 aria-modal="true"
-                // aria-labelledby="menu-heading" // Removed as per instruction
                 initial={{ opacity: 0, scale: 0.8, y: -10 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.8, y: -10 }}
@@ -224,9 +232,8 @@ const Menu = memo(
                 ref={menuRef}
                 onClick={(e) => e.stopPropagation()}
               >
-                {/* Removed the "Navigation Menu" heading */}
+                {/* Menu Items */}
                 <ul className="flex flex-col space-y-4">
-                  {/* Menu Items */}
                   {menuItems.map((item, index) => (
                     <li key={item}>
                       <a

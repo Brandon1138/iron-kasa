@@ -3,39 +3,24 @@
 'use client';
 
 import React, { useState, useEffect, useContext } from 'react';
-import { motion, AnimatePresence } from 'framer-motion'; // Import AnimatePresence
+import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-import { AnimationContext } from '../context/AnimationContext'; // Import AnimationContext
+import { AnimationContext } from '../context/AnimationContext';
 
-const ServiceCard = ({
-  service,
-  onClick,
-  isAnimationComplete,
-  isActive, // Indicates if the ServiceModal is open
-}) => {
+const ServiceCard = ({ service, onClick, isAnimationComplete, isActive }) => {
   const { imgUrl, title, sizes } = service;
-
-  // Access canAnimate from AnimationContext
   const { canAnimate } = useContext(AnimationContext);
-
-  // State to manage screen size
   const [screenSize, setScreenSize] = useState('sm');
-
-  // State to manage hover
   const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
-    // Function to handle screen resize
     const handleResize = () => {
       const width = window.innerWidth;
       if (width >= 1280) {
-        // xl and above
         setScreenSize('xl');
       } else if (width >= 1024) {
-        // lg
         setScreenSize('lg');
       } else if (width >= 768) {
-        // md
         setScreenSize('md');
       } else {
         setScreenSize('sm');
@@ -44,15 +29,12 @@ const ServiceCard = ({
 
     if (typeof window !== 'undefined') {
       window.addEventListener('resize', handleResize);
-      handleResize(); // Initialize
+      handleResize();
       return () => window.removeEventListener('resize', handleResize);
     }
   }, []);
 
-  // Get image size based on screen size with improved fallback
   const imageSize = sizes[screenSize] || sizes.lg || sizes.md || sizes.sm;
-
-  // Determine if the glow should be visible
   const isGlowVisible = isActive || isHovered;
 
   return (
@@ -80,21 +62,18 @@ const ServiceCard = ({
         if (isAnimationComplete) onClick();
       }}
       whileHover={{ scale: 1.05 }}
-      animate={{ scale: isActive ? 1.05 : 1 }} // Conditional scale based on isActive
+      animate={{ scale: isActive ? 1.05 : 1 }}
       role="button"
       tabIndex={0}
       onKeyPress={(e) => {
         if (e.key === 'Enter') onClick();
       }}
-      // Handle hover state
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       aria-label={`Open details for ${title}`}
     >
-      {/* AnimatePresence wraps the conditional glow elements */}
       <AnimatePresence>
         {isGlowVisible && canAnimate && (
-          // Animated Glow with fade-in and fade-out
           <motion.div
             key="glow"
             className={`
@@ -116,13 +95,12 @@ const ServiceCard = ({
             }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }} // Fade out on exit
+            exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
           />
         )}
 
         {isGlowVisible && !canAnimate && (
-          // Static Box-Shadow Fallback with fade-in and fade-out
           <motion.div
             key="box-shadow"
             className={`
@@ -143,12 +121,11 @@ const ServiceCard = ({
             }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }} // Fade out on exit
+            exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
           />
         )}
       </AnimatePresence>
-      {/* Card Content with Gradient Background Transition */}
       <div
         className={`
           absolute inset-0 z-10
@@ -160,28 +137,37 @@ const ServiceCard = ({
           xl:rounded-[50px]
           transition-colors duration-500
           bg-gradient-to-b from-[rgba(255,255,255,0.04)] to-[rgba(255,255,255,0.012)]
-          ${isGlowVisible ? 'from-[#1e1e1eBF] to-[#1e1e1eBF]' : 'from-[rgba(255,255,255,0.04)] to-[rgba(255,255,255,0.012)]'}
+          ${
+            isGlowVisible
+              ? 'from-[#1e1e1eBF] to-[#1e1e1eBF]'
+              : 'from-[rgba(255,255,255,0.04)] to-[rgba(255,255,255,0.012)]'
+          }
         `}
       >
-        {/* Image */}
         <div
           style={{
             width: imageSize.width,
             height: imageSize.height,
+            position: 'relative',
           }}
           className="flex justify-center items-center"
         >
           <Image
             src={imgUrl}
             alt={title}
-            width={imageSize.width}
-            height={imageSize.height}
-            style={{ objectFit: 'contain' }} // Replaces objectFit="contain"
+            fill
+            style={{ objectFit: 'contain' }}
+            sizes="
+              (min-width: 1280px) 320px,
+              (min-width: 1024px) 270px,
+              (min-width: 768px) 203px,
+              (min-width: 640px) 200px,
+              150px
+            "
             priority={false}
             loading="lazy"
           />
         </div>
-        {/* Title */}
         <h3
           className="mt-2 text-center text-[12px] md:text-md lg:text-lg font-regular text-white group-hover:text-white"
           style={{ transition: 'color 0.5s linear' }}

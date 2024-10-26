@@ -38,13 +38,19 @@ const BrandLogo = memo(({ isSearchOpen }: BrandLogoProps) => {
         />
       )}
       {/* Logo */}
-      <Image
-        src="/logo.svg"
-        alt="iPhoneDoctor Logo"
-        width={150}
-        height={50}
-        priority
-      />
+      {/* Updated to use fill prop and sizes */}
+      <div
+        className="relative w-[150px] h-[50px]" // Set width and height here
+      >
+        <Image
+          src="/logo.svg"
+          alt="iPhoneDoctor Logo"
+          fill // Use fill prop
+          sizes="150px" // Add sizes prop
+          style={{ objectFit: 'contain' }} // Maintain aspect ratio
+          priority
+        />
+      </div>
     </div>
   );
 });
