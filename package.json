@@ -10,6 +10,7 @@
     "lint:fix:": "next lint --fix"
   },
   "dependencies": {
+    "@googlemaps/js-api-loader": "^1.16.8",
     "@react-google-maps/api": "^2.19.3",
     "framer-motion": "^7.6.7",
     "next": "13.0.3",

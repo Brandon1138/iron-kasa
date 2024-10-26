@@ -1,22 +1,49 @@
-// sections/Contact.jsx
+// sections/Contact.tsx
 
 'use client';
 
-import { useRef, useCallback } from 'react';
+import React, { useRef, useCallback, useEffect } from 'react';
+import { Loader } from '@googlemaps/js-api-loader'; // Ensure latest version
 import { motion } from 'framer-motion';
-import Script from 'next/script';
 import { TypingText } from '../components';
 import styles from '../styles';
-import { fadeIn, staggerContainer } from '../utils/motion';
+import {
+  fadeIn,
+  staggerContainer,
+  fadeIn as fadeInVariant,
+} from '../utils/motion'; // Adjust imports as necessary
 
-const Contact = () => {
-  const mapRef = useRef(null);
+// Define the type for shop location
+interface Location {
+  lat: number;
+  lng: number;
+}
 
-  const initMap = useCallback(() => {
-    const shopLocation = { lat: 44.41362120240169, lng: 26.132020598094197 }; // iPhoneDoctor's latitude and longitude
+const Contact: React.FC = () => {
+  const mapRef = useRef<HTMLDivElement | null>(null);
 
-    const map = new window.google.maps.Map(mapRef.current, {
-      center: shopLocation, // Center the map on the shop location
+  // Initialize the map
+  const initMap = useCallback((): void => {
+    // Ensure google.maps is available
+    if (!window.google || !window.google.maps) {
+      console.error('Google Maps is not loaded.');
+      return;
+    }
+
+    console.log('google.maps:', window.google.maps);
+    console.log(
+      'AdvancedMarkerElement:',
+      window.google.maps.marker?.AdvancedMarkerElement
+    );
+
+    const shopLocation: Location = {
+      lat: 44.41362120240169,
+      lng: 26.132020598094197,
+    };
+
+    // Create the map
+    const map = new window.google.maps.Map(mapRef.current as HTMLElement, {
+      center: shopLocation,
       zoom: 15,
       mapId: 'a7d50c754bc2729c', // Replace with your actual Map ID
       styles: [
@@ -24,312 +51,204 @@ const Contact = () => {
           featureType: 'all',
           elementType: 'labels.text.fill',
           stylers: [
-            {
-              saturation: 36,
-            },
-            {
-              color: '#000000',
-            },
-            {
-              lightness: 40,
-            },
+            { saturation: 36 },
+            { color: '#000000' },
+            { lightness: 40 },
           ],
         },
         {
           featureType: 'all',
           elementType: 'labels.text.stroke',
           stylers: [
-            {
-              visibility: 'on',
-            },
-            {
-              color: '#000000',
-            },
-            {
-              lightness: 16,
-            },
+            { visibility: 'on' },
+            { color: '#000000' },
+            { lightness: 16 },
           ],
         },
         {
           featureType: 'all',
           elementType: 'labels.icon',
-          stylers: [
-            {
-              visibility: 'off',
-            },
-          ],
+          stylers: [{ visibility: 'off' }],
         },
         {
           featureType: 'administrative',
           elementType: 'geometry.fill',
-          stylers: [
-            {
-              color: '#000000',
-            },
-            {
-              lightness: 20,
-            },
-          ],
+          stylers: [{ color: '#000000' }, { lightness: 20 }],
         },
         {
           featureType: 'administrative',
           elementType: 'geometry.stroke',
-          stylers: [
-            {
-              color: '#000000',
-            },
-            {
-              lightness: 17,
-            },
-            {
-              weight: 1.2,
-            },
-          ],
+          stylers: [{ color: '#000000' }, { lightness: 17 }, { weight: 1.2 }],
         },
         {
           featureType: 'administrative.province',
           elementType: 'geometry',
-          stylers: [
-            {
-              visibility: 'on',
-            },
-            {
-              color: '#ff8200',
-            },
-          ],
+          stylers: [{ visibility: 'on' }, { color: '#ff8200' }],
         },
         {
           featureType: 'administrative.province',
           elementType: 'geometry.fill',
-          stylers: [
-            {
-              visibility: 'on',
-            },
-            {
-              color: '#ff3800',
-            },
-          ],
+          stylers: [{ visibility: 'on' }, { color: '#ff3800' }],
         },
         {
           featureType: 'administrative.province',
           elementType: 'labels.text.fill',
-          stylers: [
-            {
-              color: '#ff6600',
-            },
-          ],
+          stylers: [{ color: '#ff6600' }],
         },
         {
           featureType: 'administrative.locality',
           elementType: 'labels.text.fill',
-          stylers: [
-            {
-              color: '#d9d9d9',
-            },
-          ],
+          stylers: [{ color: '#d9d9d9' }],
         },
         {
           featureType: 'administrative.locality',
           elementType: 'labels.text.stroke',
-          stylers: [
-            {
-              visibility: 'off',
-            },
-          ],
+          stylers: [{ visibility: 'off' }],
         },
         {
           featureType: 'administrative.neighborhood',
           elementType: 'all',
-          stylers: [
-            {
-              visibility: 'on',
-            },
-            {
-              color: '#CA4776',
-            },
-          ],
+          stylers: [{ visibility: 'on' }, { color: '#CA4776' }],
         },
         {
           featureType: 'administrative.neighborhood',
           elementType: 'labels.text.stroke',
-          stylers: [
-            {
-              color: '#000000',
-            },
-          ],
+          stylers: [{ color: '#000000' }],
         },
         {
           featureType: 'administrative.land_parcel',
           elementType: 'labels.text.fill',
-          stylers: [
-            {
-              color: '#ff0000',
-            },
-          ],
+          stylers: [{ color: '#ff0000' }],
         },
         {
           featureType: 'landscape',
           elementType: 'geometry',
-          stylers: [
-            {
-              color: '#161616',
-            },
-            {
-              lightness: 20,
-            },
-          ],
+          stylers: [{ color: '#161616' }, { lightness: 20 }],
         },
         {
           featureType: 'landscape.man_made',
           elementType: 'geometry',
-          stylers: [
-            {
-              visibility: 'on',
-            },
-            {
-              color: '#202020',
-            },
-          ],
+          stylers: [{ visibility: 'on' }, { color: '#202020' }],
         },
         {
           featureType: 'poi',
           elementType: 'all',
-          stylers: [
-            {
-              visibility: 'on',
-            },
-          ],
+          stylers: [{ visibility: 'on' }],
         },
         {
           featureType: 'poi',
           elementType: 'geometry',
-          stylers: [
-            {
-              lightness: 21,
-            },
-            {
-              color: '#121212',
-            },
-          ],
+          stylers: [{ lightness: 21 }, { color: '#121212' }],
         },
         {
           featureType: 'poi',
           elementType: 'labels.text.fill',
-          stylers: [
-            {
-              color: '#858585',
-            },
-          ],
+          stylers: [{ color: '#858585' }],
         },
         {
           featureType: 'road.highway',
           elementType: 'geometry.fill',
-          stylers: [
-            {
-              color: '#d97706',
-            },
-          ],
+          stylers: [{ color: '#d97706' }],
         },
         {
           featureType: 'road.highway',
           elementType: 'geometry.stroke',
-          stylers: [
-            {
-              color: '#000000',
-            },
-            {
-              lightness: 29,
-            },
-            {
-              weight: 0.2,
-            },
-          ],
+          stylers: [{ color: '#000000' }, { lightness: 29 }, { weight: 0.2 }],
         },
         {
           featureType: 'road.arterial',
           elementType: 'geometry',
           stylers: [
-            {
-              color: '#271532',
-            },
-            {
-              lightness: 18,
-            },
-            {
-              visibility: 'on',
-            },
+            { color: '#271532' },
+            { lightness: 18 },
+            { visibility: 'on' },
           ],
         },
         {
           featureType: 'road.local',
           elementType: 'geometry',
-          stylers: [
-            {
-              color: '#000000',
-            },
-            {
-              lightness: 16,
-            },
-          ],
+          stylers: [{ color: '#000000' }, { lightness: 16 }],
         },
         {
           featureType: 'transit',
           elementType: 'geometry',
-          stylers: [
-            {
-              color: '#000000',
-            },
-            {
-              lightness: 19,
-            },
-          ],
+          stylers: [{ color: '#000000' }, { lightness: 19 }],
         },
         {
           featureType: 'water',
           elementType: 'geometry',
-          stylers: [
-            {
-              color: '#000000',
-            },
-            {
-              lightness: 17,
-            },
-          ],
+          stylers: [{ color: '#000000' }, { lightness: 17 }],
         },
       ],
     });
 
-    // Create an AdvancedMarkerElement
-    const marker = new window.google.maps.marker.AdvancedMarkerElement({
-      map: map,
-      position: shopLocation,
-      title: 'iPhone Doctor',
-      // Optional: Add custom content or other options here
-    });
-  });
+    // Create an AdvancedMarkerElement if available
+    let marker: google.maps.marker.AdvancedMarkerElement | google.maps.Marker;
+
+    if (
+      window.google.maps.marker &&
+      typeof window.google.maps.marker.AdvancedMarkerElement === 'function'
+    ) {
+      marker = new window.google.maps.marker.AdvancedMarkerElement({
+        map: map,
+        position: shopLocation,
+        title: 'iPhone Doctor',
+        // Optional: Add custom content or other options here
+      });
+    } else {
+      console.error('AdvancedMarkerElement is not available.');
+      // Fallback to standard Marker
+      marker = new window.google.maps.Marker({
+        map: map,
+        position: shopLocation,
+        title: 'iPhone Doctor',
+      });
+    }
+  }, []);
 
   // Function to generate Google Maps directions link
-  const getDirectionsLink = () => {
-    const { lat, lng } = { lat: 44.41361458005216, lng: 26.132022068483483 };
+  const getDirectionsLink = (): string => {
+    const { lat, lng }: Location = {
+      lat: 44.41361458005216,
+      lng: 26.132022068483483,
+    };
     return `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
   };
+
+  useEffect(() => {
+    // Ensure API key is defined
+    const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+    if (!apiKey) {
+      console.error('Google Maps API key is not defined.');
+      return;
+    }
+
+    // Initialize the loader
+    const loader = new Loader({
+      apiKey: apiKey as string,
+      version: 'weekly',
+      libraries: ['marker'], // Only load the 'marker' library
+    });
+
+    // Load the 'marker' library and initialize the map
+    loader
+      .importLibrary('marker') // Load the 'marker' library
+      .then(() => {
+        console.log('Marker library loaded successfully.');
+        initMap(); // Initialize the map after 'marker' is loaded
+      })
+      .catch((e: any) => {
+        console.error('Error loading Google Maps API', e);
+      });
+  }, [initMap]);
 
   return (
     <section
       id="contact"
-      className={`pt-24 -pb-24 lg:px-8 md:px-16 px-6 relative z-10`} // Increased pt-24 and decreased pb-8
+      className={`pt-24 -pb-24 lg:px-8 md:px-16 px-6 relative z-10`}
     >
-      <Script
-        src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&libraries=marker`}
-        strategy="afterInteractive" // Ensures async loading
-        onLoad={initMap}
-        onError={(e) => {
-          console.error('Google Maps failed to load:', e);
-          // Optionally, set a state to display an error message to the user
-        }}
-      />
       <motion.div
-        variants={staggerContainer}
+        variants={staggerContainer(0.1, 0.2)} // Call the function with appropriate arguments
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
@@ -337,7 +256,7 @@ const Contact = () => {
       >
         <TypingText title="| Contact" textStyles="text-center" />
         <motion.h2
-          variants={fadeIn('up', 'tween', 0.2, 1)}
+          variants={fadeIn('up', 'tween', 0.2, 1)} // Call the function with appropriate arguments
           className="mt-4 font-bold text-3xl lg:text-5xl text-white text-center"
         >
           Suntem aici să te{' '}
@@ -348,7 +267,7 @@ const Contact = () => {
 
         {/* Paragraph */}
         <motion.p
-          variants={fadeIn('up', 'tween', 0.4, 1)}
+          variants={fadeIn('up', 'tween', 0.4, 1)} // Call the function with appropriate arguments
           className="mt-6 w-full max-w-[1230px] px-4 text-white text-opacity-75 text-lg text-center mx-auto"
         >
           Fie că ai probleme cu software-ul, hardware-ul sau pur și simplu vrei
@@ -360,7 +279,7 @@ const Contact = () => {
 
         {/* Map Section */}
         <motion.div
-          variants={fadeIn('up', 'tween', 0.4, 1)}
+          variants={fadeIn('up', 'tween', 0.4, 1)} // Call the function with appropriate arguments
           className="mt-8 w-full"
         >
           {/* Map container with max width and padding */}
@@ -374,7 +293,7 @@ const Contact = () => {
 
         {/* Contact and Program Information */}
         <motion.div
-          variants={fadeIn('up', 'tween', 0.3, 1)}
+          variants={fadeIn('up', 'tween', 0.3, 1)} // Call the function with appropriate arguments
           className="mt-8 w-full max-w-[1230px] px-4"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-white">
