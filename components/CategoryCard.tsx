@@ -1,13 +1,24 @@
-// components/CategoryCard.jsx
+// components/CategoryCard.tsx
 
 'use client';
 
-import { motion, AnimatePresence } from 'framer-motion'; // Ensure AnimatePresence is imported
+import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState, KeyboardEvent } from 'react';
 import { AnimationContext } from '../context/AnimationContext';
 
-const CategoryCard = ({
+// Define the props interface for CategoryCard
+interface CategoryCardProps {
+  id: string;
+  imgUrl: string;
+  title: string;
+  onSelect: () => void;
+  isSelected: boolean;
+  hoveredCategoryId: string | null;
+  setHoveredCategoryId: React.Dispatch<React.SetStateAction<string | null>>;
+}
+
+const CategoryCard: React.FC<CategoryCardProps> = ({
   id,
   imgUrl,
   title,
@@ -17,7 +28,8 @@ const CategoryCard = ({
   setHoveredCategoryId,
 }) => {
   const { canAnimate } = useContext(AnimationContext); // Destructure canAnimate from context
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] =
+    useState<boolean>(false);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -27,8 +39,14 @@ const CategoryCard = ({
       setPrefersReducedMotion(mediaQuery.matches);
     };
 
-    mediaQuery.addEventListener('change', handleChange);
-    return () => mediaQuery.removeEventListener('change', handleChange);
+    // For compatibility with older browsers
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener('change', handleChange);
+      return () => mediaQuery.removeEventListener('change', handleChange);
+    } else {
+      mediaQuery.addListener(handleChange);
+      return () => mediaQuery.removeListener(handleChange);
+    }
   }, []);
 
   const isHovered = hoveredCategoryId === id;
@@ -46,6 +64,13 @@ const CategoryCard = ({
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
     exit: { opacity: 0 },
+  };
+
+  // Handle key press events for accessibility
+  const handleKeyPress = (e: KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === 'Enter') {
+      onSelect();
+    }
   };
 
   return (
@@ -76,9 +101,7 @@ const CategoryCard = ({
       onMouseLeave={() => setHoveredCategoryId(null)}
       role="button"
       tabIndex={0}
-      onKeyPress={(e) => {
-        if (e.key === 'Enter') onSelect();
-      }}
+      onKeyPress={handleKeyPress}
       aria-label={`Select ${title}`}
       whileHover={{ scale: 1.05 }}
       animate={{ scale: isGlowVisible ? 1.05 : 1 }}
@@ -144,7 +167,6 @@ const CategoryCard = ({
             />
           ))}
       </AnimatePresence>
-
       {/* The card */}
       <div
         className={`
@@ -168,8 +190,9 @@ const CategoryCard = ({
           <Image
             src={imgUrl}
             alt={title}
-            layout="fill"
-            objectFit="contain"
+            fill
+            sizes="(max-width: 768px) 100vw, 80vw"
+            style={{ objectFit: 'contain' }} // Alternatively, use className="object-contain"
             priority={false}
             loading="lazy"
           />

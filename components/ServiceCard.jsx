@@ -148,7 +148,6 @@ const ServiceCard = ({
           />
         )}
       </AnimatePresence>
-
       {/* Card Content with Gradient Background Transition */}
       <div
         className={`
@@ -177,7 +176,7 @@ const ServiceCard = ({
             alt={title}
             width={imageSize.width}
             height={imageSize.height}
-            objectFit="contain"
+            style={{ objectFit: 'contain' }} // Replaces objectFit="contain"
             priority={false}
             loading="lazy"
           />

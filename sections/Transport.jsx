@@ -32,7 +32,7 @@ const Transport = () => (
             alt="Transport Van"
             width={568}
             height={568}
-            objectFit="contain"
+            style={{ objectFit: 'contain' }}
             className="rounded-[36px] outer-shadow transition-shadow duration-300"
           />
         </motion.div>
@@ -97,7 +97,7 @@ const Transport = () => (
             alt="Transport Van"
             width={568} // Use the same width for consistency
             height={568} // Adjust height as needed
-            objectFit="contain"
+            style={{ objectFit: 'contain' }}
             className="rounded-[36px] transition-shadow duration-300 w-full"
           />
         </motion.div>

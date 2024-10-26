@@ -31,7 +31,7 @@ const HeroClient = () => {
   }, []);
 
   return (
-    <div ref={ref} className="relative z-40">
+    (<div ref={ref} className="relative z-40">
       {!prefersReducedMotion ? (
         <motion.div
           style={{
@@ -79,7 +79,7 @@ const HeroClient = () => {
         </motion.div>
       ) : (
         // Render static content without animations
-        <div className="relative w-full lg:pt-16 md:pt-12 sm:pt-8 pt-8">
+        (<div className="relative w-full lg:pt-16 md:pt-12 sm:pt-8 pt-8">
           <div className="w-full aspect-video">
             <video
               className="w-full h-full object-cover"
@@ -108,9 +108,9 @@ const HeroClient = () => {
               Your browser does not support the video tag.
             </video>
           </div>
-        </div>
+        </div>)
       )}
-    </div>
+    </div>)
   );
 };
 
