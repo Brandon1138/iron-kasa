@@ -1,9 +1,87 @@
-export const features = [
+// constants/index.ts
+
+// ---------------------
+// Interfaces Definitions
+// ---------------------
+
+// Feature Interface
+export interface Feature {
+  imgUrl: string;
+  title: string;
+  subtitle: string;
+}
+
+// Category Card Interface
+export interface CategoryCard {
+  imgUrl: string;
+}
+
+// Size Interface
+export interface Size {
+  width: number;
+  height: number;
+}
+
+// Service Interface
+export interface Service {
+  name: string;
+  duration: string;
+  price: string;
+}
+
+// Sizes Interface
+export interface Sizes {
+  expanded: Size;
+  lg: Size;
+  md: Size;
+  sm: Size;
+}
+
+// iPhone Service Detail Interface
+export interface iPhoneServiceDetail {
+  imgUrl: string;
+  title: string;
+  sizes: Sizes;
+  services: Service[];
+}
+
+// Service Details Map Interface
+export interface ServiceDetailsMap {
+  [key: number]: iPhoneServiceDetail[];
+}
+
+// Testimonial Interface
+export interface Testimonial {
+  name: string;
+  username: string;
+  imgUrl: string;
+  text: string;
+  instagramLink: string;
+}
+
+// Social Interface
+export interface Social {
+  name: string;
+  url: string;
+}
+
+// iPhone Service Card Interface
+export interface iPhoneServiceCard {
+  imgUrl: string;
+  title?: string; // Optional for flexibility
+}
+
+// ---------------------
+// Constants Definitions
+// ---------------------
+
+// Features
+export const features: Feature[] = [
   {
     imgUrl: '/star.svg',
     title: 'Experiență Atestată',
     subtitle:
-      'Printre primele servicii dedicate dispozitivelor Apple din București, cu peste 10 ani  de experiență în domeniu.',
+      'Printre primele servicii dedicate dispozitivelor Apple din București, cu peste 10 ani de experiență în domeniu.',
   },
   {
     imgUrl: '/wrench.svg',
@@ -25,29 +103,24 @@ export const features = [
   },
 ];
 
-export const categoryCard = [
-  {
-    imgUrl: '/category-iphone.svg',
-  },
-  {
-    imgUrl: '/category-ipad.svg',
-  },
-  {
-    imgUrl: '/category-macbook.svg',
-  },
-  {
-    imgUrl: '/category-imac.svg',
-  },
+// Category Cards
+export const categoryCard: CategoryCard[] = [
+  { imgUrl: '/category-iphone.svg' },
+  { imgUrl: '/category-ipad.svg' },
+  { imgUrl: '/category-macbook.svg' },
+  { imgUrl: '/category-imac.svg' },
 ];
 
-export const mainDisclaimer = [
-  'iPhone Doctor Romania nu este, nu a fost și nu va fi niciodată un service autorizat Apple. Din considerente etice și din respect atât pentru clienții noștri, cât și pentru service-urile autorizate  Apple, dorim să clarificăm acest aspect. Piesele folosite, garanția oferită și reparațiile executate nu sunt în niciun fel afiliate Apple.',
-  'iPhone Doctor Romania nu este, nu a fost și nu va fi niciodată un service autorizat Apple. Din considerente etice și din respect atât pentru clienții noștri, cât și pentru service-urile autorizate  Apple, dorim să clarificăm acest aspect. Piesele folosite, garanția oferită și reparațiile executate nu sunt în niciun fel afiliate Apple.',
-  'iPhone Doctor Romania nu este, nu a fost și nu va fi niciodată un service autorizat Apple. Din considerente etice și din respect atât pentru clienții noștri, cât și pentru service-urile autorizate  Apple, dorim să clarificăm acest aspect. Piesele folosite, garanția oferită și reparațiile executate nu sunt în niciun fel afiliate Apple.',
-  'iPhone Doctor Romania nu este, nu a fost și nu va fi niciodată un service autorizat Apple. Din considerente etice și din respect atât pentru clienții noștri, cât și pentru service-urile autorizate  Apple, dorim să clarificăm acest aspect. Piesele folosite, garanția oferită și reparațiile executate nu sunt în niciun fel afiliate Apple.',
+// Main Disclaimer
+export const mainDisclaimer: string[] = [
+  'iPhone Doctor Romania nu este, nu a fost și nu va fi niciodată un service autorizat Apple. Din considerente etice și din respect atât pentru clienții noștri, cât și pentru service-urile autorizate Apple, dorim să clarificăm acest aspect. Piesele folosite, garanția oferită și reparațiile executate nu sunt în niciun fel afiliate Apple.',
+  'iPhone Doctor Romania nu este, nu a fost și nu va fi niciodată un service autorizat Apple. Din considerente etice și din respect atât pentru clienții noștri, cât și pentru service-urile autorizate Apple, dorim să clarificăm acest aspect. Piesele folosite, garanția oferită și reparațiile executate nu sunt în niciun fel afiliate Apple.',
+  'iPhone Doctor Romania nu este, nu a fost și nu va fi niciodată un service autorizat Apple. Din considerente etice și din respect atât pentru clienții noștri, cât și pentru service-urile autorizate Apple, dorim să clarificăm acest aspect. Piesele folosite, garanția oferită și reparațiile executate nu sunt în niciun fel afiliate Apple.',
+  'iPhone Doctor Romania nu este, nu a fost și nu va fi niciodată un service autorizat Apple. Din considerente etice și din respect atât pentru clienții noștri, cât și pentru service-urile autorizate Apple, dorim să clarificăm acest aspect. Piesele folosite, garanția oferită și reparațiile executate nu sunt în niciun fel afiliate Apple.',
 ];
 
-export const iPhoneServiceCards = [
+// iPhone Service Cards
+export const iPhoneServiceCards: iPhoneServiceCard[] = [
   {
     imgUrl: '/iphone_14_pro_max.png',
     title: 'iPhone 14 Pro Max',
@@ -146,7 +219,8 @@ export const iPhoneServiceCards = [
   },
 ];
 
-export const iPhoneServiceDetails = [
+// iPhone Service Details
+export const iPhoneServiceDetails: iPhoneServiceDetail[] = [
   {
     imgUrl: '/iphone_14_pro_max.png',
     title: 'iPhone 14 Pro Max',
@@ -1078,20 +1152,21 @@ export const iPhoneServiceDetails = [
   },
 ];
 
-export const iPadServiceDetails = [];
+// Placeholder for other service details
+export const iPadServiceDetails: iPhoneServiceDetail[] = []; // Define similar structure when available
+export const macBookServiceDetails: iPhoneServiceDetail[] = []; // Define similar structure when available
+export const iMacServiceDetails: iPhoneServiceDetail[] = []; // Define similar structure when available
 
-export const macBookServiceDetails = [];
-
-export const iMacServiceDetails = [];
-
-export const serviceDetails = {
+// Service Details Mapping
+export const serviceDetails: ServiceDetailsMap = {
   0: iPhoneServiceDetails, // Reparații iPhone
   1: iPadServiceDetails, // Reparații iPad
   2: macBookServiceDetails, // Reparații MacBook
   3: iMacServiceDetails, // Reparații iMac
 };
 
-export const testimonials = [
+// Testimonials
+export const testimonials: Testimonial[] = [
   {
     name: 'Norris Măgeanu',
     username: '@norrismageanu',
@@ -1227,11 +1302,13 @@ export const testimonials = [
   },
 ];
 
-export const secondaryDisclaimer = [
+// Secondary Disclaimer
+export const secondaryDisclaimer: string[] = [
   'iPhone, iPad, MacBook și iMac sunt mărci comerciale înregistrate ale Apple Inc. iPhone Doctor este o firmă independentă de reparații și nu este în nici un fel afiliată cu Apple Inc.',
 ];
 
-export const socials = [
+// Socials
+export const socials: Social[] = [
   {
     name: 'whatsapp',
     url: '/whatsapp.svg',

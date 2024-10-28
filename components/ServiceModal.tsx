@@ -1,15 +1,47 @@
-// ServiceModal.jsx
+// ServiceModal.tsx
 
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, MouseEvent } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Portal from './Portal';
 import '../styles/globals.css';
 
-const ServiceModal = ({ service, onClose }) => {
-  const [showModal, setShowModal] = useState(!!service);
+// Define the structure of a single service item
+interface ServiceItem {
+  name: string;
+  duration: string;
+  price: string;
+}
+
+// Define the structure for sizes
+interface Size {
+  expanded: {
+    width: number;
+    height: number;
+  };
+}
+
+// Define the structure of the service prop
+interface Service {
+  imgUrl: string;
+  title: string;
+  sizes: Size;
+  services: ServiceItem[];
+}
+
+// Define the props for the ServiceModal component
+interface ServiceModalProps {
+  service: Service | null;
+  onClose: () => void;
+}
+
+const ServiceModal: React.FunctionComponent<ServiceModalProps> = ({
+  service,
+  onClose,
+}) => {
+  const [showModal, setShowModal] = useState<boolean>(!!service);
 
   useEffect(() => {
     if (service) {
@@ -105,7 +137,7 @@ const ServiceModal = ({ service, onClose }) => {
               animate="visible"
               exit="exit"
               transition={{ duration: 0.4, ease: 'easeInOut' }}
-              onClick={(e) => e.stopPropagation()}
+              onClick={(e: MouseEvent<HTMLDivElement>) => e.stopPropagation()}
               role="dialog"
               aria-modal="true"
             >
@@ -151,7 +183,7 @@ const ServiceModal = ({ service, onClose }) => {
                     alt={title}
                     width={expandedImageSize.width}
                     height={expandedImageSize.height}
-                    objectFit="contain"
+                    style={{ objectFit: 'contain' }}
                   />
                 </div>
 

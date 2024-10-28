@@ -1,20 +1,57 @@
-// components/ServiceCard.jsx
+// components/ServiceCard.tsx
 
 'use client';
 
-import React, { useState, useEffect, useContext } from 'react';
+import React, {
+  useState,
+  useEffect,
+  useContext,
+  KeyboardEvent,
+  MouseEvent,
+} from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { AnimationContext } from '../context/AnimationContext';
+import '../styles/globals.css'; // Ensure global styles are imported if needed
 
-const ServiceCard = ({ service, onClick, isAnimationComplete, isActive }) => {
+// Define the structure of a single service
+interface Service {
+  imgUrl: string;
+  title: string;
+  sizes: Sizes;
+}
+
+// Define the structure for sizes
+interface Sizes {
+  sm: { width: number; height: number };
+  md?: { width: number; height: number };
+  lg?: { width: number; height: number };
+  xl?: { width: number; height: number };
+  // Add other sizes if necessary
+}
+
+// Define the props for the ServiceCard component
+interface ServiceCardProps {
+  service: Service;
+  onClick: () => void;
+  isAnimationComplete: boolean;
+  isActive: boolean;
+}
+
+const ServiceCard: React.FC<ServiceCardProps> = ({
+  service,
+  onClick,
+  isAnimationComplete,
+  isActive,
+}) => {
   const { imgUrl, title, sizes } = service;
   const { canAnimate } = useContext(AnimationContext);
-  const [screenSize, setScreenSize] = useState('sm');
-  const [isHovered, setIsHovered] = useState(false);
+  const [screenSize, setScreenSize] = useState<'sm' | 'md' | 'lg' | 'xl'>('sm');
+  const [isHovered, setIsHovered] = useState<boolean>(false);
 
+  // Handle screen resize to set screenSize state
   useEffect(() => {
-    const handleResize = () => {
+    const handleResize = (): void => {
       const width = window.innerWidth;
       if (width >= 1280) {
         setScreenSize('xl');
@@ -29,13 +66,23 @@ const ServiceCard = ({ service, onClick, isAnimationComplete, isActive }) => {
 
     if (typeof window !== 'undefined') {
       window.addEventListener('resize', handleResize);
-      handleResize();
+      handleResize(); // Initialize screen size
       return () => window.removeEventListener('resize', handleResize);
     }
   }, []);
 
+  // Determine the image size based on screenSize
   const imageSize = sizes[screenSize] || sizes.lg || sizes.md || sizes.sm;
-  const isGlowVisible = isActive || isHovered;
+
+  // Determine if glow effect should be visible
+  const isGlowVisible: boolean = isActive || isHovered;
+
+  // Handle key press events for accessibility
+  const handleKeyPress = (e: KeyboardEvent<HTMLDivElement>): void => {
+    if (e.key === 'Enter') {
+      onClick();
+    }
+  };
 
   return (
     <motion.div
@@ -65,9 +112,7 @@ const ServiceCard = ({ service, onClick, isAnimationComplete, isActive }) => {
       animate={{ scale: isActive ? 1.05 : 1 }}
       role="button"
       tabIndex={0}
-      onKeyPress={(e) => {
-        if (e.key === 'Enter') onClick();
-      }}
+      onKeyPress={handleKeyPress}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       aria-label={`Open details for ${title}`}
@@ -126,6 +171,7 @@ const ServiceCard = ({ service, onClick, isAnimationComplete, isActive }) => {
           />
         )}
       </AnimatePresence>
+
       <div
         className={`
           absolute inset-0 z-10
@@ -157,13 +203,13 @@ const ServiceCard = ({ service, onClick, isAnimationComplete, isActive }) => {
             alt={title}
             fill
             style={{ objectFit: 'contain' }}
-            sizes="
+            sizes={`
               (min-width: 1280px) 320px,
               (min-width: 1024px) 270px,
               (min-width: 768px) 203px,
               (min-width: 640px) 200px,
               150px
-            "
+            `}
             priority={false}
             loading="lazy"
           />
