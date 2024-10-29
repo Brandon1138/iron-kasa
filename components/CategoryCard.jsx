@@ -1,10 +1,10 @@
 // components/CategoryCard.jsx
 
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
-import Image from "next/image";
-import React from "react";
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import React from 'react';
 
 const CategoryCard = ({
   id,
@@ -16,8 +16,7 @@ const CategoryCard = ({
   setHoveredCategoryId,
 }) => {
   const isHovered = hoveredCategoryId === id;
-  const isAnotherCardHovered =
-    hoveredCategoryId !== null && hoveredCategoryId !== id;
+  const isAnotherCardHovered = hoveredCategoryId !== null && hoveredCategoryId !== id;
 
   // Determine if the glow should be visible
   const isGlowVisible = (isSelected && !isAnotherCardHovered) || isHovered;
@@ -37,7 +36,7 @@ const CategoryCard = ({
         2xl:w-[270px] 2xl:h-[270px] 2xl:rounded-[44px]
         overflow-visible
         transition-transform duration-300
-        ${(isSelected && !isAnotherCardHovered) || isHovered ? "scale-105" : ""}
+        ${(isSelected && !isAnotherCardHovered) || isHovered ? 'scale-105' : ''}
         outer-shadow
         glassmorphism
         flex-shrink-0
@@ -48,7 +47,7 @@ const CategoryCard = ({
       role="button"
       tabIndex={0}
       onKeyPress={(e) => {
-        if (e.key === "Enter") onSelect();
+        if (e.key === 'Enter') onSelect();
       }}
       aria-label={`Select ${title}`}
     >
@@ -70,7 +69,7 @@ const CategoryCard = ({
         `}
         style={{
           background:
-            "conic-gradient(from 0deg, #a855f7 0%, #c34cdc 25%, #f43f5e 50%, #ec6e36 75%, #d97706 100%)",
+            'conic-gradient(from 0deg, #a855f7 0%, #c34cdc 25%, #f43f5e 50%, #ec6e36 75%, #d97706 100%)',
         }}
         initial={{ opacity: 0 }}
         animate={{
@@ -98,8 +97,8 @@ const CategoryCard = ({
           bg-gradient-to-b
           ${
             (isSelected && !isAnotherCardHovered) || isHovered
-              ? "from-[#1e1e1eBF] to-[#1e1e1eBF]"
-              : "from-[rgba(255,255,255,0.04)] to-[rgba(255,255,255,0.012)]"
+              ? 'from-[#1e1e1eBF] to-[#1e1e1eBF]'
+              : 'from-[rgba(255,255,255,0.04)] to-[rgba(255,255,255,0.012)]'
           }
           z-10
         `}
@@ -118,7 +117,7 @@ const CategoryCard = ({
               (min-width: 640px) 88px,
               56px
             `}
-            style={{ objectFit: "contain" }}
+            style={{ objectFit: 'contain' }}
             priority={false}
             loading="lazy"
           />

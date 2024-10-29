@@ -1,306 +1,35 @@
 // sections/Contact.jsx
 
-'use client';
+"use client";
 
-import { useRef } from 'react';
-import { motion } from 'framer-motion';
-import Script from 'next/script';
-import { TypingText } from '../components';
-import styles from '../styles';
-import { fadeIn, staggerContainer } from '../utils/motion';
+import { useRef, useEffect } from "react";
+import { motion } from "framer-motion";
+import Script from "next/script";
+import { TypingText } from "../components";
+import { fadeIn, staggerContainer } from "../utils/motion";
 
 const Contact = () => {
   const mapRef = useRef(null);
 
+  // Attach initMap to the window object
+  useEffect(() => {
+    window.initMap = initMap;
+  }, []);
+
+  // Updated initMap function using AdvancedMarkerElement
   const initMap = () => {
     const shopLocation = { lat: 44.41362120240169, lng: 26.132020598094197 }; // iPhoneDoctor's latitude and longitude
 
     const map = new window.google.maps.Map(mapRef.current, {
       center: shopLocation, // Center the map on the shop location
       zoom: 15,
-      styles: [
-        {
-          featureType: 'all',
-          elementType: 'labels.text.fill',
-          stylers: [
-            {
-              saturation: 36,
-            },
-            {
-              color: '#000000',
-            },
-            {
-              lightness: 40,
-            },
-          ],
-        },
-        {
-          featureType: 'all',
-          elementType: 'labels.text.stroke',
-          stylers: [
-            {
-              visibility: 'on',
-            },
-            {
-              color: '#000000',
-            },
-            {
-              lightness: 16,
-            },
-          ],
-        },
-        {
-          featureType: 'all',
-          elementType: 'labels.icon',
-          stylers: [
-            {
-              visibility: 'off',
-            },
-          ],
-        },
-        {
-          featureType: 'administrative',
-          elementType: 'geometry.fill',
-          stylers: [
-            {
-              color: '#000000',
-            },
-            {
-              lightness: 20,
-            },
-          ],
-        },
-        {
-          featureType: 'administrative',
-          elementType: 'geometry.stroke',
-          stylers: [
-            {
-              color: '#000000',
-            },
-            {
-              lightness: 17,
-            },
-            {
-              weight: 1.2,
-            },
-          ],
-        },
-        {
-          featureType: 'administrative.province',
-          elementType: 'geometry',
-          stylers: [
-            {
-              visibility: 'on',
-            },
-            {
-              color: '#ff8200',
-            },
-          ],
-        },
-        {
-          featureType: 'administrative.province',
-          elementType: 'geometry.fill',
-          stylers: [
-            {
-              visibility: 'on',
-            },
-            {
-              color: '#ff3800',
-            },
-          ],
-        },
-        {
-          featureType: 'administrative.province',
-          elementType: 'labels.text.fill',
-          stylers: [
-            {
-              color: '#ff6600',
-            },
-          ],
-        },
-        {
-          featureType: 'administrative.locality',
-          elementType: 'labels.text.fill',
-          stylers: [
-            {
-              color: '#d9d9d9',
-            },
-          ],
-        },
-        {
-          featureType: 'administrative.locality',
-          elementType: 'labels.text.stroke',
-          stylers: [
-            {
-              visibility: 'off',
-            },
-          ],
-        },
-        {
-          featureType: 'administrative.neighborhood',
-          elementType: 'all',
-          stylers: [
-            {
-              visibility: 'on',
-            },
-            {
-              color: '#CA4776',
-            },
-          ],
-        },
-        {
-          featureType: 'administrative.neighborhood',
-          elementType: 'labels.text.stroke',
-          stylers: [
-            {
-              color: '#000000',
-            },
-          ],
-        },
-        {
-          featureType: 'administrative.land_parcel',
-          elementType: 'labels.text.fill',
-          stylers: [
-            {
-              color: '#ff0000',
-            },
-          ],
-        },
-        {
-          featureType: 'landscape',
-          elementType: 'geometry',
-          stylers: [
-            {
-              color: '#161616',
-            },
-            {
-              lightness: 20,
-            },
-          ],
-        },
-        {
-          featureType: 'landscape.man_made',
-          elementType: 'geometry',
-          stylers: [
-            {
-              visibility: 'on',
-            },
-            {
-              color: '#202020',
-            },
-          ],
-        },
-        {
-          featureType: 'poi',
-          elementType: 'all',
-          stylers: [
-            {
-              visibility: 'on',
-            },
-          ],
-        },
-        {
-          featureType: 'poi',
-          elementType: 'geometry',
-          stylers: [
-            {
-              lightness: 21,
-            },
-            {
-              color: '#121212',
-            },
-          ],
-        },
-        {
-          featureType: 'poi',
-          elementType: 'labels.text.fill',
-          stylers: [
-            {
-              color: '#858585',
-            },
-          ],
-        },
-        {
-          featureType: 'road.highway',
-          elementType: 'geometry.fill',
-          stylers: [
-            {
-              color: '#d97706',
-            },
-          ],
-        },
-        {
-          featureType: 'road.highway',
-          elementType: 'geometry.stroke',
-          stylers: [
-            {
-              color: '#000000',
-            },
-            {
-              lightness: 29,
-            },
-            {
-              weight: 0.2,
-            },
-          ],
-        },
-        {
-          featureType: 'road.arterial',
-          elementType: 'geometry',
-          stylers: [
-            {
-              color: '#271532',
-            },
-            {
-              lightness: 18,
-            },
-            {
-              visibility: 'on',
-            },
-          ],
-        },
-        {
-          featureType: 'road.local',
-          elementType: 'geometry',
-          stylers: [
-            {
-              color: '#000000',
-            },
-            {
-              lightness: 16,
-            },
-          ],
-        },
-        {
-          featureType: 'transit',
-          elementType: 'geometry',
-          stylers: [
-            {
-              color: '#000000',
-            },
-            {
-              lightness: 19,
-            },
-          ],
-        },
-        {
-          featureType: 'water',
-          elementType: 'geometry',
-          stylers: [
-            {
-              color: '#000000',
-            },
-            {
-              lightness: 17,
-            },
-          ],
-        },
-      ],
+      mapId: "a7d50c754bc2729c", // Use your custom Map ID
     });
 
-    new window.google.maps.Marker({
-      position: shopLocation, // Place the marker at the shop location
+    // Use AdvancedMarkerElement instead of the deprecated Marker
+    new google.maps.marker.AdvancedMarkerElement({
       map: map,
+      position: shopLocation,
     });
   };
 
@@ -309,16 +38,14 @@ const Contact = () => {
     const { lat, lng } = { lat: 44.41361458005216, lng: 26.132022068483483 };
     return `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
   };
-
   return (
     <section
       id="contact"
-      className={`pt-24 -pb-24 lg:px-8 md:px-16 px-6 relative z-10`} // Increased pt-24 and decreased pb-8
+      className={`pt-24 -pb-24 lg:px-8 md:px-16 px-6 relative z-10`}
     >
       <Script
-        src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`}
-        strategy="lazyOnload"
-        onLoad={initMap}
+        src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&v=beta&map_ids=a7d50c754bc2729c&libraries=marker&callback=initMap&loading=async`}
+        strategy="afterInteractive"
       />
       <motion.div
         variants={staggerContainer}
@@ -329,10 +56,10 @@ const Contact = () => {
       >
         <TypingText title="| Contact" textStyles="text-center" />
         <motion.h2
-          variants={fadeIn('up', 'tween', 0.2, 1)}
+          variants={fadeIn("up", "tween", 0.2, 1)}
           className="mt-4 font-bold text-3xl lg:text-5xl text-white text-center"
         >
-          Suntem aici să te{' '}
+          Suntem aici să te{" "}
           <span className="bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-purple-500 via-rose-500 to-amber-500 bg-clip-text text-transparent">
             ajutăm
           </span>
@@ -340,7 +67,7 @@ const Contact = () => {
 
         {/* Paragraph */}
         <motion.p
-          variants={fadeIn('up', 'tween', 0.4, 1)}
+          variants={fadeIn("up", "tween", 0.4, 1)}
           className="mt-6 w-full max-w-[1230px] px-4 text-white text-opacity-75 text-lg text-center mx-auto"
         >
           Fie că ai probleme cu software-ul, hardware-ul sau pur și simplu vrei
@@ -352,7 +79,7 @@ const Contact = () => {
 
         {/* Map Section */}
         <motion.div
-          variants={fadeIn('up', 'tween', 0.4, 1)}
+          variants={fadeIn("up", "tween", 0.4, 1)}
           className="mt-8 w-full"
         >
           {/* Map container with max width and padding */}
@@ -366,7 +93,7 @@ const Contact = () => {
 
         {/* Contact and Program Information */}
         <motion.div
-          variants={fadeIn('up', 'tween', 0.3, 1)}
+          variants={fadeIn("up", "tween", 0.3, 1)}
           className="mt-8 w-full max-w-[1230px] px-4"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-white">

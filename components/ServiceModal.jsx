@@ -1,12 +1,12 @@
 // ServiceModal.jsx
 
-"use client";
+'use client';
 
-import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
-import Portal from "./Portal";
-import "../styles/globals.css";
+import React, { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
+import Portal from './Portal';
+import '../styles/globals.css';
 
 const ServiceModal = ({ service, onClose }) => {
   const [showModal, setShowModal] = useState(!!service);
@@ -24,9 +24,9 @@ const ServiceModal = ({ service, onClose }) => {
   // Prevent body scroll when modal is open
   useEffect(() => {
     if (showModal) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = 'auto';
     }
   }, [showModal]);
 
@@ -37,9 +37,9 @@ const ServiceModal = ({ service, onClose }) => {
   // Safely calculate expanded image size
   const expandedImageSize = sizes?.expanded
     ? {
-        width: sizes.expanded.width * 0.7,
-        height: sizes.expanded.height * 0.7,
-      }
+      width: sizes.expanded.width * 0.7,
+      height: sizes.expanded.height * 0.7,
+    }
     : { width: 300, height: 300 }; // Fallback sizes
 
   // Animation variants for the modal
@@ -57,7 +57,7 @@ const ServiceModal = ({ service, onClose }) => {
   };
 
   // Define the 'sizes' prop for the noise Image component
-  const noiseSizes = `(min-width: 1280px) 60vw, (min-width: 1024px) 60vw, (min-width: 768px) 70vw, (min-width: 640px) 80vw, 90vw`;
+  const noiseSizes = '(min-width: 1280px) 60vw, (min-width: 1024px) 60vw, (min-width: 768px) 70vw, (min-width: 640px) 80vw, 90vw';
 
   return (
     <Portal>
@@ -89,7 +89,7 @@ const ServiceModal = ({ service, onClose }) => {
               animate="visible"
               exit="exit"
               onClick={handleClose}
-              style={{ cursor: "pointer" }}
+              style={{ cursor: 'pointer' }}
               aria-label="Close Modal"
             />
 
@@ -111,7 +111,7 @@ const ServiceModal = ({ service, onClose }) => {
               initial="hidden"
               animate="visible"
               exit="exit"
-              transition={{ duration: 0.4, ease: "easeInOut" }}
+              transition={{ duration: 0.4, ease: 'easeInOut' }}
               onClick={(e) => e.stopPropagation()}
               role="dialog"
               aria-modal="true"
@@ -124,7 +124,7 @@ const ServiceModal = ({ service, onClose }) => {
                   fill
                   sizes={noiseSizes}
                   className="opacity-5 pointer-events-none"
-                  style={{ objectFit: "cover" }}
+                  style={{ objectFit: 'cover' }}
                 />
               </div>
 
@@ -150,9 +150,9 @@ const ServiceModal = ({ service, onClose }) => {
                   style={{
                     width: expandedImageSize.width,
                     height: expandedImageSize.height,
-                    maxWidth: "100%",
-                    maxHeight: "35vh",
-                    position: "relative", // Needed for Next.js Image with 'fill' prop
+                    maxWidth: '100%',
+                    maxHeight: '35vh',
+                    position: 'relative', // Needed for Next.js Image with 'fill' prop
                   }}
                   className="flex justify-center items-center"
                 >
@@ -160,11 +160,11 @@ const ServiceModal = ({ service, onClose }) => {
                     src={imgUrl}
                     alt={title}
                     fill
-                    sizes={`(max-width: 640px) 80vw, (max-width: 768px) 70vw, (max-width: 1024px) 60vw, (max-width: 1280px) 60vw, 60vw`}
+                    sizes="(max-width: 640px) 80vw, (max-width: 768px) 70vw, (max-width: 1024px) 60vw, (max-width: 1280px) 60vw, 60vw"
                     className="object-contain"
                     priority={false}
                     loading="lazy"
-                    style={{ objectFit: "contain" }}
+                    style={{ objectFit: 'contain' }}
                   />
                 </div>
 
@@ -188,8 +188,8 @@ const ServiceModal = ({ service, onClose }) => {
                     </div>
 
                     {/* Services List */}
-                    {services &&
-                      services.map((serviceItem, index) => (
+                    {services
+                      && services.map((serviceItem, index) => (
                         <React.Fragment key={index}>
                           <div className="text-white text-left">
                             {serviceItem.name}
