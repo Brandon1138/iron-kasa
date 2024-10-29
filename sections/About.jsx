@@ -12,8 +12,8 @@ const About = () => (
   <section id="about" className={`${styles.paddings} relative z-10`}>
     {/* Existing Background Div */}
     <div className="absolute inset-0 z-[-2] h-full w-full bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#121212_2px)] bg-[size:20px_20px]"></div>
-    <div className="absolute inset-0 z-[-1] h-full w-full bg-gradient-to-b from-stone-500 to-neutral-950 opacity-30 " />  
-    
+    <div className="absolute inset-0 z-[-1] h-full w-full bg-gradient-to-b from-stone-500 to-neutral-950 opacity-30 " />
+
     <motion.div
       variants={staggerContainer}
       initial="hidden"

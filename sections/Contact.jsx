@@ -13,289 +13,289 @@ const Contact = () => {
   const mapRef = useRef(null);
 
   const initMap = () => {
-    const shopLocation = { lat: 44.41362120240169, lng: 26.132020598094197 };  // iPhoneDoctor's latitude and longitude
+    const shopLocation = { lat: 44.41362120240169, lng: 26.132020598094197 }; // iPhoneDoctor's latitude and longitude
 
     const map = new window.google.maps.Map(mapRef.current, {
       center: shopLocation, // Center the map on the shop location
       zoom: 15,
       styles: [
         {
-            "featureType": "all",
-            "elementType": "labels.text.fill",
-            "stylers": [
-                {
-                    "saturation": 36
-                },
-                {
-                    "color": "#000000"
-                },
-                {
-                    "lightness": 40
-                }
-            ]
+          featureType: 'all',
+          elementType: 'labels.text.fill',
+          stylers: [
+            {
+              saturation: 36,
+            },
+            {
+              color: '#000000',
+            },
+            {
+              lightness: 40,
+            },
+          ],
         },
         {
-            "featureType": "all",
-            "elementType": "labels.text.stroke",
-            "stylers": [
-                {
-                    "visibility": "on"
-                },
-                {
-                    "color": "#000000"
-                },
-                {
-                    "lightness": 16
-                }
-            ]
+          featureType: 'all',
+          elementType: 'labels.text.stroke',
+          stylers: [
+            {
+              visibility: 'on',
+            },
+            {
+              color: '#000000',
+            },
+            {
+              lightness: 16,
+            },
+          ],
         },
         {
-            "featureType": "all",
-            "elementType": "labels.icon",
-            "stylers": [
-                {
-                    "visibility": "off"
-                }
-            ]
+          featureType: 'all',
+          elementType: 'labels.icon',
+          stylers: [
+            {
+              visibility: 'off',
+            },
+          ],
         },
         {
-            "featureType": "administrative",
-            "elementType": "geometry.fill",
-            "stylers": [
-                {
-                    "color": "#000000"
-                },
-                {
-                    "lightness": 20
-                }
-            ]
+          featureType: 'administrative',
+          elementType: 'geometry.fill',
+          stylers: [
+            {
+              color: '#000000',
+            },
+            {
+              lightness: 20,
+            },
+          ],
         },
         {
-            "featureType": "administrative",
-            "elementType": "geometry.stroke",
-            "stylers": [
-                {
-                    "color": "#000000"
-                },
-                {
-                    "lightness": 17
-                },
-                {
-                    "weight": 1.2
-                }
-            ]
+          featureType: 'administrative',
+          elementType: 'geometry.stroke',
+          stylers: [
+            {
+              color: '#000000',
+            },
+            {
+              lightness: 17,
+            },
+            {
+              weight: 1.2,
+            },
+          ],
         },
         {
-            "featureType": "administrative.province",
-            "elementType": "geometry",
-            "stylers": [
-                {
-                    "visibility": "on"
-                },
-                {
-                    "color": "#ff8200"
-                }
-            ]
+          featureType: 'administrative.province',
+          elementType: 'geometry',
+          stylers: [
+            {
+              visibility: 'on',
+            },
+            {
+              color: '#ff8200',
+            },
+          ],
         },
         {
-            "featureType": "administrative.province",
-            "elementType": "geometry.fill",
-            "stylers": [
-                {
-                    "visibility": "on"
-                },
-                {
-                    "color": "#ff3800"
-                }
-            ]
+          featureType: 'administrative.province',
+          elementType: 'geometry.fill',
+          stylers: [
+            {
+              visibility: 'on',
+            },
+            {
+              color: '#ff3800',
+            },
+          ],
         },
         {
-            "featureType": "administrative.province",
-            "elementType": "labels.text.fill",
-            "stylers": [
-                {
-                    "color": "#ff6600"
-                }
-            ]
+          featureType: 'administrative.province',
+          elementType: 'labels.text.fill',
+          stylers: [
+            {
+              color: '#ff6600',
+            },
+          ],
         },
         {
-            "featureType": "administrative.locality",
-            "elementType": "labels.text.fill",
-            "stylers": [
-                {
-                    "color": "#d9d9d9"
-                }
-            ]
+          featureType: 'administrative.locality',
+          elementType: 'labels.text.fill',
+          stylers: [
+            {
+              color: '#d9d9d9',
+            },
+          ],
         },
         {
-            "featureType": "administrative.locality",
-            "elementType": "labels.text.stroke",
-            "stylers": [
-                {
-                    "visibility": "off"
-                }
-            ]
+          featureType: 'administrative.locality',
+          elementType: 'labels.text.stroke',
+          stylers: [
+            {
+              visibility: 'off',
+            },
+          ],
         },
         {
-            "featureType": "administrative.neighborhood",
-            "elementType": "all",
-            "stylers": [
-                {
-                    "visibility": "on"
-                },
-                {
-                    "color": "#CA4776"
-                }
-            ]
+          featureType: 'administrative.neighborhood',
+          elementType: 'all',
+          stylers: [
+            {
+              visibility: 'on',
+            },
+            {
+              color: '#CA4776',
+            },
+          ],
         },
         {
-            "featureType": "administrative.neighborhood",
-            "elementType": "labels.text.stroke",
-            "stylers": [
-                {
-                    "color": "#000000"
-                }
-            ]
+          featureType: 'administrative.neighborhood',
+          elementType: 'labels.text.stroke',
+          stylers: [
+            {
+              color: '#000000',
+            },
+          ],
         },
         {
-            "featureType": "administrative.land_parcel",
-            "elementType": "labels.text.fill",
-            "stylers": [
-                {
-                    "color": "#ff0000"
-                }
-            ]
+          featureType: 'administrative.land_parcel',
+          elementType: 'labels.text.fill',
+          stylers: [
+            {
+              color: '#ff0000',
+            },
+          ],
         },
         {
-            "featureType": "landscape",
-            "elementType": "geometry",
-            "stylers": [
-                {
-                    "color": "#161616"
-                },
-                {
-                    "lightness": 20
-                }
-            ]
+          featureType: 'landscape',
+          elementType: 'geometry',
+          stylers: [
+            {
+              color: '#161616',
+            },
+            {
+              lightness: 20,
+            },
+          ],
         },
         {
-            "featureType": "landscape.man_made",
-            "elementType": "geometry",
-            "stylers": [
-                {
-                    "visibility": "on"
-                },
-                {
-                    "color": "#202020"
-                }
-            ]
+          featureType: 'landscape.man_made',
+          elementType: 'geometry',
+          stylers: [
+            {
+              visibility: 'on',
+            },
+            {
+              color: '#202020',
+            },
+          ],
         },
         {
-            "featureType": "poi",
-            "elementType": "all",
-            "stylers": [
-                {
-                    "visibility": "on"
-                }
-            ]
+          featureType: 'poi',
+          elementType: 'all',
+          stylers: [
+            {
+              visibility: 'on',
+            },
+          ],
         },
         {
-            "featureType": "poi",
-            "elementType": "geometry",
-            "stylers": [
-                {
-                    "lightness": 21
-                },
-                {
-                    "color": "#121212"
-                }
-            ]
+          featureType: 'poi',
+          elementType: 'geometry',
+          stylers: [
+            {
+              lightness: 21,
+            },
+            {
+              color: '#121212',
+            },
+          ],
         },
         {
-            "featureType": "poi",
-            "elementType": "labels.text.fill",
-            "stylers": [
-                {
-                    "color": "#858585"
-                }
-            ]
+          featureType: 'poi',
+          elementType: 'labels.text.fill',
+          stylers: [
+            {
+              color: '#858585',
+            },
+          ],
         },
         {
-            "featureType": "road.highway",
-            "elementType": "geometry.fill",
-            "stylers": [
-                {
-                    "color": "#d97706"
-                }
-            ]
+          featureType: 'road.highway',
+          elementType: 'geometry.fill',
+          stylers: [
+            {
+              color: '#d97706',
+            },
+          ],
         },
         {
-            "featureType": "road.highway",
-            "elementType": "geometry.stroke",
-            "stylers": [
-                {
-                    "color": "#000000"
-                },
-                {
-                    "lightness": 29
-                },
-                {
-                    "weight": 0.2
-                }
-            ]
+          featureType: 'road.highway',
+          elementType: 'geometry.stroke',
+          stylers: [
+            {
+              color: '#000000',
+            },
+            {
+              lightness: 29,
+            },
+            {
+              weight: 0.2,
+            },
+          ],
         },
         {
-            "featureType": "road.arterial",
-            "elementType": "geometry",
-            "stylers": [
-                {
-                    "color": "#271532"
-                },
-                {
-                    "lightness": 18
-                },
-                {
-                    "visibility": "on"
-                }
-            ]
+          featureType: 'road.arterial',
+          elementType: 'geometry',
+          stylers: [
+            {
+              color: '#271532',
+            },
+            {
+              lightness: 18,
+            },
+            {
+              visibility: 'on',
+            },
+          ],
         },
         {
-            "featureType": "road.local",
-            "elementType": "geometry",
-            "stylers": [
-                {
-                    "color": "#000000"
-                },
-                {
-                    "lightness": 16
-                }
-            ]
+          featureType: 'road.local',
+          elementType: 'geometry',
+          stylers: [
+            {
+              color: '#000000',
+            },
+            {
+              lightness: 16,
+            },
+          ],
         },
         {
-            "featureType": "transit",
-            "elementType": "geometry",
-            "stylers": [
-                {
-                    "color": "#000000"
-                },
-                {
-                    "lightness": 19
-                }
-            ]
+          featureType: 'transit',
+          elementType: 'geometry',
+          stylers: [
+            {
+              color: '#000000',
+            },
+            {
+              lightness: 19,
+            },
+          ],
         },
         {
-            "featureType": "water",
-            "elementType": "geometry",
-            "stylers": [
-                {
-                    "color": "#000000"
-                },
-                {
-                    "lightness": 17
-                }
-            ]
-        }
-    ],
+          featureType: 'water',
+          elementType: 'geometry',
+          stylers: [
+            {
+              color: '#000000',
+            },
+            {
+              lightness: 17,
+            },
+          ],
+        },
+      ],
     });
 
     new window.google.maps.Marker({
@@ -315,7 +315,6 @@ const Contact = () => {
       id="contact"
       className={`pt-24 -pb-24 lg:px-8 md:px-16 px-6 relative z-10`} // Increased pt-24 and decreased pb-8
     >
-      
       <Script
         src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`}
         strategy="lazyOnload"
@@ -337,16 +336,18 @@ const Contact = () => {
           <span className="bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-purple-500 via-rose-500 to-amber-500 bg-clip-text text-transparent">
             ajutăm
           </span>
-          
         </motion.h2>
-
 
         {/* Paragraph */}
         <motion.p
           variants={fadeIn('up', 'tween', 0.4, 1)}
           className="mt-6 w-full max-w-[1230px] px-4 text-white text-opacity-75 text-lg text-center mx-auto"
         >
-          Fie că ai probleme cu software-ul, hardware-ul sau pur și simplu vrei să-ți îmbunătățești performanțele dispozitivului, echipa iPhone Doctor te va trata cu seriozitate și profesionalism. Scrie-ne, sună-ne sau fă-ne o vizită la clinică și vom găsi soluția potrivită pentru tine. Așteptăm cu drag să te ajutăm!
+          Fie că ai probleme cu software-ul, hardware-ul sau pur și simplu vrei
+          să-ți îmbunătățești performanțele dispozitivului, echipa iPhone Doctor
+          te va trata cu seriozitate și profesionalism. Scrie-ne, sună-ne sau
+          fă-ne o vizită la clinică și vom găsi soluția potrivită pentru tine.
+          Așteptăm cu drag să te ajutăm!
         </motion.p>
 
         {/* Map Section */}
@@ -438,7 +439,10 @@ const Contact = () => {
                   </a>
                 </li>
                 <li className="flex items-center justify-center md:justify-end">
-                  <a href="mailto:office@iPhoneDoctor.ro" className="flex items-center">
+                  <a
+                    href="mailto:office@iPhoneDoctor.ro"
+                    className="flex items-center"
+                  >
                     <img
                       src="/mail.svg"
                       alt="Email"

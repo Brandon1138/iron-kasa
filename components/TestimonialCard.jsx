@@ -67,7 +67,6 @@ const TestimonialCard = ({ testimonial }) => {
       `}
       whileHover={isTouchDevice ? {} : { scale: 1.02 }}
     >
-
       {/* Content Container */}
       <div className="relative z-20 flex flex-col justify-between h-full">
         {/* Profile Section */}

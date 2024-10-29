@@ -15,7 +15,9 @@ const Footer = () => (
     className={`${styles.xPaddings} py-8 relative bg-primary-black bg-opacity-50 backdrop-blur-md`}
     aria-label="Footer"
   >
-    <div className={`${styles.innerWidth} mx-auto lg:px-12 px-4 flex flex-col gap-8`}>
+    <div
+      className={`${styles.innerWidth} mx-auto lg:px-12 px-4 flex flex-col gap-8`}
+    >
       {/* Adjusted Flex Container for Heading and Button */}
       <div className="flex flex-col items-center md:flex-row md:justify-between flex-wrap gap-5">
         <h4 className="font-bold lg:text-[58px] md:text-[38px] sm:text-[32px] text-[32px] text-center text-white ">
@@ -30,8 +32,16 @@ const Footer = () => (
           whileHover={{ scale: 1.02 }} // Optional: Maintain hover effect
           whileTap={{ scale: 0.98 }} // Optional: Add tap effect for better UX
         >
-          <Image src="/chat.svg" alt="chat" width={24} height={24} className="object-contain" />
-          <span className="font-normal text-[16px] text-white">Trimite un mesaj</span>
+          <Image
+            src="/chat.svg"
+            alt="chat"
+            width={24}
+            height={24}
+            className="object-contain"
+          />
+          <span className="font-normal text-[16px] text-white">
+            Trimite un mesaj
+          </span>
         </motion.button>
       </div>
 
@@ -39,15 +49,12 @@ const Footer = () => (
         <div className="mb-[50px] h-[2px] bg-white opacity-10" />
 
         {/* Updated Flex Container for Footer Items */}
-        <div className="flex flex-col items-center justify-center md:flex-row md:justify-between flex-wrap
+        <div
+          className="flex flex-col items-center justify-center md:flex-row md:justify-between flex-wrap
                         gap-6 md:gap-4 text-center md:text-left"
         >
-
           {/* Brand Logo with Glow Effect */}
-          <div
-            className="relative flex-shrink-0"
-            aria-hidden="true"
-          >
+          <div className="relative flex-shrink-0" aria-hidden="true">
             {/* Glow Effect */}
             <motion.div
               className="absolute inset-0 bg-gradient-to-r from-[#a855f7] via-[#f43f5e] to-[#d97706] rounded-full filter blur-lg opacity-50"
@@ -62,11 +69,18 @@ const Footer = () => (
           {/* Optionally, you can remove the below <h4> since it's replaced by the logo */}
           {/* <h4 className="font-bold text-[24px] text-white">iPhoneDoctor</h4> */}
 
-          <p className="font-normal text-[14px] text-white opacity-50">All rights reserved 2024 iPhoneDoctor</p>
+          <p className="font-normal text-[14px] text-white opacity-50">
+            All rights reserved 2024 iPhoneDoctor
+          </p>
 
           <div className="flex gap-4">
             {socials.map((social) => (
-              <a href={social.link} key={social.name} target="_blank" rel="noopener noreferrer">
+              <a
+                href={social.link}
+                key={social.name}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Image
                   src={social.url}
                   alt={social.name}

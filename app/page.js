@@ -4,7 +4,14 @@
 
 import { useState } from 'react';
 import { Footer, Navbar } from '../components';
-import { About, Services, Hero, Contact, Transport, Testimonials } from '../sections';
+import {
+  About,
+  Services,
+  Hero,
+  Contact,
+  Transport,
+  Testimonials,
+} from '../sections';
 import ServiceModal from '../components/ServiceModal';
 
 const Page = () => {

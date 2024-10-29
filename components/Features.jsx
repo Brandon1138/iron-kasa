@@ -9,7 +9,11 @@ const Features = ({ imgUrl, title, subtitle }) => (
       className="w-[70px] h-[70px] rounded-[24px] glassmorphism outer-shadow flex items-center justify-center"
       style={{ backgroundColor: 'rgba(255, 255, 255, 0.08)' }}
     >
-      <img src={imgUrl} alt={title} className="w-[36px] h-[36px] object-contain" />
+      <img
+        src={imgUrl}
+        alt={title}
+        className="w-[36px] h-[36px] object-contain"
+      />
     </div>
 
     {/* Title */}

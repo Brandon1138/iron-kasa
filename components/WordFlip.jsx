@@ -121,7 +121,8 @@ const WordFlip = () => {
         )}
       </AnimatePresence>
       {/* Static word with gradient after flipping or on small screens */}
-      {(!isFlipping && currentWordIndex === words.length - 1) || isSmallScreen ? (
+      {(!isFlipping && currentWordIndex === words.length - 1)
+      || isSmallScreen ? (
         <motion.span
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -130,7 +131,7 @@ const WordFlip = () => {
         >
           {displayWord}
         </motion.span>
-      ) : null}
+        ) : null}
     </span>
   );
 };

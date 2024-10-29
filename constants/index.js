@@ -3,25 +3,25 @@ export const features = [
     imgUrl: '/star.svg',
     title: 'Experiență Atestată',
     subtitle:
-        'Printre primele servicii dedicate dispozitivelor Apple din București, cu peste 10 ani  de experiență în domeniu.',
+      'Printre primele servicii dedicate dispozitivelor Apple din București, cu peste 10 ani  de experiență în domeniu.',
   },
   {
     imgUrl: '/wrench.svg',
     title: 'Reparații Hardware',
     subtitle:
-        'Reparăm orice problemă hardware, indiferent de complexitate, de la ecrane sparte la componente interne.',
+      'Reparăm orice problemă hardware, indiferent de complexitate, de la ecrane sparte la componente interne.',
   },
   {
     imgUrl: '/gear.svg',
     title: 'Soluții Software',
     subtitle:
-        'Diagnosticăm și rezolvăm toate problemele software, astfel încât dispozitivul tău să funcționeze perfect.',
+      'Diagnosticăm și rezolvăm toate problemele software, astfel încât dispozitivul tău să funcționeze perfect.',
   },
   {
     imgUrl: '/check.svg',
     title: 'Personal Calificat',
     subtitle:
-        'Echipa noastră este formată din experți certificați, gata să îți ofere reparații rapide, eficiente și de cea mai mare calitate.',
+      'Echipa noastră este formată din experți certificați, gata să îți ofere reparații rapide, eficiente și de cea mai mare calitate.',
   },
 ];
 
@@ -37,16 +37,15 @@ export const categoryCard = [
   },
   {
     imgUrl: '/category-imac.svg',
-  }, 
-]
-
+  },
+];
 
 export const mainDisclaimer = [
   'iPhone Doctor Romania nu este, nu a fost și nu va fi niciodată un service autorizat Apple. Din considerente etice și din respect atât pentru clienții noștri, cât și pentru service-urile autorizate  Apple, dorim să clarificăm acest aspect. Piesele folosite, garanția oferită și reparațiile executate nu sunt în niciun fel afiliate Apple.',
   'iPhone Doctor Romania nu este, nu a fost și nu va fi niciodată un service autorizat Apple. Din considerente etice și din respect atât pentru clienții noștri, cât și pentru service-urile autorizate  Apple, dorim să clarificăm acest aspect. Piesele folosite, garanția oferită și reparațiile executate nu sunt în niciun fel afiliate Apple.',
   'iPhone Doctor Romania nu este, nu a fost și nu va fi niciodată un service autorizat Apple. Din considerente etice și din respect atât pentru clienții noștri, cât și pentru service-urile autorizate  Apple, dorim să clarificăm acest aspect. Piesele folosite, garanția oferită și reparațiile executate nu sunt în niciun fel afiliate Apple.',
-  'iPhone Doctor Romania nu este, nu a fost și nu va fi niciodată un service autorizat Apple. Din considerente etice și din respect atât pentru clienții noștri, cât și pentru service-urile autorizate  Apple, dorim să clarificăm acest aspect. Piesele folosite, garanția oferită și reparațiile executate nu sunt în niciun fel afiliate Apple.'
-]
+  'iPhone Doctor Romania nu este, nu a fost și nu va fi niciodată un service autorizat Apple. Din considerente etice și din respect atât pentru clienții noștri, cât și pentru service-urile autorizate  Apple, dorim să clarificăm acest aspect. Piesele folosite, garanția oferită și reparațiile executate nu sunt în niciun fel afiliate Apple.',
+];
 
 export const iPhoneServiceCards = [
   {
@@ -158,13 +157,33 @@ export const iPhoneServiceDetails = [
       sm: { width: 109, height: 78 }, // Reduced by 15%
     },
     services: [
-      { name: 'Înlocuire ecran (display și touchscreen)', duration: '30 min', price: '2000 lei' },
-      { name: 'Înlocuire capac spate și rama metalică mijlocie', duration: '30 min', price: '1500 lei' },
+      {
+        name: 'Înlocuire ecran (display și touchscreen)',
+        duration: '30 min',
+        price: '2000 lei',
+      },
+      {
+        name: 'Înlocuire capac spate și rama metalică mijlocie',
+        duration: '30 min',
+        price: '1500 lei',
+      },
       { name: 'Înlocuire cască', duration: '30 min', price: '500 lei' },
-      { name: 'Înlocuire camera principală', duration: '30 min', price: '500 lei' },
+      {
+        name: 'Înlocuire camera principală',
+        duration: '30 min',
+        price: '500 lei',
+      },
       { name: 'Înlocuire baterie', duration: '30 min', price: '500 lei' },
-      { name: 'Reparație / Înlocuire mufă de încărcare', duration: '30 min', price: '150 / 500 lei' },
-      { name: 'Înlocuire lentilă cameră principală', duration: '30 min', price: '500 lei' },
+      {
+        name: 'Reparație / Înlocuire mufă de încărcare',
+        duration: '30 min',
+        price: '150 / 500 lei',
+      },
+      {
+        name: 'Înlocuire lentilă cameră principală',
+        duration: '30 min',
+        price: '500 lei',
+      },
     ],
   },
   {
@@ -177,14 +196,34 @@ export const iPhoneServiceDetails = [
       sm: { width: 121, height: 78 }, // Reduced by 15%
     },
     services: [
-      { name: 'Înlocuire ecran (display și touchscreen)', duration: '30 min', price: '1400 lei' },
-      { name: 'Înlocuire rama metalică mijlocie', duration: '30 min', price: '1200 lei' },
+      {
+        name: 'Înlocuire ecran (display și touchscreen)',
+        duration: '30 min',
+        price: '1400 lei',
+      },
+      {
+        name: 'Înlocuire rama metalică mijlocie',
+        duration: '30 min',
+        price: '1200 lei',
+      },
       { name: 'Înlocuire capac spate', duration: '40 min', price: '500 lei' },
       { name: 'Înlocuire cască', duration: '30 min', price: '400 lei' },
-      { name: 'Înlocuire camera principală', duration: '30 min', price: '500 lei' },
+      {
+        name: 'Înlocuire camera principală',
+        duration: '30 min',
+        price: '500 lei',
+      },
       { name: 'Înlocuire baterie', duration: '30 min', price: '500 lei' },
-      { name: 'Reparație / Înlocuire mufă de încărcare', duration: '30 min', price: '150 / 500 lei' },
-      { name: 'Înlocuire lentilă cameră principală', duration: '30 min', price: '500 lei' },
+      {
+        name: 'Reparație / Înlocuire mufă de încărcare',
+        duration: '30 min',
+        price: '150 / 500 lei',
+      },
+      {
+        name: 'Înlocuire lentilă cameră principală',
+        duration: '30 min',
+        price: '500 lei',
+      },
     ],
   },
   {
@@ -197,13 +236,33 @@ export const iPhoneServiceDetails = [
       sm: { width: 96, height: 71 }, // Reduced by 15%
     },
     services: [
-      { name: 'Înlocuire ecran (display și touchscreen)', duration: '30 min', price: '1800 lei' },
-      { name: 'Înlocuire capac spate și rama metalică mijlocie', duration: '30 min', price: '1500 lei' },
+      {
+        name: 'Înlocuire ecran (display și touchscreen)',
+        duration: '30 min',
+        price: '1800 lei',
+      },
+      {
+        name: 'Înlocuire capac spate și rama metalică mijlocie',
+        duration: '30 min',
+        price: '1500 lei',
+      },
       { name: 'Înlocuire cască', duration: '30 min', price: '500 lei' },
-      { name: 'Înlocuire camera principală', duration: '30 min', price: '500 lei' },
+      {
+        name: 'Înlocuire camera principală',
+        duration: '30 min',
+        price: '500 lei',
+      },
       { name: 'Înlocuire baterie', duration: '30 min', price: '500 lei' },
-      { name: 'Reparație / Înlocuire mufă de încărcare', duration: '30 min', price: '150 / 500 lei' },
-      { name: 'Înlocuire lentilă cameră principală', duration: '30 min', price: '500 lei' },
+      {
+        name: 'Reparație / Înlocuire mufă de încărcare',
+        duration: '30 min',
+        price: '150 / 500 lei',
+      },
+      {
+        name: 'Înlocuire lentilă cameră principală',
+        duration: '30 min',
+        price: '500 lei',
+      },
     ],
   },
   {
@@ -216,14 +275,34 @@ export const iPhoneServiceDetails = [
       sm: { width: 116, height: 71 }, // Reduced by 15%
     },
     services: [
-      { name: 'Înlocuire ecran (display și touchscreen)', duration: '30 min', price: '1200 lei' },
-      { name: 'Înlocuire rama metalică mijlocie', duration: '30 min', price: '1200 lei' },
+      {
+        name: 'Înlocuire ecran (display și touchscreen)',
+        duration: '30 min',
+        price: '1200 lei',
+      },
+      {
+        name: 'Înlocuire rama metalică mijlocie',
+        duration: '30 min',
+        price: '1200 lei',
+      },
       { name: 'Înlocuire capac spate', duration: '40 min', price: '500 lei' },
       { name: 'Înlocuire cască', duration: '30 min', price: '400 lei' },
-      { name: 'Înlocuire camera principală', duration: '30 min', price: '500 lei' },
+      {
+        name: 'Înlocuire camera principală',
+        duration: '30 min',
+        price: '500 lei',
+      },
       { name: 'Înlocuire baterie', duration: '30 min', price: '500 lei' },
-      { name: 'Reparație / Înlocuire mufă de încărcare', duration: '30 min', price: '150 / 500 lei' },
-      { name: 'Înlocuire lentilă cameră principală', duration: '30 min', price: '500 lei' },
+      {
+        name: 'Reparație / Înlocuire mufă de încărcare',
+        duration: '30 min',
+        price: '150 / 500 lei',
+      },
+      {
+        name: 'Înlocuire lentilă cameră principală',
+        duration: '30 min',
+        price: '500 lei',
+      },
     ],
   },
   {
@@ -236,13 +315,33 @@ export const iPhoneServiceDetails = [
       sm: { width: 111, height: 78 }, // Reduced by 15%
     },
     services: [
-      { name: 'Înlocuire ecran (display și touchscreen)', duration: '30 min', price: '1400 lei' },
-      { name: 'Înlocuire capac spate și rama metalică mijlocie', duration: '30 min', price: '1200 lei' },
+      {
+        name: 'Înlocuire ecran (display și touchscreen)',
+        duration: '30 min',
+        price: '1400 lei',
+      },
+      {
+        name: 'Înlocuire capac spate și rama metalică mijlocie',
+        duration: '30 min',
+        price: '1200 lei',
+      },
       { name: 'Înlocuire cască', duration: '30 min', price: '500 lei' },
-      { name: 'Înlocuire camera principală', duration: '30 min', price: '400 lei' },
+      {
+        name: 'Înlocuire camera principală',
+        duration: '30 min',
+        price: '400 lei',
+      },
       { name: 'Înlocuire baterie', duration: '30 min', price: '500 lei' },
-      { name: 'Reparație / Înlocuire mufă de încărcare', duration: '30 min', price: '150 / 400 lei' },
-      { name: 'Înlocuire lentilă cameră principală', duration: '30 min', price: '500 lei' },
+      {
+        name: 'Reparație / Înlocuire mufă de încărcare',
+        duration: '30 min',
+        price: '150 / 400 lei',
+      },
+      {
+        name: 'Înlocuire lentilă cameră principală',
+        duration: '30 min',
+        price: '500 lei',
+      },
     ],
   },
   {
@@ -255,13 +354,33 @@ export const iPhoneServiceDetails = [
       sm: { width: 107, height: 71 }, // Reduced by 15%
     },
     services: [
-      { name: 'Înlocuire ecran (display și touchscreen)', duration: '30 min', price: '1400 lei' },
-      { name: 'Înlocuire capac spate și rama metalică mijlocie', duration: '40 min', price: '1200 lei' },
+      {
+        name: 'Înlocuire ecran (display și touchscreen)',
+        duration: '30 min',
+        price: '1400 lei',
+      },
+      {
+        name: 'Înlocuire capac spate și rama metalică mijlocie',
+        duration: '40 min',
+        price: '1200 lei',
+      },
       { name: 'Înlocuire cască', duration: '30 min', price: '500 lei' },
-      { name: 'Înlocuire camera principală', duration: '30 min', price: '400 lei' },
+      {
+        name: 'Înlocuire camera principală',
+        duration: '30 min',
+        price: '400 lei',
+      },
       { name: 'Înlocuire baterie', duration: '30 min', price: '500 lei' },
-      { name: 'Reparație / Înlocuire mufă de încărcare', duration: '30 min', price: '150 / 400 lei' },
-      { name: 'Înlocuire lentilă cameră principală', duration: '30 min', price: '500 lei' },
+      {
+        name: 'Reparație / Înlocuire mufă de încărcare',
+        duration: '30 min',
+        price: '150 / 400 lei',
+      },
+      {
+        name: 'Înlocuire lentilă cameră principală',
+        duration: '30 min',
+        price: '500 lei',
+      },
     ],
   },
   {
@@ -274,13 +393,33 @@ export const iPhoneServiceDetails = [
       sm: { width: 105, height: 63 }, // Reduced by 15%
     },
     services: [
-      { name: 'Înlocuire ecran (display și touchscreen)', duration: '30 min', price: '900 lei' },
-      { name: 'Înlocuire capac spate și rama metalică mijlocie', duration: '40 min', price: '900 lei' },
+      {
+        name: 'Înlocuire ecran (display și touchscreen)',
+        duration: '30 min',
+        price: '900 lei',
+      },
+      {
+        name: 'Înlocuire capac spate și rama metalică mijlocie',
+        duration: '40 min',
+        price: '900 lei',
+      },
       { name: 'Înlocuire cască', duration: '30 min', price: '400 lei' },
-      { name: 'Înlocuire camera principală', duration: '30 min', price: '300 lei' },
+      {
+        name: 'Înlocuire camera principală',
+        duration: '30 min',
+        price: '300 lei',
+      },
       { name: 'Înlocuire baterie', duration: '30 min', price: '400 lei' },
-      { name: 'Reparație / Înlocuire mufă de încărcare', duration: '30 min', price: '150 / 400 lei' },
-      { name: 'Înlocuire lentilă cameră principală', duration: '30 min', price: '200 lei' },
+      {
+        name: 'Reparație / Înlocuire mufă de încărcare',
+        duration: '30 min',
+        price: '150 / 400 lei',
+      },
+      {
+        name: 'Înlocuire lentilă cameră principală',
+        duration: '30 min',
+        price: '200 lei',
+      },
     ],
   },
   {
@@ -293,13 +432,33 @@ export const iPhoneServiceDetails = [
       sm: { width: 113, height: 71 }, // Reduced by 15%
     },
     services: [
-      { name: 'Înlocuire ecran (display și touchscreen)', duration: '30 min', price: '900 lei' },
-      { name: 'Înlocuire capac spate și rama metalică mijlocie', duration: '40 min', price: '900 lei' },
+      {
+        name: 'Înlocuire ecran (display și touchscreen)',
+        duration: '30 min',
+        price: '900 lei',
+      },
+      {
+        name: 'Înlocuire capac spate și rama metalică mijlocie',
+        duration: '40 min',
+        price: '900 lei',
+      },
       { name: 'Înlocuire cască', duration: '30 min', price: '400 lei' },
-      { name: 'Înlocuire camera principală', duration: '30 min', price: '300 lei' },
+      {
+        name: 'Înlocuire camera principală',
+        duration: '30 min',
+        price: '300 lei',
+      },
       { name: 'Înlocuire baterie', duration: '30 min', price: '400 lei' },
-      { name: 'Reparație / Înlocuire mufă de încărcare', duration: '30 min', price: '150 / 400 lei' },
-      { name: 'Înlocuire lentilă cameră principală', duration: '30 min', price: '300 lei' },
+      {
+        name: 'Reparație / Înlocuire mufă de încărcare',
+        duration: '30 min',
+        price: '150 / 400 lei',
+      },
+      {
+        name: 'Înlocuire lentilă cameră principală',
+        duration: '30 min',
+        price: '300 lei',
+      },
     ],
   },
   {
@@ -312,13 +471,33 @@ export const iPhoneServiceDetails = [
       sm: { width: 84, height: 78 }, // Reduced by 15%
     },
     services: [
-      { name: 'Înlocuire ecran (display și touchscreen)', duration: '30 min', price: '1400 lei' },
-      { name: 'Înlocuire capac spate și rama metalică mijlocie', duration: '40 min', price: '900 lei' },
+      {
+        name: 'Înlocuire ecran (display și touchscreen)',
+        duration: '30 min',
+        price: '1400 lei',
+      },
+      {
+        name: 'Înlocuire capac spate și rama metalică mijlocie',
+        duration: '40 min',
+        price: '900 lei',
+      },
       { name: 'Înlocuire cască', duration: '30 min', price: '400 lei' },
-      { name: 'Înlocuire camera principală', duration: '30 min', price: '300 lei' },
+      {
+        name: 'Înlocuire camera principală',
+        duration: '30 min',
+        price: '300 lei',
+      },
       { name: 'Înlocuire baterie', duration: '30 min', price: '450 lei' },
-      { name: 'Reparație / Înlocuire mufă de încărcare', duration: '30 min', price: '150 / 400 lei' },
-      { name: 'Înlocuire lentilă cameră principală', duration: '30 min', price: '300 lei' },
+      {
+        name: 'Reparație / Înlocuire mufă de încărcare',
+        duration: '30 min',
+        price: '150 / 400 lei',
+      },
+      {
+        name: 'Înlocuire lentilă cameră principală',
+        duration: '30 min',
+        price: '300 lei',
+      },
     ],
   },
   {
@@ -331,13 +510,33 @@ export const iPhoneServiceDetails = [
       sm: { width: 76, height: 70 }, // Reduced by 15%
     },
     services: [
-      { name: 'Înlocuire ecran (display și touchscreen)', duration: '30 min', price: '600 / 800 lei' },
-      { name: 'Înlocuire capac spate și rama metalică mijlocie', duration: '40 min', price: '800 lei' },
+      {
+        name: 'Înlocuire ecran (display și touchscreen)',
+        duration: '30 min',
+        price: '600 / 800 lei',
+      },
+      {
+        name: 'Înlocuire capac spate și rama metalică mijlocie',
+        duration: '40 min',
+        price: '800 lei',
+      },
       { name: 'Înlocuire cască', duration: '30 min', price: '400 lei' },
-      { name: 'Înlocuire camera principală', duration: '30 min', price: '300 lei' },
+      {
+        name: 'Înlocuire camera principală',
+        duration: '30 min',
+        price: '300 lei',
+      },
       { name: 'Înlocuire baterie', duration: '30 min', price: '400 lei' },
-      { name: 'Reparație / Înlocuire mufă de încărcare', duration: '30 min', price: '150 / 400 lei' },
-      { name: 'Înlocuire lentilă cameră principală', duration: '30 min', price: '300 lei' },
+      {
+        name: 'Reparație / Înlocuire mufă de încărcare',
+        duration: '30 min',
+        price: '150 / 400 lei',
+      },
+      {
+        name: 'Înlocuire lentilă cameră principală',
+        duration: '30 min',
+        price: '300 lei',
+      },
     ],
   },
   {
@@ -350,13 +549,33 @@ export const iPhoneServiceDetails = [
       sm: { width: 94, height: 63 }, // Reduced by 15%
     },
     services: [
-      { name: 'Înlocuire ecran (display și touchscreen)', duration: '30 min', price: '900 lei' },
-      { name: 'Înlocuire capac spate și rama metalică mijlocie', duration: '40 min', price: '700 lei' },
+      {
+        name: 'Înlocuire ecran (display și touchscreen)',
+        duration: '30 min',
+        price: '900 lei',
+      },
+      {
+        name: 'Înlocuire capac spate și rama metalică mijlocie',
+        duration: '40 min',
+        price: '700 lei',
+      },
       { name: 'Înlocuire cască', duration: '30 min', price: '400 lei' },
-      { name: 'Înlocuire camera principală', duration: '30 min', price: '350 lei' },
+      {
+        name: 'Înlocuire camera principală',
+        duration: '30 min',
+        price: '350 lei',
+      },
       { name: 'Înlocuire baterie', duration: '30 min', price: '400 lei' },
-      { name: 'Reparație / Înlocuire mufă de încărcare', duration: '30 min', price: '150 / 400 lei' },
-      { name: 'Înlocuire lentilă cameră principală', duration: '30 min', price: '200 lei' },
+      {
+        name: 'Reparație / Înlocuire mufă de încărcare',
+        duration: '30 min',
+        price: '150 / 400 lei',
+      },
+      {
+        name: 'Înlocuire lentilă cameră principală',
+        duration: '30 min',
+        price: '200 lei',
+      },
     ],
   },
   {
@@ -369,13 +588,33 @@ export const iPhoneServiceDetails = [
       sm: { width: 113, height: 71 }, // Reduced by 15%
     },
     services: [
-      { name: 'Înlocuire ecran (display și touchscreen)', duration: '30 min', price: '600 / 700 lei' },
-      { name: 'Înlocuire capac spate și rama metalică mijlocie', duration: '40 min', price: '700 lei' },
+      {
+        name: 'Înlocuire ecran (display și touchscreen)',
+        duration: '30 min',
+        price: '600 / 700 lei',
+      },
+      {
+        name: 'Înlocuire capac spate și rama metalică mijlocie',
+        duration: '40 min',
+        price: '700 lei',
+      },
       { name: 'Înlocuire cască', duration: '30 min', price: '400 lei' },
-      { name: 'Înlocuire camera principală', duration: '30 min', price: '300 lei' },
+      {
+        name: 'Înlocuire camera principală',
+        duration: '30 min',
+        price: '300 lei',
+      },
       { name: 'Înlocuire baterie', duration: '30 min', price: '400 lei' },
-      { name: 'Reparație / Înlocuire mufă de încărcare', duration: '30 min', price: '150 / 400 lei' },
-      { name: 'Înlocuire lentilă cameră principală', duration: '30 min', price: '200 lei' },
+      {
+        name: 'Reparație / Înlocuire mufă de încărcare',
+        duration: '30 min',
+        price: '150 / 400 lei',
+      },
+      {
+        name: 'Înlocuire lentilă cameră principală',
+        duration: '30 min',
+        price: '200 lei',
+      },
     ],
   },
   {
@@ -388,13 +627,33 @@ export const iPhoneServiceDetails = [
       sm: { width: 95, height: 76 }, // Reduced by 15%
     },
     services: [
-      { name: 'Înlocuire ecran (display și touchscreen)', duration: '15 min', price: '700 / 1200 lei' },
-      { name: 'Înlocuire capac spate și rama metalică mijlocie', duration: '30 min', price: '800 lei' },
+      {
+        name: 'Înlocuire ecran (display și touchscreen)',
+        duration: '15 min',
+        price: '700 / 1200 lei',
+      },
+      {
+        name: 'Înlocuire capac spate și rama metalică mijlocie',
+        duration: '30 min',
+        price: '800 lei',
+      },
       { name: 'Înlocuire cască', duration: '30 min', price: '300 lei' },
       { name: 'Înlocuire baterie', duration: '10 min', price: '450 lei' },
-      { name: 'Înlocuire camera principală', duration: '15 min', price: '300 lei' },
-      { name: 'Înlocuire lentilă cameră principală', duration: '30 min', price: '250 lei' },
-      { name: 'Înlocuire mufă de încărcare', duration: '40 min', price: '100 / 350 lei' },
+      {
+        name: 'Înlocuire camera principală',
+        duration: '15 min',
+        price: '300 lei',
+      },
+      {
+        name: 'Înlocuire lentilă cameră principală',
+        duration: '30 min',
+        price: '250 lei',
+      },
+      {
+        name: 'Înlocuire mufă de încărcare',
+        duration: '40 min',
+        price: '100 / 350 lei',
+      },
     ],
   },
   {
@@ -407,13 +666,33 @@ export const iPhoneServiceDetails = [
       sm: { width: 91, height: 70 }, // Reduced by 15%
     },
     services: [
-      { name: 'Înlocuire ecran (display și touchscreen)', duration: '15 min', price: '700 / 1100 lei' },
-      { name: 'Înlocuire capac spate și rama metalică mijlocie', duration: '30 min', price: '700 lei' },
+      {
+        name: 'Înlocuire ecran (display și touchscreen)',
+        duration: '15 min',
+        price: '700 / 1100 lei',
+      },
+      {
+        name: 'Înlocuire capac spate și rama metalică mijlocie',
+        duration: '30 min',
+        price: '700 lei',
+      },
       { name: 'Înlocuire cască', duration: '30 min', price: '300 lei' },
       { name: 'Înlocuire baterie', duration: '10 min', price: '400 lei' },
-      { name: 'Înlocuire camera principală', duration: '15 min', price: '300 lei' },
-      { name: 'Înlocuire lentilă cameră principală', duration: '30 min', price: '250 lei' },
-      { name: 'Înlocuire mufă de încărcare', duration: '40 min', price: '100 / 350 lei' },
+      {
+        name: 'Înlocuire camera principală',
+        duration: '15 min',
+        price: '300 lei',
+      },
+      {
+        name: 'Înlocuire lentilă cameră principală',
+        duration: '30 min',
+        price: '250 lei',
+      },
+      {
+        name: 'Înlocuire mufă de încărcare',
+        duration: '40 min',
+        price: '100 / 350 lei',
+      },
     ],
   },
   {
@@ -426,13 +705,33 @@ export const iPhoneServiceDetails = [
       sm: { width: 89, height: 72 }, // Reduced by 15%
     },
     services: [
-      { name: 'Înlocuire ecran (display și touchscreen)', duration: '15 min', price: '450 / 800 lei' },
-      { name: 'Înlocuire capac spate și rama metalică mijlocie', duration: '30 min', price: '500 lei' },
+      {
+        name: 'Înlocuire ecran (display și touchscreen)',
+        duration: '15 min',
+        price: '450 / 800 lei',
+      },
+      {
+        name: 'Înlocuire capac spate și rama metalică mijlocie',
+        duration: '30 min',
+        price: '500 lei',
+      },
       { name: 'Înlocuire cască', duration: '30 min', price: '250 lei' },
       { name: 'Înlocuire baterie', duration: '10 min', price: '350 lei' },
-      { name: 'Înlocuire camera principală', duration: '15 min', price: '300 lei' },
-      { name: 'Înlocuire lentilă cameră principală', duration: '30 min', price: '200 lei' },
-      { name: 'Înlocuire mufă de încărcare', duration: '40 min', price: '100 / 350 lei' },
+      {
+        name: 'Înlocuire camera principală',
+        duration: '15 min',
+        price: '300 lei',
+      },
+      {
+        name: 'Înlocuire lentilă cameră principală',
+        duration: '30 min',
+        price: '200 lei',
+      },
+      {
+        name: 'Înlocuire mufă de încărcare',
+        duration: '40 min',
+        price: '100 / 350 lei',
+      },
     ],
   },
   {
@@ -445,12 +744,28 @@ export const iPhoneServiceDetails = [
       sm: { width: 90, height: 72 }, // Reduced by 15%
     },
     services: [
-      { name: 'Înlocuire ecran (display și touchscreen)', duration: '15 min', price: '450 / 600 lei' },
-      { name: 'Înlocuire capac spate și rama metalică mijlocie', duration: '30 min', price: '400 lei' },
+      {
+        name: 'Înlocuire ecran (display și touchscreen)',
+        duration: '15 min',
+        price: '450 / 600 lei',
+      },
+      {
+        name: 'Înlocuire capac spate și rama metalică mijlocie',
+        duration: '30 min',
+        price: '400 lei',
+      },
       { name: 'Înlocuire cască', duration: '30 min', price: '250 lei' },
       { name: 'Înlocuire baterie', duration: '10 min', price: '300 lei' },
-      { name: 'Înlocuire camera principală', duration: '15 min', price: '200 lei' },
-      { name: 'Înlocuire mufă de încărcare', duration: '40 min', price: '100 / 200 lei' },
+      {
+        name: 'Înlocuire camera principală',
+        duration: '15 min',
+        price: '200 lei',
+      },
+      {
+        name: 'Înlocuire mufă de încărcare',
+        duration: '40 min',
+        price: '100 / 200 lei',
+      },
     ],
   },
   {
@@ -463,12 +778,28 @@ export const iPhoneServiceDetails = [
       sm: { width: 71, height: 76 }, // Reduced by 15%
     },
     services: [
-      { name: 'Înlocuire ecran (display și touchscreen)', duration: '15 min', price: '600 / 900 lei' },
-      { name: 'Înlocuire capac spate și rama metalică mijlocie', duration: '30 min', price: '600 lei' },
+      {
+        name: 'Înlocuire ecran (display și touchscreen)',
+        duration: '15 min',
+        price: '600 / 900 lei',
+      },
+      {
+        name: 'Înlocuire capac spate și rama metalică mijlocie',
+        duration: '30 min',
+        price: '600 lei',
+      },
       { name: 'Înlocuire cască', duration: '30 min', price: '250 lei' },
       { name: 'Înlocuire baterie', duration: '10 min', price: '350 lei' },
-      { name: 'Înlocuire camera principală', duration: '15 min', price: '300 lei' },
-      { name: 'Înlocuire mufă de încărcare', duration: '40 min', price: '100 / 250 lei' },
+      {
+        name: 'Înlocuire camera principală',
+        duration: '15 min',
+        price: '300 lei',
+      },
+      {
+        name: 'Înlocuire mufă de încărcare',
+        duration: '40 min',
+        price: '100 / 250 lei',
+      },
     ],
   },
   {
@@ -481,12 +812,28 @@ export const iPhoneServiceDetails = [
       sm: { width: 67, height: 71 }, // Reduced by 15%
     },
     services: [
-      { name: 'Înlocuire ecran (display și touchscreen)', duration: '15 min', price: '500 / 800 lei' },
-      { name: 'Înlocuire capac spate și rama metalică mijlocie', duration: '30 min', price: '500 lei' },
+      {
+        name: 'Înlocuire ecran (display și touchscreen)',
+        duration: '15 min',
+        price: '500 / 800 lei',
+      },
+      {
+        name: 'Înlocuire capac spate și rama metalică mijlocie',
+        duration: '30 min',
+        price: '500 lei',
+      },
       { name: 'Înlocuire cască', duration: '30 min', price: '250 lei' },
       { name: 'Înlocuire baterie', duration: '10 min', price: '350 lei' },
-      { name: 'Înlocuire camera principală', duration: '15 min', price: '300 lei' },
-      { name: 'Înlocuire mufă de încărcare', duration: '40 min', price: '100 / 250 lei' },
+      {
+        name: 'Înlocuire camera principală',
+        duration: '15 min',
+        price: '300 lei',
+      },
+      {
+        name: 'Înlocuire mufă de încărcare',
+        duration: '40 min',
+        price: '100 / 250 lei',
+      },
     ],
   },
   {
@@ -499,12 +846,28 @@ export const iPhoneServiceDetails = [
       sm: { width: 52, height: 71 }, // Reduced by 15%
     },
     services: [
-      { name: 'Înlocuire ecran (display și touchscreen)', duration: '15 min', price: '500 / 700 lei' },
-      { name: 'Înlocuire capac spate și rama metalică mijlocie', duration: '30 min', price: '500 lei' },
+      {
+        name: 'Înlocuire ecran (display și touchscreen)',
+        duration: '15 min',
+        price: '500 / 700 lei',
+      },
+      {
+        name: 'Înlocuire capac spate și rama metalică mijlocie',
+        duration: '30 min',
+        price: '500 lei',
+      },
       { name: 'Înlocuire cască', duration: '30 min', price: '200 lei' },
       { name: 'Înlocuire baterie', duration: '10 min', price: '300 lei' },
-      { name: 'Înlocuire camera principală', duration: '15 min', price: '200 lei' },
-      { name: 'Înlocuire mufă de încărcare', duration: '40 min', price: '100 / 250 lei' },
+      {
+        name: 'Înlocuire camera principală',
+        duration: '15 min',
+        price: '200 lei',
+      },
+      {
+        name: 'Înlocuire mufă de încărcare',
+        duration: '40 min',
+        price: '100 / 250 lei',
+      },
     ],
   },
   {
@@ -517,12 +880,28 @@ export const iPhoneServiceDetails = [
       sm: { width: 65, height: 78 }, // Reduced by 15%
     },
     services: [
-      { name: 'Înlocuire ecran (display și touchscreen)', duration: '20 min', price: '300 / 400 lei' },
-      { name: 'Înlocuire capac spate și rama metalică mijlocie', duration: '30 min', price: '500 lei' },
+      {
+        name: 'Înlocuire ecran (display și touchscreen)',
+        duration: '20 min',
+        price: '300 / 400 lei',
+      },
+      {
+        name: 'Înlocuire capac spate și rama metalică mijlocie',
+        duration: '30 min',
+        price: '500 lei',
+      },
       { name: 'Înlocuire cască', duration: '30 min', price: '100 lei' },
       { name: 'Înlocuire baterie', duration: '10 min', price: '200 lei' },
-      { name: 'Înlocuire camera principală', duration: '15 min', price: '300 lei' },
-      { name: 'Înlocuire mufă de încărcare', duration: '40 min', price: '80 / 150 lei' },
+      {
+        name: 'Înlocuire camera principală',
+        duration: '15 min',
+        price: '300 lei',
+      },
+      {
+        name: 'Înlocuire mufă de încărcare',
+        duration: '40 min',
+        price: '80 / 150 lei',
+      },
     ],
   },
   {
@@ -535,12 +914,28 @@ export const iPhoneServiceDetails = [
       sm: { width: 58, height: 66 }, // Reduced by 15%
     },
     services: [
-      { name: 'Înlocuire ecran (display și touchscreen)', duration: '20 min', price: '300 / 400 lei' },
-      { name: 'Înlocuire capac spate și rama metalică mijlocie', duration: '20 min', price: '500 lei' },
+      {
+        name: 'Înlocuire ecran (display și touchscreen)',
+        duration: '20 min',
+        price: '300 / 400 lei',
+      },
+      {
+        name: 'Înlocuire capac spate și rama metalică mijlocie',
+        duration: '20 min',
+        price: '500 lei',
+      },
       { name: 'Înlocuire cască', duration: '30 min', price: '100 lei' },
       { name: 'Înlocuire baterie', duration: '10 min', price: '200 lei' },
-      { name: 'Înlocuire camera principală', duration: '15 min', price: '300 lei' },
-      { name: 'Înlocuire mufă de încărcare', duration: '15-40 min', price: '80 / 150 lei' },
+      {
+        name: 'Înlocuire camera principală',
+        duration: '15 min',
+        price: '300 lei',
+      },
+      {
+        name: 'Înlocuire mufă de încărcare',
+        duration: '15-40 min',
+        price: '80 / 150 lei',
+      },
     ],
   },
   {
@@ -553,16 +948,40 @@ export const iPhoneServiceDetails = [
       sm: { width: 99, height: 78 }, // Reduced by 15%
     },
     services: [
-      { name: 'Înlocuire ecran (display și touchscreen)', duration: '40 min', price: '300 / 500 lei' },
+      {
+        name: 'Înlocuire ecran (display și touchscreen)',
+        duration: '40 min',
+        price: '300 / 500 lei',
+      },
       { name: 'Înlocuire buton "Power"', duration: '40 min', price: '100 lei' },
-      { name: 'Înlocuire capac spate și rama metalică mijlocie', duration: '40 min', price: '300 lei' },
+      {
+        name: 'Înlocuire capac spate și rama metalică mijlocie',
+        duration: '40 min',
+        price: '300 lei',
+      },
       { name: 'Înlocuire cască', duration: '30 min', price: '100 lei' },
-      { name: 'Înlocuire difuzor / microfon / mufa de încărcare', duration: '30 min', price: '100 lei' },
-      { name: 'Înlocuire buton "Silent"', duration: '30 min', price: '100 lei' },
-      { name: 'Înlocuire butoane "Volume + / -"', duration: '10 min', price: '200 lei' },
+      {
+        name: 'Înlocuire difuzor / microfon / mufa de încărcare',
+        duration: '30 min',
+        price: '100 lei',
+      },
+      {
+        name: 'Înlocuire buton "Silent"',
+        duration: '30 min',
+        price: '100 lei',
+      },
+      {
+        name: 'Înlocuire butoane "Volume + / -"',
+        duration: '10 min',
+        price: '200 lei',
+      },
       { name: 'Înlocuire sim tray', duration: '5 min', price: '5 lei' },
       { name: 'Înlocuire baterie', duration: '10 min', price: '200 lei' },
-      { name: 'Înlocuire camera principală', duration: '20 min', price: '300 lei' },
+      {
+        name: 'Înlocuire camera principală',
+        duration: '20 min',
+        price: '300 lei',
+      },
     ],
   },
   {
@@ -575,16 +994,40 @@ export const iPhoneServiceDetails = [
       sm: { width: 89, height: 66 }, // Reduced by 15%
     },
     services: [
-      { name: 'Înlocuire ecran (display și touchscreen)', duration: '15 min', price: '250 / 300 lei' },
+      {
+        name: 'Înlocuire ecran (display și touchscreen)',
+        duration: '15 min',
+        price: '250 / 300 lei',
+      },
       { name: 'Înlocuire buton "Power"', duration: '40 min', price: '100 lei' },
-      { name: 'Înlocuire capac spate și rama metalică mijlocie', duration: '40 min', price: '300 lei' },
+      {
+        name: 'Înlocuire capac spate și rama metalică mijlocie',
+        duration: '40 min',
+        price: '300 lei',
+      },
       { name: 'Înlocuire cască', duration: '40 min', price: '100 lei' },
-      { name: 'Înlocuire difuzor / microfon / mufa de încărcare', duration: '30 min', price: '100 lei' },
-      { name: 'Înlocuire buton "Silent"', duration: '40 min', price: '100 lei' },
-      { name: 'Înlocuire butoane "Volume + / -"', duration: '10 min', price: '100 lei' },
+      {
+        name: 'Înlocuire difuzor / microfon / mufa de încărcare',
+        duration: '30 min',
+        price: '100 lei',
+      },
+      {
+        name: 'Înlocuire buton "Silent"',
+        duration: '40 min',
+        price: '100 lei',
+      },
+      {
+        name: 'Înlocuire butoane "Volume + / -"',
+        duration: '10 min',
+        price: '100 lei',
+      },
       { name: 'Înlocuire sim tray', duration: '5 min', price: '5 lei' },
       { name: 'Înlocuire baterie', duration: '10 min', price: '200 lei' },
-      { name: 'Înlocuire camera principală', duration: '20 min', price: '150 lei' },
+      {
+        name: 'Înlocuire camera principală',
+        duration: '20 min',
+        price: '150 lei',
+      },
     ],
   },
   {
@@ -597,37 +1040,55 @@ export const iPhoneServiceDetails = [
       sm: { width: 102, height: 78 }, // Reduced by 15%
     },
     services: [
-      { name: 'Înlocuire ecran (display și touchscreen)', duration: '15 min', price: '240 / 300 lei' },
+      {
+        name: 'Înlocuire ecran (display și touchscreen)',
+        duration: '15 min',
+        price: '240 / 300 lei',
+      },
       { name: 'Înlocuire buton "Power"', duration: '40 min', price: '80 lei' },
-      { name: 'Înlocuire capac spate și rama metalică mijlocie', duration: '40 min', price: '200 lei' },
+      {
+        name: 'Înlocuire capac spate și rama metalică mijlocie',
+        duration: '40 min',
+        price: '200 lei',
+      },
       { name: 'Înlocuire cască', duration: '40 min', price: '80 lei' },
-      { name: 'Înlocuire difuzor / microfon / mufa de încărcare', duration: '30 min', price: '80 lei' },
-      { name: 'Înlocuire buton "Silent"', duration: '40 min', price: '100 lei' },
-      { name: 'Înlocuire butoane "Volume + / -"', duration: '10 min', price: '100 lei' },
+      {
+        name: 'Înlocuire difuzor / microfon / mufa de încărcare',
+        duration: '30 min',
+        price: '80 lei',
+      },
+      {
+        name: 'Înlocuire buton "Silent"',
+        duration: '40 min',
+        price: '100 lei',
+      },
+      {
+        name: 'Înlocuire butoane "Volume + / -"',
+        duration: '10 min',
+        price: '100 lei',
+      },
       { name: 'Înlocuire sim tray', duration: '5 min', price: '5 lei' },
       { name: 'Înlocuire baterie', duration: '10 min', price: '200 lei' },
-      { name: 'Înlocuire camera principală', duration: '20 min', price: '150 lei' },
+      {
+        name: 'Înlocuire camera principală',
+        duration: '20 min',
+        price: '150 lei',
+      },
     ],
   },
 ];
 
-export const iPadServiceDetails = [
+export const iPadServiceDetails = [];
 
-]
+export const macBookServiceDetails = [];
 
-export const macBookServiceDetails = [
+export const iMacServiceDetails = [];
 
-]
-
-export const iMacServiceDetails = [
-  
-]
-  
 export const serviceDetails = {
   0: iPhoneServiceDetails, // Reparații iPhone
-  1: iPadServiceDetails,   // Reparații iPad
+  1: iPadServiceDetails, // Reparații iPad
   2: macBookServiceDetails, // Reparații MacBook
-  3: iMacServiceDetails,   // Reparații iMac
+  3: iMacServiceDetails, // Reparații iMac
 };
 
 export const testimonials = [
@@ -764,11 +1225,11 @@ export const testimonials = [
     text: 'Din tot sufletul multumesc iPhone Doctor Romania pentru ca altfel nu aveam nici o sansa sa rezolv problema rapid fara ei.',
     instagramLink: 'https://www.instagram.com/alina_puscas_/', // Dummy link
   },
-]
+];
 
 export const secondaryDisclaimer = [
-  'iPhone, iPad, MacBook și iMac sunt mărci comerciale înregistrate ale Apple Inc. iPhone Doctor este o firmă independentă de reparații și nu este în nici un fel afiliată cu Apple Inc.'
-]
+  'iPhone, iPad, MacBook și iMac sunt mărci comerciale înregistrate ale Apple Inc. iPhone Doctor este o firmă independentă de reparații și nu este în nici un fel afiliată cu Apple Inc.',
+];
 
 export const socials = [
   {

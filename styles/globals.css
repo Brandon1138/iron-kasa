@@ -7,7 +7,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Eudoxus Sans", sans-serif;
+  font-family: 'Eudoxus Sans', sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -53,15 +53,16 @@
   /* Linear Gradient Background: Top (#FFFFFF 100% opacity) to Bottom (#FFFFFF 30% opacity) */
   background: linear-gradient(
     to bottom,
-    rgba(255, 255, 255, 0.04) 0%,   /* Top: White at 4% opacity */
-    rgba(255, 255, 255, 0.012) 100% /* Bottom: White at 1.2% opacity */
+    rgba(255, 255, 255, 0.04) 0%,
+    /* Top: White at 4% opacity */ rgba(255, 255, 255, 0.012) 100%
+      /* Bottom: White at 1.2% opacity */
   );
-  
+
   /* Existing Glassmorphic Effects */
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(10px); /* Increased blur for frosted look */
   -webkit-backdrop-filter: blur(14px);
-  
+
   /* Rounded Corners and Subtle Border */
   border: 1px solid rgba(255, 255, 255, 0.08); /* Subtle border for depth */
 }
@@ -101,9 +102,10 @@
 
 /* Triple box-shadow with specified colors */
 .glassmorphism-hover:hover {
-box-shadow: -8px -8px 32px rgba(168, 85, 247, 0.37),  /* Top-left: #a855f7 */
-            0px 0px 32px rgba(244, 63, 94, 0.37),     /* Center: #f43f5e */
-            8px 8px 32px rgba(217, 119, 6, 0.37);     /* Bottom-right: #d97706 */
+  box-shadow:
+    -8px -8px 32px rgba(168, 85, 247, 0.37),
+    /* Top-left: #a855f7 */ 0px 0px 32px rgba(244, 63, 94, 0.37),
+    /* Center: #f43f5e */ 8px 8px 32px rgba(217, 119, 6, 0.37); /* Bottom-right: #d97706 */
 }
 
 /* Spinning Gradient Layer */
@@ -113,7 +115,14 @@ box-shadow: -8px -8px 32px rgba(168, 85, 247, 0.37),  /* Top-left: #a855f7 */
   left: -50%;
   width: 200%;
   height: 200%;
-  background: linear-gradient(45deg, #ff0066, #ffcc00, #00ffcc, #6600ff, #ff0066);
+  background: linear-gradient(
+    45deg,
+    #ff0066,
+    #ffcc00,
+    #00ffcc,
+    #6600ff,
+    #ff0066
+  );
   background-size: 400% 400%;
   opacity: 0.3; /* Adjust opacity as needed */
   z-index: -1; /* Ensure it stays behind the card content */
@@ -131,9 +140,9 @@ box-shadow: -8px -8px 32px rgba(168, 85, 247, 0.37),  /* Top-left: #a855f7 */
 
 .gradient-03 {
   position: absolute;
-  width: 500px; 
+  width: 500px;
   height: 800px;
-  left: 25%; 
+  left: 25%;
   top: 10%;
   background: rgba(149, 66, 232, 0.35);
   filter: blur(200px);
@@ -143,12 +152,12 @@ box-shadow: -8px -8px 32px rgba(168, 85, 247, 0.37),  /* Top-left: #a855f7 */
 
 .gradient-04 {
   position: absolute;
-  width: 600px; 
+  width: 600px;
   height: 100vh;
   left: 50%;
   top: 20%;
   background: rgba(45, 72, 152, 0.75);
-  filter: blur(250px); 
+  filter: blur(250px);
   transform: rotate(-53.13deg);
   opacity: 0.5;
 }
@@ -159,7 +168,7 @@ box-shadow: -8px -8px 32px rgba(168, 85, 247, 0.37),  /* Top-left: #a855f7 */
     rgba(255, 255, 255, 0.04) 0%,
     rgba(255, 255, 255, 0) 100%
   );
-  opacity: 0.5; 
+  opacity: 0.5;
 }
 
 .unused-gradient {
@@ -171,7 +180,7 @@ box-shadow: -8px -8px 32px rgba(168, 85, 247, 0.37),  /* Top-left: #a855f7 */
 
   background: #8d39a3;
   filter: blur(175px);
-  opacity: 0.5; 
+  opacity: 0.5;
 }
 
 .hide-scrollbar::-webkit-scrollbar {
@@ -190,9 +199,9 @@ box-shadow: -8px -8px 32px rgba(168, 85, 247, 0.37),  /* Top-left: #a855f7 */
   left: 37%;
   bottom: 0;
 
-  background: #672E96;
+  background: #672e96;
   filter: blur(100px);
-  opacity: 0.5; 
+  opacity: 0.5;
 }
 
 /* Custom Gradient Text and Animations */
@@ -208,48 +217,72 @@ box-shadow: -8px -8px 32px rgba(168, 85, 247, 0.37),  /* Top-left: #a855f7 */
 
   /* Updated Animation for Bold Text with Gradient Glow */
   .font-bold-animate {
-    font-weight: 700; 
+    font-weight: 700;
     /* Gradient Background */
     background: radial-gradient(ellipse at top left, #a855f7, #f43f5e, #d97706);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    
+
     /* Text Shadow for Glow Effect */
-    text-shadow: 0 0 10px #a855f7, 0 0 20px #f43f5e, 0 0 30px #d97706;
-    
+    text-shadow:
+      0 0 10px #a855f7,
+      0 0 20px #f43f5e,
+      0 0 30px #d97706;
+
     /* Transition Properties */
-    transition: font-weight 0.3s ease-in-out, background 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+    transition:
+      font-weight 0.3s ease-in-out,
+      background 0.3s ease-in-out,
+      text-shadow 0.3s ease-in-out;
   }
 
   .font-normal-animate {
-    font-weight: 400; 
+    font-weight: 400;
     text-shadow: none;
-    transition: font-weight 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+    transition:
+      font-weight 0.3s ease-in-out,
+      text-shadow 0.3s ease-in-out;
   }
 
   /* Custom Shadow for Glow Effect (if needed elsewhere) */
   .shadow-glow {
-    box-shadow: 0 0 10px #a855f7, 0 0 20px #d97706;
+    box-shadow:
+      0 0 10px #a855f7,
+      0 0 20px #d97706;
   }
 }
 
 /* Box Sizing */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 /* Fade Mask for Testimonials */
 .fadeMask {
-  mask-image: linear-gradient(to bottom, transparent, black 25%, black 75%, transparent);
-  -webkit-mask-image: linear-gradient(to bottom, transparent, black 25%, black 75%, transparent);
-  
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 25%,
+    black 75%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 25%,
+    black 75%,
+    transparent
+  );
+
   mask-size: 100% 100%;
   -webkit-mask-size: 100% 100%;
-  
+
   mask-repeat: no-repeat;
   -webkit-mask-repeat: no-repeat;
-  
+
   mask-position: center;
   -webkit-mask-position: center;
 }
@@ -267,7 +300,10 @@ box-shadow: -8px -8px 32px rgba(168, 85, 247, 0.37),  /* Top-left: #a855f7 */
 .testimonialCard {
   /* Base styles (optional): You can define a base background if needed */
   background: rgba(30, 30, 30, 0.5); /* Semi-transparent base */
-  transition: background 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    backdrop-filter 0.3s ease;
 }
 
 .testimonialCard:hover {
@@ -288,7 +324,10 @@ box-shadow: -8px -8px 32px rgba(168, 85, 247, 0.37),  /* Top-left: #a855f7 */
 }
 
 .interactive-hover {
-  transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .interactive-hover:hover {

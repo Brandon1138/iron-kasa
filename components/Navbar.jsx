@@ -137,7 +137,9 @@ const Navbar = () => {
         className={`${styles.xPaddings} py-8 fixed top-0 left-0 right-0 z-50 bg-primary-black bg-opacity-50 backdrop-blur-md`}
         aria-label="Main Navigation"
       >
-        <div className={`${styles.innerWidth} mx-auto flex justify-between gap-8 items-center`}>
+        <div
+          className={`${styles.innerWidth} mx-auto flex justify-between gap-8 items-center`}
+        >
           {/* Search Container */}
           <div className="relative flex items-center" ref={searchContainerRef}>
             {/* Always render the search icon */}
@@ -195,22 +197,28 @@ const Navbar = () => {
                                 className="flex-shrink-0 rounded"
                               />
                               <span className="text-white">
-                                {iphone.title.split(new RegExp(`(${searchQuery})`, 'gi')).map((part, i) => (part.toLowerCase() === searchQuery.toLowerCase() ? (
-                                  <span
-                                    key={i}
-                                    className="bg-gradient-to-r font-bold-animate bg-clip-text text-transparent"
-                                  >
-                                    {part}
-                                  </span>
-                                ) : (
-                                  part
-                                )))}
+                                {iphone.title
+                                  .split(new RegExp(`(${searchQuery})`, 'gi'))
+                                  .map((part, i) => (part.toLowerCase()
+                                    === searchQuery.toLowerCase() ? (
+                                      <span
+                                        key={i}
+                                        className="bg-gradient-to-r font-bold-animate bg-clip-text text-transparent"
+                                      >
+                                        {part}
+                                      </span>
+                                    ) : (
+                                      part
+                                    )))}
                               </span>
                             </button>
                           </li>
                         ))
                       ) : (
-                        <li className="px-4 py-2 text-white flex items-center space-x-2" aria-hidden="true">
+                        <li
+                          className="px-4 py-2 text-white flex items-center space-x-2"
+                          aria-hidden="true"
+                        >
                           <Image
                             src="/no-results.png"
                             alt="Nu sunt rezultate"
@@ -244,7 +252,12 @@ const Navbar = () => {
               transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
             />
             {/* Logo */}
-            <Image src="/logo.svg" alt="iPhoneDoctor Logo" width={150} height={50} />
+            <Image
+              src="/logo.svg"
+              alt="iPhoneDoctor Logo"
+              width={150}
+              height={50}
+            />
           </div>
 
           {/* Toggle Menu Button */}
@@ -356,7 +369,9 @@ const Navbar = () => {
 
       {/* Service Modal */}
       <AnimatePresence>
-        {selectedService && <ServiceModal service={selectedService} onClose={handleModalClose} />}
+        {selectedService && (
+          <ServiceModal service={selectedService} onClose={handleModalClose} />
+        )}
       </AnimatePresence>
     </>
   );
