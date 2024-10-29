@@ -1,10 +1,10 @@
 // components/ServiceCard.jsx
 
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import Image from 'next/image';
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 const ServiceCard = ({
   service,
@@ -15,7 +15,7 @@ const ServiceCard = ({
   const { imgUrl, title, sizes } = service;
 
   // State to manage screen size
-  const [screenSize, setScreenSize] = useState('sm');
+  const [screenSize, setScreenSize] = useState("sm");
 
   useEffect(() => {
     // Function to handle screen resize
@@ -23,22 +23,22 @@ const ServiceCard = ({
       const width = window.innerWidth;
       if (width >= 1280) {
         // xl and above
-        setScreenSize('xl');
+        setScreenSize("xl");
       } else if (width >= 1024) {
         // lg
-        setScreenSize('lg');
+        setScreenSize("lg");
       } else if (width >= 768) {
         // md
-        setScreenSize('md');
+        setScreenSize("md");
       } else {
-        setScreenSize('sm');
+        setScreenSize("sm");
       }
     };
 
-    if (typeof window !== 'undefined') {
-      window.addEventListener('resize', handleResize);
+    if (typeof window !== "undefined") {
+      window.addEventListener("resize", handleResize);
       handleResize(); // Initialize
-      return () => window.removeEventListener('resize', handleResize);
+      return () => window.removeEventListener("resize", handleResize);
     }
   }, []);
 
@@ -74,7 +74,7 @@ const ServiceCard = ({
       role="button"
       tabIndex={0}
       onKeyPress={(e) => {
-        if (e.key === 'Enter') onClick();
+        if (e.key === "Enter") onClick();
       }}
       aria-label={`Open details for ${title}`}
     >
@@ -82,9 +82,7 @@ const ServiceCard = ({
       <div
         className={`
           absolute inset-0
-          ${
-            isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
-          } // Conditional opacity
+          ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"} // Conditional opacity
           transition-opacity duration-500
           blur-md sm:blur-md md:blur-lg lg:blur-xl xl:blur-2xl
           animate-spin-slow
@@ -99,7 +97,7 @@ const ServiceCard = ({
         `}
         style={{
           background:
-            'conic-gradient(from 0deg, #a855f7 0%, #c34cdc 25%, #f43f5e 50%, #ec6e36 75%, #d97706 100%)',
+            "conic-gradient(from 0deg, #a855f7 0%, #c34cdc 25%, #f43f5e 50%, #ec6e36 75%, #d97706 100%)",
         }}
       />
 
@@ -115,11 +113,7 @@ const ServiceCard = ({
           xl:rounded-[50px]
           transition-colors duration-500
           bg-gradient-to-b from-[rgba(255,255,255,0.04)] to-[rgba(255,255,255,0.012)]
-          ${
-            isActive
-              ? 'from-[#1e1e1eBF] to-[#1e1e1eBF]'
-              : 'group-hover:from-[#1e1e1eBF] group-hover:to-[#1e1e1eBF]'
-          }
+          ${isActive ? "from-[#1e1e1eBF] to-[#1e1e1eBF]" : "group-hover:from-[#1e1e1eBF] group-hover:to-[#1e1e1eBF]"}
         `}
       >
         {/* Image */}
@@ -135,7 +129,7 @@ const ServiceCard = ({
             alt={title}
             width={imageSize.width}
             height={imageSize.height}
-            objectFit="contain"
+            style={{ objectFit: "contain" }}
             priority={false}
             loading="lazy"
           />
@@ -143,7 +137,7 @@ const ServiceCard = ({
         {/* Title */}
         <h3
           className="mt-2 text-center text-[12px] md:text-md lg:text-lg font-regular text-white group-hover:text-white"
-          style={{ transition: 'color 0.5s linear' }}
+          style={{ transition: "color 0.5s linear" }}
         >
           {title}
         </h3>

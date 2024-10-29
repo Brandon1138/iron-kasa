@@ -1,12 +1,12 @@
 // ServiceModal.jsx
 
-'use client';
+"use client";
 
-import React, { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import Image from 'next/image';
-import Portal from './Portal';
-import '../styles/globals.css';
+import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import Portal from "./Portal";
+import "../styles/globals.css";
 
 const ServiceModal = ({ service, onClose }) => {
   const [showModal, setShowModal] = useState(!!service);
@@ -24,9 +24,9 @@ const ServiceModal = ({ service, onClose }) => {
   // Prevent body scroll when modal is open
   useEffect(() => {
     if (showModal) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     }
   }, [showModal]);
 
@@ -82,7 +82,7 @@ const ServiceModal = ({ service, onClose }) => {
               animate="visible"
               exit="exit"
               onClick={handleClose}
-              style={{ cursor: 'pointer' }}
+              style={{ cursor: "pointer" }}
               aria-label="Close Modal"
             />
 
@@ -104,7 +104,7 @@ const ServiceModal = ({ service, onClose }) => {
               initial="hidden"
               animate="visible"
               exit="exit"
-              transition={{ duration: 0.4, ease: 'easeInOut' }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
               onClick={(e) => e.stopPropagation()}
               role="dialog"
               aria-modal="true"
@@ -116,7 +116,7 @@ const ServiceModal = ({ service, onClose }) => {
                   alt="Background Noise"
                   fill
                   className="opacity-5 pointer-events-none"
-                  style={{ objectFit: 'cover' }}
+                  style={{ objectFit: "cover" }}
                 />
               </div>
 
@@ -142,8 +142,8 @@ const ServiceModal = ({ service, onClose }) => {
                   style={{
                     width: expandedImageSize.width,
                     height: expandedImageSize.height,
-                    maxWidth: '100%',
-                    maxHeight: '35vh',
+                    maxWidth: "100%",
+                    maxHeight: "35vh",
                   }}
                 >
                   <Image
@@ -151,7 +151,7 @@ const ServiceModal = ({ service, onClose }) => {
                     alt={title}
                     width={expandedImageSize.width}
                     height={expandedImageSize.height}
-                    objectFit="contain"
+                    style={{ objectFit: "contain" }}
                   />
                 </div>
 
@@ -175,8 +175,8 @@ const ServiceModal = ({ service, onClose }) => {
                     </div>
 
                     {/* Services List */}
-                    {services
-                      && services.map((serviceItem, index) => (
+                    {services &&
+                      services.map((serviceItem, index) => (
                         <React.Fragment key={index}>
                           <div className="text-white text-left">
                             {serviceItem.name}
