@@ -110,6 +110,14 @@ const CategoryCard = ({
             src={imgUrl}
             alt={title}
             fill
+            sizes={`
+              (min-width: 1536px) 216px,
+              (min-width: 1280px) 188px,
+              (min-width: 1024px) 152px,
+              (min-width: 768px) 112px,
+              (min-width: 640px) 88px,
+              56px
+            `}
             style={{ objectFit: "contain" }}
             priority={false}
             loading="lazy"

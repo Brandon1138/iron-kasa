@@ -129,7 +129,7 @@ const ServiceCard = ({
             alt={title}
             width={imageSize.width}
             height={imageSize.height}
-            style={{ objectFit: "contain" }}
+            style={{ objectFit: "contain", width: "auto", height: "auto" }}
             priority={false}
             loading="lazy"
           />
