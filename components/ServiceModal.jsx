@@ -33,10 +33,14 @@ const ServiceModal = ({ service, onClose }) => {
   if (!service) return null;
 
   const { imgUrl, title, sizes, services } = service;
-  const expandedImageSize = {
-    width: sizes.expanded.width * 0.7,
-    height: sizes.expanded.height * 0.7,
-  };
+
+  // Safely calculate expanded image size
+  const expandedImageSize = sizes?.expanded
+    ? {
+        width: sizes.expanded.width * 0.7,
+        height: sizes.expanded.height * 0.7,
+      }
+    : { width: 300, height: 300 }; // Fallback sizes
 
   // Animation variants for the modal
   const modalVariants = {
@@ -51,6 +55,9 @@ const ServiceModal = ({ service, onClose }) => {
     visible: { opacity: 0.6 },
     exit: { opacity: 0 },
   };
+
+  // Define the 'sizes' prop for the noise Image component
+  const noiseSizes = `(min-width: 1280px) 60vw, (min-width: 1024px) 60vw, (min-width: 768px) 70vw, (min-width: 640px) 80vw, 90vw`;
 
   return (
     <Portal>
@@ -115,6 +122,7 @@ const ServiceModal = ({ service, onClose }) => {
                   src="/noise.png"
                   alt="Background Noise"
                   fill
+                  sizes={noiseSizes}
                   className="opacity-5 pointer-events-none"
                   style={{ objectFit: "cover" }}
                 />
@@ -137,20 +145,25 @@ const ServiceModal = ({ service, onClose }) => {
 
               {/* Content Wrapper */}
               <div className="flex flex-col py-4 items-center w-full space-y-6 relative z-10">
-                {/* Image */}
+                {/* Service Image */}
                 <div
                   style={{
                     width: expandedImageSize.width,
                     height: expandedImageSize.height,
                     maxWidth: "100%",
                     maxHeight: "35vh",
+                    position: "relative", // Needed for Next.js Image with 'fill' prop
                   }}
+                  className="flex justify-center items-center"
                 >
                   <Image
                     src={imgUrl}
                     alt={title}
-                    width={expandedImageSize.width}
-                    height={expandedImageSize.height}
+                    fill
+                    sizes={`(max-width: 640px) 80vw, (max-width: 768px) 70vw, (max-width: 1024px) 60vw, (max-width: 1280px) 60vw, 60vw`}
+                    className="object-contain"
+                    priority={false}
+                    loading="lazy"
                     style={{ objectFit: "contain" }}
                   />
                 </div>
@@ -205,8 +218,8 @@ const ServiceModal = ({ service, onClose }) => {
                       glassmorphism-hover
                       transition-colors duration-300
                     "
-                  whileHover={{ scale: 1.02 }} // Optional: Maintain hover effect
-                  whileTap={{ scale: 0.98 }} // Optional: Add tap effect for better UX
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                   onClick={() => {
                     // Define the action, e.g., open chat or navigate to contact page
                   }}

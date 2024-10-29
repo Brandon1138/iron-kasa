@@ -6,12 +6,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const ServiceCard = ({
-  service,
-  onClick,
-  isAnimationComplete,
-  isActive, // Ensure this prop is destructured
-}) => {
+const ServiceCard = ({ service, onClick, isAnimationComplete, isActive }) => {
   const { imgUrl, title, sizes } = service;
 
   // State to manage screen size
@@ -22,13 +17,10 @@ const ServiceCard = ({
     const handleResize = () => {
       const width = window.innerWidth;
       if (width >= 1280) {
-        // xl and above
         setScreenSize("xl");
       } else if (width >= 1024) {
-        // lg
         setScreenSize("lg");
       } else if (width >= 768) {
-        // md
         setScreenSize("md");
       } else {
         setScreenSize("sm");
@@ -44,6 +36,24 @@ const ServiceCard = ({
 
   // Get image size based on screen size with improved fallback
   const imageSize = sizes[screenSize] || sizes.lg || sizes.md || sizes.sm;
+
+  // Safely construct the 'sizes' prop for the Image component
+  const sizesArray = [];
+
+  if (sizes.xl) {
+    sizesArray.push(`(min-width: 1280px) ${sizes.xl.width}px`);
+  }
+  if (sizes.lg) {
+    sizesArray.push(`(min-width: 1024px) ${sizes.lg.width}px`);
+  }
+  if (sizes.md) {
+    sizesArray.push(`(min-width: 768px) ${sizes.md.width}px`);
+  }
+  if (sizes.sm) {
+    sizesArray.push(`${sizes.sm.width}px`);
+  }
+
+  const sizesProp = sizesArray.join(", ");
 
   return (
     <motion.div
@@ -70,7 +80,7 @@ const ServiceCard = ({
         if (isAnimationComplete) onClick();
       }}
       whileHover={{ scale: 1.05 }}
-      animate={{ scale: isActive ? 1.05 : 1 }} // Conditional scale based on isActive
+      animate={{ scale: isActive ? 1.05 : 1 }}
       role="button"
       tabIndex={0}
       onKeyPress={(e) => {
@@ -82,7 +92,7 @@ const ServiceCard = ({
       <div
         className={`
           absolute inset-0
-          ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"} // Conditional opacity
+          ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"}
           transition-opacity duration-500
           blur-md sm:blur-md md:blur-lg lg:blur-xl xl:blur-2xl
           animate-spin-slow
@@ -113,7 +123,11 @@ const ServiceCard = ({
           xl:rounded-[50px]
           transition-colors duration-500
           bg-gradient-to-b from-[rgba(255,255,255,0.04)] to-[rgba(255,255,255,0.012)]
-          ${isActive ? "from-[#1e1e1eBF] to-[#1e1e1eBF]" : "group-hover:from-[#1e1e1eBF] group-hover:to-[#1e1e1eBF]"}
+          ${
+            isActive
+              ? "from-[#1e1e1eBF] to-[#1e1e1eBF]"
+              : "group-hover:from-[#1e1e1eBF] group-hover:to-[#1e1e1eBF]"
+          }
         `}
       >
         {/* Image */}
@@ -121,15 +135,16 @@ const ServiceCard = ({
           style={{
             width: imageSize.width,
             height: imageSize.height,
+            position: "relative", // Needed for Next.js Image with 'fill' prop
           }}
           className="flex justify-center items-center"
         >
           <Image
             src={imgUrl}
             alt={title}
-            width={imageSize.width}
-            height={imageSize.height}
-            style={{ objectFit: "contain", width: "auto", height: "auto" }}
+            fill
+            sizes={sizesProp}
+            style={{ objectFit: "contain" }}
             priority={false}
             loading="lazy"
           />
