@@ -1235,17 +1235,21 @@ export const socials = [
   {
     name: 'whatsapp',
     url: '/whatsapp.svg',
+    link: 'https://wa.me/+40764838860',
   },
   {
     name: 'instagram',
     url: '/instagram.svg',
+    link: 'https://www.instagram.com/iphonedoctorromania/',
   },
   {
     name: 'facebook',
     url: '/facebook.svg',
+    link: 'https://www.facebook.com/iphonedoctorromania/',
   },
   {
     name: 'tiktok',
     url: '/tiktok.svg',
+    link: 'https://www.tiktok.com/@iphonedoctorromania',
   },
 ];

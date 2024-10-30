@@ -80,6 +80,7 @@ const Footer = () => (
                 key={social.name}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`Link to ${social.name}`}
               >
                 <Image
                   src={social.url}
