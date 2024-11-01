@@ -1,11 +1,14 @@
+// Footer.jsx
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image'; // Import Next.js Image component
-import { socials } from '../constants';
+import Image from 'next/image';
+import { socials } from '../../constants'; // Adjust the path if necessary
 
-import styles from '../styles';
-import { footerVariants } from '../utils/motion';
+import styles from '../../styles';
+import { footerVariants } from '../../utils/motion';
+import BrandLogo from '../common/BrandLogo'; // Import BrandLogo from common folder
+import Socials from './Socials'; // Import Socials component
 
 const Footer = () => (
   <motion.footer
@@ -49,51 +52,18 @@ const Footer = () => (
         <div className="mb-[50px] h-[2px] bg-white opacity-10" />
 
         {/* Updated Flex Container for Footer Items */}
-        <div
-          className="flex flex-col items-center justify-center md:flex-row md:justify-between flex-wrap
-                        gap-6 md:gap-4 text-center md:text-left"
-        >
-          {/* Brand Logo with Glow Effect */}
-          <div className="relative flex-shrink-0" aria-hidden="true">
-            {/* Glow Effect */}
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-[#a855f7] via-[#f43f5e] to-[#d97706] rounded-full filter blur-lg opacity-50"
-              initial={{ scale: 1 }}
-              animate={{ scale: [1, 1.05, 1] }}
-              transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
-            />
-            {/* Logo */}
-            <Image src="/logo.svg" alt="Brand Logo" width={150} height={50} />
-          </div>
-
-          {/* Optionally, you can remove the below <h4> since it's replaced by the logo */}
-          {/* <h4 className="font-bold text-[24px] text-white">iPhoneDoctor</h4> */}
+        <div className="flex flex-col items-center justify-center md:flex-row md:justify-between flex-wrap gap-6 md:gap-4 text-center md:text-left">
+          {/* Brand Logo Component */}
+          <BrandLogo />
 
           <p className="font-normal text-[14px] text-white opacity-50">
             All rights reserved 2024 iPhoneDoctor
           </p>
 
-          <div className="flex gap-4">
-            {socials.map((social) => (
-              <a
-                href={social.link}
-                key={social.name}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Link to ${social.name}`}
-              >
-                <Image
-                  src={social.url}
-                  alt={social.name}
-                  width={24}
-                  height={24}
-                  className="object-contain cursor-pointer"
-                />
-              </a>
-            ))}
-          </div>
+          {/* Socials Component */}
+          <Socials />
 
-          {/* Optional: Remove or keep based on your design */}
+          {/* Optional: Footer Gradient or Additional Styling */}
           <div className="footer-gradient" />
         </div>
       </div>
