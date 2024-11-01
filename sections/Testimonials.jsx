@@ -7,7 +7,7 @@ import { TypingText } from '../components';
 import styles from '../styles';
 import { fadeIn, staggerContainer } from '../utils/motion';
 import { testimonials } from '../constants';
-import TestimonialCard from '../components/TestimonialCard';
+import TestimonialCard from '../components/Cards/TestimonialCard';
 
 const Testimonials = () => {
   // Divide testimonials into three columns

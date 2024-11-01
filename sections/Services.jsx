@@ -7,8 +7,8 @@ import { motion } from 'framer-motion'; // Removed AnimatePresence
 import styles from '../styles';
 import { staggerContainer, fadeIn } from '../utils/motion';
 import { categoryCard, mainDisclaimer, serviceDetails } from '../constants';
-import CategoryCard from '../components/CategoryCard';
-import ServiceCard from '../components/ServiceCard';
+import CategoryCard from '../components/Cards/CategoryCard';
+import ServiceCard from '../components/Cards/ServiceCard';
 import ServiceModal from '../components/ServiceModal';
 import { useState } from 'react';
 
