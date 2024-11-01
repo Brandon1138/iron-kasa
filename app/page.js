@@ -3,7 +3,8 @@
 'use client';
 
 import { useState } from 'react';
-import { Footer, Navbar } from '../components';
+import { Navbar } from '../components/Navbar';
+import { Footer } from '../components';
 import {
   About,
   Services,
