@@ -2,7 +2,7 @@
 
 'use client';
 
-import { TypingText, TitleText } from '../components';
+import { TypingText, TitleText } from '../components/Effects';
 import { motion } from 'framer-motion'; // Removed AnimatePresence
 import styles from '../styles';
 import { staggerContainer, fadeIn } from '../utils/motion';

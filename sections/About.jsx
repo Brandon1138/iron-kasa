@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { TypingText } from '../components';
+import { TypingText } from '../components/Effects';
 import Features from '../components/Features';
 
 import styles from '../styles';

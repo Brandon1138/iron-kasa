@@ -1,4 +1,4 @@
-import { TypingText, TitleText } from './Effects/CustomTexts';
-import WordFlip from './Effects/WordFlip';
+import { TypingText, TitleText } from './CustomTexts';
+import WordFlip from './WordFlip';
 
 export { TypingText, TitleText, WordFlip };

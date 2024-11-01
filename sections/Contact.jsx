@@ -1,12 +1,12 @@
 // sections/Contact.jsx
 
-"use client";
+'use client';
 
-import { useRef, useEffect } from "react";
-import { motion } from "framer-motion";
-import Script from "next/script";
-import { TypingText } from "../components";
-import { fadeIn, staggerContainer } from "../utils/motion";
+import { useRef, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import Script from 'next/script';
+import { TypingText } from '../components/Effects';
+import { fadeIn, staggerContainer } from '../utils/motion';
 
 const Contact = () => {
   const mapRef = useRef(null);
@@ -23,7 +23,7 @@ const Contact = () => {
     const map = new window.google.maps.Map(mapRef.current, {
       center: shopLocation, // Center the map on the shop location
       zoom: 15,
-      mapId: "a7d50c754bc2729c", // Use your custom Map ID
+      mapId: 'a7d50c754bc2729c', // Use your custom Map ID
     });
 
     // Use AdvancedMarkerElement instead of the deprecated Marker
@@ -56,10 +56,10 @@ const Contact = () => {
       >
         <TypingText title="| Contact" textStyles="text-center" />
         <motion.h2
-          variants={fadeIn("up", "tween", 0.2, 1)}
+          variants={fadeIn('up', 'tween', 0.2, 1)}
           className="mt-4 font-bold text-3xl lg:text-5xl text-white text-center"
         >
-          Suntem aici să te{" "}
+          Suntem aici să te{' '}
           <span className="bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-purple-500 via-rose-500 to-amber-500 bg-clip-text text-transparent">
             ajutăm
           </span>
@@ -67,7 +67,7 @@ const Contact = () => {
 
         {/* Paragraph */}
         <motion.p
-          variants={fadeIn("up", "tween", 0.4, 1)}
+          variants={fadeIn('up', 'tween', 0.4, 1)}
           className="mt-6 w-full max-w-[1230px] px-4 text-white text-opacity-75 text-lg text-center mx-auto"
         >
           Fie că ai probleme cu software-ul, hardware-ul sau pur și simplu vrei
@@ -79,7 +79,7 @@ const Contact = () => {
 
         {/* Map Section */}
         <motion.div
-          variants={fadeIn("up", "tween", 0.4, 1)}
+          variants={fadeIn('up', 'tween', 0.4, 1)}
           className="mt-8 w-full"
         >
           {/* Map container with max width and padding */}
@@ -93,7 +93,7 @@ const Contact = () => {
 
         {/* Contact and Program Information */}
         <motion.div
-          variants={fadeIn("up", "tween", 0.3, 1)}
+          variants={fadeIn('up', 'tween', 0.3, 1)}
           className="mt-8 w-full max-w-[1230px] px-4"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-white">
