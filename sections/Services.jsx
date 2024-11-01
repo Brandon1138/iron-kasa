@@ -3,7 +3,7 @@
 'use client';
 
 import { TypingText, TitleText } from '../components/Effects';
-import { motion } from 'framer-motion'; // Removed AnimatePresence
+import { motion } from 'framer-motion';
 import styles from '../styles';
 import { staggerContainer, fadeIn } from '../utils/motion';
 import { categoryCard, mainDisclaimer, serviceDetails } from '../constants';
@@ -50,11 +50,15 @@ const Services = () => {
           variants={staggerContainer}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.25 }}
+          viewport={{ once: false, amount: 0.25 }} // Allow re-animation for TypingText
           onAnimationComplete={() => setIsAnimationComplete(true)}
           className="flex flex-col items-center"
         >
-          <TypingText title="| Servicii" textStyles="text-center" />
+          <TypingText
+            key={selectedCategory}
+            title="| Servicii"
+            textStyles="text-center"
+          />
         </motion.div>
 
         {/* TitleText with Styled "dispozitivul" */}
@@ -62,7 +66,7 @@ const Services = () => {
           variants={fadeIn('up', 'tween', 0.2, 1)}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.25 }}
+          viewport={{ once: true, amount: 0.25 }} // Keep once: true
           className="text-center mt-4"
         >
           <TitleText
@@ -83,7 +87,7 @@ const Services = () => {
           variants={staggerContainer}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.25 }}
+          viewport={{ once: true, amount: 0.25 }} // Keep once: true
           className="
             grid grid-cols-4 mt-8 py-8 px-4
             gap-[10px] sm:gap-[14px] lg:gap-[30px]
@@ -138,7 +142,7 @@ const Services = () => {
             variants={staggerContainer}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, amount: 0.25 }}
+            viewport={{ once: true, amount: 0.25 }} // Keep once: true
             onAnimationComplete={() => setIsAnimationComplete(true)}
             className="
               grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4
