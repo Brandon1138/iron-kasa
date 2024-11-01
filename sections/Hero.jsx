@@ -6,7 +6,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
 import styles from '../styles';
 import { fadeIn, staggerContainer, textVariant } from '../utils/motion';
-import WordFlip from '../components/WordFlip';
+import WordFlip from '../components/Effects/WordFlip';
 
 const Hero = () => {
   const ref = useRef(null);
