@@ -6,7 +6,7 @@ import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Portal from './Portal';
-import '../styles/globals.css';
+import '../../styles/globals.css';
 
 const ServiceModal = ({ service, onClose }) => {
   const [showModal, setShowModal] = useState(!!service);

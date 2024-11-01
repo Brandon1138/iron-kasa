@@ -4,7 +4,7 @@
 
 import { useState } from 'react';
 import { Navbar } from '../components/Navbar';
-import { Footer } from '../components/Footer';
+import Footer from '../components/Footer/Footer';
 import {
   About,
   Services,
@@ -13,7 +13,7 @@ import {
   Transport,
   Testimonials,
 } from '../sections';
-import ServiceModal from '../components/ServiceModal';
+import ServiceModal from '../components/Modal/ServiceModal'; // Adjusted import path
 
 const Page = () => {
   const [selectedService, setSelectedService] = useState(null);
@@ -28,7 +28,7 @@ const Page = () => {
 
   return (
     <div className="relative bg-primary-black overflow-hidden">
-      <Navbar />
+      <Navbar onServiceSelect={handleServiceSelect} />
       <Hero />
       <div className="relative">
         <About id="about" />
@@ -42,7 +42,9 @@ const Page = () => {
       <Footer />
 
       {/* Render ServiceModal */}
-      <ServiceModal service={selectedService} onClose={handleCloseModal} />
+      {selectedService && (
+        <ServiceModal service={selectedService} onClose={handleCloseModal} />
+      )}
     </div>
   );
 };
