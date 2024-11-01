@@ -57,7 +57,7 @@ const Testimonials = () => {
 
           {/* Animated Heading */}
           <motion.h2
-            variants={fadeIn('up', 'tween', 0.3, 1)}
+            variants={fadeIn('right', 'tween', 0.3, 1)}
             className="mt-4 font-bold text-3xl lg:text-5xl text-white text-center"
           >
             Ce spun{' '}

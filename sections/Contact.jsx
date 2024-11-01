@@ -1,5 +1,3 @@
-// sections/Contact.jsx
-
 'use client';
 
 import { useRef, useEffect } from 'react';
@@ -11,33 +9,45 @@ import { fadeIn, staggerContainer } from '../utils/motion';
 const Contact = () => {
   const mapRef = useRef(null);
 
-  // Attach initMap to the window object
   useEffect(() => {
     window.initMap = initMap;
   }, []);
 
-  // Updated initMap function using AdvancedMarkerElement
   const initMap = () => {
-    const shopLocation = { lat: 44.41362120240169, lng: 26.132020598094197 }; // iPhoneDoctor's latitude and longitude
+    const shopLocation = { lat: 44.41362120240169, lng: 26.132020598094197 };
 
     const map = new window.google.maps.Map(mapRef.current, {
-      center: shopLocation, // Center the map on the shop location
+      center: shopLocation,
       zoom: 15,
-      mapId: 'a7d50c754bc2729c', // Use your custom Map ID
+      mapId: 'a7d50c754bc2729c',
     });
 
-    // Use AdvancedMarkerElement instead of the deprecated Marker
     new google.maps.marker.AdvancedMarkerElement({
       map: map,
       position: shopLocation,
     });
   };
 
-  // Function to generate Google Maps directions link
+  const staggerChildrenVariants = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
+  const contentContainerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
   const getDirectionsLink = () => {
     const { lat, lng } = { lat: 44.41361458005216, lng: 26.132022068483483 };
     return `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
   };
+
   return (
     <section
       id="contact"
@@ -56,7 +66,7 @@ const Contact = () => {
       >
         <TypingText title="| Contact" textStyles="text-center" />
         <motion.h2
-          variants={fadeIn('up', 'tween', 0.2, 1)}
+          variants={fadeIn('left', 'tween', 0.2, 1)}
           className="mt-4 font-bold text-3xl lg:text-5xl text-white text-center"
         >
           Suntem aici să te{' '}
@@ -65,124 +75,125 @@ const Contact = () => {
           </span>
         </motion.h2>
 
-        {/* Paragraph */}
-        <motion.p
-          variants={fadeIn('up', 'tween', 0.4, 1)}
-          className="mt-6 w-full max-w-[1230px] px-4 text-white text-opacity-75 text-lg text-center mx-auto"
-        >
-          Fie că ai probleme cu software-ul, hardware-ul sau pur și simplu vrei
-          să-ți îmbunătățești performanțele dispozitivului, echipa iPhone Doctor
-          te va trata cu seriozitate și profesionalism. Scrie-ne, sună-ne sau
-          fă-ne o vizită la clinică și vom găsi soluția potrivită pentru tine.
-          Așteptăm cu drag să te ajutăm!
-        </motion.p>
-
-        {/* Map Section */}
+        {/* New stagger container for the three main content sections */}
         <motion.div
-          variants={fadeIn('up', 'tween', 0.4, 1)}
-          className="mt-8 w-full"
+          variants={contentContainerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="w-full flex flex-col items-center"
         >
-          {/* Map container with max width and padding */}
-          <div className="mx-auto w-full max-w-[1230px] px-4">
-            <div
-              ref={mapRef}
-              className="w-full h-[400px] rounded-[36px] overflow-hidden shadow-lg"
-            ></div>
-          </div>
-        </motion.div>
+          <motion.p
+            variants={staggerChildrenVariants}
+            className="mt-6 w-full max-w-[1230px] px-4 text-white text-opacity-75 text-lg text-center mx-auto"
+          >
+            Fie că ai probleme cu software-ul, hardware-ul sau pur și simplu
+            vrei să-ți îmbunătățești performanțele dispozitivului, echipa iPhone
+            Doctor te va trata cu seriozitate și profesionalism. Scrie-ne,
+            sună-ne sau fă-ne o vizită la clinică și vom găsi soluția potrivită
+            pentru tine. Așteptăm cu drag să te ajutăm!
+          </motion.p>
 
-        {/* Contact and Program Information */}
-        <motion.div
-          variants={fadeIn('up', 'tween', 0.3, 1)}
-          className="mt-8 w-full max-w-[1230px] px-4"
-        >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-white">
-            {/* Left Column - Program Information */}
-            <div className="flex flex-col items-center md:items-start">
-              <h3 className="text-xl font-bold mb-4">Program</h3>
-              {/* Subcolumns for Days and Hours */}
-              <div className="w-full flex flex-row justify-center md:justify-start space-x-8">
-                {/* Days Column */}
-                <ul className="space-y-2 text-center md:text-left">
-                  <li className="leading-loose">Luni - Joi</li>
-                  <li className="leading-loose">Vineri</li>
-                  <li className="leading-loose">Sâmbătă</li>
-                  <li className="leading-loose">Duminică</li>
-                </ul>
-                {/* Hours Column */}
-                <ul className="space-y-2 text-center md:text-left">
-                  <li className="leading-loose">10:00 - 20:00</li>
-                  <li className="leading-loose">10:00 - 17:00</li>
-                  <li className="leading-loose">Închis</li>
-                  <li className="leading-loose">12:00 - 17:00</li>
+          <motion.div
+            variants={staggerChildrenVariants}
+            className="mt-8 w-full"
+          >
+            <div className="mx-auto w-full max-w-[1230px] px-4">
+              <div
+                ref={mapRef}
+                className="w-full h-[400px] rounded-[36px] overflow-hidden shadow-lg"
+              ></div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            variants={staggerChildrenVariants}
+            className="mt-8 w-full max-w-[1230px] px-4"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-white">
+              {/* Left Column - Program Information */}
+              <div className="flex flex-col items-center md:items-start">
+                <h3 className="text-xl font-bold mb-4">Program</h3>
+                <div className="w-full flex flex-row justify-center md:justify-start space-x-8">
+                  <ul className="space-y-2 text-center md:text-left">
+                    <li className="leading-loose">Luni - Joi</li>
+                    <li className="leading-loose">Vineri</li>
+                    <li className="leading-loose">Sâmbătă</li>
+                    <li className="leading-loose">Duminică</li>
+                  </ul>
+                  <ul className="space-y-2 text-center md:text-left">
+                    <li className="leading-loose">10:00 - 20:00</li>
+                    <li className="leading-loose">10:00 - 17:00</li>
+                    <li className="leading-loose">Închis</li>
+                    <li className="leading-loose">12:00 - 17:00</li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Right Column - Contact Information */}
+              <div className="flex flex-col items-center md:items-end">
+                <h3 className="text-xl font-bold mb-4">Date de Contact</h3>
+                <ul className="space-y-4">
+                  <li className="flex items-center justify-center md:justify-end">
+                    <a
+                      href={getDirectionsLink()}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center"
+                    >
+                      <img
+                        src="/map.svg"
+                        alt="Get Directions"
+                        className="mr-2 cursor-pointer w-4 h-4 border-0"
+                      />
+                      <span className="text-right font-bold text-white hover:text-transparent hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-600 hover:bg-clip-text hover:-webkit-background-clip-text hover:font-bold-animate transition-all duration-300 ease-in-out">
+                        Str. Știrului nr. 8A, Sector 3
+                      </span>
+                    </a>
+                  </li>
+                  <li className="flex items-center justify-center md:justify-end">
+                    <a href="tel:0764838860" className="flex items-center">
+                      <img
+                        src="/phone.svg"
+                        alt="Phone"
+                        className="mr-2 cursor-pointer w-4 h-4 border-0"
+                      />
+                      <span className="text-right font-bold text-white hover:text-transparent hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-600 hover:bg-clip-text hover:-webkit-background-clip-text hover:font-bold-animate transition-all duration-300 ease-in-out">
+                        0764 838 860
+                      </span>
+                    </a>
+                  </li>
+                  <li className="flex items-center justify-center md:justify-end">
+                    <a href="tel:0784888444" className="flex items-center">
+                      <img
+                        src="/phone.svg"
+                        alt="Phone"
+                        className="mr-2 cursor-pointer w-4 h-4 border-0"
+                      />
+                      <span className="text-right font-bold text-white hover:text-transparent hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-600 hover:bg-clip-text hover:-webkit-background-clip-text hover:font-bold-animate transition-all duration-300 ease-in-out">
+                        0784 888 444
+                      </span>
+                    </a>
+                  </li>
+                  <li className="flex items-center justify-center md:justify-end">
+                    <a
+                      href="mailto:office@iPhoneDoctor.ro"
+                      className="flex items-center"
+                    >
+                      <img
+                        src="/mail.svg"
+                        alt="Email"
+                        className="mr-2 cursor-pointer w-4 h-4 border-0"
+                      />
+                      <span className="text-right font-bold text-white hover:text-transparent hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-600 hover:bg-clip-text hover:-webkit-background-clip-text hover:font-bold-animate transition-all duration-300 ease-in-out">
+                        office@iPhoneDoctor.ro
+                      </span>
+                    </a>
+                  </li>
                 </ul>
               </div>
             </div>
-
-            {/* Right Column - Contact Information */}
-            <div className="flex flex-col items-center md:items-end">
-              <h3 className="text-xl font-bold mb-4">Date de Contact</h3>
-              <ul className="space-y-4">
-                <li className="flex items-center justify-center md:justify-end">
-                  {/* Address with Clickable Icon */}
-                  <a
-                    href={getDirectionsLink()}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center"
-                  >
-                    <img
-                      src="/map.svg"
-                      alt="Get Directions"
-                      className="mr-2 cursor-pointer w-4 h-4 border-0"
-                    />
-                    <span className="text-right font-bold text-white hover:text-transparent hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-600 hover:bg-clip-text hover:-webkit-background-clip-text hover:font-bold-animate transition-all duration-300 ease-in-out">
-                      Str. Știrului nr. 8A, Sector 3
-                    </span>
-                  </a>
-                </li>
-                <li className="flex items-center justify-center md:justify-end">
-                  <a href="tel:0764838860" className="flex items-center">
-                    <img
-                      src="/phone.svg"
-                      alt="Phone"
-                      className="mr-2 cursor-pointer w-4 h-4 border-0"
-                    />
-                    <span className="text-right font-bold text-white hover:text-transparent hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-600 hover:bg-clip-text hover:-webkit-background-clip-text hover:font-bold-animate transition-all duration-300 ease-in-out">
-                      0764 838 860
-                    </span>
-                  </a>
-                </li>
-                <li className="flex items-center justify-center md:justify-end">
-                  <a href="tel:0784888444" className="flex items-center">
-                    <img
-                      src="/phone.svg"
-                      alt="Phone"
-                      className="mr-2 cursor-pointer w-4 h-4 border-0"
-                    />
-                    <span className="text-right font-bold text-white hover:text-transparent hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-600 hover:bg-clip-text hover:-webkit-background-clip-text hover:font-bold-animate transition-all duration-300 ease-in-out">
-                      0784 888 444
-                    </span>
-                  </a>
-                </li>
-                <li className="flex items-center justify-center md:justify-end">
-                  <a
-                    href="mailto:office@iPhoneDoctor.ro"
-                    className="flex items-center"
-                  >
-                    <img
-                      src="/mail.svg"
-                      alt="Email"
-                      className="mr-2 cursor-pointer w-4 h-4 border-0"
-                    />
-                    <span className="text-right font-bold text-white hover:text-transparent hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-600 hover:bg-clip-text hover:-webkit-background-clip-text hover:font-bold-animate transition-all duration-300 ease-in-out">
-                      office@iPhoneDoctor.ro
-                    </span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
+          </motion.div>
         </motion.div>
       </motion.div>
     </section>
