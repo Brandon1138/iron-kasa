@@ -62,7 +62,7 @@ const Footer = () => (
           </p>
 
           {/* Socials Component */}
-          <Socials />
+          <Socials socials={socials} />
 
           {/* Optional: Footer Gradient or Additional Styling */}
           <div className="footer-gradient" />
