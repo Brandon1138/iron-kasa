@@ -19,7 +19,7 @@ const ServiceCard = ({ service, onClick, isAnimationComplete, isActive }) => {
       if (width >= 1280) {
         setScreenSize('xl');
       } else if (width >= 1024) {
-        setScreenSize('lg');
+        setScreenSize('md'); // Changed from 'lg' to 'md' to delay switch
       } else if (width >= 768) {
         setScreenSize('md');
       } else {
