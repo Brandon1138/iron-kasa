@@ -19,7 +19,15 @@ const BrandLogo = ({ isHidden }) => (
       transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
     />
     {/* Logo */}
-    <Image src="/logo.svg" alt="iPhoneDoctor Logo" width={150} height={50} />
+    <Image
+      src="/logo.svg"
+      alt="iPhoneDoctor Logo"
+      width={150}
+      height={50}
+      sizes="(max-width: 768px) 100px, 150px" // Adjust based on your layout
+      className="w-[150px] h-[50px]" // Example for responsive sizing
+      style={{ objectFit: 'contain' }}
+    />
   </div>
 );
 

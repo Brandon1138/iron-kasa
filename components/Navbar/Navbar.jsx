@@ -86,7 +86,7 @@ const Navbar = ({ onServiceSelect }) => {
       variants={navVariants}
       initial="hidden"
       animate="show"
-      className={`${styles.xPaddings} py-8 fixed top-0 left-0 right-0 z-50 bg-primary-black bg-opacity-50 backdrop-blur-md`}
+      className={`${styles.xPaddings} py-6 fixed top-0 left-0 right-0 z-50 bg-primary-black bg-opacity-50 backdrop-blur-md`}
       aria-label="Main Navigation"
     >
       <div

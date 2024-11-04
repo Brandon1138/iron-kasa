@@ -1,7 +1,6 @@
 // Menu.jsx
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Image from 'next/image';
 
 const Menu = ({
   isMenuOpen,
@@ -17,11 +16,17 @@ const Menu = ({
       aria-label="Toggle menu"
       aria-haspopup="true"
       aria-expanded={isMenuOpen}
-      className="w-[24px] h-[24px] object-contain cursor-pointer focus:outline-none z-60"
+      className="w-6 h-6 cursor-pointer focus:outline-none z-60"
       onClick={toggleMenu}
       ref={buttonRef}
     >
-      <Image src="/menu.svg" alt="menu" width={24} height={24} />
+      <img
+        src="/menu.svg"
+        alt="Menu"
+        width="24"
+        height="24"
+        className="object-contain"
+      />
     </button>
 
     {/* Menu Modal */}

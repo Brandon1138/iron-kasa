@@ -16,8 +16,7 @@ const CategoryCard = ({
   setHoveredCategoryId,
 }) => {
   const isHovered = hoveredCategoryId === id;
-  const isAnotherCardHovered =
-    hoveredCategoryId !== null && hoveredCategoryId !== id;
+  const isAnotherCardHovered = hoveredCategoryId !== null && hoveredCategoryId !== id;
 
   // Determine if the glow should be visible
   const isGlowVisible = (isSelected && !isAnotherCardHovered) || isHovered;
