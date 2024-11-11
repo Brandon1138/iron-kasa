@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { TypingText } from '../components/Effects';
-import Features from '../components/Features';
+import Features from '../components/Overview/Features';
 
 import styles from '../styles';
 import { fadeIn, staggerContainer } from '../utils/motion';
