@@ -1078,7 +1078,263 @@ export const iPhoneServiceDetails = [
   },
 ];
 
-export const iPadServiceDetails = [];
+export const iPadServiceCards = [
+  {
+    imgUrl: '/ipad_9.png',
+    title: 'iPad 9',
+  },
+  {
+    imgUrl: '/ipad_8.png',
+    title: 'iPad 8',
+  },
+  {
+    imgUrl: '/ipad_7.png',
+    title: 'iPad 7',
+  },
+  {
+    imgUrl: '/ipad_6.png',
+    title: 'iPad 6',
+  },
+  {
+    imgUrl: '/ipad_pro_11.png',
+    title: 'iPad Pro 11',
+  },
+  {
+    imgUrl: '/ipad_5.png',
+    title: 'iPad 5',
+  },
+  {
+    imgUrl: '/ipad_pro_12_9.png',
+    title: 'iPad Pro 12.9',
+  },
+  {
+    imgUrl: '/ipad_air_2.png',
+    title: 'iPad Air 2',
+  },
+  {
+    imgUrl: '/ipad_mini_2.png',
+    title: 'iPad Mini 2',
+  },
+  {
+    imgUrl: '/ipad_air_1.png',
+    title: 'iPad Air 1',
+  },
+  {
+    imgUrl: '/ipad_4.png',
+    title: 'iPad 4',
+  },
+  {
+    imgUrl: '/ipad_mini.png',
+    title: 'iPad mini',
+  },
+];
+
+export const iPadServiceDetails = [
+  {
+    imgUrl: '/ipad_9.png',
+    title: 'iPad 9',
+    sizes: {
+      expanded: { width: 332, height: 360 },
+      lg: { width: 153, height: 165 },
+      md: { width: 107, height: 115 },
+      sm: { width: 77, height: 82 },
+    },
+    services: [
+      {
+        name: 'Înlocuire ecran (display și touchscreen)',
+        duration: '10 min',
+        price: '1000 lei',
+      },
+    ],
+  },
+  {
+    imgUrl: '/ipad_8.png',
+    title: 'iPad 8',
+    sizes: {
+      expanded: { width: 307, height: 360 },
+      lg: { width: 141, height: 165 },
+      md: { width: 99, height: 115 },
+      sm: { width: 72, height: 82 },
+    },
+    services: [
+      {
+        name: 'Înlocuire ecran (display și touchscreen)',
+        duration: '10 min',
+        price: '1000 lei',
+      },
+    ],
+  },
+  {
+    imgUrl: '/ipad_7.png',
+    title: 'iPad 7',
+    sizes: {
+      expanded: { width: 306, height: 360 },
+      lg: { width: 141, height: 165 },
+      md: { width: 99, height: 115 },
+      sm: { width: 71, height: 82 },
+    },
+    services: [
+      {
+        name: 'Înlocuire ecran (display și touchscreen)',
+        duration: '10 min',
+        price: '1000 lei',
+      },
+    ],
+  },
+  {
+    imgUrl: '/ipad_6.png',
+    title: 'iPad 6',
+    sizes: {
+      expanded: { width: 299, height: 344 },
+      lg: { width: 138, height: 157 },
+      md: { width: 97, height: 110 },
+      sm: { width: 70, height: 79 },
+    },
+    services: [
+      {
+        name: 'Înlocuire ecran (display și touchscreen)',
+        duration: '10 min',
+        price: '1000 lei',
+      },
+    ],
+  },
+  {
+    imgUrl: '/ipad_pro_11.png',
+    title: 'iPad Pro 11',
+    sizes: {
+      expanded: { width: 353, height: 355 },
+      lg: { width: 162, height: 162 },
+      md: { width: 114, height: 113 },
+      sm: { width: 82, height: 81 },
+    },
+    services: [
+      {
+        name: 'Înlocuire ecran (display și touchscreen)',
+        duration: '10 min',
+        price: '1000 lei',
+      },
+    ],
+  },
+  {
+    imgUrl: '/ipad_5.png',
+    title: 'iPad 5',
+    sizes: {
+      expanded: { width: 299, height: 345 },
+      lg: { width: 138, height: 158 },
+      md: { width: 97, height: 110 },
+      sm: { width: 70, height: 79 },
+    },
+    services: [
+      {
+        name: 'Înlocuire ecran (display și touchscreen)',
+        duration: '10 min',
+        price: '1000 lei',
+      },
+    ],
+  },
+  {
+    imgUrl: '/ipad_pro_12_9.png',
+    title: 'iPad Pro 12.9',
+    sizes: {
+      expanded: { width: 406, height: 402 },
+      lg: { width: 187, height: 184 },
+      md: { width: 131, height: 128 },
+      sm: { width: 95, height: 92 },
+    },
+    services: [
+      {
+        name: 'Înlocuire ecran (display și touchscreen)',
+        duration: '10 min',
+        price: '1000 lei',
+      },
+    ],
+  },
+  {
+    imgUrl: '/ipad_air_2.png',
+    title: 'iPad Air 2',
+    sizes: {
+      expanded: { width: 298, height: 345 },
+      lg: { width: 138, height: 158 },
+      md: { width: 97, height: 110 },
+      sm: { width: 70, height: 79 },
+    },
+    services: [
+      {
+        name: 'Înlocuire ecran (display și touchscreen)',
+        duration: '10 min',
+        price: '1000 lei',
+      },
+    ],
+  },
+  {
+    imgUrl: '/ipad_mini_2.png',
+    title: 'iPad Mini 2',
+    sizes: {
+      expanded: { width: 277, height: 312 },
+      lg: { width: 127, height: 142 },
+      md: { width: 89, height: 99 },
+      sm: { width: 64, height: 71 },
+    },
+    services: [
+      {
+        name: 'Înlocuire ecran (display și touchscreen)',
+        duration: '10 min',
+        price: '1000 lei',
+      },
+    ],
+  },
+  {
+    imgUrl: '/ipad_air.png',
+    title: 'iPad Air',
+    sizes: {
+      expanded: { width: 325, height: 345 },
+      lg: { width: 150, height: 158 },
+      md: { width: 105, height: 110 },
+      sm: { width: 76, height: 79 },
+    },
+    services: [
+      {
+        name: 'Înlocuire ecran (display și touchscreen)',
+        duration: '10 min',
+        price: '1000 lei',
+      },
+    ],
+  },
+  {
+    imgUrl: '/ipad_4.png',
+    title: 'iPad 4',
+    sizes: {
+      expanded: { width: 335, height: 347 },
+      lg: { width: 154, height: 158 },
+      md: { width: 108, height: 110 },
+      sm: { width: 78, height: 79 },
+    },
+    services: [
+      {
+        name: 'Înlocuire ecran (display și touchscreen)',
+        duration: '10 min',
+        price: '1000 lei',
+      },
+    ],
+  },
+  {
+    imgUrl: '/ipad_mini.png',
+    title: 'iPad Mini',
+    sizes: {
+      expanded: { width: 280, height: 312 },
+      lg: { width: 129, height: 142 },
+      md: { width: 91, height: 99 },
+      sm: { width: 66, height: 71 },
+    },
+    services: [
+      {
+        name: 'Înlocuire ecran (display și touchscreen)',
+        duration: '10 min',
+        price: '1000 lei',
+      },
+    ],
+  },
+];
 
 export const macBookServiceDetails = [];
 
