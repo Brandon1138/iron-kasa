@@ -10,6 +10,7 @@ import { categoryCard, mainDisclaimer, serviceDetails } from '../constants';
 import CategoryCard from '../components/Cards/CategoryCard';
 import ServiceCard from '../components/Cards/ServiceCard';
 import ServiceModal from '../components/Modal/ServiceModal';
+import { CategoryContent } from '../components/Overview';
 import { useState } from 'react';
 
 const Services = () => {
@@ -136,36 +137,13 @@ const Services = () => {
           </motion.div>
         )}
 
-        {/* Service Cards */}
+        {/* Use the new CategoryContent component */}
         {selectedCategory !== null && (
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.25 }} // Keep once: true
-            onAnimationComplete={() => setIsAnimationComplete(true)}
-            className="
-              grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4
-              mt-8 py-8 px-4
-              gap-[12px] sm:gap-[12px] md:gap-[16px] lg:gap-[22px] xl:gap-[26px] 2xl:gap-[30px]
-              w-full 
-            "
-          >
-            {serviceDetails[selectedCategory].map((service, index) => (
-              <motion.div
-                key={index}
-                variants={fadeIn('up', 'tween', index * 0.1, 1)}
-                className="flex justify-center"
-              >
-                <ServiceCard
-                  service={service}
-                  onClick={() => handleServiceSelect(service)}
-                  isAnimationComplete={isAnimationComplete}
-                  isActive={selectedService === service} // Pass isActive prop
-                />
-              </motion.div>
-            ))}
-          </motion.div>
+          <CategoryContent
+            selectedCategory={selectedCategory}
+            isAnimationComplete={isAnimationComplete}
+            onServiceSelect={handleServiceSelect}
+          />
         )}
 
         {/* Service Modal */}
