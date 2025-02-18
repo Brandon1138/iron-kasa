@@ -1,9 +1,9 @@
-// components/CategoryContent.jsx
+// components/Services/CategoryContent.jsx
 
 'use client';
 
 import { motion } from 'framer-motion';
-import ServiceCard from '../Cards/ServiceCard';
+import ServiceCard from '../Cards/serviceCard';
 import { serviceDetails } from '../../constants';
 import { fadeIn, staggerContainer } from '../../utils/motion';
 
@@ -12,7 +12,7 @@ const CategoryContent = ({
   isAnimationComplete,
   onServiceSelect,
 }) => {
-  // For iPhone and iPad categories, render ServiceCards.
+  // Render service cards for iPhone & iPad categories.
   if (selectedCategory === 0 || selectedCategory === 1) {
     return (
       <motion.div
@@ -38,183 +38,8 @@ const CategoryContent = ({
       </motion.div>
     );
   }
-
-  // For MacBook and iMac categories, render the text content.
+  // For MacBook / iMac categories, render the text content along with additional sections.
   else if (selectedCategory === 2 || selectedCategory === 3) {
-    // Replace this with your actual copywritten text.
-    const textContent = (
-      <div>
-        <p className="text-[20px] text-white text-opacity-75">
-          <strong>De peste 10 ani</strong>, ne ocupăm cu repararea tuturor
-          dispozitivelor Apple, inclusiv MacBook și iMac. Mulți clienți ne-au
-          recomandat mai departe datorită <strong>rapidității</strong>,{' '}
-          <strong>transparenței</strong> și {''}
-          <strong>experienței</strong> tehnicienilor noștri. Dacă nu ne cunoști
-          încă, iată cum lucrăm și de ce ne aleg atât de mulți posesori de Mac.
-        </p>
-        <hr className="my-4 border-white opacity-25" />
-        <h2 className="font-bold text-3xl text-white py-2">
-          Costuri de Reparație
-        </h2>
-        <p className="text-[20px] text-white text-opacity-75 py-2">
-          <strong>Constatarea este obligatorie și gratuită</strong> – Analizăm
-          fiecare dispozitiv în minimum 15 minute și maximum 72 de ore, în
-          funcție de complexitatea problemei.
-        </p>
-        <p className="text-[20px] text-white text-opacity-75 py-2">
-          <strong>Te anunțăm înainte de orice lucrare</strong> – După
-          constatare, stabilim împreună dacă merită să reparăm placa de bază sau
-          alte componente ori să înlocuim doar piesa defectă.
-        </p>
-        <p className="text-[20px] text-white text-opacity-75 py-2">
-          <strong>
-            Prețuri cu până la 60% mai mici decât cele oferite de service
-          </strong>
-          -urile oficiale Apple – Profităm de experiența noastră în reparații la
-          nivel de componentă, fără să fie nevoie să schimbăm ansambluri
-          întregi.
-        </p>
-        <p className="text-[20px] text-white text-opacity-75 py-2">
-          <strong>
-            Piese originale (demontate de pe alte produse Apple) sau compatibile
-            de cea mai bună calitate
-          </strong>{' '}
-          – În funcție de preferințele și bugetul tău.
-        </p>
-        <hr className="my-4 border-white opacity-25" />
-        <h2 className="font-bold text-3xl text-white py-2">
-          Cât durează reparația?
-        </h2>
-        <p className="text-[20px] text-white text-opacity-75 py-2">
-          În general, lucrările obișnuite (schimbare ecran, tastatură, baterie,
-          upgrade SSD/HDD/RAM, instalare sistem de operare) se pot rezolva{' '}
-          <strong>pe loc</strong>, în <strong>câteva zeci de minute</strong>. În
-          cel mai rău caz, vei aștepta <strong>24-48</strong> de ore, în funcție
-          de gravitatea defecțiunii și aglomerația din service.
-        </p>
-        <p className="text-[20px] text-white text-opacity-75 py-2">
-          <strong>Exemplu real:</strong> Un client a vărsat apă pe tastatura
-          unui MacBook Air 13″, iar anumite taste nu mai funcționau. Procedura
-          oficială Apple ar fi să înlocuiască întregul topcase. Noi am schimbat
-          doar tastatura, iar reparația a fost gata în 40 de minute.
-        </p>
-        <hr className="my-4 border-white opacity-25" />
-        <h2 className="font-bold text-3xl text-white py-2">
-          Sunteți service oficial Apple?
-        </h2>
-        <p className="text-[20px] text-white text-opacity-75 py-2">
-          Nu suntem și <strong>nici nu ne-am dorit</strong> să fim Apple
-          Authorized Service Provider. <strong>În schimb</strong>, avem un
-          tehnician acreditat Apple, fost angajat într-un Apple Premium Service
-          Provider. Datorită flexibilității pe care o avem, putem lucra rapid,{' '}
-          <strong>fără proceduri birocratice</strong>, și menținem costurile la
-          un nivel rezonabil.
-        </p>
-        <hr className="my-4 border-white opacity-25" />
-        <h2 className="font-bold text-3xl text-white py-2">
-          Ce fel de reparații efectuăm?
-        </h2>
-        <p className="text-[20px] text-white text-opacity-75 py-2">
-          Ne specializăm în reparații electronice la nivel de componentă,
-          inclusiv:
-        </p>
-        <p className="text-[20px] text-white text-opacity-75 py-2">
-          <strong>Reparații placă de bază</strong> (defecte de la șocuri
-          mecanice, tensiune, contact cu lichide)
-        </p>
-        <p className="text-[20px] text-white text-opacity-75 py-2">
-          <strong>Înlocuire/reparații chip-uri</strong> și tranzistori,
-          reparații plăci grafice
-        </p>
-        <p className="text-[20px] text-white text-opacity-75 py-2">
-          <strong>Schimbare display</strong>, baterie, difuzoare, carcasă, mufă
-          de încărcare
-        </p>
-        <p className="text-[20px] text-white text-opacity-75 py-2">
-          <strong>Tastaturi</strong> (înlocuire completă, modificare layout,
-          reparație taste)
-        </p>
-        <p className="text-[20px] text-white text-opacity-75 py-2">
-          <strong> Upgrade SSD/HDD/memorie RAM </strong> și{' '}
-          <strong> instalare/mentenanță macOS </strong> (inclusiv Windows dacă
-          dorești)
-        </p>
-        <p className="text-[20px] text-white text-opacity-75 py-2">
-          <strong>Porturi / conectori</strong> (USB, USB-C, HDMI, jack 3.5mm)
-        </p>
-        <p className="text-[20px] text-white text-opacity-75 py-2">
-          <strong>Deparolare OS / EFI</strong>, rescriere EFI/Bios, recuperare
-          date
-        </p>
-        <p className="text-[20px] text-white text-opacity-75 py-2">
-          <strong>Curățare și decolmatare</strong> (coolere, placă de bază,
-          placă video, procesor)
-        </p>
-        <p className="text-[20px] text-white text-opacity-75 py-2">
-          Folosim <strong>piese de calitate</strong>, iar fiecare reparație
-          beneficiază de {''}
-          <strong>garanție între 90 și 365 de zile</strong>.
-        </p>
-        <hr className="my-4 border-white opacity-25" />
-        <h2 className="font-bold text-3xl text-white py-2">
-          Cum decurge reparația, pas cu pas?
-        </h2>
-        <p className="text-[20px] text-white text-opacity-75 py-2">
-          <strong>1. Recepția produsului</strong>
-        </p>
-        <p className="text-[20px] text-white text-opacity-75 py-2">
-          Poți aduce Mac-ul personal la sediul nostru (Str. Știrului, nr. 8A,
-          Sector 3, București) sau ni-l poți trimite prin curier rapid.
-        </p>
-        <p className="text-[20px] text-white text-opacity-75 py-2">
-          <strong>2. Diagnoză & ofertă</strong>
-        </p>
-        <p className="text-[20px] text-white text-opacity-75 py-2">
-          Analizăm problema pe loc (15 minute) sau în maximum 72 de ore, apoi
-          îți oferim detalii despre cost și durată.
-        </p>
-        <p className="text-[20px] text-white text-opacity-75 py-2">
-          <strong>3. Reparația propriu-zisă</strong>
-        </p>
-        <p className="text-[20px] text-white text-opacity-75 py-2">
-          După ce ne confirmi că ești de acord cu oferta, ne apucăm de treabă.
-          În peste 70% din cazuri, reparația se face pe loc.
-        </p>
-        <p className="text-[20px] text-white text-opacity-75 py-2">
-          <strong>4. Returnarea device-ului</strong>
-        </p>
-        <p className="text-[20px] text-white text-opacity-75 py-2">
-          Îți predăm laptopul funcțional, cu garanție inclusă, fie personal, fie
-          prin curier.
-        </p>
-        <hr className="my-4 border-white opacity-25" />
-        <h2 className="font-bold text-3xl text-white py-2">
-          De ce să ne alegi pe noi?
-        </h2>
-        <p className="text-[20px] text-white text-opacity-75 py-2">
-          <strong>Constatarea este obligatorie și gratuită</strong> – Peste 10
-          ani de reparații Apple.
-        </p>
-        <p className="text-[20px] text-white text-opacity-75 py-2">
-          <strong>Tehnician acreditat Apple</strong> – Dar cu libertatea de a
-          repara la nivel avansat de circuit.
-        </p>
-        <p className="text-[20px] text-white text-opacity-75 py-2">
-          <strong>Rapiditate și eficiență</strong> – Majoritatea reparațiilor se
-          rezolvă în câteva zeci de minute.
-        </p>
-        <p className="text-[20px] text-white text-opacity-75 py-2">
-          <strong>Prețuri corecte</strong> – Fără costuri ascunse, fără soluții
-          inutile de înlocuire totală.
-        </p>
-        <p className="text-[20px] text-white text-opacity-75 py-2">
-          <strong>Garanție la reparații</strong> – Între 90 și 365 de zile, în
-          funcție de lucrare.
-        </p>
-      </div>
-    );
-
-    // Optionally, you could also define a header or title for this category.
     const categoryTitle =
       selectedCategory === 2 ? 'Reparații MacBook' : 'Reparații iMac';
 
@@ -223,17 +48,197 @@ const CategoryContent = ({
         variants={fadeIn('up', 'tween', 0.2, 1)}
         initial="hidden"
         animate="show"
-        className="mt-12 text-center px-4"
+        className="mt-12 px-4 w-full max-w-5xl mx-auto"
       >
-        <h3 className="font-bold text-3xl text-white">{categoryTitle}</h3>
+        {/* Header Section */}
+        {selectedCategory === 2 ? (
+          <motion.div
+            variants={fadeIn('up', 'tween', 0.2, 1)}
+            initial="hidden"
+            animate="show"
+            className="relative w-full h-64 mb-8 rounded-xl overflow-hidden flex items-center justify-center"
+            style={{
+              backgroundImage: 'url(/Macbook_Header.webp)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          >
+            <div className="absolute inset-0 bg-black opacity-50"></div>
+            <motion.h1
+              variants={fadeIn('up', 'tween', 0.3, 1)}
+              className="text-white text-4xl font-bold z-10"
+            >
+              {categoryTitle}
+            </motion.h1>
+          </motion.div>
+        ) : (
+          <motion.div
+            variants={fadeIn('up', 'tween', 0.2, 1)}
+            initial="hidden"
+            animate="show"
+            className="relative w-full h-64 mb-8 bg-neutral-800 rounded-xl flex items-center justify-center"
+          >
+            <motion.h1
+              variants={fadeIn('up', 'tween', 0.3, 1)}
+              className="text-white text-4xl font-bold z-10"
+            >
+              {categoryTitle}
+            </motion.h1>
+          </motion.div>
+        )}
+
+        {/* Consolidated Introductory Text */}
         <motion.p
           variants={fadeIn('up', 'tween', 0.3, 1)}
           initial="hidden"
           animate="show"
-          className="mt-12 text-white text-opacity-50 text-[20px]"
+          className="text-white text-opacity-75 text-xl mb-8 leading-relaxed"
         >
-          {textContent}
+          De peste 10 ani ne ocupăm cu repararea tuturor dispozitivelor Apple,
+          inclusiv MacBook și iMac. Oferim constatare gratuită în 15 minute,
+          prețuri cu până la 60% mai mici decât cele ale service-urilor
+          oficiale, și reparații la nivel de componentă, toate realizate de
+          tehnicieni cu experiență.
         </motion.p>
+
+        {/* Benefits Section */}
+        <SectionTitle title="Beneficiile noastre" />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+          <BenefitCard
+            title="Constatare Gratuită"
+            text="Diagnostic rapid în 15-30 minute. Pentru cazuri complexe, până la 48 de ore, fără costuri inițiale."
+          />
+          <BenefitCard
+            title="Transparență Completă"
+            text="Primești toate detaliile înainte de orice lucrare, pentru decizii informate."
+          />
+          <BenefitCard
+            title="Calitate Superioară"
+            text="Folosim piese originale sau compatibile, adaptate nevoilor și bugetului tău."
+          />
+        </div>
+
+        <SectionTitle title="Cât durează reparația?" />
+        <BulletParagraph>
+          Lucrările obișnuite (schimbare ecran, baterie, upgrade SSD/HDD/RAM) se
+          rezolvă pe loc, în câteva zeci de minute. În cazuri mai grave, 24-48
+          de ore.
+        </BulletParagraph>
+        <BulletParagraph>
+          <strong>Exemplu real:</strong> Un client a vărsat apă pe tastatura
+          unui MacBook Air 13″. Procedura oficială: înlocuirea întregului
+          topcase; noi am schimbat doar tastatura în 40 de minute.
+        </BulletParagraph>
+
+        {/* Grid of repair types */}
+        <SectionTitle title="Ce fel de reparații efectuăm?" />
+        <motion.p
+          variants={fadeIn('up', 'tween', 0.35, 1)}
+          initial="hidden"
+          animate="show"
+          className="text-white text-opacity-75 text-xl mb-8 leading-relaxed"
+        >
+          Alege soluția potrivită pentru nevoile tale.
+        </motion.p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <RepairCard
+            title="Reparații placă de bază"
+            text="Defecte de la șocuri mecanice, tensiune, contact cu lichide."
+          />
+          <RepairCard
+            title="Chip-uri și tranzistori"
+            text="Înlocuire sau reparații la nivel de componentă, plăci grafice."
+          />
+          <RepairCard
+            title="Schimbare display"
+            text="Ecrane sparte sau defecte, baterie, difuzoare, carcasă."
+          />
+          <RepairCard
+            title="Tastaturi"
+            text="Înlocuire completă, modificare layout, reparație taste."
+          />
+          <RepairCard
+            title="Upgrade SSD/HDD/RAM"
+            text="Instalare și mentenanță macOS (inclusiv Windows la cerere)."
+          />
+          <RepairCard
+            title="Baterii / Acumulatori"
+            text="Înlocuire, calibrare, testare autonomie."
+          />
+          <RepairCard
+            title="Înlocuire difuzoare / boxe"
+            text="Reparație și înlocuire difuzoare, microfoane, reglaj sunet."
+          />
+          <RepairCard
+            title="Porturi / Conectori"
+            text="Reparație și înlocuire porturi de încărcare, USB, etc."
+          />
+          <RepairCard
+            title="Deparolare OS / EFI"
+            text="Rescriere EFI/Bios, recuperare date."
+          />
+          <RepairCard
+            title="Curățare și decolmatare"
+            text="Coolere, placă de bază, placă video, procesor."
+          />
+        </div>
+
+        <motion.p
+          variants={fadeIn('up', 'tween', 0.5, 1)}
+          initial="hidden"
+          animate="show"
+          className="text-white text-opacity-75 text-xl mb-8 leading-relaxed"
+        >
+          Folosim piese de calitate, iar fiecare reparație beneficiază de
+          garanție între 90 și 365 de zile.
+        </motion.p>
+
+        {/* Step-by-step timeline */}
+        <SectionTitle title="Cum decurge reparația, pas cu pas?" />
+        <div className="relative pl-8 mb-8">
+          {/* Vertical connector */}
+          <div className="absolute left-4 top-0 bottom-0 w-px bg-white opacity-30"></div>
+          <div className="space-y-8">
+            <StepItem
+              step="1"
+              title="Recepția produsului"
+              text="Poți aduce Mac-ul la sediu (Str. Știrului, nr. 8A) sau ni-l trimiți prin curier."
+            />
+            <StepItem
+              step="2"
+              title="Diagnoză & ofertă"
+              text="Analizăm pe loc (15 minute) sau în max. 72h, apoi discutăm cost și durată."
+            />
+            <StepItem
+              step="3"
+              title="Reparația propriu-zisă"
+              text="După confirmare, ne apucăm de treabă. În 70% din cazuri, rezolvăm pe loc."
+            />
+            <StepItem
+              step="4"
+              title="Returnarea device-ului"
+              text="Predăm laptopul funcțional, cu garanție, personal sau prin curier."
+            />
+          </div>
+        </div>
+
+        {/* CTA (Reverted to initial placement) */}
+        <motion.button
+          variants={fadeIn('up', 'tween', 0.3, 1)}
+          className="flex items-center h-fit py-4 px-6 bg-[#d97706] rounded-[32px] gap-[12px] hover:bg-[#a95c04] glassmorphism-hover transition-colors duration-300 self-center mt-6"
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          type="button"
+        >
+          <img
+            src="/chat.svg"
+            alt="chat"
+            className="w-[24px] h-[24px] object-contain"
+          />
+          <span className="font-normal text-[16px] text-white">
+            Trimite un mesaj
+          </span>
+        </motion.button>
       </motion.div>
     );
   }
@@ -242,3 +247,99 @@ const CategoryContent = ({
 };
 
 export default CategoryContent;
+
+/** Helper Components **/
+
+const SectionTitle = ({ title }) => (
+  <motion.h2
+    variants={fadeIn('up', 'tween', 0.3, 1)}
+    initial="hidden"
+    animate="show"
+    className="font-bold text-2xl md:text-3xl text-white mb-4"
+  >
+    {title}
+  </motion.h2>
+);
+
+const BulletParagraph = ({ children }) => (
+  <motion.p
+    variants={fadeIn('up', 'tween', 0.4, 1)}
+    initial="hidden"
+    animate="show"
+    className="text-white text-opacity-75 text-lg mb-4 leading-relaxed"
+  >
+    {children}
+  </motion.p>
+);
+
+const BenefitCard = ({ title, text }) => (
+  <motion.div
+    variants={fadeIn('up', 'tween', 0.4, 1)}
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: true, amount: 0.25 }}
+    className="glassmorphism glassmorphism-hover p-6 rounded-xl text-white flex flex-col items-center text-center transition-transform duration-300 relative overflow-hidden"
+  >
+    <div className="relative z-10">
+      <h3 className="font-bold text-xl mb-2">{title}</h3>
+      <p className="text-base leading-snug">{text}</p>
+    </div>
+  </motion.div>
+);
+
+const RepairCard = ({ title, text }) => {
+  // Mapping repair type titles to their respective background images in the public folder.
+  const backgrounds = {
+    'Reparații placă de bază': '/Motherboard.webp',
+    Tastaturi: '/Keyboard.webp',
+    'Chip-uri și tranzistori': '/Chip.webp',
+    'Schimbare display': '/Display.webp',
+    'Porturi / Conectori': '/Ports.webp',
+    'Înlocuire difuzoare / boxe': '/Audio.webp',
+    'Baterii / Acumulatori': '/Battery.webp',
+    'Upgrade SSD/HDD/RAM': '/Storage.webp',
+    'Deparolare OS / EFI': '/Unlocking.webp',
+    'Curățare și decolmatare': '/Cleaning.webp',
+  };
+
+  const backgroundImage = backgrounds[title] || '';
+
+  return (
+    <motion.div
+      variants={fadeIn('up', 'tween', 0.4, 1)}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.25 }}
+      className="relative bg-neutral-700 p-4 rounded-xl text-white text-opacity-80 overflow-hidden"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
+      <div className="relative z-10">
+        <h3 className="font-semibold text-xl mb-2">{title}</h3>
+        <p className="text-base leading-snug">{text}</p>
+      </div>
+      <div className="absolute inset-0 bg-black opacity-40"></div>
+    </motion.div>
+  );
+};
+
+const StepItem = ({ step, title, text }) => (
+  <motion.div
+    variants={fadeIn('up', 'tween', 0.4, 1)}
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: true, amount: 0.25 }}
+    className="flex items-center"
+  >
+    <div className="w-8 h-8 flex items-center justify-center bg-[#d97706] text-white font-bold rounded-full mr-4">
+      {step}
+    </div>
+    <div>
+      <h4 className="text-white font-semibold text-lg mb-1">{title}</h4>
+      <p className="text-white text-opacity-75 text-base">{text}</p>
+    </div>
+  </motion.div>
+);
