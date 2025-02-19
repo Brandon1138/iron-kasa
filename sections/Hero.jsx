@@ -39,10 +39,7 @@ const Hero = () => {
       id="home"
     >
       {/* Texture Background with 4px Blur */}
-      <div
-        className="absolute inset-0 bg-cover bg-center z-0"
-        style={{ backgroundImage: 'url(/texture-new.webp)' }}
-      />
+      <div className="absolute inset-0 bg-cover bg-center z-0 bg-[url('/texture-new-small.webp')] md:bg-[url('/texture-new-medium.webp')] lg:bg-[url('/texture-new-large.webp')]" />
 
       {/* Content Wrapper */}
       <motion.div
