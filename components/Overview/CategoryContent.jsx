@@ -117,18 +117,6 @@ const CategoryContent = ({
           />
         </div>
 
-        <SectionTitle title="Cât durează reparația?" />
-        <BulletParagraph>
-          Lucrările obișnuite (schimbare ecran, baterie, upgrade SSD/HDD/RAM) se
-          rezolvă pe loc, în câteva zeci de minute. În cazuri mai grave, 24-48
-          de ore.
-        </BulletParagraph>
-        <BulletParagraph>
-          <strong>Exemplu real:</strong> Un client a vărsat apă pe tastatura
-          unui MacBook Air 13″. Procedura oficială: înlocuirea întregului
-          topcase; noi am schimbat doar tastatura în 40 de minute.
-        </BulletParagraph>
-
         {/* Grid of repair types */}
         <SectionTitle title="Ce fel de reparații efectuăm?" />
         <motion.p
@@ -258,17 +246,6 @@ const SectionTitle = ({ title }) => (
   >
     {title}
   </motion.h2>
-);
-
-const BulletParagraph = ({ children }) => (
-  <motion.p
-    variants={fadeIn('up', 'tween', 0.4, 1)}
-    initial="hidden"
-    animate="show"
-    className="text-white text-opacity-75 text-lg mb-4 leading-relaxed"
-  >
-    {children}
-  </motion.p>
 );
 
 const BenefitCard = ({ title, text }) => (

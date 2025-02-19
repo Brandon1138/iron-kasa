@@ -49,106 +49,106 @@ export const mainDisclaimer = [
 
 export const iPhoneServiceCards = [
   {
-    imgUrl: '/iphone_14_pro_max.png',
+    imgUrl: '/iphone_14_pro_max.webp',
     title: 'iPhone 14 Pro Max',
   },
   {
-    imgUrl: '/iphone_14_plus.png',
+    imgUrl: '/iphone_14_plus.webp',
     title: 'iPhone 14 Plus',
   },
   {
-    imgUrl: '/iphone_14_pro.png',
+    imgUrl: '/iphone_14_pro.webp',
     title: 'iPhone 14 Pro',
   },
   {
-    imgUrl: '/iphone_14.png',
+    imgUrl: '/iphone_14.webp',
     title: 'iPhone 14',
   },
   {
-    imgUrl: '/iphone_13_pro_max.png',
+    imgUrl: '/iphone_13_pro_max.webp',
     title: 'iPhone 13 Pro Max',
   },
   {
-    imgUrl: '/iphone_13_pro.png',
+    imgUrl: '/iphone_13_pro.webp',
     title: 'iPhone 13 Pro',
   },
   {
-    imgUrl: '/iphone_13_mini.png',
+    imgUrl: '/iphone_13_mini.webp',
     title: 'iPhone 13 Mini',
   },
   {
-    imgUrl: '/iphone_13.png',
+    imgUrl: '/iphone_13.webp',
     title: 'iPhone 13',
   },
   {
-    imgUrl: '/iphone_12_pro_max.png',
+    imgUrl: '/iphone_12_pro_max.webp',
     title: 'iPhone 12 Pro Max',
   },
   {
-    imgUrl: '/iphone_12_pro.png',
+    imgUrl: '/iphone_12_pro.webp',
     title: 'iPhone 12 Pro',
   },
   {
-    imgUrl: '/iphone_12_mini.png',
+    imgUrl: '/iphone_12_mini.webp',
     title: 'iPhone 12 Mini',
   },
   {
-    imgUrl: '/iphone_12.png',
+    imgUrl: '/iphone_12.webp',
     title: 'iPhone 12',
   },
   {
-    imgUrl: '/iphone_11_pro_max.png',
+    imgUrl: '/iphone_11_pro_max.webp',
     title: 'iPhone 11 Pro Max',
   },
   {
-    imgUrl: '/iphone_11_pro.png',
+    imgUrl: '/iphone_11_pro.webp',
     title: 'iPhone 11 Pro',
   },
   {
-    imgUrl: '/iphone_11.png',
+    imgUrl: '/iphone_11.webp',
     title: 'iPhone 11',
   },
   {
-    imgUrl: '/iphone_xr.png',
+    imgUrl: '/iphone_xr.webp',
     title: 'iPhone XR',
   },
   {
-    imgUrl: '/iphone_xs_max.png',
+    imgUrl: '/iphone_xs_max.webp',
     title: 'iPhone XS Max',
   },
   {
-    imgUrl: '/iphone_xs.png',
+    imgUrl: '/iphone_xs.webp',
     title: 'iPhone XS',
   },
   {
-    imgUrl: '/iphone_x.png',
+    imgUrl: '/iphone_x.webp',
     title: 'iPhone X',
   },
   {
-    imgUrl: '/iphone_8_plus.png',
+    imgUrl: '/iphone_8_plus.webp',
     title: 'iPhone 8 Plus',
   },
   {
-    imgUrl: '/iphone_8.png',
+    imgUrl: '/iphone_8.webp',
     title: 'iPhone 8',
   },
   {
-    imgUrl: '/iphone_7_plus.png',
+    imgUrl: '/iphone_7_plus.webp',
     title: 'iPhone 7 Plus',
   },
   {
-    imgUrl: '/iphone_7.png',
+    imgUrl: '/iphone_7.webp',
     title: 'iPhone 7',
   },
   {
-    imgUrl: '/iphone_6s_plus.png',
+    imgUrl: '/iphone_6s_plus.webp',
     title: 'iPhone 6s Plus',
   },
 ];
 
 export const iPhoneServiceDetails = [
   {
-    imgUrl: '/iphone_14_pro_max.png',
+    imgUrl: '/iphone_14_pro_max.webp',
     title: 'iPhone 14 Pro Max',
     sizes: {
       expanded: { width: 467, height: 342 },
@@ -187,7 +187,7 @@ export const iPhoneServiceDetails = [
     ],
   },
   {
-    imgUrl: '/iphone_14_plus.png',
+    imgUrl: '/iphone_14_plus.webp',
     title: 'iPhone 14 Plus',
     sizes: {
       expanded: { width: 531, height: 342 },
@@ -227,7 +227,7 @@ export const iPhoneServiceDetails = [
     ],
   },
   {
-    imgUrl: '/iphone_14_pro.png',
+    imgUrl: '/iphone_14_pro.webp',
     title: 'iPhone 14 Pro',
     sizes: {
       expanded: { width: 422, height: 308 },
@@ -266,7 +266,7 @@ export const iPhoneServiceDetails = [
     ],
   },
   {
-    imgUrl: '/iphone_14.png',
+    imgUrl: '/iphone_14.webp',
     title: 'iPhone 14',
     sizes: {
       expanded: { width: 503, height: 308 },
@@ -306,7 +306,7 @@ export const iPhoneServiceDetails = [
     ],
   },
   {
-    imgUrl: '/iphone_13_pro_max.png',
+    imgUrl: '/iphone_13_pro_max.webp',
     title: 'iPhone 13 Pro Max',
     sizes: {
       expanded: { width: 489, height: 342 },
@@ -345,7 +345,7 @@ export const iPhoneServiceDetails = [
     ],
   },
   {
-    imgUrl: '/iphone_13_pro.png',
+    imgUrl: '/iphone_13_pro.webp',
     title: 'iPhone 13 Pro',
     sizes: {
       expanded: { width: 473, height: 308 },
@@ -384,7 +384,7 @@ export const iPhoneServiceDetails = [
     ],
   },
   {
-    imgUrl: '/iphone_13_mini.png',
+    imgUrl: '/iphone_13_mini.webp',
     title: 'iPhone 13 Mini',
     sizes: {
       expanded: { width: 460, height: 276 },
@@ -423,7 +423,7 @@ export const iPhoneServiceDetails = [
     ],
   },
   {
-    imgUrl: '/iphone_13.png',
+    imgUrl: '/iphone_13.webp',
     title: 'iPhone 13',
     sizes: {
       expanded: { width: 493, height: 308 },
@@ -462,7 +462,7 @@ export const iPhoneServiceDetails = [
     ],
   },
   {
-    imgUrl: '/iphone_12_pro_max.png',
+    imgUrl: '/iphone_12_pro_max.webp',
     title: 'iPhone 12 Pro Max',
     sizes: {
       expanded: { width: 363, height: 342 },
@@ -501,7 +501,7 @@ export const iPhoneServiceDetails = [
     ],
   },
   {
-    imgUrl: '/iphone_12_pro.png',
+    imgUrl: '/iphone_12_pro.webp',
     title: 'iPhone 12 Pro',
     sizes: {
       expanded: { width: 337, height: 308 },
@@ -540,7 +540,7 @@ export const iPhoneServiceDetails = [
     ],
   },
   {
-    imgUrl: '/iphone_12_mini.png',
+    imgUrl: '/iphone_12_mini.webp',
     title: 'iPhone 12 Mini',
     sizes: {
       expanded: { width: 413, height: 276 },
@@ -579,7 +579,7 @@ export const iPhoneServiceDetails = [
     ],
   },
   {
-    imgUrl: '/iphone_12.png',
+    imgUrl: '/iphone_12.webp',
     title: 'iPhone 12',
     sizes: {
       expanded: { width: 493, height: 308 },
@@ -618,7 +618,7 @@ export const iPhoneServiceDetails = [
     ],
   },
   {
-    imgUrl: '/iphone_11_pro_max.png',
+    imgUrl: '/iphone_11_pro_max.webp',
     title: 'iPhone 11 Pro Max',
     sizes: {
       expanded: { width: 409, height: 332 },
@@ -657,7 +657,7 @@ export const iPhoneServiceDetails = [
     ],
   },
   {
-    imgUrl: '/iphone_11_pro.png',
+    imgUrl: '/iphone_11_pro.webp',
     title: 'iPhone 11 Pro',
     sizes: {
       expanded: { width: 403, height: 304 },
@@ -696,7 +696,7 @@ export const iPhoneServiceDetails = [
     ],
   },
   {
-    imgUrl: '/iphone_11.png',
+    imgUrl: '/iphone_11.webp',
     title: 'iPhone 11',
     sizes: {
       expanded: { width: 393, height: 318 },
@@ -735,7 +735,7 @@ export const iPhoneServiceDetails = [
     ],
   },
   {
-    imgUrl: '/iphone_xr.png',
+    imgUrl: '/iphone_xr.webp',
     title: 'iPhone XR',
     sizes: {
       expanded: { width: 389, height: 318 },
@@ -769,7 +769,7 @@ export const iPhoneServiceDetails = [
     ],
   },
   {
-    imgUrl: '/iphone_xs_max.png',
+    imgUrl: '/iphone_xs_max.webp',
     title: 'iPhone XS Max',
     sizes: {
       expanded: { width: 309, height: 332 },
@@ -803,7 +803,7 @@ export const iPhoneServiceDetails = [
     ],
   },
   {
-    imgUrl: '/iphone_xs.png',
+    imgUrl: '/iphone_xs.webp',
     title: 'iPhone XS',
     sizes: {
       expanded: { width: 290, height: 304 },
@@ -837,7 +837,7 @@ export const iPhoneServiceDetails = [
     ],
   },
   {
-    imgUrl: '/iphone_x.png',
+    imgUrl: '/iphone_x.webp',
     title: 'iPhone X',
     sizes: {
       expanded: { width: 229, height: 305 },
@@ -871,7 +871,7 @@ export const iPhoneServiceDetails = [
     ],
   },
   {
-    imgUrl: '/iphone_8_plus.png',
+    imgUrl: '/iphone_8_plus.webp',
     title: 'iPhone 8 Plus',
     sizes: {
       expanded: { width: 272, height: 335 },
@@ -905,7 +905,7 @@ export const iPhoneServiceDetails = [
     ],
   },
   {
-    imgUrl: '/iphone_8.png',
+    imgUrl: '/iphone_8.webp',
     title: 'iPhone 8',
     sizes: {
       expanded: { width: 245, height: 291 },
@@ -939,7 +939,7 @@ export const iPhoneServiceDetails = [
     ],
   },
   {
-    imgUrl: '/iphone_7_plus.png',
+    imgUrl: '/iphone_7_plus.webp',
     title: 'iPhone 7 Plus',
     sizes: {
       expanded: { width: 435, height: 335 },
@@ -985,7 +985,7 @@ export const iPhoneServiceDetails = [
     ],
   },
   {
-    imgUrl: '/iphone_7.png',
+    imgUrl: '/iphone_7.webp',
     title: 'iPhone 7',
     sizes: {
       expanded: { width: 387, height: 291 },
@@ -1031,7 +1031,7 @@ export const iPhoneServiceDetails = [
     ],
   },
   {
-    imgUrl: '/iphone_6s_plus.png',
+    imgUrl: '/iphone_6s_plus.webp',
     title: 'iPhone 6s Plus',
     sizes: {
       expanded: { width: 437, height: 335 },
@@ -1080,58 +1080,58 @@ export const iPhoneServiceDetails = [
 
 export const iPadServiceCards = [
   {
-    imgUrl: '/ipad_9.png',
+    imgUrl: '/ipad_9.webp',
     title: 'iPad 9',
   },
   {
-    imgUrl: '/ipad_8.png',
+    imgUrl: '/ipad_8.webp',
     title: 'iPad 8',
   },
   {
-    imgUrl: '/ipad_7.png',
+    imgUrl: '/ipad_7.webp',
     title: 'iPad 7',
   },
   {
-    imgUrl: '/ipad_6.png',
+    imgUrl: '/ipad_6.webp',
     title: 'iPad 6',
   },
   {
-    imgUrl: '/ipad_pro_11.png',
+    imgUrl: '/ipad_pro_11.webp',
     title: 'iPad Pro 11',
   },
   {
-    imgUrl: '/ipad_5.png',
+    imgUrl: '/ipad_5.webp',
     title: 'iPad 5',
   },
   {
-    imgUrl: '/ipad_pro_12_9.png',
+    imgUrl: '/ipad_pro_12_9.webp',
     title: 'iPad Pro 12.9',
   },
   {
-    imgUrl: '/ipad_air_2.png',
+    imgUrl: '/ipad_air_2.webp',
     title: 'iPad Air 2',
   },
   {
-    imgUrl: '/ipad_mini_2.png',
+    imgUrl: '/ipad_mini_2.webp',
     title: 'iPad Mini 2',
   },
   {
-    imgUrl: '/ipad_air_1.png',
+    imgUrl: '/ipad_air_1.webp',
     title: 'iPad Air 1',
   },
   {
-    imgUrl: '/ipad_4.png',
+    imgUrl: '/ipad_4.webp',
     title: 'iPad 4',
   },
   {
-    imgUrl: '/ipad_mini.png',
+    imgUrl: '/ipad_mini.webp',
     title: 'iPad mini',
   },
 ];
 
 export const iPadServiceDetails = [
   {
-    imgUrl: '/ipad_9.png',
+    imgUrl: '/ipad_9.webp',
     title: 'iPad 9',
     sizes: {
       expanded: { width: 332, height: 360 },
@@ -1148,7 +1148,7 @@ export const iPadServiceDetails = [
     ],
   },
   {
-    imgUrl: '/ipad_8.png',
+    imgUrl: '/ipad_8.webp',
     title: 'iPad 8',
     sizes: {
       expanded: { width: 307, height: 360 },
@@ -1165,7 +1165,7 @@ export const iPadServiceDetails = [
     ],
   },
   {
-    imgUrl: '/ipad_7.png',
+    imgUrl: '/ipad_7.webp',
     title: 'iPad 7',
     sizes: {
       expanded: { width: 306, height: 360 },
@@ -1182,7 +1182,7 @@ export const iPadServiceDetails = [
     ],
   },
   {
-    imgUrl: '/ipad_6.png',
+    imgUrl: '/ipad_6.webp',
     title: 'iPad 6',
     sizes: {
       expanded: { width: 299, height: 344 },
@@ -1199,7 +1199,7 @@ export const iPadServiceDetails = [
     ],
   },
   {
-    imgUrl: '/ipad_pro_11.png',
+    imgUrl: '/ipad_pro_11.webp',
     title: 'iPad Pro 11',
     sizes: {
       expanded: { width: 353, height: 355 },
@@ -1216,7 +1216,7 @@ export const iPadServiceDetails = [
     ],
   },
   {
-    imgUrl: '/ipad_5.png',
+    imgUrl: '/ipad_5.webp',
     title: 'iPad 5',
     sizes: {
       expanded: { width: 299, height: 345 },
@@ -1233,7 +1233,7 @@ export const iPadServiceDetails = [
     ],
   },
   {
-    imgUrl: '/ipad_pro_12_9.png',
+    imgUrl: '/ipad_pro_12_9.webp',
     title: 'iPad Pro 12.9',
     sizes: {
       expanded: { width: 406, height: 402 },
@@ -1250,7 +1250,7 @@ export const iPadServiceDetails = [
     ],
   },
   {
-    imgUrl: '/ipad_air_2.png',
+    imgUrl: '/ipad_air_2.webp',
     title: 'iPad Air 2',
     sizes: {
       expanded: { width: 298, height: 345 },
@@ -1267,7 +1267,7 @@ export const iPadServiceDetails = [
     ],
   },
   {
-    imgUrl: '/ipad_mini_2.png',
+    imgUrl: '/ipad_mini_2.webp',
     title: 'iPad Mini 2',
     sizes: {
       expanded: { width: 277, height: 312 },
@@ -1284,7 +1284,7 @@ export const iPadServiceDetails = [
     ],
   },
   {
-    imgUrl: '/ipad_air.png',
+    imgUrl: '/ipad_air.webp',
     title: 'iPad Air',
     sizes: {
       expanded: { width: 325, height: 345 },
@@ -1301,7 +1301,7 @@ export const iPadServiceDetails = [
     ],
   },
   {
-    imgUrl: '/ipad_4.png',
+    imgUrl: '/ipad_4.webp',
     title: 'iPad 4',
     sizes: {
       expanded: { width: 335, height: 347 },
@@ -1318,7 +1318,7 @@ export const iPadServiceDetails = [
     ],
   },
   {
-    imgUrl: '/ipad_mini.png',
+    imgUrl: '/ipad_mini.webp',
     title: 'iPad Mini',
     sizes: {
       expanded: { width: 280, height: 312 },
@@ -1351,133 +1351,133 @@ export const testimonials = [
   {
     name: 'Norris Măgeanu',
     username: '@norrismageanu',
-    imgUrl: '/norris_mageanu.png',
+    imgUrl: '/norris_mageanu.webp',
     text: 'In general, in viata, imi place sa am cunoscuti, parteneri, care au solutii rapide in ariile lor de competenta. "Doctoru\'" Robert e in aceasta categorie cand vorbim de iphone. Nu mi-a spus niciodata "nu se poate" cand am avut vreo problema cu telefonul. Sa nu il cautati mai devreme de pranz, totusi...',
     instagramLink: 'https://www.instagram.com/norrismageanu/', // Dummy link
   },
   {
     name: 'Speak',
     username: '@iamspeak',
-    imgUrl: '/speak.png',
+    imgUrl: '/speak.webp',
     text: 'Mereu cand am o problema cu telefonul sau laptopul, apelez cu mare incredere la Iphone Doctor pentru ca lucrurile se misca foarte repede si sunt de calitate. Intotdeauna se gaseste o solutie rapida si eficienta in rezolvarea problemelor.',
     instagramLink: 'https://www.instagram.com/iamspeak/', // Dummy link
   },
   {
     name: 'DJ Optick',
     username: '@djoptick',
-    imgUrl: '/dj_optick.png',
+    imgUrl: '/dj_optick.webp',
     text: 'Doctor talentat, prompt - un fel de iFixit, dar in Bucuresti!',
     instagramLink: 'https://www.instagram.com/djoptick/', // Dummy link
   },
   {
     name: 'Loredana Chivu',
     username: '@loredanachivu_official',
-    imgUrl: '/loredana_chivu.png',
+    imgUrl: '/loredana_chivu.webp',
     text: 'Display spart, telefon scapat in apa si alte probleme: pe loc in maxim 1 ora au rezolvat toate problemele! Multumesc',
     instagramLink: 'https://www.instagram.com/loredanachivu_official', // Dummy link
   },
   {
     name: 'DJ Mahony',
     username: '@mahonyro',
-    imgUrl: '/dj_mahony.png',
+    imgUrl: '/dj_mahony.webp',
     text: 'De peste 8 ani apelez la prietenul meu iPhone Doctor Romania pentru orice problema legata de telefon sau de laptop. De fiecare data a dat dovada de profesionalism si ii recomand intotdeauna. Multumesc iPhone Doctor Romania pentru cele mai bune servicii din Bucuresti pentru Mac si iPhone',
     instagramLink: 'https://www.instagram.com/mahonyro/', // Dummy link
   },
   {
     name: 'Cabral',
     username: '@cabralibacka',
-    imgUrl: '/cabral.png',
+    imgUrl: '/cabral.webp',
     text: 'Băiatul ășta nu se pricepe la marketing si PR, dar se pricepe la orice device din universul Apple. Am reparat la Robert de la Iphone 3 - până la X, și de la Macbook Air si Pro - până la iPad. Este serios, își face treaba repede și gaseste intotdeauna soluții. Recomand.',
     instagramLink: 'https://www.instagram.com/cabralibacka/', // Dummy link
   },
   {
     name: 'Raluka',
     username: '@ralukaofficial',
-    imgUrl: '/raluka.png',
+    imgUrl: '/raluka.webp',
     text: 'Cand nu te astepti, spargi un ecran sau nu mai este ok bateria. Am schimbat ecranul telefonului personal, am reparat si o problema la WiFi si am observat profesionalismul lui. Recomand.',
     instagramLink: 'https://www.instagram.com/ralukaofficial/', // Dummy link
   },
   {
     name: 'Florin Ristei',
     username: '@fristei',
-    imgUrl: '/florin_ristei.png',
+    imgUrl: '/florin_ristei.webp',
     text: 'De la iPhone 5 la iPhone 7, la niste Macbook Pro, sau niste Magic soricei d-aia albi si enervanti, pe toate le-am gasit la iPhone Doctor. Sau daca nu le-am gasit la el, macar a fost cel care mi le-a facut ca noi dupa ce unele au suferit traume mai mult decat emotionale. Super profi si punctual, lucreaza curat.Recomand oricand, cu drag!',
     instagramLink: 'https://www.instagram.com/fristei/', // Dummy link
   },
   {
     name: 'DJ Sava',
     username: '@djsava',
-    imgUrl: '/dj_sava.png',
+    imgUrl: '/dj_sava.webp',
     text: 'Pentru ca in general nu prea am grija de lucruri, mai ales de telefoane (le sparg sau le pierd) e bine sa ai pe cineva doar la un apel distanta, si totul se rezolva! Eu de 11 ani il am pe Iphone Doctor!',
     instagramLink: 'https://www.instagram.com/djsava/', // Dummy link
   },
   {
     name: 'Alina Ceușan',
     username: '@alinaceusan',
-    imgUrl: '/alina_ceusan.png',
+    imgUrl: '/alina_ceusan.webp',
     text: 'E bine de stiut, pentru orice probleme ati avea cu iPhone-ul mergeti la iPhone Doctor Romania pentru ca se ocupa super repede de treaba.',
     instagramLink: 'https://www.instagram.com/alinaceusan/', // Dummy link
   },
   {
     name: 'Adelina Pestrițu',
     username: '@adelina.pestritu',
-    imgUrl: '/adelina_pestritu.png',
+    imgUrl: '/adelina_pestritu.webp',
     text: 'Pentru reparatii pe loc, mergeti la iPhone Doctor Romania.',
     instagramLink: 'https://www.instagram.com/adelina.pestritu/', // Dummy link
   },
   {
     name: 'Delia Matache',
     username: '@delia',
-    imgUrl: '/delia.png',
+    imgUrl: '/delia.webp',
     text: 'Am reusit sa-mi sparg telefonul iar in timp ce m-am pregatit pentru concert iPhone Doctor l-a si reparat. Multumesc!',
     instagramLink: 'https://www.instagram.com/delia/', // Dummy link
   },
   {
     name: 'Andra',
     username: '@andra',
-    imgUrl: '/andra.png',
+    imgUrl: '/andra.webp',
     text: 'Problema rezolvata, multumesc iPhone Doctor Romania - nu am crezut ca poti sa rezolvi atat de repede un ecran - Am telefonu exact ca nou!',
     instagramLink: 'https://www.instagram.com/andra/', // Dummy link
   },
   {
     name: 'Irina Rimes',
     username: '@irinarimes',
-    imgUrl: '/irina_rimes.png',
+    imgUrl: '/irina_rimes.webp',
     text: 'Laptop-ul meu a ajuns inapoi casa, in sfarsit. - Multumesc iPhone Doctor Romania. De aceea dragii mei am pentru voi un sfat: sa fiti atenti cu lucrurile voastre pentru ca daca nu sunteti si faceti ca mine - va trebui sa mergeti cu ele la Doctor.',
     instagramLink: 'https://www.instagram.com/irinarimes/', // Dummy link
   },
   {
     name: 'Andreea Mantea',
     username: '@andreeamantea',
-    imgUrl: '/andreea_mantea.png',
+    imgUrl: '/andreea_mantea.webp',
     text: 'Servicii de calitate - Multumesc mult, iPhone Doctor Romania. Sunteti cei mai buni.',
     instagramLink: 'https://www.instagram.com/andreeamantea/?hl=en', // Dummy link
   },
   {
     name: 'Andreea Bănică',
     username: '@iamandreeabanica',
-    imgUrl: '/andreea_banica.png',
+    imgUrl: '/andreea_banica.webp',
     text: 'Am avut o situatie neprevazuta cu un telefon spart ,si am mers la iPhone Doctor Romania care l-a reparat pe loc!',
     instagramLink: 'https://www.instagram.com/iamandreeabanica/', // Dummy link
   },
   {
     name: 'Selly',
     username: '@selly',
-    imgUrl: '/selly.png',
+    imgUrl: '/selly.webp',
     text: 'Multumesc iPhone Doctor Romania ... nu aveam chef sa stau cu telefonul in service zile intregi iar baietii l-au facut pe loc in 5 minute.',
     instagramLink: 'https://www.instagram.com/selly/', // Dummy link
   },
   {
     name: 'Carmen Grebenișan',
     username: '@grebenisancarmen',
-    imgUrl: '/carmen_grebenisan.png',
+    imgUrl: '/carmen_grebenisan.webp',
     text: 'Vreau sa le multumesc din suflet baietilor de la iPhone Doctor Romania ca au rezolvat problema atat de repede si intr-un mod impecabil. Asa ca daca vreodata aveti vreo problema cu un iPhone apelati cu incredere la ei pentru ca va rezolva problema extraordinar de repede: Wow',
     instagramLink: 'https://www.instagram.com/grebenisancarmen/', // Dummy link
   },
   {
     name: 'Alina Pușcaș',
     username: '@alina_puscas_',
-    imgUrl: '/alina_puscas.png',
+    imgUrl: '/alina_puscas.webp',
     text: 'Din tot sufletul multumesc iPhone Doctor Romania pentru ca altfel nu aveam nici o sansa sa rezolv problema rapid fara ei.',
     instagramLink: 'https://www.instagram.com/alina_puscas_/', // Dummy link
   },

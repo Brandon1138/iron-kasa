@@ -41,7 +41,7 @@ const Hero = () => {
       {/* Texture Background with 4px Blur */}
       <div
         className="absolute inset-0 bg-cover bg-center z-0"
-        style={{ backgroundImage: 'url(/texture-new.jpg)' }}
+        style={{ backgroundImage: 'url(/texture-new.webp)' }}
       />
 
       {/* Content Wrapper */}
@@ -83,7 +83,7 @@ const Hero = () => {
               muted
               loop
               preload="auto"
-              poster="/fallback-image.png"
+              poster="/fallback-image.webp"
             >
               {/* Mobile Video Source */}
               <source
