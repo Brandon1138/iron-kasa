@@ -3,7 +3,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import ServiceCard from '../Cards/serviceCard';
+import ServiceCard from '../Cards/ServiceCard';
 import { serviceDetails } from '../../constants';
 import { fadeIn, staggerContainer } from '../../utils/motion';
 
@@ -39,9 +39,8 @@ const CategoryContent = ({
     );
   }
   // For MacBook / iMac categories, render the text content along with additional sections.
-  else if (selectedCategory === 2 || selectedCategory === 3) {
-    const categoryTitle =
-      selectedCategory === 2 ? 'Reparații MacBook' : 'Reparații iMac';
+  if (selectedCategory === 2 || selectedCategory === 3) {
+    const categoryTitle = selectedCategory === 2 ? 'Reparații MacBook' : 'Reparații iMac';
 
     return (
       <motion.div
@@ -63,7 +62,7 @@ const CategoryContent = ({
               backgroundPosition: 'center',
             }}
           >
-            <div className="absolute inset-0 bg-black opacity-50"></div>
+            <div className="absolute inset-0 bg-black opacity-50" />
             <motion.h1
               variants={fadeIn('up', 'tween', 0.3, 1)}
               className="text-white text-4xl font-bold z-10"
@@ -197,7 +196,7 @@ const CategoryContent = ({
         <SectionTitle title="Cum decurge reparația, pas cu pas?" />
         <div className="relative pl-8 mb-8">
           {/* Vertical connector */}
-          <div className="absolute left-4 top-0 bottom-0 w-px bg-white opacity-30"></div>
+          <div className="absolute left-4 top-0 bottom-0 w-px bg-white opacity-30" />
           <div className="space-y-8">
             <StepItem
               step="1"
@@ -248,7 +247,7 @@ const CategoryContent = ({
 
 export default CategoryContent;
 
-/** Helper Components **/
+/** Helper Components * */
 
 const SectionTitle = ({ title }) => (
   <motion.h2
@@ -321,7 +320,7 @@ const RepairCard = ({ title, text }) => {
         <h3 className="font-semibold text-xl mb-2">{title}</h3>
         <p className="text-base leading-snug">{text}</p>
       </div>
-      <div className="absolute inset-0 bg-black opacity-40"></div>
+      <div className="absolute inset-0 bg-black opacity-40" />
     </motion.div>
   );
 };
