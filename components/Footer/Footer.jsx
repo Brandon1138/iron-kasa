@@ -4,12 +4,12 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { socials } from '../../constants'; // Adjust the path if necessary
+import { socials } from '../../constants';
 
 import styles from '../../styles';
 import { footerVariants } from '../../utils/motion';
-import BrandLogo from '../common/BrandLogo'; // Import BrandLogo from common folder
-import Socials from './Socials'; // Import Socials component
+import BrandLogo from '../common/BrandLogo';
+import Socials from './Socials';
 
 const Footer = () => (
   <motion.footer
@@ -33,8 +33,8 @@ const Footer = () => (
         <motion.button
           type="button"
           className="flex items-center h-fit py-4 px-6 bg-[#d97706] rounded-[32px] gap-[12px] hover:bg-[#a95c04] glassmorphism-hover transition-colors duration-300"
-          whileHover={{ scale: 1.02 }} // Optional: Maintain hover effect
-          whileTap={{ scale: 0.98 }} // Optional: Add tap effect for better UX
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
         >
           <Image
             src="/chat.svg"
@@ -58,7 +58,7 @@ const Footer = () => (
           <BrandLogo />
 
           <p className="font-normal text-[14px] text-white opacity-50">
-            All rights reserved 2024 iPhoneDoctor
+            All rights reserved 2025 iPhoneDoctor
           </p>
 
           {/* Socials Component */}
