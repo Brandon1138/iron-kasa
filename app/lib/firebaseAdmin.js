@@ -1,15 +1,20 @@
 import 'server-only';
 import admin from 'firebase-admin';
 
-if (!admin.apps.length) {
+const projectId = process.env.FIREBASE_ADMIN_PROJECT_ID;
+const clientEmail = process.env.FIREBASE_ADMIN_CLIENT_EMAIL;
+const rawPrivateKey = process.env.FIREBASE_ADMIN_PRIVATE_KEY;
+
+// Only initialize when all required env vars are provided
+if (!admin.apps.length && projectId && clientEmail && rawPrivateKey) {
   admin.initializeApp({
     credential: admin.credential.cert({
-      projectId: process.env.FIREBASE_ADMIN_PROJECT_ID,
-      clientEmail: process.env.FIREBASE_ADMIN_CLIENT_EMAIL,
-      // replace escaped \n with real newlines
-      privateKey: process.env.FIREBASE_ADMIN_PRIVATE_KEY.replace(/\\n/g, '\n'),
+      projectId,
+      clientEmail,
+      privateKey: rawPrivateKey.replace(/\\n/g, '\n'),
     }),
   });
 }
 
 export { admin };
+

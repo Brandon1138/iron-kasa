@@ -1,8 +1,9 @@
 import { NextResponse } from 'next/server';
-import { verifyToken } from '@/lib/verifyToken'; // Adjust path as needed
-import { admin } from '@/lib/firebaseAdmin'; // Adjust path as needed
+import { verifyToken } from '../../../lib/verifyToken';
+import { admin } from '../../../lib/firebaseAdmin';
 
-const db = admin.firestore();
+// Ensure this route runs on the Node.js runtime (required for firebase-admin)
+export const runtime = 'nodejs';
 
 /**
  * GET: Fetch a single device by ID (Restricted to auth users)
@@ -12,6 +13,7 @@ export async function GET(req, { params }) {
     await verifyToken(req);
 
     const { id } = params;
+    const db = admin.firestore();
     const docRef = await db.collection('devices').doc(id).get();
     if (!docRef.exists) {
       return NextResponse.json({ error: 'Device not found' }, { status: 404 });
@@ -36,6 +38,7 @@ export async function PATCH(req, { params }) {
     const { id } = params;
     const body = await req.json();
 
+    const db = admin.firestore();
     await db
       .collection('devices')
       .doc(id)
@@ -58,6 +61,7 @@ export async function DELETE(req, { params }) {
     await verifyToken(req);
 
     const { id } = params;
+    const db = admin.firestore();
     await db.collection('devices').doc(id).delete();
 
     return NextResponse.json({ success: true }, { status: 200 });

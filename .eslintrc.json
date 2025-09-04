@@ -17,7 +17,8 @@
         "useTabs": false,
         "semi": true,
         "singleQuote": true,
-        "trailingComma": "es5"
+        "trailingComma": "es5",
+        "endOfLine": "auto"
       }
     ],
     "no-mixed-spaces-and-tabs": "error"

@@ -9,10 +9,15 @@ import Info from '../components/Overview/Info'; // Import the Info component
 
 const Contact = () => {
   const mapRef = useRef(null);
+  const enableMap =
+    process.env.NODE_ENV === 'production' &&
+    Boolean(process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY);
 
   useEffect(() => {
-    window.initMap = initMap;
-  }, []);
+    if (enableMap) {
+      window.initMap = initMap;
+    }
+  }, [enableMap]);
 
   const initMap = () => {
     const shopLocation = { lat: 44.41362120240169, lng: 26.132020598094197 };
@@ -44,10 +49,12 @@ const Contact = () => {
       id="contact"
       className={`pt-24 -pb-24 lg:px-8 md:px-16 px-6 relative z-10`}
     >
-      <Script
-        src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&v=beta&map_ids=a7d50c754bc2729c&libraries=marker&callback=initMap&loading=async`}
-        strategy="afterInteractive"
-      />
+      {enableMap && (
+        <Script
+          src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&v=beta&map_ids=a7d50c754bc2729c&libraries=marker&callback=initMap&loading=async`}
+          strategy="afterInteractive"
+        />
+      )}
       <motion.div
         variants={staggerContainer}
         initial="hidden"
@@ -96,10 +103,16 @@ const Contact = () => {
             className="mt-8 w-full"
           >
             <div className="mx-auto w-full max-w-[1230px] px-4">
-              <div
-                ref={mapRef}
-                className="w-full h-[400px] rounded-[36px] overflow-hidden shadow-lg"
-              ></div>
+              {enableMap ? (
+                <div
+                  ref={mapRef}
+                  className="w-full h-[400px] rounded-[36px] overflow-hidden shadow-lg"
+                />
+              ) : (
+                <div className="w-full h-[400px] rounded-[36px] overflow-hidden bg-neutral-800/50 text-secondary-white flex items-center justify-center">
+                  <span className="text-sm opacity-80">Map disabled in development</span>
+                </div>
+              )}
             </div>
           </motion.div>
 
