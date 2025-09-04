@@ -1,6 +1,6 @@
 // page.js
 
-'use client';
+"use client";
 
 import { useState } from 'react';
 import { Navbar } from '../components/Navbar';
@@ -13,26 +13,15 @@ import {
   Transport,
   Testimonials,
 } from '../sections';
-import ServiceModal from '../components/Modal/ServiceModal'; // Adjusted import path
-
 const Page = () => {
-  const [selectedService, setSelectedService] = useState(null);
-
-  const handleServiceSelect = (service) => {
-    setSelectedService(service);
-  };
-
-  const handleCloseModal = () => {
-    setSelectedService(null);
-  };
 
   return (
     <div className="relative bg-primary-black overflow-hidden">
-      <Navbar onServiceSelect={handleServiceSelect} />
+      <Navbar />
       <Hero />
       <div className="relative">
         <About id="about" />
-        <Services id="services" onServiceSelect={handleServiceSelect} />
+        <Services id="services" />
       </div>
       <div className="relative">
         <Transport id="transport" />
@@ -41,10 +30,7 @@ const Page = () => {
       </div>
       <Footer />
 
-      {/* Render ServiceModal */}
-      {selectedService && (
-        <ServiceModal service={selectedService} onClose={handleCloseModal} />
-      )}
+      {/* Modals removed in favor of routed pages */}
     </div>
   );
 };

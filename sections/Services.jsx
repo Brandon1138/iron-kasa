@@ -1,21 +1,19 @@
 // components/Services.jsx
 
-'use client';
+"use client";
 
 import { TypingText, TitleText } from '../components/Effects';
 import { motion } from 'framer-motion';
 import styles from '../styles';
 import { staggerContainer, fadeIn } from '../utils/motion';
-import { categoryCard, mainDisclaimer, serviceDetails } from '../constants';
+import { categoryCard } from '../constants';
 import CategoryCard from '../components/Cards/CategoryCard';
-import ServiceCard from '../components/Cards/ServiceCard';
-import ServiceModal from '../components/Modal/ServiceModal';
-import { CategoryContent } from '../components/Overview';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 const Services = () => {
   const [selectedCategory, setSelectedCategory] = useState(0);
-  const [selectedService, setSelectedService] = useState(null);
+  const router = useRouter();
   const [isAnimationComplete, setIsAnimationComplete] = useState(false);
   const [hoveredCategoryId, setHoveredCategoryId] = useState(null);
 
@@ -27,15 +25,24 @@ const Services = () => {
   ];
 
   const handleCategorySelect = (index) => {
+    // Navigate to category pages instead of expanding inline content
+    switch (index) {
+      case 0:
+        router.push('/iphones');
+        break;
+      case 1:
+        router.push('/ipads');
+        break;
+      case 2:
+        router.push('/macbooks');
+        break;
+      case 3:
+        router.push('/imacs');
+        break;
+      default:
+        break;
+    }
     setSelectedCategory(index);
-  };
-
-  const handleServiceSelect = (service) => {
-    setSelectedService(service);
-  };
-
-  const handleModalClose = () => {
-    setSelectedService(null);
   };
 
   return (
@@ -114,42 +121,7 @@ const Services = () => {
           ))}
         </motion.div>
 
-        {/* Selected Category Information */}
-        {selectedCategory !== null && (
-          <motion.div
-            key={selectedCategory}
-            variants={fadeIn('up', 'tween', 0.2, 1)}
-            initial="hidden"
-            animate="show"
-            className="mt-12 text-center px-4"
-          >
-            <h3 className="font-bold text-3xl text-white">
-              {categoryTitles[selectedCategory]}
-            </h3>
-            <motion.p
-              variants={fadeIn('up', 'tween', 0.3, 1)}
-              initial="hidden"
-              animate="show"
-              className="mt-12 text-white text-opacity-50 text-[20px]"
-            >
-              {mainDisclaimer[selectedCategory]}
-            </motion.p>
-          </motion.div>
-        )}
-
-        {/* Use the new CategoryContent component */}
-        {selectedCategory !== null && (
-          <CategoryContent
-            selectedCategory={selectedCategory}
-            isAnimationComplete={isAnimationComplete}
-            onServiceSelect={handleServiceSelect}
-          />
-        )}
-
-        {/* Service Modal */}
-        {selectedService && (
-          <ServiceModal service={selectedService} onClose={handleModalClose} />
-        )}
+        {/* Category content is now on dedicated pages via routing */}
       </div>
     </section>
   );

@@ -3,8 +3,10 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { iPhoneServiceDetails } from '../../constants';
+import { useRouter } from 'next/navigation';
 
-const SearchBar = ({ onResultClick, isSearchOpen, setIsSearchOpen }) => {
+const SearchBar = ({ isSearchOpen, setIsSearchOpen }) => {
+  const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
 
@@ -42,7 +44,13 @@ const SearchBar = ({ onResultClick, isSearchOpen, setIsSearchOpen }) => {
 
   // Handle clicking on a search result
   const handleResultClick = (iphone) => {
-    onResultClick(iphone);
+    const slug = iphone.title
+      .normalize('NFD')
+      .replace(/\p{Diacritic}/gu, '')
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)+/g, '');
+    router.push(`/iphones/${slug}`);
     setIsSearchOpen(false);
     setSearchQuery('');
     setSearchResults([]);

@@ -10,7 +10,7 @@ import SearchBar from './SearchBar';
 import BrandLogo from '../common/BrandLogo';
 import Menu from './Menu';
 
-const Navbar = ({ onServiceSelect }) => {
+const Navbar = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -21,11 +21,6 @@ const Navbar = ({ onServiceSelect }) => {
   // Toggle the menu open/close
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
-  };
-
-  // Handle clicking on a search result
-  const handleResultClick = (iphone) => {
-    onServiceSelect(iphone);
   };
 
   // Close the menu and search bar when clicking outside, scrolling, or pressing Escape
@@ -94,10 +89,8 @@ const Navbar = ({ onServiceSelect }) => {
       >
         {/* SearchBar Component */}
         <SearchBar
-          onResultClick={handleResultClick}
           isSearchOpen={isSearchOpen}
           setIsSearchOpen={setIsSearchOpen}
-          searchContainerRef={searchContainerRef}
         />
 
         {/* BrandLogo Component */}
