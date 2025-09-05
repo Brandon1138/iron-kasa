@@ -19,7 +19,7 @@ const Page = () => {
     <div className="relative bg-primary-black overflow-hidden">
       <Navbar />
       <Hero />
-      <div className="relative">
+      <div className="relative bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#121212_2px)] bg-[size:20px_20px]">
         <About id="about" />
         <Services id="services" />
       </div>
