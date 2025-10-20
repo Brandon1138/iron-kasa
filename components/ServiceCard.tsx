@@ -45,7 +45,11 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   isActive,
 }) => {
   const { imgUrl, title, sizes } = service;
-  const { canAnimate } = useContext(AnimationContext);
+  const context = useContext(AnimationContext);
+  if (!context) {
+    throw new Error('AnimationContext must be used within an AnimationProvider');
+  }
+  const { canAnimate } = context;
   const [screenSize, setScreenSize] = useState<'sm' | 'md' | 'lg' | 'xl'>('sm');
   const [isHovered, setIsHovered] = useState<boolean>(false);
 

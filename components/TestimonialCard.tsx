@@ -1,14 +1,36 @@
 // components/TestimonialCard.jsx
 
+
 'use client';
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import type { Testimonial } from '../constants';
 
-const TestimonialCard = ({ testimonial }) => {
-  const [isTouchDevice, setIsTouchDevice] = useState(false);
-  const [screenSize, setScreenSize] = useState('sm');
+type ScreenSize = 'sm' | 'md' | 'lg' | 'xl';
+
+interface TestimonialCardProps {
+  testimonial: Testimonial;
+}
+
+const paddingClasses: Record<ScreenSize, string> = {
+  sm: 'p-4',
+  md: 'p-6',
+  lg: 'p-8',
+  xl: 'p-10',
+};
+
+const roundedClasses: Record<ScreenSize, string> = {
+  sm: 'rounded-[36px]',
+  md: 'rounded-[40px]',
+  lg: 'rounded-[44px]',
+  xl: 'rounded-[50px]',
+};
+
+export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
+  const [isTouchDevice, setIsTouchDevice] = useState<boolean>(false);
+  const [screenSize, setScreenSize] = useState<ScreenSize>('sm');
 
   useEffect(() => {
     // Detect touch devices
@@ -34,21 +56,6 @@ const TestimonialCard = ({ testimonial }) => {
       return () => window.removeEventListener('resize', handleResize);
     }
   }, []);
-
-  // Define padding and border-radius based on screen size for consistency
-  const paddingClasses = {
-    sm: 'p-4',
-    md: 'p-6',
-    lg: 'p-8',
-    xl: 'p-10',
-  };
-
-  const roundedClasses = {
-    sm: 'rounded-[36px]',
-    md: 'rounded-[40px]',
-    lg: 'rounded-[44px]',
-    xl: 'rounded-[50px]',
-  };
 
   return (
     <motion.div
@@ -110,6 +117,4 @@ const TestimonialCard = ({ testimonial }) => {
       </div>
     </motion.div>
   );
-};
-
-export default TestimonialCard;
+}

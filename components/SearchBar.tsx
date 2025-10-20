@@ -5,14 +5,13 @@
 import React, { useState, useEffect, useRef, useContext, memo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-import { iPhoneServiceDetails } from '../constants';
+import { iPhoneServiceDetails, type iPhoneServiceDetail } from '../constants';
 import { AnimationContext } from '../context/AnimationContext';
-import { Iphone } from '../types';
 
 interface SearchBarProps {
   isSearchOpen: boolean;
   toggleSearch: (value: boolean) => void;
-  setSelectedService: (iphone: Iphone) => void;
+  setSelectedService: (iphone: iPhoneServiceDetail) => void;
 }
 
 const SearchBar = memo(function SearchBar({
@@ -21,12 +20,16 @@ const SearchBar = memo(function SearchBar({
   setSelectedService,
 }: SearchBarProps) {
   const [searchQuery, setSearchQuery] = useState<string>('');
-  const [searchResults, setSearchResults] = useState<Iphone[]>([]);
+  const [searchResults, setSearchResults] = useState<iPhoneServiceDetail[]>([]);
   const searchInputRef = useRef<HTMLInputElement>(null);
   const resultsRef = useRef<HTMLUListElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const { canAnimate } = useContext(AnimationContext);
+  const context = useContext(AnimationContext);
+  if (!context) {
+    throw new Error('AnimationContext must be used within an AnimationProvider');
+  }
+  const { canAnimate } = context;
 
   // Handle search input changes
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -46,7 +49,7 @@ const SearchBar = memo(function SearchBar({
   };
 
   // Handle clicking on a search result
-  const handleResultClick = (iphone: Iphone) => {
+  const handleResultClick = (iphone: iPhoneServiceDetail) => {
     setSelectedService(iphone);
     toggleSearch(false);
     setSearchQuery('');
@@ -56,7 +59,7 @@ const SearchBar = memo(function SearchBar({
   // Handle keyboard interaction on search results
   const handleResultKeyDown = (
     e: React.KeyboardEvent<HTMLButtonElement>,
-    iphone: Iphone
+    iphone: iPhoneServiceDetail,
   ) => {
     if (e.key === 'Enter') {
       handleResultClick(iphone);

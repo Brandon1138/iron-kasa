@@ -5,35 +5,12 @@
 import React, { useEffect, useState, MouseEvent } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import type { iPhoneServiceDetail } from '../constants';
 import Portal from './Portal';
 import '../styles/globals.css';
 
-// Define the structure of a single service item
-interface ServiceItem {
-  name: string;
-  duration: string;
-  price: string;
-}
-
-// Define the structure for sizes
-interface Size {
-  expanded: {
-    width: number;
-    height: number;
-  };
-}
-
-// Define the structure of the service prop
-interface Service {
-  imgUrl: string;
-  title: string;
-  sizes: Size;
-  services: ServiceItem[];
-}
-
-// Define the props for the ServiceModal component
 interface ServiceModalProps {
-  service: Service | null;
+  service: iPhoneServiceDetail | null;
   onClose: () => void;
 }
 

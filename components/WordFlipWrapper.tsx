@@ -5,7 +5,7 @@
 import { useEffect, useState } from 'react';
 import WordFlip from './WordFlip';
 
-const WordFlipWrapper = () => {
+export default function WordFlipWrapper(): JSX.Element {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -14,7 +14,6 @@ const WordFlipWrapper = () => {
 
   return (
     <span className="relative inline-block">
-      {/* Placeholder Word */}
       <span
         className={`transition-opacity duration-500 ${
           isClient ? 'opacity-0' : 'opacity-100'
@@ -22,7 +21,6 @@ const WordFlipWrapper = () => {
       >
         Apple
       </span>
-      {/* WordFlip Component */}
       <span
         className={`absolute top-0 left-0 transition-opacity duration-500 ${
           isClient ? 'opacity-100' : 'opacity-0'
@@ -32,6 +30,4 @@ const WordFlipWrapper = () => {
       </span>
     </span>
   );
-};
-
-export default WordFlipWrapper;
+}

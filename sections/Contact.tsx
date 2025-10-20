@@ -19,7 +19,11 @@ interface Location {
   lng: number;
 }
 
-const Contact: React.FC = () => {
+interface ContactProps {
+  id?: string;
+}
+
+const Contact: React.FC<ContactProps> = ({ id = 'contact' }) => {
   const mapRef = useRef<HTMLDivElement | null>(null);
   const isMapInitialized = useRef(false); // Initialization flag
 
@@ -118,10 +122,7 @@ const Contact: React.FC = () => {
   }, [initMap]);
 
   return (
-    <section
-      id="contact"
-      className={`pt-24 -pb-24 lg:px-8 md:px-16 px-6 relative z-10`}
-    >
+    <section id={id} className={`pt-24 -pb-24 lg:px-8 md:px-16 px-6 relative z-10`}>
       <motion.div
         variants={staggerContainer(0.1, 0.2)} // Call the function with appropriate arguments
         initial="hidden"
