@@ -1,4 +1,19 @@
-const styles = {
+interface Styles {
+  innerWidth: string;
+  interWidth: string;
+  paddings: string;
+  yPaddings: string;
+  xPaddings: string;
+  topPaddings: string;
+  bottomPaddings: string;
+  flexCenter: string;
+  flexStart: string;
+  flexEnd: string;
+  navPadding: string;
+  heroHeading: string;
+}
+
+const styles: Styles = {
   innerWidth: '2xl:max-w-[1280px] w-full',
   interWidth: 'lg:w-[80%] w-[100%]',
 
@@ -13,9 +28,9 @@ const styles = {
   flexEnd: 'flex justify-end',
   navPadding: 'pt-[98px]',
 
-  // hero section
   heroHeading:
     'font-bold lg:text-[96px] md:text-[72px] sm:text-[48px] text-[44px] lg:leading-[104px] md:leading-[80px] sm:leading-[56px] leading-[52px] text-white',
 };
 
 export default styles;
+export type { Styles };

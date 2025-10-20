@@ -1,32 +1,35 @@
-// context/AnimationContext.js
-
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect, type ReactNode } from 'react';
 import {
   detectFrameRate,
   getStoredFrameRate,
 } from '../utils/frameRateDetection';
 
-// Create the context with default values
-export const AnimationContext = createContext({
-  canAnimate: false,
-  toggleCanAnimate: () => {},
-});
+interface AnimationContextValue {
+  canAnimate: boolean;
+  toggleCanAnimate: () => void;
+}
 
-// AnimationProvider component
-export const AnimationProvider = ({ children }) => {
-  const [automaticCanAnimate, setAutomaticCanAnimate] = useState(false);
-  const [userCanAnimate, setUserCanAnimate] = useState(null); // null indicates no user preference
-  const [mounted, setMounted] = useState(false);
+export const AnimationContext = createContext<AnimationContextValue | undefined>(
+  undefined,
+);
+
+interface AnimationProviderProps {
+  children: ReactNode;
+}
+
+export const AnimationProvider = ({ children }: AnimationProviderProps) => {
+  const [automaticCanAnimate, setAutomaticCanAnimate] =
+    useState<boolean>(false);
+  const [userCanAnimate, setUserCanAnimate] = useState<boolean | null>(null);
+  const [mounted, setMounted] = useState<boolean>(false);
 
   useEffect(() => {
-    setMounted(true); // Mark as mounted after client-side hydration
+    setMounted(true);
 
-    // Retrieve user preference from localStorage
     const storedUserCanAnimate = localStorage.getItem('userCanAnimate');
     if (storedUserCanAnimate !== null) {
-      setUserCanAnimate(JSON.parse(storedUserCanAnimate));
+      setUserCanAnimate(JSON.parse(storedUserCanAnimate) as boolean);
     } else {
-      // If no user preference, use automatic frame rate detection
       const storedCanAnimate = getStoredFrameRate();
       if (storedCanAnimate !== null) {
         setAutomaticCanAnimate(storedCanAnimate);
@@ -38,27 +41,23 @@ export const AnimationProvider = ({ children }) => {
     }
   }, []);
 
-  // Function to toggle user preference
   const toggleCanAnimate = () => {
     const newValue = userCanAnimate === null ? true : !userCanAnimate;
     setUserCanAnimate(newValue);
     localStorage.setItem('userCanAnimate', JSON.stringify(newValue));
   };
 
-  // Determine the final canAnimate value
   const canAnimate =
     userCanAnimate !== null ? userCanAnimate : automaticCanAnimate;
 
-  // Prevent rendering until mounted to avoid hydration mismatch
   if (!mounted) {
-    return null; // Or a loading spinner if preferred
+    return null;
   }
 
   return (
     <AnimationContext.Provider value={{ canAnimate, toggleCanAnimate }}>
       {children}
-      {/* Portal Root for Modals */}
-      <div id="modal-root"></div>
+      <div id="modal-root" />
     </AnimationContext.Provider>
   );
 };

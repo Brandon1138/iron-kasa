@@ -13,12 +13,13 @@ import SearchBar from './SearchBar';
 import BrandLogo from './BrandLogo';
 import Menu from './Menu';
 
-import { Iphone } from '../types'; // Ensure this import path is correct
+import type { iPhoneServiceDetail } from '../constants';
 
 const Navbar = memo(function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
-  const [selectedService, setSelectedService] = useState<Iphone | null>(null);
+  const [selectedService, setSelectedService] =
+    useState<iPhoneServiceDetail | null>(null);
   const [isGraphicsOpen, setIsGraphicsOpen] = useState<boolean>(false);
 
   // Handlers

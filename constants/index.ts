@@ -63,6 +63,7 @@ export interface Testimonial {
 export interface Social {
   name: string;
   url: string;
+  link?: string;
 }
 
 // iPhone Service Card Interface

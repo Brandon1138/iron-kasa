@@ -9,13 +9,13 @@ import { AnimationContext } from '../context/AnimationContext';
 
 // Define the props interface for CategoryCard
 interface CategoryCardProps {
-  id: string;
+  id: number;
   imgUrl: string;
   title: string;
   onSelect: () => void;
   isSelected: boolean;
-  hoveredCategoryId: string | null;
-  setHoveredCategoryId: React.Dispatch<React.SetStateAction<string | null>>;
+  hoveredCategoryId: number | null;
+  setHoveredCategoryId: React.Dispatch<React.SetStateAction<number | null>>;
 }
 
 const CategoryCard: React.FC<CategoryCardProps> = ({
@@ -27,7 +27,11 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
   hoveredCategoryId,
   setHoveredCategoryId,
 }) => {
-  const { canAnimate } = useContext(AnimationContext); // Destructure canAnimate from context
+  const context = useContext(AnimationContext);
+  if (!context) {
+    throw new Error('AnimationContext must be used within an AnimationProvider');
+  }
+  const { canAnimate } = context;
   const [prefersReducedMotion, setPrefersReducedMotion] =
     useState<boolean>(false);
 
