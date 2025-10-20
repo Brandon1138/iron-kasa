@@ -7,7 +7,7 @@ import styles from '../styles';
 import { footerVariants } from '../utils/motion';
 import BrandLogo from '../components/BrandLogo';
 
-export default function Footer(): JSX.Element {
+const Footer = (): JSX.Element => {
   return (
     <motion.footer
       variants={footerVariants}
@@ -80,4 +80,6 @@ export default function Footer(): JSX.Element {
       </div>
     </motion.footer>
   );
-}
+};
+
+export default Footer;

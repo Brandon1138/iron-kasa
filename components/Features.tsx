@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import type { Feature } from '../constants';
 
-export default function Features({ imgUrl, title, subtitle }: Feature): JSX.Element {
+const Features = ({ imgUrl, title, subtitle }: Feature): JSX.Element => {
   return (
     <div className="flex flex-col items-start text-left">
       <div
@@ -27,4 +27,6 @@ export default function Features({ imgUrl, title, subtitle }: Feature): JSX.Elem
       </p>
     </div>
   );
-}
+};
+
+export default Features;

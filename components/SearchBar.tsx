@@ -27,7 +27,9 @@ const SearchBar = memo(function SearchBar({
 
   const context = useContext(AnimationContext);
   if (!context) {
-    throw new Error('AnimationContext must be used within an AnimationProvider');
+    throw new Error(
+      'AnimationContext must be used within an AnimationProvider'
+    );
   }
   const { canAnimate } = context;
 
@@ -59,7 +61,7 @@ const SearchBar = memo(function SearchBar({
   // Handle keyboard interaction on search results
   const handleResultKeyDown = (
     e: React.KeyboardEvent<HTMLButtonElement>,
-    iphone: iPhoneServiceDetail,
+    iphone: iPhoneServiceDetail
   ) => {
     if (e.key === 'Enter') {
       handleResultClick(iphone);

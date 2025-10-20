@@ -2,13 +2,7 @@
 
 'use client';
 
-import React, {
-  useState,
-  useEffect,
-  useContext,
-  KeyboardEvent,
-  MouseEvent,
-} from 'react';
+import React, { useState, useEffect, useContext, KeyboardEvent } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { AnimationContext } from '../context/AnimationContext';
@@ -47,7 +41,9 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   const { imgUrl, title, sizes } = service;
   const context = useContext(AnimationContext);
   if (!context) {
-    throw new Error('AnimationContext must be used within an AnimationProvider');
+    throw new Error(
+      'AnimationContext must be used within an AnimationProvider'
+    );
   }
   const { canAnimate } = context;
   const [screenSize, setScreenSize] = useState<'sm' | 'md' | 'lg' | 'xl'>('sm');

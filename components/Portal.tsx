@@ -10,7 +10,7 @@ interface PortalProps {
   children: ReactNode;
 }
 
-export default function Portal({ children }: PortalProps) {
+const Portal = ({ children }: PortalProps): ReactNode => {
   const [mounted, setMounted] = useState<boolean>(false);
 
   useEffect(() => {
@@ -24,4 +24,6 @@ export default function Portal({ children }: PortalProps) {
 
   const modalRoot = document.getElementById('modal-root');
   return modalRoot ? createPortal(children, modalRoot) : null;
-}
+};
+
+export default Portal;
