@@ -29,7 +29,9 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
 }) => {
   const context = useContext(AnimationContext);
   if (!context) {
-    throw new Error('AnimationContext must be used within an AnimationProvider');
+    throw new Error(
+      'AnimationContext must be used within an AnimationProvider'
+    );
   }
   const { canAnimate } = context;
   const [prefersReducedMotion, setPrefersReducedMotion] =

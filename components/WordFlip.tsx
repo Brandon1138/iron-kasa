@@ -7,10 +7,11 @@ const words = ['Apple', 'iPhone', 'iPad', 'MacBook', 'iMac', 'Apple'] as const;
 const flipDuration = 777;
 const flipDelay = 777;
 
-export default function WordFlip(): JSX.Element {
+const WordFlip = (): JSX.Element => {
   const [currentWordIndex, setCurrentWordIndex] = useState<number>(0);
   const [isFlipping, setIsFlipping] = useState<boolean>(false);
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState<boolean>(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] =
+    useState<boolean>(false);
   const [isSmallScreen, setIsSmallScreen] = useState<boolean>(false);
 
   const flipDurationRef = useRef<number>(flipDuration);
@@ -114,16 +115,25 @@ export default function WordFlip(): JSX.Element {
           </motion.span>
         )}
       </AnimatePresence>
-      {(!isFlipping && currentWordIndex === words.length - 1) || isSmallScreen ? (
+      {(!isFlipping && currentWordIndex === words.length - 1) ||
+      isSmallScreen ? (
         <motion.span
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-purple-500 via-rose-500 to-amber-500 bg-clip-text text-transparent flex items-center justify-start"
+          className={`
+            absolute inset-0
+            bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))]
+            from-purple-500 via-rose-500 to-amber-500
+            bg-clip-text text-transparent
+            flex items-center justify-start
+          `}
         >
           {displayWord}
         </motion.span>
       ) : null}
     </span>
   );
-}
+};
+
+export default WordFlip;

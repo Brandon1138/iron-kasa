@@ -5,7 +5,7 @@
 import { useEffect, useState } from 'react';
 import WordFlip from './WordFlip';
 
-export default function WordFlipWrapper(): JSX.Element {
+const WordFlipWrapper = (): JSX.Element => {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -30,4 +30,6 @@ export default function WordFlipWrapper(): JSX.Element {
       </span>
     </span>
   );
-}
+};
+
+export default WordFlipWrapper;

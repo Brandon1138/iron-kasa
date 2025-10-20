@@ -1,6 +1,5 @@
 // components/TestimonialCard.jsx
 
-
 'use client';
 
 import Image from 'next/image';
@@ -28,7 +27,7 @@ const roundedClasses: Record<ScreenSize, string> = {
   xl: 'rounded-[50px]',
 };
 
-export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
+const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
   const [isTouchDevice, setIsTouchDevice] = useState<boolean>(false);
   const [screenSize, setScreenSize] = useState<ScreenSize>('sm');
 
@@ -117,4 +116,6 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
       </div>
     </motion.div>
   );
-}
+};
+
+export default TestimonialCard;
