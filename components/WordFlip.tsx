@@ -88,9 +88,9 @@ const WordFlip = (): JSX.Element => {
 
   return (
     <span
-      className="inline-block relative overflow-hidden mt-1"
+      className="inline-block relative overflow-hidden mt-1 max-w-full"
       style={{
-        width: '450px',
+        width: 'min(450px, calc(100vw - 3rem))',
         height: '1.2em',
         transform: 'translateY(-0.1em)',
       }}
