@@ -2,8 +2,7 @@
 
 'use client';
 
-import React, { useRef, useCallback, useEffect } from 'react';
-import { Loader } from '@googlemaps/js-api-loader'; // Ensure latest version
+import React, { useRef, useCallback, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { TypingText } from '../components';
 import styles from '../styles';
@@ -24,8 +23,10 @@ interface ContactProps {
 }
 
 const Contact: React.FC<ContactProps> = ({ id = 'contact' }) => {
+  const sectionRef = useRef<HTMLElement | null>(null);
   const mapRef = useRef<HTMLDivElement | null>(null);
   const isMapInitialized = useRef(false); // Initialization flag
+  const [hasLoadedMap, setHasLoadedMap] = useState(false);
 
   // Initialize the map
   const initMap = useCallback((): void => {
@@ -40,12 +41,6 @@ const Contact: React.FC<ContactProps> = ({ id = 'contact' }) => {
       console.error('Google Maps is not loaded.');
       return;
     }
-
-    console.log('google.maps:', window.google.maps);
-    console.log(
-      'AdvancedMarkerElement:',
-      window.google.maps.marker?.AdvancedMarkerElement
-    );
 
     const shopLocation: Location = {
       lat: 44.41362120240169,
@@ -95,6 +90,34 @@ const Contact: React.FC<ContactProps> = ({ id = 'contact' }) => {
   };
 
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+
+        if (entry.isIntersecting) {
+          setHasLoadedMap(true);
+          observer.disconnect();
+        }
+      },
+      {
+        threshold: 0.1,
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!hasLoadedMap || isMapInitialized.current) {
+      return;
+    }
+
     // Ensure API key is defined
     const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
     if (!apiKey) {
@@ -102,27 +125,41 @@ const Contact: React.FC<ContactProps> = ({ id = 'contact' }) => {
       return;
     }
 
-    // Initialize the loader
-    const loader = new Loader({
-      apiKey: apiKey as string,
-      version: 'weekly',
-      libraries: ['marker'], // Only load the 'marker' library
-    });
+    let isMounted = true;
 
-    // Load the 'marker' library and initialize the map
-    loader
-      .importLibrary('marker') // Load the 'marker' library
-      .then(() => {
-        console.log('Marker library loaded successfully.');
-        initMap(); // Initialize the map after 'marker' is loaded
-      })
-      .catch((e: any) => {
+    const loadMap = async () => {
+      try {
+        const { Loader } = await import('@googlemaps/js-api-loader');
+
+        const loader = new Loader({
+          apiKey: apiKey as string,
+          version: 'weekly',
+          libraries: ['marker'], // Only load the 'marker' library
+        });
+
+        await loader.importLibrary('marker');
+
+        if (isMounted) {
+          initMap();
+        }
+      } catch (e) {
         console.error('Error loading Google Maps API', e);
-      });
-  }, [initMap]);
+      }
+    };
+
+    loadMap();
+
+    return () => {
+      isMounted = false;
+    };
+  }, [hasLoadedMap, initMap]);
 
   return (
-    <section id={id} className={`pt-24 -pb-24 lg:px-8 md:px-16 px-6 relative z-10`}>
+    <section
+      ref={sectionRef}
+      id={id}
+      className={`pt-24 -pb-24 lg:px-8 md:px-16 px-6 relative z-10`}
+    >
       <motion.div
         variants={staggerContainer(0.1, 0.2)} // Call the function with appropriate arguments
         initial="hidden"
